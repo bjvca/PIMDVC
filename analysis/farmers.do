@@ -219,6 +219,10 @@ rename hh_headHHdairy_ouputqX4 dry_consumeday
 rename hh_headHHdairy_ouputqX5 dry_givenday
 rename hh_headHHdairy_ouputqX6 dry_calvesday
 rename hh_headHHdairy_ouputqX7 dry_processday
+foreach v of varlist dry_localcows_abv8 dry_localcows_liquid dry_lowestpric dry_highestpric dry_sellday dry_exotics_abv8 dry_exotics_liqud dry_price dry_total dry_consumeday dry_givenday dry_calvesday dry_processday{
+replace `v'="." if `v'=="999"|`v'=="n/a"
+destring `v', replace
+}
 
 
 rename hh_headHHdairy_ouputq44 rainy_localcows
@@ -237,6 +241,12 @@ rename hh_headHHdairy_ouputq56 rainy_consumeday
 rename hh_headHHdairy_ouputq57 rainy_givenday
 rename hh_headHHdairy_ouputq58 rainy_calvesday
 rename hh_headHHdairy_ouputq59 rainy_processday
+
+foreach v of varlist rainy_localcows_abv8 rainy_localcows_liquid rainy_consumeday rainy_exotics_abv8 rainy_exotics_liqud rainy_price rainy_total rainy_lowestpric rainy_highestpric rainy_sellday rainy_givenday rainy_calvesday rainy_processday{
+replace `v'="." if `v'=="999"|`v'=="n/a"
+destring `v', replace
+}
+
 
 rename hh_headHHsalesq701 sales_directneighbor
 rename hh_headHHsalesq702 sales_tradetoretail
@@ -457,6 +467,19 @@ rename hh_headHHsalesR56 sales_direct_mlkshp_contain
 rename hh_headHHsalesR57 sales_direct_mlkshp_testlact
 rename hh_headHHsalesR58 sales_direct_mlkshp_testalc
 
+
+
+
+
+foreach v of varlist  sales_neigh_* sales_tr_retail_* sales_tr_mcc_* sales_tr_mklshp_* sales_trans_retail_* sales_trans_mcc_* sales_trans_mklshp_* sales_direct_mcc_*  sales_direct_mlkshp_*{
+replace `v'="." if `v'=="999"|`v'=="n/a"| `v'=="98"| `v'=="96"
+replace `v'="1" if `v'=="Yes"
+replace `v'="0" if `v'=="No"
+
+destring `v', replace
+}
+
+
 rename hh_headHHq177 nosale_unable
 rename hh_headHHq178 nosale_unable_time
 rename hh_headHHq179 nosale_unable_why
@@ -465,6 +488,13 @@ rename hh_headHHq1802 nosale_unable_ghee
 rename hh_headHHq1803 nosale_unable_give
 rename hh_headHHq1804 nosale_unable_animal
 rename hh_headHHq1805 nosale_unable_throw
+
+foreach v of varlist  nosale_*{
+replace `v'="." if `v'=="999"|`v'=="n/a"| `v'=="98"
+replace `v'="1" if `v'=="Yes"
+replace `v'="0" if `v'=="No"
+destring `v', replace
+}
 
 rename hh_headHHfood_safetyq181 safet_wheremilked
 rename hh_headHHfood_safetyq182 safet_wheremilkedfloor
@@ -481,7 +511,6 @@ rename hh_headHHfood_safetyq1903 safet_contain_plasbuck
 rename hh_headHHfood_safetyq1904 safet_contain_steelbuc
 rename hh_headHHfood_safetyq1905 safet_contain_jerryc
 rename hh_headHHfood_safetyq1906 safet_contain_steelcan
-
 
 
 rename hh_headHHfood_safetyq191 safet_cowsleep
@@ -502,6 +531,13 @@ rename  hh_headHHfood_safetyq1965 safet_feed_freesup
 rename hh_headHHfood_safetyq198 safet_watersource
 rename hh_headHHfood_safetyq198b safet_watersource_prob
 
+foreach v of varlist  safet_wheremilked safet_utterclean safet_uttercleanhow safet_milkcream safet_cowstand safet_drycontain safet_spraycow{
+replace `v'="." if `v'=="999"|`v'=="n/a"| `v'=="98"
+replace `v'="1" if `v'=="Yes"
+replace `v'="0" if `v'=="No"
+destring `v', replace
+}
+
 rename hh_headHHanimal_healthq199 anhealth_vac
 rename  hh_headHHanimal_healthq200 anhealth_vacwho
 rename  hh_headHHanimal_healthq201  anhealth_vvetdist
@@ -510,9 +546,25 @@ rename  hh_headHHanimal_healthq203 anhealth_vet12mo
 rename  hh_headHHanimal_healthq204 anhealth_vetnum
 rename  hh_headHHanimal_healthq205 anhealth_vetcost
 
+foreach v of varlist anhealth_vvetdist anhealth_vetmeddist{
+replace `v'=. if `v'==999
+}
+
+
+foreach v of varlist anhealth_vac anhealth_vacwho anhealth_vet12mo anhealth_vetnum anhealth_vetcost{
+replace `v'="." if `v'=="999"|`v'=="n/a"| `v'=="98"
+replace `v'="1" if `v'=="Yes"
+replace `v'="0" if `v'=="No"
+destring `v', replace
+}
 rename hh_headHHtrainingq206 training
 rename hh_headHHtrainingq207 training_who
-
+foreach v of varlist training*{
+replace `v'="." if `v'=="999"|`v'=="n/a"| `v'=="98"
+replace `v'="1" if `v'=="Yes"
+replace `v'="0" if `v'=="No"
+destring `v', replace
+}
 
 rename hh_headHHtraininglabor1 labor_admale
 rename  hh_headHHtraininglabor2 labor_adfemale
@@ -531,6 +583,12 @@ rename  hh_headHHtrainingq216 labor_adfemale_market
 rename  hh_headHHtrainingq217 labor_adfemale_feed
 rename  hh_headHHtrainingq218 labor_adfemale_cleaning
 
+foreach v of varlist labor_admale_* labor_adfemale_*{
+replace `v'="." if `v'=="999"|`v'=="n/a"| `v'=="98"
+replace `v'="1" if `v'=="Yes"
+replace `v'="0" if `v'=="No"
+destring `v', replace
+}
 rename hh_headHHtrainingq219 labor_childmale_milkam
 rename  hh_headHHtrainingq220 labor_childmale_milkpm
 rename  hh_headHHtrainingq221 labor_childmale_market
@@ -544,9 +602,23 @@ rename  hh_headHHtrainingq226 labor_childfemale_market
 rename  hh_headHHtrainingq227 labor_childfemale_feed
 rename  hh_headHHtrainingq228 labor_childfemale_cleaning
 
+foreach v of varlist labor_childmale_* labor_childfemale_*{
+replace `v'="." if `v'=="999"|`v'=="n/a"| `v'=="98"
+replace `v'="1" if `v'=="Yes"
+replace `v'="0" if `v'=="No"
+destring `v', replace
+}
+
 rename hh_headHHtrainingq229 labor_hired
 rename  hh_headHHtrainingq230 labor_hired_hours
 rename  hh_headHHtrainingq231 labor_hired_cost
+
+foreach v of varlist labor_hired*{
+replace `v'="." if `v'=="999"|`v'=="n/a"| `v'=="98"
+replace `v'="1" if `v'=="Yes"
+replace `v'="0" if `v'=="No"
+destring `v', replace
+}
 
 rename hh_headHHq2321 whycattle_wealth
 rename  hh_headHHq2322 whycattle_prestig
@@ -554,13 +626,20 @@ rename  hh_headHHq2323  whycattle_prodmilk
 rename hh_headHHq2324  whycattle_prodmeat
 rename hh_headHHq2325 whycattle_bridep
 
-rename hh_headHHrecallq233 tenyrs_cows
+rename hh_headHHrecallq233 start_tenyrs_cows
 rename  hh_headHHrecallq233b start_whenstart
 rename  hh_headHHrecallq234 start_exoticsnum
 rename  hh_headHHrecallq235  start_localnum
 rename hh_headHHrecallq236 start_milkperday
 rename hh_headHHrecallq237 start_sellperday
 rename  hh_headHHrecallq238 start_selltrader
+
+foreach v of varlist start_tenyrs_cows start_whenstart start_exoticsnum start_localnum start_milkperday{
+replace `v'="." if `v'=="999"|`v'=="n/a"| `v'=="98"
+replace `v'="1" if `v'=="Yes"
+replace `v'="0" if `v'=="No"
+destring `v', replace
+}
 
 rename hh_headHHlivestock_assetsq239 assets_milkshed
 rename  hh_headHHlivestock_assetsq240 assets_milkshed_roof
@@ -574,24 +653,41 @@ rename  hh_headHHlivestock_assetsq247 assets_jerryc
 rename  hh_headHHlivestock_assetsq248 assets_jerrycnum 
 rename  hh_headHHlivestock_assetsq249 assets_plasbuck 
 rename  hh_headHHlivestock_assetsq250 assets_plasbucknum
-rename  hh_headHHlivestock_assetsq251 assets_mobilenum
-rename  hh_headHHlivestock_assetsq252 assets_motonum
-rename  hh_headHHlivestock_assetsq253 assets_bikenum
-rename  hh_headHHlivestock_assetsq254 assets_carsnum
-rename  hh_headHHlivestock_assetsq255 assets_radionum
-rename  hh_headHHlivestock_assetsq256 assets_waterpumpnum
-rename  hh_headHHlivestock_assetsq257 assets_pangasnum
-rename  hh_headHHlivestock_assetsq258 assets_wheelbnum
-rename  hh_headHHlivestock_assetsq259 assets_sicklenum
-rename  hh_headHHlivestock_assetsq260 assets_hayforknum
-rename  hh_headHHlivestock_assetsq261 assets_tarpaulinsnum
-rename  hh_headHHlivestock_assetsq262 assets_cuttingmachnum
-rename  hh_headHHlivestock_assetsq263 assets_horsepipnum
-rename  hh_headHHlivestock_assetsq264 assets_sprayersnum
+rename  hh_headHHlivestock_assetsq251 assets2_mobilenum
+rename  hh_headHHlivestock_assetsq252 assets2_motonum
+rename  hh_headHHlivestock_assetsq253 assets2_bikenum
+rename  hh_headHHlivestock_assetsq254 assets2_carsnum
+rename  hh_headHHlivestock_assetsq255 assets2_radionum
+rename  hh_headHHlivestock_assetsq256 assets2_waterpumpnum
+rename  hh_headHHlivestock_assetsq257 assets2_pangasnum
+rename  hh_headHHlivestock_assetsq258 assets2_wheelbnum
+rename  hh_headHHlivestock_assetsq259 assets2_sicklenum
+rename  hh_headHHlivestock_assetsq260 assets2_hayforknum
+rename  hh_headHHlivestock_assetsq261 assets2_tarpaulinsnum
+rename  hh_headHHlivestock_assetsq262 assets2_cuttingmachnum
+rename  hh_headHHlivestock_assetsq263 assets2_horsepipnum
+rename  hh_headHHlivestock_assetsq264 assets2_sprayersnum
+
+
+foreach v of varlist assets_*{
+replace `v'="." if `v'=="999"|`v'=="n/a"| `v'=="98"
+replace `v'="1" if `v'=="Yes"
+replace `v'="0" if `v'=="No"
+destring `v', replace
+}
+
 
 rename  hh_headHHcooperativeq265 coop_
 rename  hh_headHHcooperativeq266 coop_num
 rename  hh_headHHcooperativeq267 coop_nondairy
+
+foreach v of varlist coop_*{
+replace `v'="." if `v'=="999"|`v'=="n/a"| `v'=="98"
+replace `v'="1" if `v'=="Yes"
+replace `v'="0" if `v'=="No"
+destring `v', replace
+}
+
 
 rename  hh_headHHaccess_financeq268 fina_ac
 rename  hh_headHHaccess_financeq2691 fina_coop
@@ -610,7 +706,9 @@ rename  hh_headHHaccess_financeq2735 fina_inv_hirelabor
 rename  hh_headHHaccess_financeq2736 fina_inv_artinf
 rename  hh_headHHaccess_financeq2737 fina_inv_othermilk
 foreach v of varlist fina_*{
-replace `v'="." if `v'=="n/a"
+replace `v'="." if `v'=="999"|`v'=="n/a"| `v'=="98"
+replace `v'="1" if `v'=="Yes"
+replace `v'="0" if `v'=="No"
 destring `v', replace
 }
 
@@ -619,21 +717,69 @@ rename hh_headHHL1 hh_childU5_bf
 rename  hh_headHHL2 hh_childU5_milk7d
 rename  hh_headHHL3 hh_childU5_milklit
 foreach v of varlist hh_childU5*{
-replace `v'="." if `v'=="n/a"
+replace `v'="." if `v'=="999"|`v'=="n/a"| `v'=="98"
+replace `v'="1" if `v'=="Yes"
+replace `v'="0" if `v'=="No"
 destring `v', replace
 }
 foreach v of varlist hh_headHHconsumption*{
-replace `v'="." if `v'=="999"|`v'=="n/a"
+replace `v'="." if `v'=="999"|`v'=="n/a"| `v'=="98"
+replace `v'="1" if `v'=="Yes"
+replace `v'="0" if `v'=="No"
 destring `v', replace
 }
 *
 
+exit
 
 
+*****************
+*	DESCRIPTIVVES
 
+sum hh_mems hhmem*_age hhmem*_married hhmem*_head hhmem*_spouse hhmem*_male
 
+sum head_edu_primary head_edu_some head_edu_none
 
+sum head_rel_angli head_rel_pent head_rel_cath head_rel_mus
 
+sum head_tribe_Banyankore head_tribe_Banyarwanda head_tribe_Banyoro
+
+sum dist_tarmac dist_murram dist_mcc dist_milkshop dist_neigh dist_market dist_tradecenter dist_vilchairm
+sum cellrec_good
+
+sum main_income_dairy main_income_crops
+
+sum hh_rooms hh_solarpower hh_ironroof 
+tab land_areafenced 
+sum land_area_useable
+
+sum cattle*
+
+sum dry_*
+
+sum rainy_*
+
+sum sales_directneighbor sales_tradetoretail sales_tradetomcc sales_tradetomilkshop sales_transptoretail sales_transptomcc sales_transptomilkshop sales_directmcc sales_directmilkshop sales_other
+
+sum sales_neigh_* sales_tr_retail_* sales_tr_mcc_* sales_tr_mklshp_* sales_trans_retail_* sales_trans_mcc_* sales_trans_mklshp_* sales_direct_mcc_*  sales_direct_mlkshp_*
+
+sum nosale*
+
+sum safet* anhealth* training*
+
+sum labor*
+
+sum whycattle*
+
+sum start*
+
+sum assets*
+
+sum coop* fina*
+
+sum hh_childU5*
+
+sum hh_headHHconsumption*
 
 
 
