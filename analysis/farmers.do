@@ -219,9 +219,15 @@ rename hh_headHHdairy_ouputqX4 dry_consumeday
 rename hh_headHHdairy_ouputqX5 dry_givenday
 rename hh_headHHdairy_ouputqX6 dry_calvesday
 rename hh_headHHdairy_ouputqX7 dry_processday
+
 foreach v of varlist dry_localcows_abv8 dry_localcows_liquid dry_lowestpric dry_highestpric dry_sellday dry_exotics_abv8 dry_exotics_liqud dry_price dry_total dry_consumeday dry_givenday dry_calvesday dry_processday{
 replace `v'="." if `v'=="999"|`v'=="n/a"
 destring `v', replace
+}
+
+foreach v of varlist dry_localcows dry_exotics{
+replace `v'=. if `v'==999
+
 }
 
 
@@ -245,6 +251,10 @@ rename hh_headHHdairy_ouputq59 rainy_processday
 foreach v of varlist rainy_localcows_abv8 rainy_localcows_liquid rainy_consumeday rainy_exotics_abv8 rainy_exotics_liqud rainy_price rainy_total rainy_lowestpric rainy_highestpric rainy_sellday rainy_givenday rainy_calvesday rainy_processday{
 replace `v'="." if `v'=="999"|`v'=="n/a"
 destring `v', replace
+}
+foreach v of varlist rainy_localcows rainy_exotics{
+replace `v'=. if `v'==999
+
 }
 
 
@@ -738,6 +748,28 @@ exit
 
 sum hh_mems hhmem*_age hhmem*_married hhmem*_head hhmem*_spouse hhmem*_male
 
+gen head_age=. 
+replace head_age =hhmem1_age if hhmem1_relhhhead==1
+replace head_age =hhmem2_age if hhmem2_relhhhead=="1" & head_age==.
+replace head_age =hhmem3_age if hhmem3_relhhhead=="1" &head_age==.
+replace head_age =hhmem4_age if hhmem4_relhhhead=="1" &head_age==.
+replace head_age =hhmem5_age if hhmem5_relhhhead=="1" &head_age==.
+replace head_age =hhmem6_age if hhmem6_relhhhead=="1" &head_age==.
+replace head_age =hhmem7_age if hhmem7_relhhhead=="1" &head_age==.
+replace head_age =hhmem8_age if hhmem8_relhhhead=="1" &head_age==.
+replace head_age =hhmem9_age if hhmem9_relhhhead=="1" &head_age==.
+gen head_married=. 
+replace head_married =hhmem1_married if hhmem1_relhhhead==1
+replace head_married =hhmem2_married if hhmem2_relhhhead=="1" & head_married==.
+replace head_married =hhmem3_married if hhmem3_relhhhead=="1" &head_married==.
+replace head_married =hhmem4_married if hhmem4_relhhhead=="1" &head_married==.
+replace head_married =hhmem5_married if hhmem5_relhhhead=="1" &head_married==.
+replace head_married =hhmem6_married if hhmem6_relhhhead=="1" &head_married==.
+replace head_married =hhmem7_married if hhmem7_relhhhead=="1" &head_married==.
+replace head_married =hhmem8_married if hhmem8_relhhhead=="1" &head_married==.
+replace head_married =hhmem9_married if hhmem9_relhhhead=="1" &head_married==.
+
+sum head_age head_married
 sum head_edu_primary head_edu_some head_edu_none
 
 sum head_rel_angli head_rel_pent head_rel_cath head_rel_mus
@@ -749,7 +781,7 @@ sum cellrec_good
 
 sum main_income_dairy main_income_crops
 
-sum hh_rooms hh_solarpower hh_ironroof 
+sum hh_rooms hh_solarpower hh_ironroof land_area
 tab land_areafenced 
 sum land_area_useable
 
