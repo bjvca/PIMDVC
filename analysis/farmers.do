@@ -557,7 +557,7 @@ rename  hh_headHHanimal_healthq204 anhealth_vetnum
 rename  hh_headHHanimal_healthq205 anhealth_vetcost
 
 foreach v of varlist anhealth_vvetdist anhealth_vetmeddist{
-replace `v'=. if `v'==999
+replace `v'=. if `v'==999|`v'==99
 }
 
 
@@ -594,7 +594,7 @@ rename  hh_headHHtrainingq217 labor_adfemale_feed
 rename  hh_headHHtrainingq218 labor_adfemale_cleaning
 
 foreach v of varlist labor_admale_* labor_adfemale_*{
-replace `v'="." if `v'=="999"|`v'=="n/a"| `v'=="98"
+replace `v'="." if `v'=="999"|`v'=="n/a"| `v'=="98"| `v'=="99"
 replace `v'="1" if `v'=="Yes"
 replace `v'="0" if `v'=="No"
 destring `v', replace
@@ -644,12 +644,21 @@ rename hh_headHHrecallq236 start_milkperday
 rename hh_headHHrecallq237 start_sellperday
 rename  hh_headHHrecallq238 start_selltrader
 
-foreach v of varlist start_tenyrs_cows start_whenstart start_exoticsnum start_localnum start_milkperday{
-replace `v'="." if `v'=="999"|`v'=="n/a"| `v'=="98"
+foreach v of varlist start_tenyrs_cows start_whenstart start_exoticsnum start_localnum start_milkperday {
+replace `v'="." if `v'=="999"|`v'=="n/a"| `v'=="98" | `v'=="99"
 replace `v'="1" if `v'=="Yes"
 replace `v'="0" if `v'=="No"
 destring `v', replace
 }
+
+replace start_sellperday=. if start_sellperday==999|start_sellperday==98 | start_sellperday==99
+
+
+gen farmdairy_year=substr(start_whenstart, 7, 4)
+destring farmdairy_year, replace
+
+gen farmdairy_year_count=2018-farmdairy_year
+
 
 rename hh_headHHlivestock_assetsq239 assets_milkshed
 rename  hh_headHHlivestock_assetsq240 assets_milkshed_roof
@@ -680,10 +689,14 @@ rename  hh_headHHlivestock_assetsq264 assets2_sprayersnum
 
 
 foreach v of varlist assets_*{
-replace `v'="." if `v'=="999"|`v'=="n/a"| `v'=="98"
+replace `v'="." if `v'=="999"|`v'=="n/a"| `v'=="98" | `v'=="99"| `v'=="96"
 replace `v'="1" if `v'=="Yes"
 replace `v'="0" if `v'=="No"
 destring `v', replace
+}
+foreach v of varlist assets2*{
+replace `v'=. if `v'==999|`v'==98 | `v'==99| `v'==96
+
 }
 
 
@@ -732,7 +745,7 @@ replace `v'="1" if `v'=="Yes"
 replace `v'="0" if `v'=="No"
 destring `v', replace
 }
-foreach v of varlist hh_headHHconsumption*{
+foreach v of varlist hh_headHHconsumption* UI{
 replace `v'="." if `v'=="999"|`v'=="n/a"| `v'=="98"
 replace `v'="1" if `v'=="Yes"
 replace `v'="0" if `v'=="No"
@@ -804,11 +817,12 @@ sum labor*
 sum whycattle*
 
 sum start*
-
+sum farmdairy_year_count
 sum assets*
 
 sum coop* fina*
 
+replace hh_childU5_milklit=. if hh_childU5_milklit>50
 sum hh_childU5*
 
 sum hh_headHHconsumption*
