@@ -7,14 +7,15 @@ clear
 
 gl dir "C:\Users\u0107600\Dropbox\Uganda-Dairy"
 
- use "$dir\Data\traders.dta", clear
+ use "$dir\analysis\traders_insheet.dta", clear
 
+*insheet using "https://raw.githubusercontent.com/bjvca/PIMDVC/master/data/public/traders.csv", clear
 
  
  ***clean data
  
  rename traderq3 age
- replace age ="." if age =="999"| age=="n/a"
+ replace age =. if age ==999
  destring age, replace
  
  rename traderq4 gender
@@ -49,10 +50,9 @@ gl dir "C:\Users\u0107600\Dropbox\Uganda-Dairy"
   order hh_head*, a(traderq6)
 
  rename traderq8 hh_size
- replace hh_size="." if hh_size=="KINONI"
- destring hh_size, replace 
  
 replace traderq9=. if traderq9>95
+
  gen rel_angli=.
  replace  rel_angli =0 if traderq9!=.
  replace  rel_angli =1 if traderq9==1
@@ -79,13 +79,11 @@ replace traderq9=. if traderq9>95
  order eth_*, a(traderq10)
  
 gen indp_collect=.
-replace indp_collect=0 if traderq14!="."
-replace indp_collect=1 if traderq14=="1"
+replace indp_collect=0 if traderq14!=.
+replace indp_collect=1 if traderq14==1
  
  
 rename traderq16 trader_transport
-replace trader_transport="." if trader_transport=="n/a"
-destring trader_transport, replace
 gen trade_only=.
 replace trade_only=0 if trader_transport!=.
 replace trade_only=1 if trader_transport==1
@@ -218,20 +216,18 @@ rename traderq54 rain_avg_soldproc
 replace rain_avg_soldproc=. if rain_avg_soldproc==999
 
 rename traderq55 rain_avg_soldinsti
-replace rain_avg_soldinsti="." if rain_avg_soldinsti=="999"|rain_avg_soldinsti=="n/a"
-destring rain_avg_soldinsti,replace
+replace rain_avg_soldinsti=. if rain_avg_soldinsti==999
+
 
 rename traderq56 rain_avg_soldrest
-replace rain_avg_soldrest="." if rain_avg_soldrest=="999"|rain_avg_soldrest=="n/a"
-destring rain_avg_soldrest,replace
+replace rain_avg_soldrest=. if rain_avg_soldrest==999
 
 rename traderq57 rain_avg_soldother
-replace rain_avg_soldother="." if rain_avg_soldother=="999"|rain_avg_soldother=="n/a"
-destring rain_avg_soldother,replace
+replace rain_avg_soldother=. if rain_avg_soldother==999
 
 gen milk_nevrej=.
-replace milk_nevrej=0 if traderq58=="2"|traderq58=="1"|traderq58=="3"
-replace milk_nevrej=1 if traderq58=="2"
+replace milk_nevrej=0 if traderq58==2|traderq58==1|traderq58==3
+replace milk_nevrej=1 if traderq58==2
 order milk_nevrej, a(traderq58)
 
 rename traderq59 rej_reason
@@ -258,8 +254,6 @@ rename traderq64 own_jerrycan
 rename traderq65 own_moto
 rename traderq66 own_bike
 rename traderq67 own_mobile
-replace own_mobile="." if own_mobile=="Yes"
-destring own_mobile, replace
 rename traderq68 own_measu
 rename traderq69 own_sieves
 
@@ -274,11 +268,10 @@ replace trans_bike=1 if traderq70==2
  order trans_boda trans_bike,a(traderq70)
  
  rename traderq72 trans_cap_lit
- replace trans_cap_lit ="." if trans_cap_lit=="999"|trans_cap_lit=="Yes"
- destring trans_cap_lit, replace
+ replace trans_cap_lit =. if trans_cap_lit==999
+
  
- replace traderq73="." if traderq73=="Yes"
- destring traderq73, replace
+ replace traderq73=. if traderq73>95
  
  gen main_buyer_indiv=.
  replace main_buyer_indiv=0 if traderq73!=.
@@ -291,7 +284,7 @@ replace trans_bike=1 if traderq70==2
   order main_buy*, a(traderq73)
   
   rename traderq74 yrs_delivering
-  replace yrs_delivering="." if yrs_delivering=="09:05:00.000+03"
+  replace yrs_delivering=. if yrs_delivering==999
   destring yrs_delivering, replace 
     replace yrs_delivering=. if yrs_delivering==999
 
@@ -415,6 +408,29 @@ exit
 tab gender
 sum edu_* tradedairy_years_count
 
+gen trans_agree_write=.
+replace trans_agree_write=0 if trans_agreement!=.
+replace trans_agree_write=1 if trans_agreement==2
+gen trans_agree_oral=.
+replace trans_agree_oral=0 if trans_agreement!=.
+replace trans_agree_oral=1 if trans_agreement==1
+gen trans_agree_none=.
+replace trans_agree_none=0 if trans_agreement!=.
+replace trans_agree_none=1 if trans_agreement==3
+
+gen trade_agree_write=.
+replace trade_agree_write=0 if trade_agree_buy!=.
+replace trade_agree_write=1 if trade_agree_buy==2
+gen trade_agree_oral=.
+replace trade_agree_oral=0 if trade_agree_buy!=.
+replace trade_agree_oral=1 if trade_agree_buy==1
+gen trade_agree_none=.
+replace trade_agree_none=0 if trade_agree_buy!=.
+replace trade_agree_none=1 if trade_agree_buy==3
+
+ttest trans_agree_write==trade_agree_write, unp
+ttest trans_agree_oral==trade_agree_oral, unp
+ttest trans_agree_none==trade_agree_none, unp
 
 
 sum trade_only trans_only trade_trans 
@@ -427,9 +443,33 @@ tab traderq35
 sum  dry_suppliers dry_avg_liters
 sum dry_avg_soldshop dry_avg_soldindiv dry_avg_soldcoop dry_avg_soldpriv dry_avg_soldproc dry_avg_soldinsti dry_avg_soldrest
 sum rain_price
+
 tab traderq47
 sum  rain_suppliers rain_avg_liters
 sum rain_avg_soldshop rain_avg_soldindiv rain_avg_soldcoop rain_avg_soldpriv rain_avg_soldproc rain_avg_soldinsti rain_avg_soldrest
+
+gen dry_boughfarm=.
+replace dry_boughfarm=0 if traderq35!=.
+replace dry_boughfarm=1 if traderq35==1
+
+gen rain_boughfarm=.
+replace rain_boughfarm=0 if traderq47!=.
+replace rain_boughfarm=1 if traderq47==1
+
+ttest dry_price==rain_price
+ttest dry_boughfarm==rain_boughfarm
+ttest dry_suppliers== rain_suppliers
+ttest dry_avg_liters== rain_avg_liters
+ttest dry_avg_soldshop==rain_avg_soldshop
+ttest dry_avg_soldindiv==rain_avg_soldindiv
+ttest dry_avg_soldcoop==rain_avg_soldcoop
+ttest dry_avg_soldpriv==rain_avg_soldpriv
+ttest dry_avg_soldproc==rain_avg_soldproc
+ttest dry_avg_soldinsti==rain_avg_soldinsti
+ttest dry_avg_soldrest==rain_avg_soldrest
+
+
+
 
 tab milk_nevrej
 tab rej_reason
@@ -457,3 +497,45 @@ tab finance_records
 tab finance_acess
 tab finance_loan
 tab finance_loan_amt
+
+
+**coop vs noncoop
+
+ttest dry_price, by(coop) unp
+ttest dry_boughfarm, by(coop) unp
+ttest dry_suppliers, by(coop) unp
+ttest dry_avg_liters, by(coop) unp
+ttest dry_avg_soldshop, by(coop) unp
+ttest dry_avg_soldindiv, by(coop) unp
+ttest dry_avg_soldcoop, by(coop) unp
+ttest dry_avg_soldpriv, by(coop) unp
+ttest dry_avg_soldproc, by(coop) unp
+ttest dry_avg_soldinsti, by(coop) unp
+ttest dry_avg_soldrest, by(coop) unp
+
+ttest rain_price, by(coop) unp
+ttest rain_boughfarm, by(coop) unp
+ttest rain_suppliers, by(coop) unp
+ttest rain_avg_liters, by(coop) unp
+ttest rain_avg_soldshop, by(coop) unp
+ttest rain_avg_soldindiv, by(coop) unp
+ttest rain_avg_soldcoop, by(coop) unp
+ttest rain_avg_soldpriv, by(coop) unp
+ttest rain_avg_soldproc, by(coop) unp
+ttest rain_avg_soldinsti, by(coop) unp
+ttest rain_avg_soldrest, by(coop) unp
+
+
+*graph
+
+gen competit_change=competit_now- competit_first
+
+scatter competit_change tradedairy_years_count 
+
+
+sort tradedairy_years_count competit_first
+
+scatter competit_first tradedairy_years_count 
+
+by tradedairy_years_count: egen ave_firstcompt=mean(competit_first) if competit_first!=.
+scatter ave_firstcompt tradedairy_years_count
