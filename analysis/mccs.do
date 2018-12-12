@@ -7,7 +7,8 @@ clear
 
 gl dir "C:\Users\u0107600\Dropbox\Uganda-Dairy"
 
- use "$dir\Data\mccs.dta", clear
+ use "$dir\analysis\mccs_insheet.dta", clear
+*insheet using "https://raw.githubusercontent.com/bjvca/PIMDVC/master/data/public/mccs.csv", clear
 
 
  
@@ -143,11 +144,11 @@ replace sell_brooks=1 if mccq30=="2"
  replace traders_choice_litte=1 if mccq34==2
  
 
- gen trademilk_year=mccq35
- tostring trademilk_year, replace
+ gen trademilk_year= substr(mccq35, 7, 4)
   destring trademilk_year, replace
-replace trademilk_year=(21185-trademilk_year)/365
-replace trademilk_year=round(trademilk_year,1) 
+replace trademilk_year=(18-trademilk_year) if trademilk_year<90
+replace trademilk_year=(100-trademilk_year+18) if trademilk_year==93
+
 
  order sell_jesa sell_brooks traders_choice_alot traders_choice_litte trademilk_year, a(mccq35)
  
