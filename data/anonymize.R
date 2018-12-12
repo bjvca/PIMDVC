@@ -84,9 +84,18 @@ farmers_SW <- cbind(ID=paste("F",rownames(farmers),sep="_"), farmers)
 traders_SW <- cbind(ID=paste("T",rownames(traders),sep="_"), traders)
 mccs_SW <- cbind(ID=paste("MCC",rownames(mccs),sep="_"), mccs)
 
-mccs_C[c("mcc.q43.6","mcc.q43.7","mcc.q43.8","mcc.q43.9","mcc.q43.10","mcc.q43.11")] <- NA 
-###now we need to oder the variables in mccs_C to the same order as variable names in mccs_SW before we can rbind
-mccs_C <- mccs_C[names(mccs_SW)]
+
+### some issues the question on destination for MCCS, only q43.1, 98 and 99 are the same
+### first rename
+names(mccs_C)[names(mccs_C) ==  "mcc.q43.2"] <- "mcc.q43.12"
+names(mccs_C)[names(mccs_C) ==  "mcc.q43.3"] <- "mcc.q43.13"
+names(mccs_C)[names(mccs_C) ==  "mcc.q43.4"] <- "mcc.q43.14"
+names(mccs_C)[names(mccs_C) ==  "mcc.q43.5"] <- "mcc.q43.15"
+mccs_C[c("mcc.q43.2","mcc.q43.3","mcc.q43.4","mcc.q43.5","mcc.q43.6","mcc.q43.7","mcc.q43.8","mcc.q43.9","mcc.q43.10","mcc.q43.11")] <- NA 
+mccs_SW[c("mcc.q43.12","mcc.q43.13","mcc.q43.14","mcc.q43.15")] <- NA
+###now we need to oder the variables in both mccs_C and mccs_SW in the same way before we can rbind
+mccs_C <- mccs_C[c(names(mccs_C)[1:61],"mcc.q43.2","mcc.q43.3","mcc.q43.4","mcc.q43.5","mcc.q43.6", "mcc.q43.7","mcc.q43.8","mcc.q43.9","mcc.q43.10","mcc.q43.11","mcc.q43.12","mcc.q43.13", "mcc.q43.14","mcc.q43.15",names(mccs_C)[66:106] )] 
+mccs_SW <- mccs_SW[c(names(mccs_SW)[1:61],"mcc.q43.2","mcc.q43.3","mcc.q43.4","mcc.q43.5","mcc.q43.6", "mcc.q43.7","mcc.q43.8","mcc.q43.9","mcc.q43.10","mcc.q43.11","mcc.q43.12","mcc.q43.13", "mcc.q43.14","mcc.q43.15",names(mccs_SW)[72:112] )] 
 
 ### for farmers selling to farmers that sell to MCC in the last 7 days, they really screwed up, with only recording frequency
 #Frequency of payment of transactions with this trader that buys from farmers and sells to MCC in central q105
