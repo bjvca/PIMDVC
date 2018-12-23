@@ -1,0 +1,1999 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\usetheme{Frankfurt}
+\usepackage{textpos}
+\setbeamersize{text margin left = 1em}
+\setbeamersize{text margin right = 1em}
+\addtobeamertemplate{frametitle}{}{%
+\begin{textblock*}{100mm}(.85\textwidth,-1cm)
+
+\end{textblock*}}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Innovations for inclusive and efficient dairy value chains in Uganda
+\end_layout
+
+\begin_layout Author
+Bjorn Van Campenhout - IFPRI/LICOS
+\end_layout
+
+\begin_layout Institute
+\begin_inset Graphics
+	filename Twitter_bird_logo_2012.svg.png
+	scale 5
+
+\end_inset
+
+@bjvca
+\end_layout
+
+\begin_layout Section*
+Introduction
+\end_layout
+
+\begin_layout Subsection*
+Intro
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Consumption has increased substantially
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{columns} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}{0.5
+\backslash
+textwidth} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize}  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item data: UNPS, various years
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item 70-90 percent of this is non-pasteurized raw milk  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item milk shops with coolers and boiling infastructure  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item in urban centres lots of choice in milk and derived products
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}{0.5
+\backslash
+textwidth}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}   
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+includegraphics[scale=0.3]{consumption}           
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column}  
+\backslash
+end{columns}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+And export has also skyrocketed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{columns} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}{0.5
+\backslash
+textwidth} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize}  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item data: SNV
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item quiet revolution - milk != considered export commodity
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item 2017: coffee US 550M, fish 140, milk 130, tea 80
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item on course to overtake South Africa as largest milk exporter
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}{0.5
+\backslash
+textwidth}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}   
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+includegraphics[scale=0.15]{trade}           
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column}  
+\backslash
+end{columns}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Production
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+2.2 billion liters in 2017/2018
+\end_layout
+
+\begin_layout Itemize
+2 billion in 2015
+\end_layout
+
+\begin_layout Itemize
+1.8 billion in 2012
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Key events
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+1998 Dairy Industry Act, which created the Dairy Development Authority (DDA),
+ the industry regulator
+\end_layout
+
+\begin_layout Itemize
+2006 National Dairy Corporation was privatized 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+monopoly (Sameer, now Brookside)
+\end_layout
+
+\begin_layout Itemize
+Uganda Crane Creameries Cooperative Union (UCCCU)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+2013 - ABI trust brings in 100 milk coolers at request of UCCCU - also lots
+ of private investment
+\end_layout
+
+\begin_layout Itemize
+2014 - Indian investment in Mbarara, attracted by low milk prices
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Market Structure
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename market_structure.png
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section*
+Actors
+\end_layout
+
+\begin_layout Subsection*
+Farmers
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Farmers: HH characteristics
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{columns} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}{0.5
+\backslash
+textwidth} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize}  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item data: primary survey of about 1300 farmers
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item 80 percent at Least 10 Years Experience
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item 75 
+\backslash
+% male headed
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item 2/3 consider dairy their main business
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}{0.5
+\backslash
+textwidth}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}   
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+includegraphics[scale=0.1]{farm}           
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column}  
+\backslash
+end{columns}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Farmers: Evolution of herd over time
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{columns} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}{0.5
+\backslash
+textwidth} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize}  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item cattle used to be held for traditional purpose (eg.
+ bride price) - now productive capital
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item access to water constrains growth in the extensive margin
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item yield of local 2.5-4.7 L
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item yield of exotic 3.4-5.4 L
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}{0.5
+\backslash
+textwidth}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}   
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+includegraphics[scale=0.25]{herd_time}           
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column}  
+\backslash
+end{columns}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Farmers: Exotic adoption by size
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{columns} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}{0.5
+\backslash
+textwidth} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize}  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item adoption share of exotics in herd
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item adoption is highest around median
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}{0.5
+\backslash
+textwidth}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}   
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+includegraphics[scale=0.3]{exotic_adoption_size}           
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column}  
+\backslash
+end{columns}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Farmers: Exotic adoption over space
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{columns} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}{0.5
+\backslash
+textwidth} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize}  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Infrastructure (distance to nearest tarmac road)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Remoteness (distance to nearest dirt road)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Market access (distance to nearest market)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item Access to services (distance to nearest vet)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}{0.5
+\backslash
+textwidth}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}   
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+includegraphics[scale=0.3]{exotic_adoption_space}           
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column}  
+\backslash
+end{columns}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Farmers: Prices
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{columns} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}{0.5
+\backslash
+textwidth} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize}  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item marked seasonality in prices driven by seasons
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item lots of direct retail - but small quantities 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item also lots of sales at farm gate - about 15 L/trans
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item 10 percent sell direct to MCC
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}{0.5
+\backslash
+textwidth}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}   
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+includegraphics[scale=0.3]{prices}           
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column}  
+\backslash
+end{columns}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Subsection*
+Traders
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Traders/Transporters
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{columns} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}{0.5
+\backslash
+textwidth} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize}  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item data: primary survey of about 500 traders
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item traders are generally young (average 30 years)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item 3 years experience on average
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item all male business
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}{0.5
+\backslash
+textwidth}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}   
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+includegraphics[scale=0.1]{traders}           
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column}  
+\backslash
+end{columns}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Traders/Transporters: Trading partners
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{columns} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}{0.5
+\backslash
+textwidth} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize}  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item buy from farmers (5-7 per day)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item collect about 105 - 170 L per day
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item 60 percent uses jerrycans
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item 40 percent uses a motorbike
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}{0.5
+\backslash
+textwidth}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}   
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+includegraphics[scale=0.35]{trader_sold_to}           
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column}  
+\backslash
+end{columns}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Milk Collection Centres
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Milk Collection Centres
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{columns} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}{0.5
+\backslash
+textwidth} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize}  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item data: primary survey of about 50 mcc
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item 30 percent are coops
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item also recent - on average only 4 years in operation
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item total capacity on average about 5000 liters
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}{0.5
+\backslash
+textwidth}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}   
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+includegraphics[scale=0.05]{mcc}           
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column}  
+\backslash
+end{columns}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection*
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Milk Collection Centres: Reasons why farmers sell to them
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{columns} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}{0.5
+\backslash
+textwidth} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize}  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item mccs offer many services (credit, training on hygiene, milk cans on
+ loan)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item important quality checkpoint
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}{0.5
+\backslash
+textwidth}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}   
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+includegraphics[scale=0.35]{mcc_reason}           
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column}  
+\backslash
+end{columns}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection*
+Processors
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Processors
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{columns} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}{0.5
+\backslash
+textwidth} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize}  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item 3 large (500,000 l/day), 10 medium scale (100,000 - 10,000 l/day),
+ 100 small scale processors
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item specialization (eg Amos for caseine, Pearl for powder, Brookside for
+ neighbouring markets) 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item different ways of organizing the value chain
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}{0.5
+\backslash
+textwidth}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}   
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+includegraphics[scale=0.05]{processor}           
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column}  
+\backslash
+end{columns}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section*
+Risks and Challenges
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Risks and challenges
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Risks:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+over-reliance on export sector dominated by just 3 companies
+\end_layout
+
+\begin_layout Itemize
+VAT on pasteurized milk pushes consumers to raw milk 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Challenges: farmers complain prices are too low to invest - processors complain
+ prices are too high and margins to small to make a profit
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+no industry for packaging materials, feeding
+\end_layout
+
+\begin_layout Itemize
+absence or poor service sector (irrigation, IVF)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\end_body
+\end_document

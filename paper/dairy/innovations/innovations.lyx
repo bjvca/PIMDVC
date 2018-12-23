@@ -1,0 +1,205 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+author{Bjorn Van Campenhout
+\backslash
+thanks{Development Strategy and Governance Division, International Food
+ Policy Research Institute, Leuven, Belgium - corresponding author: b.vancampenho
+ut@cgiar.org} 
+\backslash
+footnotemark[3] , Bart Minten
+\backslash
+thanks{Development Strategy and Governance Division, International Food
+ Policy Research Institute, Addis Abeba, Ethiopia}, and Johan Swinnen
+\backslash
+thanks{LICOS Center for Institutions and Economic Performance, KULeuven,
+ Belgium}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Innovations in Dairy Value Chains - Evidence from Uganda
+\end_layout
+
+\begin_layout Section*
+Introduction
+\end_layout
+
+\begin_layout Standard
+The dairy sector in Uganda has undergoing substantial changes over the last
+ few decades.
+ A combination of policy changes, an injection of foreign direct investment,
+ changing diets of an increasingly demanding urban and rural population
+ and technological progress have substantially altered the entire value
+ chain over time.
+\end_layout
+
+\begin_layout Standard
+value chain in Uganda is arguably one of the most dynamic.
+ 
+\end_layout
+
+\begin_layout Standard
+In a sense, the success in the dairy sector also came as a surprise.
+ For instance Shephard (2016) is hesitant about the future of the dairy
+ sector in Uganda as a strong export oriented sector, pointing out informality
+ of relationships constrained the development of contractual interactions
+ resulting in supply uncertainties at the level of the processors.
+\end_layout
+
+\begin_layout Standard
+Ankole heifers only start producing milk after four years.
+ For a fresian, this is already after one year.
+\end_layout
+
+\begin_layout Section*
+The demand for milk
+\end_layout
+
+\begin_layout Standard
+Consumption of dairy products has been increasing over time in Uganda.
+ According to the UN
+\end_layout
+
+\begin_layout Section*
+Policy context
+\end_layout
+
+\begin_layout Standard
+The sector was 
+\end_layout
+
+\begin_layout Standard
+Also important is seasonality in prices.
+ For seasonality, write about the importance of Amos.
+ Also discuss innovations such as mobile phone (Jensen; no more losses in
+ rainy season) and motorbikes etc.
+ 
+\end_layout
+
+\begin_layout Standard
+Impressive poverty reduction, high price elasticity of dairy products, milk
+ in particular -> Increase in demand.
+\end_layout
+
+\begin_layout Standard
+The weakening shilling also probably contributed to the export boom in dairy.
+\end_layout
+
+\begin_layout Section*
+Evolution of herd size:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+Indeed, as profit squeezes have hit Ugandan dairy farmers some have reduced
+ the number of Friesian and other crosses in their herds, partly because
+ the tradi- tional breeds require fewer purchased inputs to main- tain their
+ health; farmers repeatedly emphasized that they see lit- tle point in adopting
+ measures to increase efficiency and expand milk production if there is
+ no profitable market for the additional milk.
+ Indeed, some farmers experiencing profit squeezes had cut back on efforts
+ to improve pastures, reduced the number of Friesian- cross dairy cattle
+ in their herds, and reduced the use of purchased inputs to control insects
+ and cattle diseases.
+ Such farms had returned to traditional low-cost, low- output methods of
+ production.
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\end_layout
+
+\end_body
+\end_document
