@@ -1,4 +1,4 @@
-mccs <- read.csv("/home/bjvca/data/projects/PIMDVC/data/raw/MCCs.csv")
+mccs <- read.csv("/home/bjvca/data/projects/PIMDVC/data/public/mccs.csv")
 
 mccs$average_collected <-  as.numeric(as.character(mccs$mcc.q42))
 

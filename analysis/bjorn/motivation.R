@@ -113,44 +113,20 @@ test_data <-
     rur_urb = c("rural","rural","rural","urban","urban","urban" ),
     time = c("2005/06","2009/10","2012/13","2005/06","2009/10","2012/13")
   )
-pdf("/home/bjvca/data/projects/PIMDVC/presentations/consumption.pdf")
+pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/consumption.pdf")
  
 
 ggplot(data=test_data, aes(x=time, y=liters, group=rur_urb, colour=rur_urb)) +
     geom_line(size=1.5) +
     geom_point() + theme(axis.text=element_text(size=14),
-        axis.title=element_text(size=16,face="bold")) + ylim(0,35)
+        axis.title=element_text(size=16,face="bold")) + ylim(0,35) + theme(legend.title=element_blank()) + theme(legend.text=element_text(size=16))
 dev.off()
 
+### consumption as reported by farmers in the survey
+farmers <- read.csv("/home/bjvca/data/projects/PIMDVC/data/public/farmers.csv")
+ summary(as.numeric(as.character(farmers$hh_head.HH.consumption.milk_value)))
+ summary(as.numeric(as.character(farmers$hh_head.HH.consumption.bongo_value)))
 
-
-
-
-
-
-
-###1999
-secA <- read.dta("/home/bjvca/data/data/UGANDA/UNHS/UNHS_1999/Socio/sec7a.dta")
-secA[is.na(secA)] <- 0
-milk <- subset(secA ,itemcode==125)
-milk <- subset(milk,unitofqu == 3 | unitofqu ==  32)
-milk$conv <- 1
-
-milk$conv[milk$unitofqu==32] <- .5
-milk$conv[milk$unitofqu==24] <- .5
-milk$conv[milk$unitofqu==26] <- .3
-
-milk$totmilk <-  (milk$hhpurcha + milk$awaypurc+ milk$consumpt + milk$freequan)*milk$conv
-milk$totmilk[milk$totmilk >50 ] <- NA   
-
-milk_hh <- aggregate(milk$totmilk,list(milk$househol), sum)
-names(milk_hh) <- c("HHID","totmilk")
-
-sec1 <- read.dta("/home/bjvca/data/data/UGANDA/UNHS/UNHS_1999/Socio/sec1.dta")
-milk2013 <- merge(sec1,milk_hh, by.x="househol", by.y="HHID", all.x=T)
-milk2013$totmilk[is.na(milk2013$totmilk)] <- 0
-weighted.mean(milk2013$totmilk, milk2013$multipli)*52.177457/6
-unlist(lapply(split(milk2013, milk2013$area), function(z) weighted.mean(z$totmilk, z$multipli))) *52.177457/6
 
 
 #### using UNPS
