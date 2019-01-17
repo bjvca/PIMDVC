@@ -62,9 +62,19 @@ farmers$herdsize_local <- rowSums(farmers[c("hh_head.HH.cattle_ownership.q29", "
 farmers$hh_head.HH.recall.q234 <- as.numeric(as.character(farmers$hh_head.HH.recall.q234))
 farmers$hh_head.HH.recall.q235 <- as.numeric(as.character(farmers$hh_head.HH.recall.q235))
 farmers[c("hh_head.HH.recall.q234","hh_head.HH.recall.q235")] <- lapply(farmers[c("hh_head.HH.recall.q234","hh_head.HH.recall.q235")] , function(x) replace(x, x == 999, NA) )
-farmers$herdsize_b <- rowSums(farmers[c("hh_head.HH.recall.q234","hh_head.HH.recall.q235")] , na.rm=T)
+
 farmers$herdsize_exot_b <- as.numeric(as.character(farmers$hh_head.HH.recall.q234))
 farmers$herdsize_local_b <- as.numeric(as.character(farmers$hh_head.HH.recall.q235))
+farmers$herdsize_exot_b[is.na(farmers$herdsize_exot_b)] <- 0
+farmers$herdsize_local_b[is.na(farmers$herdsize_local_b)] <- 0
+
+#unless they did not have cows back then
+farmers$herdsize_exot_b[farmers$hh_head.HH.recall.q233!="Yes"] <- NA
+farmers$herdsize_local_b[farmers$hh_head.HH.recall.q233!="Yes"] <- NA
+
+farmers$herdsize_b <- rowSums( farmers[c("herdsize_exot_b","herdsize_local_b")] , na.rm=T)
+farmers$herdsize_b <- rowSums( farmers[c("herdsize_exot_b","herdsize_local_b")] , na.rm=T)
+farmers$herdsize_b[farmers$hh_head.HH.recall.q233!="Yes"] <- NA
 
 ##change in herd size
  mean(farmers$herdsize_exot_b, na.rm=T)
@@ -85,7 +95,7 @@ res[c(2,4),2] <- "now"
 res[c(1,2),3] <- "exotics"
 res[c(3,4),3] <- "local"
 names(res) <- c("number","time","type")
-pdf("/home/bjvca/data/projects/PIMDVC/presentations/herd_time.pdf")
+pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/herd_time.pdf")
 ggplot(res, aes(x = time, y = number, fill = type)) + 
   geom_bar(stat = "identity")  + theme(axis.text=element_text(size=14),
         axis.title=element_text(size=16,face="bold"))  + theme(legend.text=element_text(size=14))
@@ -209,5 +219,132 @@ ggplot(prices, aes(x = price, y = quote, fill = quote)) +
   theme(legend.position = "none")
 
 
+### grazing land
+farmers$hh_head.HH.land.q21[farmers$hh_head.HH.land.q21==999] <- NA 
+tapply(farmers$hh_head.HH.land.q21 , farmers$shed,  mean, na.rm = T)
+tapply(farmers$hh_head.HH.land.q21 , farmers$shed,  median, na.rm = T)
+
+### price of cows
+farmers$price_cow_local <- as.numeric(as.character(farmers$hh_head.HH.cattle_ownership.q24))
+farmers$price_cow_exot <- as.numeric(as.character(farmers$hh_head.HH.cattle_ownership.q30))
+farmers$price_cow_local[farmers$price_cow_local==999] <- NA
+farmers$price_cow_exot[farmers$price_cow_exot==999] <- NA
+##delete outlier after inspection of boxplot
+farmers$price_cow_exot[farmers$price_cow_exot>=3000000] <- NA
+
+summary(farmers[c("price_cow_local","price_cow_exot")])
+
+
+farmers$price_heifer_local <- as.numeric(as.character(farmers$hh_head.HH.cattle_ownership.q26))
+farmers$price_heifer_exot <- as.numeric(as.character(farmers$hh_head.HH.cattle_ownership.q32))
+farmers$price_heifer_local[farmers$price_heifer_local==999] <- NA
+farmers$price_heifer_exot[farmers$price_heifer_exot==999] <- NA
+summary(farmers[c("price_heifer_local","price_heifer_exot")])
+
+
+farmers$price_calf_local <- as.numeric(as.character(farmers$hh_head.HH.cattle_ownership.q28))
+farmers$price_calf_exot <- as.numeric(as.character(farmers$hh_head.HH.cattle_ownership.q34))
+farmers$price_calf_local[farmers$price_calf_local==999] <- NA
+farmers$price_calf_exot[farmers$price_calf_exot==999] <- NA
+summary(farmers[c("price_calf_local","price_calf_exot")])
+
+
+#output
+
+farmers$liters_dry_exot <-  as.numeric(as.character(farmers$hh_head.HH.dairy_ouput.q42))
+farmers$liters_dry_exot[farmers$liters_dry_exot > 25] <- NA
+farmers$liters_dry_exot[farmers$liters_dry_exot == 0] <- NA
+
+farmers$liters_dry_local <-  as.numeric(as.character(farmers$hh_head.HH.dairy_ouput.q38))
+farmers$liters_dry_local[farmers$liters_dry_local > 25] <- NA
+farmers$liters_dry_local[farmers$liters_dry_local == 0] <- NA
+
+
+farmers$liters_rain_exot <-  as.numeric(as.character(farmers$hh_head.HH.dairy_ouput.q51))
+farmers$liters_rain_exot[farmers$liters_rain_exot > 25] <- NA
+farmers$liters_rain_exot[farmers$liters_rain_exot == 0] <- NA
+
+farmers$liters_rain_local <-  as.numeric(as.character(farmers$hh_head.HH.dairy_ouput.q47))
+farmers$liters_rain_local[farmers$liters_rain_local > 25] <- NA
+farmers$liters_rain_local[farmers$liters_rain_local == 0] <- NA
+
+summary(c(farmers$liters_dry_exot,farmers$liters_dry_local))
+summary(c(farmers$liters_rain_exot,farmers$liters_rain_local))
+
+summary(c(farmers$liters_rain_exot,farmers$liters_dry_exot))
+summary(c(farmers$liters_rain_local,farmers$liters_dry_local))
+### total daily production in dry season (av yield*number of animals in milk)
+farmers$in_milk_dry_local <-  as.numeric(as.character(farmers$hh_head.HH.dairy_ouput.q35))
+farmers$in_milk_dry_local[farmers$in_milk_dry_local > 200] <- NA
+farmers$prod_dry_local <- NA
+farmers$prod_dry_local[farmers$in_milk_dry_local==0] <- 0
+farmers$prod_dry_local[!is.na(farmers$in_milk_dry_local) & farmers$in_milk_dry_local>0] <- farmers$in_milk_dry_local[!is.na(farmers$in_milk_dry_local) & farmers$in_milk_dry_local>0] * farmers$liters_dry_local[!is.na(farmers$in_milk_dry_local) & farmers$in_milk_dry_local>0]
+
+farmers$in_milk_dry_exot <-  as.numeric(as.character(farmers$hh_head.HH.dairy_ouput.q39))
+farmers$in_milk_dry_exot[farmers$in_milk_dry_exot > 200] <- NA
+farmers$prod_dry_exot <- NA
+farmers$prod_dry_exot[farmers$in_milk_dry_exot==0] <- 0
+farmers$prod_dry_exot[!is.na(farmers$in_milk_dry_exot) & farmers$in_milk_dry_exot>0] <- farmers$in_milk_dry_exot[!is.na(farmers$in_milk_dry_exot) & farmers$in_milk_dry_exot>0] * farmers$liters_dry_exot[!is.na(farmers$in_milk_dry_exot) & farmers$in_milk_dry_exot>0]
+
+farmers$prod_dry <- farmers$prod_dry_exot + farmers$prod_dry_local
+
+### total daily production in rainy season (av yield*number of animals in milk)
+farmers$in_milk_rain_local <-  as.numeric(as.character(farmers$hh_head.HH.dairy_ouput.q44))
+farmers$in_milk_rain_local[farmers$in_milk_rain_local > 200] <- NA
+farmers$prod_rain_local <- NA
+farmers$prod_rain_local[farmers$in_milk_rain_local==0] <- 0
+farmers$prod_rain_local[!is.na(farmers$in_milk_rain_local) & farmers$in_milk_rain_local>0] <- farmers$in_milk_rain_local[!is.na(farmers$in_milk_rain_local) & farmers$in_milk_rain_local>0] * farmers$liters_rain_local[!is.na(farmers$in_milk_rain_local) & farmers$in_milk_rain_local>0]
+
+farmers$in_milk_rain_exot <-  as.numeric(as.character(farmers$hh_head.HH.dairy_ouput.q48))
+farmers$in_milk_rain_exot[farmers$in_milk_rain_exot > 200] <- NA
+farmers$prod_rain_exot <- NA
+farmers$prod_rain_exot[farmers$in_milk_rain_exot==0] <- 0
+farmers$prod_rain_exot[!is.na(farmers$in_milk_rain_exot) & farmers$in_milk_rain_exot>0] <- farmers$in_milk_rain_exot[!is.na(farmers$in_milk_rain_exot) & farmers$in_milk_rain_exot>0] * farmers$liters_rain_exot[!is.na(farmers$in_milk_rain_exot) & farmers$in_milk_rain_exot>0]
+
+farmers$prod_rain <- farmers$prod_rain_exot + farmers$prod_rain_local
+farmers$prod_rain[farmers$prod_rain>1000] <- NA
+
+### sold
+farmers$sold_dry <- as.numeric(as.character(farmers$hh_head.HH.dairy_ouput.qX3))
+farmers$sold_dry[farmers$sold_dry >200] <- NA 
+
+qplot(farmers$shed,farmers$sold_dry, geom="boxplot")
+
+farmers$sold_dry_share <- farmers$sold_dry/farmers$prod_dry
+farmers$sold_dry_share[farmers$sold_dry_share > 1] <- NA
+
+qplot(farmers$shed,farmers$sold_dry, geom="boxplot")
+
+ggplot(farmers, aes(x = sold_dry_share, y = shed, fill = shed)) +
+  geom_density_ridges() +
+  theme_ridges() +
+  theme(legend.position = "none") + scale_x_continuous(limits = c(0,1))
+
+farmers$sold_rain <- as.numeric(as.character(farmers$hh_head.HH.dairy_ouput.q55))
+farmers$sold_rain[farmers$sold_rain >500] <- NA 
+
+qplot(farmers$shed,farmers$sold_rain, geom="boxplot")
+
+farmers$sold_rain_share <- farmers$sold_rain/farmers$prod_rain
+farmers$sold_rain_share[farmers$sold_rain_share > 1] <- NA
+
+qplot(farmers$shed,farmers$sold_rain_share, geom="boxplot")
+
+ggplot(farmers, aes(x = sold_rain_share, y = shed, fill = shed)) +
+  geom_density_ridges() +
+  theme_ridges() +
+  theme(legend.position = "none") + scale_x_continuous(limits = c(0,1)) 
+##faceting by season?
+library(reshape2)
+to_plot <- melt(farmers[c("shed","sold_dry_share","sold_rain_share")])
+
+levels(to_plot$variable) <- c("dry season","rainy season") 
+pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/market_part.pdf")
+ggplot(to_plot, aes(x = value, y = variable, fill = variable)) +
+  geom_density_ridges() +
+  theme_ridges() +
+  theme(legend.position = "none") + scale_x_continuous(limits = c(0,1)) + facet_grid(shed ~ .)
+dev.off()
+###
 
 
