@@ -1,0 +1,806 @@
+\documentclass[11pt,letter,draft]{article}
+%\documentclass[12pt,letter,final]{article}
+% \documentclass[11pt,letter,final]{article}
+ %\documentclass[AER,reviewmode]{AEA}
+% \documentclass[elsarticle,reviewmode]{elsarticle}
+\usepackage{enumitem} % used for bullet points
+\usepackage{latexsym}
+% \usepackage{pslatex} % produces Times New Roman
+\usepackage[dvips]{graphicx} \graphicspath{{../Tables/}} 
+\usepackage[dvips]{lscape}
+\usepackage[subrefformat=parens,labelformat=parens]{subfig} % Note: package subfig superseded subfigure
+\usepackage{graphpap}
+\usepackage{dcolumn}
+\usepackage{natbib}
+%\bibliographystyle{abbrvnat}
+%\setcitestyle{authoryear,open={((},close={))}}
+
+\usepackage[dvips]{rotating}
+\usepackage{pstricks}
+\usepackage{booktabs}
+\usepackage{psfrag}
+\usepackage{chngcntr}
+\usepackage{graphpap, pstricks, psfrag, keyval, xcolor, colortbl, graphicx}
+\usepackage{longtable, ctable, multirow, dcolumn, caption, float, rccol, fltpoint}
+%\usepackage{ctable}
+\usepackage{eurosym}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{titlesec} 
+\usepackage{chngcntr}
+\usepackage{amssymb,amsmath}
+\usepackage{keyval}   % required for subfig package
+\usepackage{caption}  % required for subfig package
+% \usepackage{rccol}
+% \usepackage{fltpoint}
+\usepackage[british]{babel}
+% \usepackage[english]{babel}
+\usepackage{comment}
+\usepackage[pagewise]{lineno}
+
+\listfiles
+%==============================================================================
+% Local definitions
+\newcommand{\mcl}{\multicolumn}
+\newcommand{\sym}{\textsuperscript}
+\newcommand{\tss}{\textsuperscript}
+\newcolumntype{.}{D{.}{.}{2.4}}%
+\addtolength\footnotesep{2.0mm}
+\pagenumbering{arabic}
+\parindent1.5em
+\oddsidemargin0cm \headheight0cm \headsep0cm \textwidth16.1cm
+\topmargin0cm \textheight23.6cm
+\listfiles
+\sloppy
+%%% begin new command defined
+\newcommand{\lra}{\!\!\leftrightarrow\!\!}
+\newcommand{\ra}{\!\!\rightarrow\!\!}
+\newcommand{\tcl}{\textcolor}
+\newcommand\litem[1]{\item{\bfseries #1}}
+\newif\ifdraft
+\draftfalse % or \drafttrue
+
+%%% end
+% \renewcommand{\thesection}{\Roman{section}}
+% \renewcommand{\thesubsection}{\Alph{subsection}}
+% \newtheorem{result}{Result}
+% \renewcommand{\thesection}{\Roman{section}}
+% \renewcommand{\thesubsection}{\Alph{subsection}}
+% \textheight+235mm
+% \textwidth+155mm
+% \topmargin-10mm %for dvi2ps
+% \topmargin-18mm %for dvi2pdf
+% \oddsidemargin+6mm
+% \evensidemargin+6mm
+%%%% personalized \marginpar
+\newcounter{marginparcounter}
+\newcommand{\lizpar}[1]{\stepcounter{marginparcounter}$^{(\roman{marginparcounter})}$\marginpar{\renewcommand{\baselinestretch}{0.8}\scriptsize$^{(\roman{marginparcounter})}$ LI: #1}}
+\newcommand{\lizparr}[1]{\tcl{red}{\stepcounter{marginparcounter}$^{(\roman{marginparcounter})}$}\marginpar{\renewcommand{\baselinestretch}{0.8}\scriptsize\tcl{red}{$^{(\roman{marginparcounter})}$} \tcl{red}{LI: #1}}}
+\newcommand{\benpar}[1]{\stepcounter{marginparcounter}$^{(\roman{marginparcounter})}$\marginpar{\renewcommand{\baselinestretch}{0.8}\scriptsize$^{(\roman{marginparcounter})}$ BD: #1}}
+\newcommand{\benparg}[1]{\tcl{green}{\stepcounter{marginparcounter}$^{(\roman{marginparcounter})}$}\marginpar{\renewcommand{\baselinestretch}{0.8}\scriptsize\tcl{green}{$^{(\roman{marginparcounter})}$} \tcl{green}{BD: #1}}}
+
+
+\titleformat{\section} {\normalfont\bfseries}{\thesection.\ }{0em}{}
+\titleformat{\subsection} {\normalfont\itshape} {\thesubsection.\ } {0em} {}
+\titleformat{\subsubsection} {\normalfont\itshape} {\thesubsubsection.\ } {0em} {}
+
+%==============================================================================
+\renewcommand{\baselinestretch}{1.4}
+\begin{document} 
+% \setpagewiselinenumbers
+% \modulolinenumbers[1]
+% \linenumbers
+%==============================================================================
+% \vspace{-8mm}
+\title{Dairy Sector in Uganda}
+%\author{}
+
+%\date
+
+\maketitle
+
+
+%\begin{abstract}
+%\noindent
+
+
+
+
+
+%\vspace{8mm}
+%\end{abstract}
+
+%\date{Preliminary draft. Please don't cite or circulate.}
+
+
+\section{Sales}
+\subsection{Farmers}
+
+
+\begin{table}[ht]
+\centering
+\caption{Farmer Characteristics}
+\label{tab:farmers_desc}
+
+\scalebox{0.63}{%
+\begin{tabular}{l*{1}{ccccccccccccc}}
+\hline\hline
+ Sales...      &\multicolumn{3}{c}{Direct Neighbor}                  &\multicolumn{3}{c}{Trader to MCC}                  &\multicolumn{3}{c}{Transp to MCC}                  &\multicolumn{3}{c}{Direct MCC}                  \\
+                            &\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}&\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}&\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}&\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}\\
+                            \hline
+
+
+
+
+Num HH Members&         6.7&         3.0&         386&         7.4&         3.1&         488&         7.4&         3.9&         160&         7.2&         3.4&         201\\
+HH Head Female     &         0.1&         0.3&         386&         0.1&         0.3&         488&         0.1&         0.3&         160&         0.05&         0.2&         201\\
+HH Head Completed Primary    &         0.19&         0.4&         385&         0.22&         0.4&         487&         0.26&         0.4&         160&         0.24&         0.4&         200\\
+KM to Nearest...\\
+Tarmac road&        10.5&        12.0&         367&        21.7&        19.0&         431&        21.9&        19.3&         153&        17.4&        16.9&         180\\
+Murram Road&         1.3&         2.4&         382&         2.5&         3.5&         485&         2.9&         3.5&         158&         2.3&         3.2&         201\\
+MCC&        12.6&        11.2&         322&         7.5&         7.8&         478&         7.0&         5.8&         158&         5.1&         6.1&         200\\
+Neighbor&         0.3&         0.4&         386&         0.5&         0.7&         487&         0.5&         0.7&         159&         0.5&         0.8&         200\\
+Market&         4.9&         4.4&         383&         7.7&         5.6&         477&         8.6&         5.8&         159&         8.1&         6.4&         192\\
+
+
+
+\hline\hline
+\mcl{13}{l}{
+\footnotesize{
+\parbox{20cm}{\vspace{2mm}\baselineskip=11pt}}}%
+\end{tabular}
+}
+\end{table}
+
+Overall, the basic household characteristics are about the same across all sales outlets. Households have on average 7 members, with about 10\% of households having a female head and about 20\% of the households have a head who completed primary school. However, we see that remoteness may play a role in who the farmers sell to. Those who sell directly to their neighbor live, on average, closest to the tarmac and murram roads as well as the nearest market. And also closest to their neighbor (as expected). They tend to live the farthest from a MCC. Those to tell to one of the other three outlets, to a trader or transporter who sells to MCC or directly to MCC are fairly similar. With the exception of those who sell direct to a MCC live closest (as expected). Those who sell to a transporter (who may charge more) tend to live the farthest from tarmac and murram roads as well as a market suggesting they are the most remote farmers.
+
+
+
+
+
+\clearpage
+\subsubsection{Seasonality}
+
+\begin{table}[ht]
+\centering
+\caption{Dry Season Sales}
+\label{tab:traders_desc}
+
+\scalebox{0.63}{%
+\begin{tabular}{l*{1}{ccccccccccccc}}
+\hline\hline
+ Sales...      &\multicolumn{3}{c}{Direct Neighbor}                  &\multicolumn{3}{c}{Trader to MCC}                  &\multicolumn{3}{c}{Transp to MCC}                  &\multicolumn{3}{c}{Direct MCC}                  \\
+                            &\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}&\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}&\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}&\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}\\
+                            \hline
+%\midrule
+Local Cows      &        2.41&        3.63&         381&        4.15&        6.59&         479&        4.84&        8.22&         158&  3.49& 5.47& 206   \\   
+ Local Cows Abv 8yrs  &        0.95&        1.63&         260&        1.76&        2.98&         268&        2.85&        3.86&          74&        1.87&        2.86&          92\\
+Local Cows Prod&        2.72&        2.03&         268&        2.19&        2.03&         278&        2.74&        3.17&          78&        2.53&        2.21&          95\\
+Exotic Cowns       &        0.85&        1.83&         381&        5.05&        6.12&         480&        8.16&       10.55&         156&        6.86&        7.61&         200\\
+Exotic Cows Abv 8yrs     &        0.46&        1.21&         131&        1.34&        2.55&         362&        2.17&        4.25&         127&        1.66&        2.82&         162\\
+Exotic Cows  Prod   &        5.47&        4.91&         131&        5.45&        7.18&         369&        5.47&        8.00&         128&        9.04&       12.29&         165\\
+Price           &      951.2&      210.2&         319&      845.1&      182.0&         448&     894.3&      192.0&         146&      920.0&      179.3&         187\\
+Lowest Price     &      884.48&      207.79&         319&      749.44&      203.36&         449&      800.68&      210.91&         146&      821.66&      213.58&         187\\
+Highest Price     &     1018.03&      243.01&         319&      940.80&      192.33&         448&      988.01&      200.89&         146&     1018.45&      182.78&         187\\
+Avg Amt Sold Per Day        &        4.68&        5.70&         320&       15.07&       15.98&         453&       17.70&       18.12&         150&       20.34&       18.01&         190\\
+Avg Amt Consumed Per Day            &        2.29&        1.45&         323&        3.72&        1.89&         453&        4.04&        2.05&         148&        4.48&        2.18&         190\\
+Avg Amt Given Per Day              &        0.45&        1.18&         317&        0.70&        1.51&         451&        0.85&        1.89&         148&        0.96&        1.62&         185\\
+Avg Amt Fed to Calves Per Day             &        0.94&        1.60&         204&        1.85&        2.69&         248&        1.20&        2.30&          72&        1.82&        2.67&         112\\
+Avg Amt Processed Per Day           &        0.45&        1.06&         312&        1.82&        1.84&         436&        1.59&        1.84&         147&        2.07&        2.26&         182\\
+
+Avg Amt Milked Per Day    &       13.26&       21.41&         327&       44.31&      105.76&         462&       68.03&      151.38&         151&       78.65&      141.13&         193\\
+dry\_income          &     6684.27&     7188.42&         124&    15760.31&    15798.43&         354&    18179.55&    18201.93&         124&    22481.21&    18939.12&         157\\
+
+
+\hline\hline
+\mcl{13}{l}{
+\footnotesize{
+\parbox{20cm}{\vspace{2mm}\baselineskip=11pt}}}%
+\end{tabular}
+}
+\end{table}
+
+
+\begin{figure}[!th]
+\centering
+\caption{Dry Season Sales}
+\label{fig:dry_priceandsales}
+\includegraphics[draft=false,scale=0.7]{./tables/dry_priceandsales.png}
+\footnotesize{
+\parbox{10cm}{\vspace{2mm}  \baselineskip=11pt}}%
+\end{figure}
+
+
+
+
+
+\begin{table}[!th]
+\centering
+\caption{Rainy Season Sales}
+\label{tab:traders_desc}
+
+\scalebox{0.65}{%
+\begin{tabular}{l*{1}{ccccccccccccc}}
+\hline\hline
+ Sales...      &\multicolumn{3}{c}{Direct Neighbor}                  &\multicolumn{3}{c}{Trader to MCC}                  &\multicolumn{3}{c}{Transp to MCC}                  &\multicolumn{3}{c}{Direct MCC}                  \\
+                            &\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}&\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}&\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}&\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}\\
+                            \hline
+Local Cows     &         2.5&         3.6&         383&         3.7&         5.7&         486&         4.9&         8.1&         160&         4.0&         8.2&         200\\
+Local Cows  Abv 8yrs&         0.7&         1.4&         290&         1.4&         2.5&         263&         2.3&         4.3&          84&         1.8&         2.5&          94\\
+Local Cow Prod&         3.5&         2.5&         297&         3.2&         2.4&         277&         3.6&         3.2&          88&         4.6&         5.5&          96\\
+Exotic Cows      &         0.9&         1.9&         382&         5.5&         5.8&         484&         8.0&         8.4&         159&         7.6&         8.3&         199\\
+Exotic Cows  Abv 8yrs  &         0.3&         0.9&         145&         1.2&         2.2&         388&         2.0&         4.3&         136&         1.7&         3.1&         164\\
+Exotic Cows Prod &         7.1&         8.9&         145&         8.2&         9.7&         397&         7.8&        11.2&         137& 11.19& 14.47& 172      \\ 
+Price         &       843.2&       228.6&         367&       581.2&       162.0&         477&       613.1&       187.5&         159&       610.6&       177.3&         196\\
+
+Lowest Price    &       781.1&       242.3&         367&       500.4&       163.5&         477&       536.2&       190.6&         159&       531.1&       171.9&         196\\
+Highest Price  &       905.3&       239.1&         367&       662.3&       187.5&         478&       690.0&       206.8&         159&       690.0&       212.6&         196\\
+Avg Amt Sold Per Day      &         5.9&         7.2&         365&        27.0&        43.9&         476&        32.2&        35.9&         158&        37.2&        53.4&         197\\
+Avg Amt Consumed Per Day   &         2.4&         1.5&         366&         4.2&         1.8&         477&         4.5&         2.0&         156&         4.8&         2.1&         196\\
+Avg Amt Given Per Day    &         0.5&         1.0&         362&         1.0&         1.8&         468&         1.1&         2.1&         153&         1.1&         1.8&         192\\
+Avg Amt Fed To Calves Per Day    &         0.8&         1.4&         224&         2.1&         2.7&         259&         1.6&         2.7&          77&         1.9&         2.8&         116\\
+Avg Amt Processed Per Day   &         0.6&         1.2&         356&         2.4&         2.0&         458&         2.2&         2.1&         154&         2.7&         2.5&         190\\
+
+Avg Amt Milked Per Day   &        15.7&        30.2&         368&        69.8&       169.2&         478&        89.7&       188.2&         159&       134.9&       281.1&         198\\
+rainy\_income        &      6434.8&      7079.6&         145&     16564.7&     25366.9&         395&     19838.2&     20350.1&         136&     26236.7&     42227.8&         165\\
+
+
+
+\hline\hline
+\mcl{13}{l}{
+\footnotesize{
+\parbox{20cm}{\vspace{2mm}\baselineskip=11pt}}}%
+\end{tabular}
+}
+\end{table}
+
+
+
+\begin{figure}[!th]
+\centering
+\caption{Rainy Season Sales}
+\label{fig:gender}
+\includegraphics[draft=false,scale=0.7]{./tables/rainy_priceandsales.png}
+\footnotesize{
+\parbox{10cm}{\vspace{2mm}  \baselineskip=11pt}}%
+\end{figure}
+
+
+\begin{figure}[!th]
+\centering
+\caption{Rainy Season Sales}
+\label{fig:recentsales}
+\includegraphics[draft=false,scale=0.7]{./tables/priceandsales.png}
+\footnotesize{
+\parbox{10cm}{\vspace{2mm}  \baselineskip=11pt}}%
+\end{figure}
+
+\begin{figure}[!th]
+\centering
+\caption{Seasonal Prices Changes by Sales Outlet}
+\label{fig:pricebysale}
+\includegraphics[draft=false,scale=0.4]{./tables/dry_neigh.png}
+\includegraphics[draft=false,scale=0.4]{./tables/rainy_neigh.png}
+\includegraphics[draft=false,scale=0.4]{./tables/dry_tradmcc.png}
+\includegraphics[draft=false,scale=0.4]{./tables/rainy_tradmcc.png}
+\includegraphics[draft=false,scale=0.4]{./tables/dry_transmcc.png}
+\includegraphics[draft=false,scale=0.4]{./tables/rainy_transmcc.png}
+\includegraphics[draft=false,scale=0.4]{./tables/dry_mcc.png}
+\includegraphics[draft=false,scale=0.4]{./tables/rainy_mcc.png}
+
+\footnotesize{
+\parbox{10cm}{\vspace{2mm}  \baselineskip=11pt}}%
+\end{figure}
+
+
+
+
+
+\clearpage
+\subsubsection{Recent Sales}
+
+\begin{table}[ht]
+\centering
+\caption{Sales}
+\label{tab:sales}
+
+\scalebox{0.65}{%
+\begin{tabular}{l*{1}{ccccccccccccc}}
+\hline\hline
+ Sales...      &\multicolumn{3}{c}{Direct Neighbor}                  &\multicolumn{3}{c}{Trader to MCC}                  &\multicolumn{3}{c}{Transp to MCC}                  &\multicolumn{3}{c}{Direct MCC}                  \\
+                            &\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}&\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}&\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}&\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}\\
+                            \hline
+Number Transactions in Last 7 days&  5.93 &2.79 &         427 &6.57 &1.62 &         513  &6.69 &1.1 &         164  &6.61 &1.96 &         209\\
+Number of Buyers&  3.14 &2.88 &         414  &1.51 &1.87 &         507  &1.34 &1.74 &         161  &2.16 &3.6 &         189\\
+Price Received  &906.81 &215.8 &    433  &  515.84  &   166.35 & 142*&783.25 &310.27 &         163  &799.47 &233.41 &         207\\
+Liters Sold  &32.14 &142.29 &         428  &51.24 &140.36 &         510  &65.07 &176.25 &         161  &82.27 &201.88 &         209\\
+HH Head Decided  &0.86 &0.35 &         423  &0.95 &0.21 &         499  &0.99 &0.11 &         159  &0.98 &0.14 &         205\\
+Cash Payment  &0.99 &0.11 &         437  &0.99 &0.1 &         506  &0.97 &0.18 &         159  &0.97 &0.17 &         197\\
+Payment Direct  &0.34 &0.48 &         435  \\
+Payment Daily  & & & &0.01 &0.11 &         507  &0.01 &0.08 &         163  &0.01 &0.12 &         208\\
+Payment Weekly  &0.18 &0.39 &         435  &0.65 &0.48 &         507  &0.6 &0.49 &         163  &0.44 &0.5 &         208\\
+Payment Monthly  &0.03 &0.16 &         435\\ 
+No Agreement  &0.51 &0.5 &         432  &0.34 &0.48 &         512 &0.43 &0.5 &         164  &0.43 &0.5 &         208\\
+Years Selling to this customer  &2.95 &3.86 &         426  &2.98 &3.12 &         506  &4.24 &5.37 &         164  &4 &4.23 &         206\\
+Never Rejected  &0.74 &0.44 &         386  &0.74 &0.44 &         479  &0.67 &0.47 &         159  &0.5 &0.5 &         202\\
+Pay Premium  &0.1 &0.3 &         433  &0.07 &0.26 &         511  &0.06 &0.23 &         163  &0.07 &0.26 &         209\\
+Assist With..\\ 
+Training  &0.15 &0.35 &          96 &0.13 &0.34 &          70  &0.08 &0.28 &          25  &0.34 &0.48 &          68\\
+Inputs  &0.78 &0.42 &          96  &0.37 &0.49 &          70  &0.2 &0.41 &          25  &0.38 &0.49 &          68\\
+Credit  &0.17 &0.37 &          96 &0.61 &0.49 &          70  &0.44 &0.51 &          25  &0.78 &0.42 &          68\\
+Uses Boda Boda  & & & &0.9 &0.3 &         51  &0.82 &0.38 &         163 &0.59 &0.49 &         209\\
+Jerry Can container  & & & &0.63 &0.48 &         512  &0.57 &0.5 &         160  &0.54 &0.5 &         209\\
+Farmer Paid Transport  & & & & & & &2273.94 &1548.58 &         137  &2712.36 &1195.86 &         182\\
+Main Income Source Dairy& 0.47& & 437& 0.84& & 513& 0.92& & 164& 0.83& & 209\\
+
+\hline\hline
+\mcl{13}{l}{
+\footnotesize{
+\parbox{20cm}{\vspace{2mm}Notes. *Price for those who sold to traders who sell to MCCs was only collected in the SW milk shed.\baselineskip=11pt}}}%
+\end{tabular}
+}
+\end{table}
+
+\begin{figure}[!th]
+\centering
+\caption{Recent Prices by Shed}
+\label{fig:recentsales}
+\includegraphics[draft=false,scale=0.7]{./tables/priceandsales.png}
+\footnotesize{
+\parbox{10cm}{\vspace{2mm}  \baselineskip=11pt}}%
+\end{figure}
+
+\begin{figure}[!th]
+\centering
+\caption{Recent Sales}
+\label{fig:pricebysale}
+\includegraphics[draft=false,scale=0.46]{./tables/sales_neigh_price.png}
+\includegraphics[draft=false,scale=0.46]{./tables/sales_tr_mcc_price.png}
+\includegraphics[draft=false,scale=0.46]{./tables/sales_trans_mcc_price.png}
+\includegraphics[draft=false,scale=0.46]{./tables/sales_direct_mcc_price.png}
+\footnotesize{
+\parbox{10cm}{\vspace{2mm}  \baselineskip=11pt}}%
+\end{figure}
+
+
+\clearpage
+\subsubsection{Gender}
+
+
+
+\begin{table}[ht]
+\centering
+\caption{T-Test Different Gender HH Heads}
+\label{tab:female_farmers_desc}
+
+\scalebox{0.62}{%
+\begin{tabular}{l*{1}{cccccccc}}
+\hline\hline
+ Sales...      &\multicolumn{3}{c}{F Headed Household}                  &\multicolumn{3}{c}{M Headed Household}             \\
+                            &\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}&\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}} &\multicolumn{1}{l}{{P-value}}\\
+                            
+                            \hline
+
+\textbf{In Last 7 Days...}	\\
+\textbf{Sells Direct to Neighbor}& 27\%& & 150& 25\% & & 1,399& 0.60  \\
+
+Num Transactions&  5.9&  3&  39&  6&  2.8&  339& 0.85 \\
+Number Buyers&  2.6&  2.2&  39&  3.2&  3&  333&  0.28\\
+Price&  867.5&  236.8&  40&  915.4&  210.8&  344&  0.18\\
+Liters&  86.1&  220.8&  39&  29.4&  139.6&  342&  0.03**\\
+Years Selling to this Outlet&  1.8&  1.5&  39&  3.1&  4.1&  339&  0.05*\\
+Milk Never Rejected&  0.8&  0.4&  32&  0.7&  0.4&  308&  0.37\\
+Pay for Premium&  0&  0.2&  40&  0.1&  0.3&  344&  0.12\\
+
+\textbf{Sells Trader to MCC }& 31\%& & 150& 31\% & &  1,399&  0.96 \\
+Num Transactions&  6.6&  1.4&  47&  6.6&  1.6&  441&  0.80\\
+Number Buyers&  1.2&  0.7&  47&  1.5&  2&  436& 0.25 \\
+Price&  533.3&  148.4&  15&  507.6&  167.8&  118&  0.57\\
+Liters&  88.5&  206.3&  46&  44.5&  120.5&  440&  0.03**\\
+Years Selling to this Outlet&  2.7&  3.6&  47&  3&  3.1&  434& 0.50 \\
+Milk Never Rejected&  0.7&  0.5&  42&  0.7&  0.4&  412& 0.46 \\
+Pay for Premium&  0&  0.1&  46&  0.1&  0.2&  440&  0.24\\
+
+\textbf{Sells Trans to MCC}& 12\%& & 150& 10\% & &  1,399&  0.48 \\
+Num Transactions&  7&  0&  18&  6.7&  1.1&  142&  0.22\\
+Number Buyers&  1.3&  0.7&  18&  1.4&  1.9&  139&  0.86\\
+Price&  700&  221.6&  18&  789.1&  317.5&  141&  0.25\\
+Liters&  34.2&  63.9&  17&  70.2&  187.3&  140&  0.43\\
+Years Selling to this Outlet&  5.6&  6.5&  18&  4.1&  5.2&  142& 0.27 \\
+Milk Never Rejected&  0.6&  0.5&  17&  0.7&  0.5&  138& 0.44 \\
+Pay for Premium&  0.1&  0.2&  18&  0&  0.2&  141&  0.91\\
+
+\textbf{Sells Direct MCC}& 7\%& & 150& 14\% & &  1,399&  0.015**  \\
+Num Transactions&  5.8&  2.5&  10&  6.6&  2&           191& 0.20\\
+Number Buyers&  1&  0&  9&  2.2&  3.7&           173& 0.33\\
+Price&  956.3&  301.7&  8&  788.4&  227&           191& 0.045**\\
+Liters&  176.1&  355.7&  10&  77.9&  194&           191& 0.14\\
+Years Selling to this Outlet&  3.7&  3.6&  10&  3.9&  4.3&           188&  0.86\\
+Milk Never Rejected&  0.5&  0.5&  10&  0.5&  0.5&           185&  0.99\\
+Pay for Premium&  0&  0&  10&  0.1&  0.3&           191& 0.40\\
+
+
+\hline\hline
+\mcl{7}{l}{
+\footnotesize{
+\parbox{20cm}{\vspace{2mm}\baselineskip=11pt}}}%
+\end{tabular}
+}
+\end{table}
+
+
+
+In Table \ref{tab:female_farmers_desc}, the only significant difference between male headed households and female headed household, in terms of sales outlets, is that women are less likely to sell directly to an MCC. However, if they do sell directly to a MCC, then they receive a significantly higher price. We see that Female headed households who sell only to neighbors tend to sell more liters of milk but have been selling for over a year less. Also female headed households who sell to traders who sell to MCCS sell more liters as well.
+
+
+In terms of distance, there is no significant difference in distances to roads between female and male headed households when looking at sales outlets separately. When looking at the full sample, female headed households are located slightly further from MCCs than male head households (10.2 km v 8.6 km; p-value: 0.053).
+
+\clearpage
+\subsubsection{Poverty}
+\label{poverty}
+
+
+
+\begin{table}[ht]
+\centering
+\caption{T-Test Assets Over Poverty Level}
+\label{tab:asset_pov}
+
+\scalebox{0.6}{%
+\begin{tabular}{l*{1}{cccccccc}}
+\hline\hline
+ Sales...      &\multicolumn{3}{c}{Rich Household}                  &\multicolumn{3}{c}{Poor Household}             \\
+                            &\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}&\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}} &\multicolumn{1}{l}{{P-value}}\\
+                            
+                            \hline
+
+\textbf{In Last 7 Days...}	\\
+\textbf{Full Sample} \\
+ 
+Num Transactions&  6.4&  2.0&  331&  6.4&  2.1&  896&  0.74   \\
+Number Buyers& 2.2&  2.8&  327&  2.0&  2.6&  867&  .38   \\
+Price&  791.5&  291.2&  262&  803.0&  257.5&  613&  0.56   \\
+Liters&  62.6& 154.0&  334&  48.5&  159.7&  891&  0.16   \\
+Years Selling to their Outlet&  4.1&  4.5&  331&  3.0&  3.7&  886&  0.00***   \\
+Milk Never Rejected&  0.7&  0.5&  313&  0.69&  0.5&  831&  0.58   \\
+Pay for Premium&  0.04&  0.2&  331&  0.08&  0.27&  896&  0.01***   \\
+
+ \\
+\textbf{Sells Direct to Neighbor} \\
+ 
+Num Transactions&  6.3&  2.4&  86&  5.9&  2.9&  292&  0.28   \\
+Number Buyers&  3.7&  2.8&  87&  2.9&  2.9&  285&  .03**   \\
+Price&  962.9&  244.7&  89&  894.6&  201.4&  295&  0.01***   \\
+Liters&  32&  109.3&  89&  36.2&  161.1&  292&  0.82   \\
+Years Selling to this Outlet&  3.2&  3.3&  87&  2.9&  4&  291&  0.55   \\
+Milk Never Rejected&  0.8&  0.4&  80&  0.7&  0.4&  260&  0.07*   \\
+Pay for Premium&  0.02&  0.1&  89&  0.1&  0.3&  295&  0.01***   \\
+ \\
+\textbf{Sells Trader to MCC }&  &  &  &  &  &  &     \\
+Num Transactions&  6.3&  2&  118&  6.6&  1.4&  370&  0.09*   \\
+Number Buyers&  1.7&  2.6&  118&  1.4&  1.6&  365&  0.23   \\
+Price&  517.4&  121.7&  46&  506.9&  184.9&  87&  0.73   \\
+Liters&  55.5&  114.8&  118&  46.4&  136.3&  368&  0.51   \\
+Years Selling to this Outlet&  3.4&  2.7&  117&  2.9&  3.2&  364&  0.12   \\
+Milk Never Rejected&  0.7&  0.4&  111&  0.7&  0.4&  343&  0.98   \\
+Pay for Premium&  0.1&  0.2&  118&  0.1&  0.2&  368&  0.9   \\
+  \\
+\textbf{Sells Trans to MCC} \\
+Num Transactions&  6.6&  1.3&  52&  6.8&  0.9&  108&  0.52   \\
+Number Buyers&  1.2&  0.5&  52&  1.4&  2.1&  105&  0.39   \\
+Price&  799.4&  339.7&  52&  769.2&  293.9&  107&  0.56   \\
+Liters&  80.2&  183.1&  52&  59.4&  176.4&  105&  0.49   \\
+Years Selling to this Outlet&  5.4&  6.9&  52&  3.7&  4.4&  108&  0.054*   \\
+Milk Never Rejected&  0.7&  0.5&  50&  0.7&  0.5&  105&  0.84   \\
+Pay for Premium&  0&  0.1&  52&  0.1&  0.2&  107&  0.21   \\
+    \\
+\textbf{Sells Direct MCC}  \\
+Num Transactions&  6.4&  1.7&  75&  6.7&  2.1&  126&  0.22   \\
+Number Buyers&  2&  3.6&  70&  2.3&  3.7&  112&  0.54   \\
+Price&  750.7&  235.6&  75&  822.1&  226.3&  124&  0.03**   \\
+Liters&  97.8&  214.3&  75&  73.9&  199.1&  126&  0.45   \\
+Years Selling to this Outlet&  5.3&  5.3&  75&  3.1&  3.2&  123&  0.00***   \\
+Milk Never Rejected&  0.5&  0.5&  72&  0.5&  0.5&  123&  0.35  \\
+Pay for Premium&  0&  0.2&  75&  0.1&  0.3&  126&  0.27  \\
+
+
+\hline\hline
+\mcl{7}{l}{
+\footnotesize{
+\parbox{20cm}{\vspace{2mm}\baselineskip=11pt}}}%
+\end{tabular}
+}
+\end{table}
+The poverty indicator was created by first a sum of whether or not the respondent owned the following assets: milk shed, cattle barn, feeding troughs, steel milking cans, steel buckets, jerrycans, plastic buckets, mobile phone, motorbike, bike, car, radio, water pump, panga, wheelbarrow, sickles, hay forks, tarps, cutting machine, hosepipes and knapsacks. With a total of 21 assets, the maximum number owned by a household is 8. 74\% of households own only 2 of these, therefore we define a rich household as those who have more than 2 of these assets. We do not consider the number of each asset owned in Table \ref{tab:asset_pov}.
+
+We first look at the full sample and see that rich households have sold to their outlet for on average 1 year longer than poor households. However, more poor households report selling to an outlet in which they are paid a premium. When we split the sub-sample into which outlets they sell to, we begin to see a few more differences between rich and poor. For those who sell to neighbors, the poor households sell to a significantly lower number of neighbors and received a significantly lower price. But once again, the poor households report selling to buyers who pay premiums for milk. As for those who sell to either a trader to a transporter who sells to the MCC, there are minimal differences between rich and poor households. Those who sell direct to the MCC, the poor households have been selling for fewer years but report earning a higher price per liter.
+
+
+
+
+\clearpage
+\subsection{Traders} 
+
+\subsubsection{Seasonality}
+\begin{table}[ht]
+\centering
+\caption{Type of Traders Sales}
+\label{tab:sales}
+
+\scalebox{0.65}{%
+\begin{tabular}{l*{1}{cccccccccc}}
+\hline\hline
+Sales...  & \multicolumn{3}{c}{Trader Only}& \multicolumn{3}{c}{Transporter Only}& \multicolumn{3}{c}{Trader and Transporter}       \\
+                            &\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}&\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}&\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}\\
+
+Private Collector    &         0.59&         0.5&         197&         0.4&         0.5&         304&         0.5&         0.5&         185\\
+Cooperative     &         0.32&         0.5&         197&         0.4&         0.5&         304&         0.4&         0.5&         185\\
+Processor     &         0.1&         0.3&         197&         0.1&         0.4&         304&         0.1&         0.3&         185\\
+Dry Price          &      1049.7&       174.6&         196&      1062.3&       181.2&         288&      1029.8&       171.2&         178\\
+Dry Liters          &       138.2&       166.9&         196&       158.7&       269.3&         296&       165.0&       219.7&         178\\
+Dry Suppliers&			7.4&			7.7&			194&		4.2&		5.3&			291&		7.5&		6.9&		178	\\	
+Rain Price        &       660.9&       185.8&         201&       685.5&       203.7&         300&       681.5&       214.8&         184\\
+Rain Liters        &       257.0&       294.3&         200&       234.7&       258.4&         304&       277.1&       327.9&         185\\
+Rain Suppliers&				9.1&			9.1&		200&		5.3&		8.7&		300&		8.6&		7.3&		183 \\
+Cost Margin or Transp Charge&   123.3&	61.4&	197 & 67.6&		45.0&		295	\\
+
+\hline\hline
+\mcl{10}{l}{
+\footnotesize{
+\parbox{15cm}{\vspace{2mm}\baselineskip=11pt}}}%
+\end{tabular}
+}
+\end{table}
+
+
+
+\begin{table}[ht]
+\centering
+\caption{Traders Sales}
+\label{tab:sales}
+
+\scalebox{0.65}{%
+\begin{tabular}{l*{1}{cccccccccc}}
+\hline\hline
+ Sales...  & \multicolumn{3}{c}{Private Collector}& \multicolumn{3}{c}{Cooperative}& \multicolumn{3}{c}{Processor}      \\
+                            &\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}&\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}&\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}\\
+
+Main Buyer&        0.50& & 686& 0.39& & 686& 0.11& & 686       \\
+
+Dry Price  &      1040.8&       183.2&         325&      1064.3&       159.3&         255&      1036.8&       203.8&          72   \\
+Dry Liters &       166.1&       290.5&         328&       149.1&       152.8&         258&       132.1&       146.4&          74    \\
+Rainy Price &      663.0&       201.7&         338&       688.5&       200.5&         261&       688.2&       201.0&          76\\
+Rainy Liters&       268.9&       328.6&         339&       241.7&       242.3&         264&       247.0&       257.8&          75\\
+
+
+
+\hline\hline
+\mcl{10}{l}{
+\footnotesize{
+\parbox{15cm}{\vspace{2mm}\baselineskip=11pt}}}%
+\end{tabular}
+}
+\end{table}
+
+
+
+\begin{figure}[!th]
+\centering
+\caption{Dry Season Sales}
+\label{fig:gender}
+\includegraphics[draft=false,scale=0.6]{./tables/trade_price_dry.png}
+\footnotesize{
+\parbox{10cm}{\vspace{2mm}  \baselineskip=11pt}}%
+\end{figure}
+
+\begin{figure}[!th]
+\centering
+\caption{Rainy Season Sales}
+\label{fig:gender}
+\includegraphics[draft=false,scale=0.6]{./tables/trade_price_rain.png}
+\footnotesize{
+\parbox{10cm}{\vspace{2mm}  \baselineskip=11pt}}%
+\end{figure}
+
+\begin{figure}[!th]
+\centering
+\caption{Recent Prices}
+\label{fig:recentsales}
+\includegraphics[draft=false,scale=0.7]{./tables/priceandsales.png}
+\footnotesize{
+\parbox{10cm}{\vspace{2mm}  \baselineskip=11pt}}%
+\end{figure}
+
+\begin{figure}[!th]
+\centering
+\caption{Prices by Season}
+\label{fig:pricebysale}
+\includegraphics[draft=false,scale=0.4]{./tables/trader_pricedry.png}
+\includegraphics[draft=false,scale=0.4]{./tables/trader_pricedrains.png}
+\includegraphics[draft=false,scale=0.4]{./tables/trans_pricedry.png}
+\includegraphics[draft=false,scale=0.4]{./tables/trans_pricerain.png}
+\includegraphics[draft=false,scale=0.4]{./tables/tt_pricedry.png}
+\includegraphics[draft=false,scale=0.4]{./tables/tt_pricerain.png}
+\footnotesize{
+\parbox{10cm}{\vspace{2mm}  \baselineskip=11pt}}%
+\end{figure}
+
+\clearpage
+\subsubsection{Poverty}
+
+\begin{figure}[!th]
+\centering
+\caption{Boda vs Bike}
+\label{fig:bodabike}
+\includegraphics[draft=false,scale=0.7]{./tables/transp_wsup.png}
+\footnotesize{
+\parbox{10cm}{\vspace{2mm}  \baselineskip=11pt}}%
+\end{figure}
+
+Traders who have access to a boda rather than a bicycle are able to have a much most lucrative business. In Figure \ref{fig:bodabike} we see that in the rainy season, those on a bike may have a slightly higher price but they have few suppliers and sell fewer liters. We see the same pattern in the dry season, with the prices received by all traders being closer. 
+
+
+\begin{table}[ht]
+\centering
+\caption{Traders Assets by Transport Type}
+\label{tab:trader_trans_assets}
+
+\scalebox{0.65}{%
+\begin{tabular}{l*{1}{ccccccccc}}
+\hline\hline
+ Sells to...  & \multicolumn{4}{c}{Bicycle}& \multicolumn{4}{c}{Boda}     \\
+                            &\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}  &\multicolumn{1}{l}{{P-Value}}  &\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}  &\multicolumn{1}{l}{{P-Value}}   \\
+50L Containers Owned  & 0.4& 0.8& 166& 0.00***&  1.64& 2.1& 508& 0.06*\\
+25L Containers Owned  & 0.13& 0.4& 166& 0.11&  0.22& 0.8& 508&  0.68\\
+10L Containers Owned  & 0.05& 0.3& 166& 0.42&  0.11& 0.8& 508& 0.41 \\
+Jerrycans Owned  & 3.81& 3.3& 166& 0.00***&  6.14& 5.7& 508& 0.00***\\
+Mobiles Owns  & 0.9& 0.7& 166& 0.00***&  1.09& 0.5& 508& 0.00***\\
+Measuring Cups Owned   & 0.85& 1.1& 166& 0.47&  0.85& 1& 508&  0.27 \\
+Sieves Owned   & 0.97& 1& 166& 0.30& 1.04& 1& 508&  0.96 \\
+
+
+
+
+\hline\hline
+\mcl{10}{l}{
+\footnotesize{
+\parbox{15cm}{\vspace{2mm}Notes. The p-values are the results of t-tests for each transport type compared to the other transport types. \baselineskip=11pt}}}%
+\end{tabular}
+}
+\end{table}
+
+
+table \ref{tab:trader_trans_assets} shows the summary for assets for those who use a bicycle versus those who use a boda. As expected, those who use w bike have fewer 50L milk containers, jerrycans and mobiles.
+
+
+\begin{table}[ht]
+\centering
+\caption{Traders Assets}
+\label{tab:trader-assets}
+
+\scalebox{0.65}{%
+\begin{tabular}{l*{1}{ccccccccccccc}}
+\hline\hline
+ Sells to...  & \multicolumn{4}{c}{Private Collector}& \multicolumn{4}{c}{Cooperative}& \multicolumn{4}{c}{Processor}      \\
+                            &\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}  &\multicolumn{1}{l}{{P-Value}}  &\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}  &\multicolumn{1}{l}{{P-Value}}  &\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}  &\multicolumn{1}{l}{{P-Value}} \\
+50L Containers Owned  & 1.58& 4.2& 341& 0.54&  1.51& 2.1& 265& 0.97&  1.21& 1.7&           77& 0.39\\
+25L Containers Owned  & 0.17& 0.8& 341& 0.06*& 0.27& 1& 265& 0.36&  0.39& 1.2&           77& 0.103\\
+10L Containers Owned  & 0.12& 0.9& 341& 0.46& 0.06& 0.3& 265& 0.27&  0.14& 1.1&           77& 0.56\\
+Jerrycans Owned  & 6.41& 5.6& 341& 0.00***& 4.16& 4.6& 265& 0.00***& 6.08& 5.3&           77& 0.29\\
+Motorcycles Owned & 0.86& 0.6& 341& 0.84&  0.9& 0.7& 265& 0.20&  0.78& 0.7&           77& 0.24\\
+Bicycles Owned  & 0.52& 0.6& 341& 0.76&  0.51& 0.6& 265& 0.66& 0.58& 0.7&           77& 0.38\\
+Mobiles Owns  & 1.09& 0.5& 341& 0.06*& 1.02& 0.5& 265& 0.28&  0.97& 0.7&           77& 0.19\\
+Measuring Cups Owned   & 0.86& 1& 341& 0.62&  1.03& 1.1& 265& 0.002***&  0.45& 0.8&           77& 0.00***\\
+Sieves Owned   & 1.05& 1& 341& 0.93&  1.14& 1.1& 265& 0.06*&  0.73& 0.9&           77& 0.003***\\
+
+
+\hline\hline
+\mcl{10}{l}{
+\footnotesize{
+\parbox{15cm}{\vspace{2mm}Notes. The p-values are the results of t-tests for each sales outlet compared to the other two combined.\baselineskip=11pt}}}%
+\end{tabular}
+}
+\end{table}
+
+Table \ref{tab:trader-assets} shows the asset ownership by who the trader sells to. We see that those who sell to Cooperatives have significantly less Jerrycans than those who sell to private collectors or processors and also have more measure cups and sieves. This is expected as we know that quality is important in the cooperatives. 
+
+
+\begin{table}[ht]
+\centering
+\caption{Traders Assets by Milk Shed}
+\label{tab:trader_trans_assets}
+
+\scalebox{0.65}{%
+\begin{tabular}{l*{1}{cccccccc}}
+\hline\hline
+ & \multicolumn{3}{c}{Central Shed}& \multicolumn{3}{c}{SW Shed}     \\
+                            &\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}    &\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}  &\multicolumn{1}{l}{{P-Value}}   \\
+50L Containers Owned  & 0.88& 1.4& 541& 3.66& 5.9&          153&	0.00***	\\
+25L Containers Owned  & 0.1& 0.5& 541& 0.68& 1.6&      153&		0.000***\\
+10L Containers Owned  & 0.1& 0.8& 541& 0.07& 0.5&     153&		0.66\\
+Jerrycans Owned  & 6.61& 5.3& 541& 1.3& 2.8&       153&		0.00***\\
+Motorcycles Owned & 0.82& 0.6& 541& 0.98& 0.7&     153&		0.008***\\
+Bicycles Owned  & 0.56& 0.6& 541& 0.4& 0.8&        153&	0.004***	\\
+Mobiles Owns  & 1.05& 0.6& 541& 1.05& 0.5&        153&	0.97	\\
+Measuring Cups Owned   & 0.86& 1.1& 541& 0.95& 0.8&       153&	0.37	\\
+Sieves Owned   & 1.1& 1& 541& 0.87& 0.9&         153&	0.014**	\\
+
+
+
+
+
+\hline\hline
+\mcl{8}{l}{
+\footnotesize{
+\parbox{15cm}{\vspace{2mm}Notes. The p-values are the results of t-tests for each transport type compared to the other transport types. \baselineskip=11pt}}}%
+\end{tabular}
+}
+\end{table}
+
+There were significant differences between the traders in each milk shed. The southwest milk shed, where the dairy business has been growing significantly, the traders have more 50L milk containers, more 25 L milk containers, less jerrycans, more motorcycles and less bicycles than the central milk shed. 
+
+\end{document}
+
+
+
+
+
+\begin{table}[ht]
+\centering
+\caption{Female Headed Farmer Remoteness}
+\label{tab:female_farmers_dist}
+
+\scalebox{0.62}{%
+\begin{tabular}{l*{1}{cccccccc}}
+\hline\hline
+ Sales...      &\multicolumn{3}{c}{F Headed Household}                  &\multicolumn{3}{c}{M Headed Household}             \\
+                            &\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}}&\multicolumn{1}{c}{{Mean}}&\multicolumn{1}{c}{{Sd}}&\multicolumn{1}{l}{{Obs}} &\multicolumn{1}{l}{{P-value}}\\
+                            
+                            \hline
+
+\textbf{In Last 7 Days...}	\\
+\textbf{Sells Direct to Neighbor}  \\
+
+KM to Nearest...\\
+Tarmac road&        13.7&        16.9&        36&        10.1&       11.3&         331&        0.09*\\
+Murram Road&         0.8&        1.0&         40&         1.3&         2.5&         342&         0.19        \\
+MCC&        14.2&       15.3&         32&         12.4&         10.6&         290&        0.39        \\
+Neighbor&         0.3&         0.3&         38640         0.3&         0.4&         346&         0.98    \\
+Market&         4.7&         3.5&         40&         4.9&         4.5&         343&        0.73
+
+\textbf{Sells Trader to MCC } \\
+KM to Nearest...\\
+Tarmac road&       22.4&       18.8&        42&        21.6&       19.0&         389&        0.79\\
+Murram Road&         0.8&        1.0&         40&         1.3&         2.5&         342&         0.19        \\
+MCC&        14.2&       15.3&         32&         12.4&         10.6&         290&        0.39        \\
+Neighbor&         0.3&         0.3&         38640         0.3&         0.4&         346&         0.98    \\
+Market&         4.7&         3.5&         40&         4.9&         4.5&         343&        0.73
+
+
+\textbf{Sells Trans to MCC}& 12\%& & 150& 10\% & &  1,399&  0.48 \\
+KM to Nearest...\\
+Tarmac road&        13.7&        16.9&        36&        10.1&       11.3&         331&        0.09*\\
+Murram Road&         0.8&        1.0&         40&         1.3&         2.5&         342&         0.19        \\
+MCC&        14.2&       15.3&         32&         12.4&         10.6&         290&        0.39        \\
+Neighbor&         0.3&         0.3&         38640         0.3&         0.4&         346&         0.98    \\
+Market&         4.7&         3.5&         40&         4.9&         4.5&         343&        0.73
+
+
+\textbf{Sells Direct MCC}& 7\%& & 150& 14\% & &  1,399&  0.015**  \\
+KM to Nearest...\\
+Tarmac road&        13.7&        16.9&        36&        10.1&       11.3&         331&        0.09*\\
+Murram Road&         0.8&        1.0&         40&         1.3&         2.5&         342&         0.19        \\
+MCC&        14.2&       15.3&         32&         12.4&         10.6&         290&        0.39        \\
+Neighbor&         0.3&         0.3&         38640         0.3&         0.4&         346&         0.98    \\
+Market&         4.7&         3.5&         40&         4.9&         4.5&         343&        0.73
+
+
+
+\hline\hline
+\mcl{7}{l}{
+\footnotesize{
+\parbox{20cm}{\vspace{2mm}.\baselineskip=11pt}}}%
+\end{tabular}
+}
+\end{table}
+
