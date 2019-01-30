@@ -51,9 +51,9 @@ farmers <- read.csv("/home/bjvca/data/projects/PIMDVC/data/public/farmers.csv")
 ## herd size now
 farmers[c("hh_head.HH.cattle_ownership.q23", "hh_head.HH.cattle_ownership.q25","hh_head.HH.cattle_ownership.q27","hh_head.HH.cattle_ownership.q29", "hh_head.HH.cattle_ownership.q31","hh_head.HH.cattle_ownership.q33")] <- lapply(farmers[c("hh_head.HH.cattle_ownership.q23", "hh_head.HH.cattle_ownership.q25","hh_head.HH.cattle_ownership.q27","hh_head.HH.cattle_ownership.q29", "hh_head.HH.cattle_ownership.q31","hh_head.HH.cattle_ownership.q33")], function(x) replace(x, x == 999, NA) )
 farmers$herdsize <- rowSums(farmers[c("hh_head.HH.cattle_ownership.q23", "hh_head.HH.cattle_ownership.q25","hh_head.HH.cattle_ownership.q27","hh_head.HH.cattle_ownership.q29", "hh_head.HH.cattle_ownership.q31","hh_head.HH.cattle_ownership.q33")], na.rm=T)
-farmers$herdsize_exot <- rowSums(farmers[c("hh_head.HH.cattle_ownership.q23", "hh_head.HH.cattle_ownership.q25","hh_head.HH.cattle_ownership.q27")], na.rm=T)
+farmers$herdsize_local <- rowSums(farmers[c("hh_head.HH.cattle_ownership.q23", "hh_head.HH.cattle_ownership.q25","hh_head.HH.cattle_ownership.q27")], na.rm=T)
 
-farmers$herdsize_local <- rowSums(farmers[c("hh_head.HH.cattle_ownership.q29", "hh_head.HH.cattle_ownership.q31","hh_head.HH.cattle_ownership.q33")], na.rm=T)
+farmers$herdsize_exot <- rowSums(farmers[c("hh_head.HH.cattle_ownership.q29", "hh_head.HH.cattle_ownership.q31","hh_head.HH.cattle_ownership.q33")], na.rm=T)
 
 
 
@@ -83,23 +83,112 @@ farmers$herdsize_b[farmers$hh_head.HH.recall.q233!="Yes"] <- NA
  mean(farmers$herdsize_local_b, na.rm=T)
  mean(farmers$herdsize_local, na.rm=T)
 
-res <- matrix(NA,4,3)
-res[1,1] <- mean(farmers$herdsize_exot_b, na.rm=T)
-res[2,1] <-  mean(farmers$herdsize_exot, na.rm=T)
+res <- matrix(NA,8,4)
+res[1,1] <- mean(farmers$herdsize_exot_b[farmers$shed=="SW"], na.rm=T)
+res[2,1] <-  mean(farmers$herdsize_exot[farmers$shed=="SW"], na.rm=T)
 
- res[3,1] <- mean(farmers$herdsize_local_b, na.rm=T)
-res[4,1] <-  mean(farmers$herdsize_local, na.rm=T)
+res[3,1] <- mean(farmers$herdsize_local_b[farmers$shed=="SW"], na.rm=T)
+res[4,1] <-  mean(farmers$herdsize_local[farmers$shed=="SW"], na.rm=T)
+
+res[5,1] <- mean(farmers$herdsize_exot_b[farmers$shed=="C"], na.rm=T)
+res[6,1] <-  mean(farmers$herdsize_exot[farmers$shed=="C"], na.rm=T)
+
+res[7,1] <- mean(farmers$herdsize_local_b[farmers$shed=="C"], na.rm=T)
+res[8,1] <-  mean(farmers$herdsize_local[farmers$shed=="C"], na.rm=T)
 res <- data.frame(res)
-res[c(1,3),2] <- "10 years ago"
-res[c(2,4),2] <- "now"
-res[c(1,2),3] <- "exotics"
-res[c(3,4),3] <- "local"
-names(res) <- c("number","time","type")
+
+res[c(1,3,5,7),2] <- "10 years ago"
+res[c(2,4,6,8),2] <- "now"
+res[c(1,2,5,6),3] <- "exotics"
+res[c(3,4,7,8),3] <- "local"
+res[1:4,4] <- "Southwestern shed"
+res[5:8,4] <- "Central shed"
+
+names(res) <- c("number","time","type","shed")
 pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/herd_time.pdf")
 ggplot(res, aes(x = time, y = number, fill = type)) + 
-  geom_bar(stat = "identity")  + theme(axis.text=element_text(size=14),
-        axis.title=element_text(size=16,face="bold"))  + theme(legend.text=element_text(size=14))
+  geom_bar(stat = "identity")  + facet_grid(. ~ shed) + theme(axis.text=element_text(size=14),
+        axis.title=element_text(size=16,face="bold"))  + theme(legend.text=element_text(size=14)) + theme(strip.text.x = element_text(size = 14))
 dev.off()
+
+ mean(farmers$herdsize_exot_b, na.rm=T)/mean(farmers$herdsize_local_b+farmers$herdsize_exot_b, na.rm=T)
+ mean(farmers$herdsize_exot, na.rm=T)/mean(farmers$herdsize_local+farmers$herdsize_exot, na.rm=T)
+
+
+ mean(farmers$herdsize_exot_b[farmers$shed=="C"], na.rm=T)/mean(farmers$herdsize_local_b[farmers$shed=="C"]+farmers$herdsize_exot_b[farmers$shed=="C"], na.rm=T)
+ mean(farmers$herdsize_exot[farmers$shed=="C"], na.rm=T)/mean(farmers$herdsize_local[farmers$shed=="C"]+farmers$herdsize_exot[farmers$shed=="C"], na.rm=T)
+
+
+ mean(farmers$herdsize_exot_b[farmers$shed=="SW"], na.rm=T)/mean(farmers$herdsize_local_b[farmers$shed=="SW"]+farmers$herdsize_exot_b[farmers$shed=="SW"], na.rm=T)
+ mean(farmers$herdsize_exot[farmers$shed=="SW"], na.rm=T)/mean(farmers$herdsize_local[farmers$shed=="SW"]+farmers$herdsize_exot[farmers$shed=="SW"], na.rm=T)
+
+### ticks
+## are ticks a problem (likert 1-5)
+
+
+ggplot(farmers, aes(x=hh_head.HH.food_safety.S1 )) + geom_bar()+ facet_grid(. ~ shed)
+ggplot(farmers, aes(x=hh_head.HH.food_safety.S2 )) + geom_bar()+ facet_grid(. ~ shed)
+
+prop.table(table(farmers$hh_head.HH.food_safety.S1[farmers$shed=="C"]))
+prop.table(table(farmers$hh_head.HH.food_safety.S1[farmers$shed=="SW"]))
+
+prop.table(table(farmers$hh_head.HH.food_safety.S2[farmers$shed=="C"]))
+prop.table(table(farmers$hh_head.HH.food_safety.S2[farmers$shed=="SW"]))
+
+
+## are ticks a problem (likert 1-5)
+
+### do you spray?
+
+ tapply(farmers$hh_head.HH.food_safety.q195,farmers$shed,summary)
+
+
+
+###prices
+
+prices <- data.frame(farmers$ID,(as.numeric(as.character(farmers$hh_head.HH.dairy_ouput.qX1))+as.numeric(as.character(farmers$hh_head.HH.dairy_ouput.qX2)))/2 , farmers$shed)
+prices$quote <- "average price"
+names(prices) <- c("ID","price","shed","quote")
+prices2 <- data.frame(farmers$ID,as.numeric(as.character(farmers$hh_head.HH.dairy_ouput.qX1)), farmers$shed)
+prices2$quote <- "lowest price"
+names(prices2) <- c("ID","price","shed","quote")
+prices3 <- data.frame(farmers$ID,as.numeric(as.character(farmers$hh_head.HH.dairy_ouput.qX2)), farmers$shed)
+prices3$quote <- "highest price"
+names(prices3) <- c("ID","price","shed","quote")
+prices_dry <- rbind(prices,prices2,prices3)
+prices_dry$season <- "dry season"
+
+prices <- data.frame(farmers$ID,(as.numeric(as.character(farmers$hh_head.HH.dairy_ouput.q53))+as.numeric(as.character(farmers$hh_head.HH.dairy_ouput.q54)))/2, farmers$shed)
+prices$quote <- "average price"
+names(prices) <- c("ID","price","shed","quote")
+prices2 <- data.frame(farmers$ID,as.numeric(as.character(farmers$hh_head.HH.dairy_ouput.q53)), farmers$shed)
+prices2$quote <- "lowest price"
+names(prices2) <- c("ID","price","shed","quote")
+prices3 <- data.frame(farmers$ID,as.numeric(as.character(farmers$hh_head.HH.dairy_ouput.q54)), farmers$shed)
+prices3$quote <- "highest price"
+names(prices3) <- c("ID","price","shed","quote")
+prices_rainy <- rbind(prices,prices2,prices3)
+prices_rainy$season <- "rainy season"
+
+prices <- rbind(prices_dry,prices_rainy)
+prices$price[prices$price == 999] <- NA
+prices$price[prices$price > 1800] <- NA
+prices$price[prices$price < 200] <- NA
+
+ggplot(prices[prices$quote=="average price",], aes(x = price, y = season, fill = season)) +
+  geom_density_ridges() + facet_grid(~ shed) +
+  theme_ridges() +
+  theme(legend.position = "none")
+
+
+
+to_merge <- aggregate( prices$price[prices$quote=="average price"], list(prices$ID[prices$quote=="average price"]) ,mean, na.rm=T)
+names(to_merge) <- c("ID","average_price")
+farmers <- merge(farmers,to_merge, by = "ID", all.x=T)
+farmers <- merge(farmers, prices[prices$quote=="average price" & prices$season=="dry season",][c("ID","price")], by="ID", all.x=T)
+names(farmers)[names(farmers) == 'price'] <- 'price_dry_season'
+farmers <- merge(farmers, prices[prices$quote=="average price" & prices$season=="rainy season",][c("ID","price")], by="ID", all.x=T)
+names(farmers)[names(farmers) == 'price'] <- 'price_rainy_season'
 
 farmers$hh_head.HH.distance.q11[farmers$hh_head.HH.distance.q11==999] <- NA
 farmers$hh_head.HH.distance.q9[farmers$hh_head.HH.distance.q9==999] <- NA
@@ -107,44 +196,161 @@ farmers$hh_head.HH.distance.q10[farmers$hh_head.HH.distance.q10>900] <- NA
 farmers$hh_head.HH.distance.q14[farmers$hh_head.HH.distance.q14>900] <- NA
 farmers$hh_head.HH.distance.q15[farmers$hh_head.HH.distance.q15>900] <- NA
 farmers$hh_head.HH.distance.q12[farmers$hh_head.HH.distance.q12>900] <- NA
+farmers$hh_head.HH.distance.q13[farmers$hh_head.HH.distance.q13>900] <- NA
 farmers$hh_head.HH.distance.q16[farmers$hh_head.HH.distance.q16>900] <- NA
-
-p1 <- ggplot(farmers, aes(hh_head.HH.distance.q9, herdsize_exot/herdsize))  + geom_point() + geom_smooth() + xlim(0,30)  + xlab("distance to tarmac road") + ylab("share of exotic cows")
-p2 <- ggplot(farmers, aes(hh_head.HH.distance.q10, herdsize_exot/herdsize))  + geom_point() + geom_smooth() + xlim(0,30) + xlab("distance to murram road") + ylab("share of exotic cows")
-p3 <- ggplot(farmers, aes(hh_head.HH.distance.q14, herdsize_exot/herdsize))  + geom_point() + geom_smooth() + xlim(0,30) + xlab("distance to market") + ylab("share of exotic cows")
-
 farmers$hh_head.HH.animal_health.q201[farmers$hh_head.HH.animal_health.q201>900] <- NA
 farmers$hh_head.HH.animal_health.q202[farmers$hh_head.HH.animal_health.q202>900] <- NA
 
-p4 <-ggplot(farmers, aes(hh_head.HH.animal_health.q201, herdsize_exot/herdsize)) + geom_point() + geom_smooth() + xlim(0,30)  + xlab("distance vet") + ylab("share of exotic cows")
-pdf("/home/bjvca/data/projects/PIMDVC/presentations/exotic_adoption_space.pdf")
-multiplot(p1, p2, p3, p4, cols=2)
+### distance to milk collection center
+p1 <- ggplot(farmers, aes(hh_head.HH.distance.q11, herdsize_exot/herdsize, colour=shed)) + geom_smooth()  + xlab("distance to milk collection center") + ylab("share of exotic cows")  + coord_cartesian(xlim = c(0, 20), ylim=c(0,1))
+#murram
+p2 <-  ggplot(farmers, aes(hh_head.HH.distance.q10, herdsize_exot/herdsize, colour=shed)) + geom_smooth()  + xlab("distance to all weather road") + ylab("share of exotic cows")  + coord_cartesian(xlim = c(0, 20), ylim=c(0,1))
+###distance to shop for medicien
+p3 <- ggplot(farmers, aes(hh_head.HH.animal_health.q202, herdsize_exot/herdsize, colour=shed))  + coord_cartesian(xlim = c(0, 20), ylim=c(.25,1))+  geom_smooth()  + xlab("distance to drug store (km)") + ylab("share of exotic cows")
+###distance to shop for medicien
+p4 <- ggplot(farmers, aes(hh_head.HH.animal_health.q201, herdsize_exot/herdsize, colour=shed))  + coord_cartesian(xlim = c(0, 20), ylim=c(.25,1))+  geom_smooth()  + xlab("distance to vet (km)") + ylab("share of exotic cows")
+
+
+pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/exotic_adoption_space.pdf")
+multiplot(p1, p3, p2, p4, cols=2)
 dev.off()
 
-pdf("/home/bjvca/data/projects/PIMDVC/presentations/exotic_adoption_size.pdf")
-ggplot(farmers, aes(herdsize, herdsize_exot/herdsize)) + geom_point()+ geom_smooth() + xlim(0,70)  + xlab("herd size") + ylab("share of exotic cows")+geom_vline(xintercept =20)
-dev.off()
+###################################################################### market participation ####################################################################
+n <- 5
+res <- matrix(NA,8,n*2)
+
+### sold to?
+res[1,c(1,1+n)] <- tapply(farmers$hh_head.HH.sales.q70.1, farmers$shed,mean)
+res[2,c(1,1+n)] <- tapply(farmers$hh_head.HH.sales.q70.2  | farmers$hh_head.HH.sales.q70.3 |farmers$hh_head.HH.sales.q70.4, farmers$shed,mean)
+
+res[3,c(1,1+n)] <- tapply(farmers$hh_head.HH.sales.q70.2, farmers$shed,mean)
+res[4,c(1,1+n)] <- tapply(farmers$hh_head.HH.sales.q70.3, farmers$shed,mean)
+res[5,c(1,1+n)] <- tapply(farmers$hh_head.HH.sales.q70.4, farmers$shed,mean)
+
+res[6,c(1,1+n)] <- tapply(farmers$hh_head.HH.sales.q70.5  | farmers$hh_head.HH.sales.q70.6 |farmers$hh_head.HH.sales.q70.7, farmers$shed,mean)
+res[7,c(1,1+n)] <- tapply(farmers$hh_head.HH.sales.q70.8, farmers$shed,mean)
+res[8,c(1,1+n)] <- tapply(farmers$hh_head.HH.sales.q70.9, farmers$shed,mean)
+
+#average number of transactions
+farmers[c("hh_head.HH.sales.q71", "hh_head.HH.sales.q85", "hh_head.HH.sales.q103", "hh_head.HH.sales.q121", "hh_head.HH.sales.q139", "hh_head.HH.sales.q158", "hh_head.HH.sales.R1", "hh_head.HH.sales.R20", "hh_head.HH.sales.R40")] <- lapply(farmers[c("hh_head.HH.sales.q71", "hh_head.HH.sales.q85", "hh_head.HH.sales.q103", "hh_head.HH.sales.q121", "hh_head.HH.sales.q139", "hh_head.HH.sales.q158", "hh_head.HH.sales.R1", "hh_head.HH.sales.R20", "hh_head.HH.sales.R40")], function(x) replace(x, x == "999","n/a") )
+
+farmers[c("hh_head.HH.sales.q71", "hh_head.HH.sales.q85", "hh_head.HH.sales.q103", "hh_head.HH.sales.q121", "hh_head.HH.sales.q139", "hh_head.HH.sales.q158", "hh_head.HH.sales.R1", "hh_head.HH.sales.R20", "hh_head.HH.sales.R40")] <- lapply(farmers[c("hh_head.HH.sales.q71", "hh_head.HH.sales.q85", "hh_head.HH.sales.q103", "hh_head.HH.sales.q121", "hh_head.HH.sales.q139", "hh_head.HH.sales.q158", "hh_head.HH.sales.R1", "hh_head.HH.sales.R20", "hh_head.HH.sales.R40")], function(x) as.numeric(as.character(x)) )
 
 
-##neighbout
-summary(as.numeric(as.character(farmers$hh_head.HH.sales.q73)))
-##trader
-summary(c(as.numeric(as.character(farmers$hh_head.HH.sales.q87)),as.numeric(as.character(farmers$hh_head.HH.sales.q123))))
-##transporter
-summary(c(as.numeric(as.character(farmers$hh_head.HH.sales.q141)),as.numeric(as.character(farmers$hh_head.HH.sales.q160))))
-summary(as.numeric(as.character(farmers$hh_head.HH.sales.R23)))
+
+res[1,c(2,2+n)] <- tapply( as.numeric(as.character(farmers$hh_head.HH.sales.q71)), farmers$shed,mean, na.rm=T)
+res[2,c(2,2+n)] <- tapply(rowSums(farmers[c("hh_head.HH.sales.q85", "hh_head.HH.sales.q103", "hh_head.HH.sales.q121")], na.rm=T)[rowSums(farmers[c("hh_head.HH.sales.q85", "hh_head.HH.sales.q103", "hh_head.HH.sales.q121")], na.rm=T)>0], farmers$shed[rowSums(farmers[c("hh_head.HH.sales.q85", "hh_head.HH.sales.q103", "hh_head.HH.sales.q121")], na.rm=T)>0],mean)
+
+res[3,c(2,2+n)] <- tapply( as.numeric(as.character(farmers$hh_head.HH.sales.q85)), farmers$shed,mean, na.rm=T)
+res[4,c(2,2+n)] <- tapply( as.numeric(as.character(farmers$hh_head.HH.sales.q103)), farmers$shed,mean, na.rm=T)
+res[5,c(2,2+n)] <- tapply( as.numeric(as.character(farmers$hh_head.HH.sales.q121)), farmers$shed,mean, na.rm=T)
+
+res[6,c(2,2+n)] <- tapply(rowSums(farmers[c("hh_head.HH.sales.q139", "hh_head.HH.sales.q158", "hh_head.HH.sales.R1")], na.rm=T)[rowSums(farmers[c("hh_head.HH.sales.q139", "hh_head.HH.sales.q158", "hh_head.HH.sales.R1")], na.rm=T)>0], farmers$shed[rowSums(farmers[c("hh_head.HH.sales.q139", "hh_head.HH.sales.q158", "hh_head.HH.sales.R1")], na.rm=T)>0],mean)
+
+res[7,c(2,2+n)] <- tapply( as.numeric(as.character(farmers$hh_head.HH.sales.R20)), farmers$shed,mean, na.rm=T)
+res[8,c(2,2+n)] <- tapply( as.numeric(as.character(farmers$hh_head.HH.sales.R40)), farmers$shed,mean, na.rm=T)
+
+#average number of type 
+farmers[c("hh_head.HH.sales.q72", "hh_head.HH.sales.q86", "hh_head.HH.sales.q104", "hh_head.HH.sales.q122", "hh_head.HH.sales.q140", "hh_head.HH.sales.q159", "hh_head.HH.sales.R2", "hh_head.HH.sales.R21", "hh_head.HH.sales.R41")] <- lapply(farmers[c("hh_head.HH.sales.q72", "hh_head.HH.sales.q86", "hh_head.HH.sales.q104", "hh_head.HH.sales.q122", "hh_head.HH.sales.q140", "hh_head.HH.sales.q159", "hh_head.HH.sales.R2", "hh_head.HH.sales.R21", "hh_head.HH.sales.R41")], function(x) replace(x, x == "999","n/a") )
+
+farmers[c("hh_head.HH.sales.q72", "hh_head.HH.sales.q86", "hh_head.HH.sales.q104", "hh_head.HH.sales.q122", "hh_head.HH.sales.q140", "hh_head.HH.sales.q159", "hh_head.HH.sales.R2", "hh_head.HH.sales.R21", "hh_head.HH.sales.R41")] <- lapply(farmers[c("hh_head.HH.sales.q72", "hh_head.HH.sales.q86", "hh_head.HH.sales.q104", "hh_head.HH.sales.q122", "hh_head.HH.sales.q140", "hh_head.HH.sales.q159", "hh_head.HH.sales.R2", "hh_head.HH.sales.R21", "hh_head.HH.sales.R41")], function(x) as.numeric(as.character(x)) )
+
+
+
+res[1,c(3,3+n)] <- tapply( as.numeric(as.character(farmers$hh_head.HH.sales.q72)), farmers$shed,mean, na.rm=T)
+res[2,c(3,3+n)] <- tapply(rowSums(farmers[c("hh_head.HH.sales.q86", "hh_head.HH.sales.q104", "hh_head.HH.sales.q122")], na.rm=T)[rowSums(farmers[c("hh_head.HH.sales.q86", "hh_head.HH.sales.q104", "hh_head.HH.sales.q122")], na.rm=T)>0], farmers$shed[rowSums(farmers[c("hh_head.HH.sales.q86", "hh_head.HH.sales.q104", "hh_head.HH.sales.q122")], na.rm=T)>0],mean)
+
+res[3,c(3,3+n)] <- tapply( as.numeric(as.character(farmers$hh_head.HH.sales.q86)), farmers$shed,mean, na.rm=T)
+res[4,c(3,3+n)] <- tapply( as.numeric(as.character(farmers$hh_head.HH.sales.q104)), farmers$shed,mean, na.rm=T)
+res[5,c(3,3+n)] <- tapply( as.numeric(as.character(farmers$hh_head.HH.sales.q122)), farmers$shed,mean, na.rm=T)
+
+res[6,c(3,3+n)] <- tapply(rowSums(farmers[c("hh_head.HH.sales.q140", "hh_head.HH.sales.q159", "hh_head.HH.sales.R2")], na.rm=T)[rowSums(farmers[c("hh_head.HH.sales.q140", "hh_head.HH.sales.q159", "hh_head.HH.sales.R2")], na.rm=T)>0], farmers$shed[rowSums(farmers[c("hh_head.HH.sales.q140", "hh_head.HH.sales.q159", "hh_head.HH.sales.R2")], na.rm=T)>0],mean)
+
+res[7,c(3,3+n)] <- tapply( as.numeric(as.character(farmers$hh_head.HH.sales.R21)), farmers$shed,mean, na.rm=T)
+res[8,c(3,3+n)] <- tapply( as.numeric(as.character(farmers$hh_head.HH.sales.R41)), farmers$shed,mean, na.rm=T)
+
+### use resampling based hypothesis tests
+library(coin)
+wilcox_test(hh_head.HH.sales.R21~shed, data=farmers, distribution="exact") 
+
+#prices 
+farmers[c("hh_head.HH.sales.q73", "hh_head.HH.sales.q87", "hh_head.HH.sales.q105", "hh_head.HH.sales.q123", "hh_head.HH.sales.q141", "hh_head.HH.sales.q160", "hh_head.HH.sales.R3", "hh_head.HH.sales.R23", "hh_head.HH.sales.R42")] <- lapply(farmers[c("hh_head.HH.sales.q73", "hh_head.HH.sales.q87", "hh_head.HH.sales.q105", "hh_head.HH.sales.q123", "hh_head.HH.sales.q141", "hh_head.HH.sales.q160", "hh_head.HH.sales.R3", "hh_head.HH.sales.R23", "hh_head.HH.sales.R42")], function(x) replace(x, x == "999","n/a") )
+
+farmers[c("hh_head.HH.sales.q73", "hh_head.HH.sales.q87", "hh_head.HH.sales.q105", "hh_head.HH.sales.q123", "hh_head.HH.sales.q141", "hh_head.HH.sales.q160", "hh_head.HH.sales.R3", "hh_head.HH.sales.R23", "hh_head.HH.sales.R42")] <- lapply(farmers[c("hh_head.HH.sales.q73", "hh_head.HH.sales.q87", "hh_head.HH.sales.q105", "hh_head.HH.sales.q123", "hh_head.HH.sales.q141", "hh_head.HH.sales.q160", "hh_head.HH.sales.R3", "hh_head.HH.sales.R23", "hh_head.HH.sales.R42")], function(x) as.numeric(as.character(x)) )
+
+res[1,c(4,4+n)] <- tapply( as.numeric(as.character(farmers$hh_head.HH.sales.q73)), farmers$shed,mean, na.rm=T)
+res[2,c(4,4+n)] <- tapply(rowSums(farmers[c("hh_head.HH.sales.q87",  "hh_head.HH.sales.q123")], na.rm=T)[rowSums(farmers[c("hh_head.HH.sales.q87", "hh_head.HH.sales.q123")], na.rm=T)>0], farmers$shed[rowSums(farmers[c("hh_head.HH.sales.q87", "hh_head.HH.sales.q123")], na.rm=T)>0],mean)
+
+res[3,c(4,4+n)] <- tapply( as.numeric(as.character(farmers$hh_head.HH.sales.q87)), farmers$shed,mean, na.rm=T)
+res[4,c(4,4+n)] <- NA
+res[5,c(4,4+n)] <- tapply( as.numeric(as.character(farmers$hh_head.HH.sales.q123)), farmers$shed,mean, na.rm=T)
+
+res[6,c(4,4+n)] <- tapply(rowSums(farmers[c("hh_head.HH.sales.q141", "hh_head.HH.sales.q160", "hh_head.HH.sales.R3")], na.rm=T)[rowSums(farmers[c("hh_head.HH.sales.q141", "hh_head.HH.sales.q160", "hh_head.HH.sales.R3")], na.rm=T)>0], farmers$shed[rowSums(farmers[c("hh_head.HH.sales.q141", "hh_head.HH.sales.q160", "hh_head.HH.sales.R3")], na.rm=T)>0],mean)
+
+res[7,c(4,4+n)] <- tapply( as.numeric(as.character(farmers$hh_head.HH.sales.R23)), farmers$shed,mean, na.rm=T)
+res[8,c(4,4+n)] <- tapply( as.numeric(as.character(farmers$hh_head.HH.sales.R42)), farmers$shed,mean, na.rm=T)
+
+## amounts
+
+
+farmers[c("hh_head.HH.sales.q74", "hh_head.HH.sales.q88", "hh_head.HH.sales.q106", "hh_head.HH.sales.q124", "hh_head.HH.sales.q142", "hh_head.HH.sales.q161", "hh_head.HH.sales.R4", "hh_head.HH.sales.R24", "hh_head.HH.sales.R43")] <- lapply(farmers[c("hh_head.HH.sales.q74", "hh_head.HH.sales.q88", "hh_head.HH.sales.q106", "hh_head.HH.sales.q124", "hh_head.HH.sales.q142", "hh_head.HH.sales.q161", "hh_head.HH.sales.R4", "hh_head.HH.sales.R24", "hh_head.HH.sales.R43")] , function(x) replace(x, x == "999","n/a") )
+
+farmers[c("hh_head.HH.sales.q74", "hh_head.HH.sales.q88", "hh_head.HH.sales.q106", "hh_head.HH.sales.q124", "hh_head.HH.sales.q142", "hh_head.HH.sales.q161", "hh_head.HH.sales.R4", "hh_head.HH.sales.R24", "hh_head.HH.sales.R43")]  <- lapply(farmers[c("hh_head.HH.sales.q74", "hh_head.HH.sales.q88", "hh_head.HH.sales.q106", "hh_head.HH.sales.q124", "hh_head.HH.sales.q142", "hh_head.HH.sales.q161", "hh_head.HH.sales.R4", "hh_head.HH.sales.R24", "hh_head.HH.sales.R43")] , function(x) as.numeric(as.character(x)) )
+## for amounts, it seems some pleople entred value here. Delete everything above 99 liters
+farmers$hh_head.HH.sales.q74[as.numeric(as.character(farmers$hh_head.HH.sales.q74)) > 99] <- NA
+farmers$hh_head.HH.sales.q88[as.numeric(as.character(farmers$hh_head.HH.sales.q88)) > 99] <- NA
+farmers$hh_head.HH.sales.q106[as.numeric(as.character(farmers$hh_head.HH.sales.q106)) > 99] <- NA
+farmers$hh_head.HH.sales.q124[as.numeric(as.character(farmers$hh_head.HH.sales.q124)) > 99] <- NA
+farmers$hh_head.HH.sales.q142[as.numeric(as.character(farmers$hh_head.HH.sales.q142)) > 99] <- NA
+farmers$hh_head.HH.sales.q161[as.numeric(as.character(farmers$hh_head.HH.sales.q161)) > 99] <- NA
+farmers$hh_head.HH.sales.R4[as.numeric(as.character(farmers$hh_head.HH.sales.R4)) > 99] <- NA
+farmers$hh_head.HH.sales.R24[as.numeric(as.character(farmers$hh_head.HH.sales.R24)) > 99] <- NA
+farmers$hh_head.HH.sales.R43[as.numeric(as.character(farmers$hh_head.HH.sales.R43)) > 99] <- NA
+
+
+
+res[1,c(5,5+n)] <- tapply( as.numeric(as.character(farmers$hh_head.HH.sales.q74)), farmers$shed,mean, na.rm=T)
+res[2,c(5,5+n)] <- tapply(rowSums(farmers[c("hh_head.HH.sales.q88","hh_head.HH.sales.q106",  "hh_head.HH.sales.q124")], na.rm=T)[rowSums(farmers[c("hh_head.HH.sales.q88","hh_head.HH.sales.q106",  "hh_head.HH.sales.q124")], na.rm=T)>0], farmers$shed[rowSums(farmers[c("hh_head.HH.sales.q88","hh_head.HH.sales.q106",  "hh_head.HH.sales.q124")], na.rm=T)>0],mean)
+
+res[3,c(5,5+n)] <- tapply( as.numeric(as.character(farmers$hh_head.HH.sales.q88)), farmers$shed,mean, na.rm=T)
+res[4,c(5,5+n)] <- tapply( as.numeric(as.character(farmers$hh_head.HH.sales.q106)), farmers$shed,mean, na.rm=T)
+res[5,c(5,5+n)] <- tapply( as.numeric(as.character(farmers$hh_head.HH.sales.q124)), farmers$shed,mean, na.rm=T)
+
+res[6,c(5,5+n)] <- tapply(rowSums(farmers[c("hh_head.HH.sales.q142", "hh_head.HH.sales.q161", "hh_head.HH.sales.R4")], na.rm=T)[rowSums(farmers[c("hh_head.HH.sales.q142", "hh_head.HH.sales.q161", "hh_head.HH.sales.R4")], na.rm=T)>0], farmers$shed[rowSums(farmers[c("hh_head.HH.sales.q142", "hh_head.HH.sales.q161", "hh_head.HH.sales.R4")], na.rm=T)>0],mean)
+
+res[7,c(5,5+n)] <- tapply( as.numeric(as.character(farmers$hh_head.HH.sales.R24)), farmers$shed,mean, na.rm=T)
+res[8,c(5,5+n)] <- tapply( as.numeric(as.character(farmers$hh_head.HH.sales.R43)), farmers$shed,mean, na.rm=T)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## need to make a long dataset with price and sold to
-ridgeplot1 <-data.frame( as.numeric(as.character(farmers$hh_head.HH.sales.q73)), farmers$shed)
+ridgeplot1 <-data.frame(farmers$ID, as.numeric(as.character(farmers$hh_head.HH.sales.q73)), farmers$shed)
 ridgeplot1$sold_to <- "neighbour"
-names(ridgeplot1) <- c("price","shed","sold_to") 
+names(ridgeplot1) <- c("ID","price","shed","sold_to") 
 tapply(ridgeplot1$price, ridgeplot1$shed,mean, na.rm=T)
 
-ridgeplot2 <- data.frame(as.numeric(as.character(farmers$hh_head.HH.sales.q87)), farmers$shed)
-names(ridgeplot2) <- c("price","shed")
+ridgeplot2 <- data.frame(farmers$ID,as.numeric(as.character(farmers$hh_head.HH.sales.q87)), farmers$shed)
+names(ridgeplot2) <- c("ID","price","shed")
 ridgeplot2$sold_to <- "trader"
-ridgeplot2_2 <- data.frame(as.numeric(as.character(farmers$hh_head.HH.sales.q123)),  farmers$shed)
-names(ridgeplot2_2) <- c("price","shed")
+ridgeplot2_2 <- data.frame(farmers$ID,as.numeric(as.character(farmers$hh_head.HH.sales.q123)),  farmers$shed)
+names(ridgeplot2_2) <- c("ID","price","shed")
 ridgeplot2_2$sold_to <- "trader"
 ridgeplot2 <- rbind(ridgeplot2, ridgeplot2_2)
 rm(ridgeplot2_2)
@@ -152,14 +358,14 @@ rm(ridgeplot2_2)
 tapply(ridgeplot2$price, ridgeplot2$shed,mean,ra.rm=T)
 t.test(ridgeplot2$price~ridgeplot2$shed)
 
-ridgeplot3 <- data.frame(as.numeric(as.character(farmers$hh_head.HH.sales.q141)), farmers$shed)
-names(ridgeplot3) <- c("price","shed")
+ridgeplot3 <- data.frame(farmers$ID,as.numeric(as.character(farmers$hh_head.HH.sales.q141)), farmers$shed)
+names(ridgeplot3) <- c("ID","price","shed")
 ridgeplot3$sold_to <- "transporter"
-ridgeplot3_2 <- data.frame(as.numeric(as.character(farmers$hh_head.HH.sales.q160)), farmers$shed)
-names(ridgeplot3_2) <- c("price","shed")
+ridgeplot3_2 <- data.frame(farmers$ID,as.numeric(as.character(farmers$hh_head.HH.sales.q160)), farmers$shed)
+names(ridgeplot3_2) <- c("ID","price","shed")
 ridgeplot3_2$sold_to <- "transporter"
-ridgeplot3_3 <- data.frame(as.numeric(as.character(farmers$hh_head.HH.sales.R3)), farmers$shed)
-names(ridgeplot3_3) <- c("price","shed")
+ridgeplot3_3 <- data.frame(farmers$ID,as.numeric(as.character(farmers$hh_head.HH.sales.R3)), farmers$shed)
+names(ridgeplot3_3) <- c("ID","price","shed")
 ridgeplot3_3$sold_to <- "transporter"
 ridgeplot3 <- rbind(rbind(ridgeplot3, ridgeplot3_2),ridgeplot3_2)
 rm(c(ridgeplot3_2,ridgeplot3_3)
@@ -169,9 +375,9 @@ t.test(ridgeplot3$price~ridgeplot3$shed)
 
 
 ## need to make a long dataset with price and sold to
-ridgeplot4 <-data.frame( as.numeric(as.character(farmers$hh_head.HH.sales.R23)), farmers$shed)
+ridgeplot4 <-data.frame(farmers$ID, as.numeric(as.character(farmers$hh_head.HH.sales.R23)), farmers$shed)
 ridgeplot4$sold_to <- "mcc"
-names(ridgeplot4) <- c("price","shed","sold_to") 
+names(ridgeplot4) <- c("ID","price","shed","sold_to") 
 tapply(ridgeplot4$price, ridgeplot4$shed,mean, na.rm=T)
 
 ridgeplot_all <- rbind(ridgeplot1,ridgeplot2,ridgeplot3,ridgeplot4)
@@ -183,41 +389,6 @@ ggplot(ridgeplot_all, aes(x = price, y = sold_to, fill = sold_to)) +
   theme_ridges() +
   theme(legend.position = "none")
 dev.off()
-
-prices <- data.frame(as.numeric(as.character(farmers$hh_head.HH.dairy_ouput.q43)), farmers$shed)
-prices$quote <- "average price"
-names(prices) <- c("price","shed","quote")
-prices2 <- data.frame(as.numeric(as.character(farmers$hh_head.HH.dairy_ouput.qX1)), farmers$shed)
-prices2$quote <- "lowest price"
-names(prices2) <- c("price","shed","quote")
-prices3 <- data.frame(as.numeric(as.character(farmers$hh_head.HH.dairy_ouput.qX2)), farmers$shed)
-prices3$quote <- "highest price"
-names(prices3) <- c("price","shed","quote")
-prices_dry <- rbind(prices,prices2,prices3)
-prices_dry$season <- "dry season"
-
-prices <- data.frame(as.numeric(as.character(farmers$hh_head.HH.dairy_ouput.q52)), farmers$shed)
-prices$quote <- "average price"
-names(prices) <- c("price","shed","quote")
-prices2 <- data.frame(as.numeric(as.character(farmers$hh_head.HH.dairy_ouput.q53)), farmers$shed)
-prices2$quote <- "lowest price"
-names(prices2) <- c("price","shed","quote")
-prices3 <- data.frame(as.numeric(as.character(farmers$hh_head.HH.dairy_ouput.q54)), farmers$shed)
-prices3$quote <- "highest price"
-names(prices3) <- c("price","shed","quote")
-prices_rainy <- rbind(prices,prices2,prices3)
-prices_rainy$season <- "rainy season"
-
-prices <- rbind(prices_dry,prices_rainy)
-prices$price[prices$price == 999] <- NA
-prices$price[prices$price > 1800] <- NA
-prices$price[prices$price < 200] <- NA
-
-ggplot(prices, aes(x = price, y = quote, fill = quote)) +
-  geom_density_ridges() + facet_grid(shed ~ season) +
-  theme_ridges() +
-  theme(legend.position = "none")
-
 
 ### grazing land
 farmers$hh_head.HH.land.q21[farmers$hh_head.HH.land.q21==999] <- NA 
