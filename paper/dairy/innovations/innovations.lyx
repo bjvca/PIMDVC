@@ -147,9 +147,21 @@ In a sense, the success in the dairy sector also came as a surprise.
  resulting in supply uncertainties at the level of the processors.
 \end_layout
 
+\begin_layout Itemize
+upstream, the lack of a complementary industry that supports the dairy sector
+ (companies that produce packaging, dairy service sector servicing equipment
+ for quality testing and storage, artificial insemination,...)
+\end_layout
+
 \begin_layout Standard
-Ankole heifers only start producing milk after four years.
- For a fresian, this is already after one year.
+In this article, we consider three key innovations which cut across the
+ entire dairy value chain.
+ A the rapid uptake of higher yielding cross-bred cows.
+ A second innovation is related to the gradual increase of small traders
+ and brokers that link rural producers to milk collection centers.
+ A third important change that happened is related to the increase in the
+ number and capacity of milk collection and bulking centres.
+ 
 \end_layout
 
 \begin_layout Section*
@@ -541,6 +553,88 @@ We also included Masindi district in our sample.
 \end_layout
 
 \begin_layout Section*
+Trade flows
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Milk-Flows"
+
+\end_inset
+
+ shows how milk flows through the dairy value chain, differentiating between
+ and the the more export oriented southwestern milk shed (bottom).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+Central Milk Shed
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename central.png
+	scale 32
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Southwestern Milk Shed
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename SW_flow.png
+	scale 31
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Milk Flows
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Milk-Flows"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
 Farmers
 \end_layout
 
@@ -549,8 +643,35 @@ Herd size and production
 \end_layout
 
 \begin_layout Standard
-Technology adoption often leads to significant changes in the structure
- and performance of a value chain.
+At the micro level, the extent to which a farmer is integrated in modern
+ commercial value chains and his level of technology adoption is determined
+ simultaneously.
+ Innovating farmers may be more likely to participate in modern value chains
+ simply because they are more likely to produce a stable marketable surplus
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "mather2013explaining"
+
+\end_inset
+
+.
+ Processors in modern value chains may have stringent quality standards
+ which only innovating farmers can guarantee 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "reardon2009agrifood"
+
+\end_inset
+
+.
+ At the same time, poorly functioning input and output markets erode the
+ profitability of a technology, leading some farmers to opt-out.
+ Increased vertical coordination may address many of the constraints to
+ technology adoption that smallholder farmers face.
+ For instance, contracts between processors or wholesalers and farmers may
+ reduce the uncertainty related to finding a buyer for innovating farmers.
+ Processors may provide credit and/or inputs to smallholder farmers.
  
 \end_layout
 
@@ -565,20 +686,16 @@ reference "fig:Herd-size-and"
 \end_inset
 
  compares herd size as reported by farmers in our sample now and 10 years
- ago.
- We find that currently, the average farmer has 32 animals.
- This is not that much higher than 10 years ago, when the average farmer
- had 27 animals.
- We do see an important shift in the composition of the herd.
- While the proportion of exotic animals within the herd was less than 20
- percent ten years ago, these days one in two animals are improved.
- However, the evolution of composition of the herd differs between the southwest
-ern and the central milk shed.
- While the share of improved animals increased from 8 percent to almost
- 60 percent in the central region over the last 10 years, we see a reduction
- in improve animal adoption in the southwestern milk shed: While about 42
- percent of the herd were improved animals 10 years ago, now less than 20
- percent are exotics.
+ ago, for the central milk shed in the left panel and for the southwestern
+ milk shed in the right panel.
+ We see that over time, herd size increased form on average 26 cows to 31
+ cows in the central milk shed and from 31 to 34 in the central milk shed.
+ More importantly, we see that the Central milk shed is catching up with
+ the southwestern milk shed in terms of adoption of crossbred cows.
+ While 10 years ago, only 2 out of 26 cows were improved, this has now become
+ almost 14 out of 31.
+ In the southwestern milk shed, more than 82 percent of animals are of an
+ improved breed.
 \end_layout
 
 \begin_layout Standard
@@ -602,7 +719,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Herd size and composition now and 10 years ago
+Adoption of crossbred cows
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Herd-size-and"
@@ -627,45 +744,169 @@ name "fig:Herd-size-and"
 \end_layout
 
 \begin_layout Standard
-This apparent dis-adoption has been documented in other studies:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Quotes eld
-\end_inset
-
-Indeed, as profit squeezes have hit Ugandan dairy farmers some have reduced
- the number of Friesian and other crosses in their herds, partly because
- the traditional breeds require fewer purchased inputs to maintain their
- health; farmers repeatedly emphasized that they see little point in adopting
- measures to increase efficiency and expand milk production if there is
- no profitable market for the additional milk.
- Indeed, some farmers experiencing profit squeezes had cut back on efforts
- to improve pastures, reduced the number of Friesian- cross dairy cattle
- in their herds, and reduced the use of purchased inputs to control insects
- and cattle diseases.
- Such farms had returned to traditional low-cost, low- output methods of
- production.
-\begin_inset Quotes erd
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-One problem that accelerated the type of profit squeeze these authors talk
- about has to do with high incidence of East Coast fever, a devastating
- tick-borne disease of cattle caused by the protozoan parasite, 
+Various reasons were reported by farmers as to why adoption of improved
+ dairy animals was not even more widespread (EC fever and succeptibiliy,
+ require lots of management, no feeding industry, no AI services).
+ The most important reason why farmers do not invest in improved animals
+ is related to the higher susceptibility to pests and diseases.
+ East Coast fever in particular, a tick-borne disease caused by the protozoan
+ parasite, 
 \emph on
 Theileria Parva
 \emph default
-.
- Over time, the ticks have become resistant to XXX, the insecticide that
- is used to fight ticks.Local breeds are much more resistant to these ticks.
- Our data suggests that, using Wilcoxon signed rank tests, ticks are equally
- prevalent in the southwestern and central milk sheds.
- However, farmers in the southwestern milk shed report that east coast fever
- is more problematic than in the central region.
+, was reported to be killing many animals.
+ Over time, the ticks have become resistant to acaricides.
+ Local breeds are much more resistant to these ticks and also have shorter
+ hair on the cowskin, making it easier to detect ticks early on.
+ East coast fever is such as big problems that some farmers were of the
+ opinion that extension should focus on animal survival first before trying
+ to increase milk yields.
+\end_layout
+
+\begin_layout Standard
+We thus also collected some information on the extent of the problem and
+ what farmers do about it.
+ First, we simply asked farmers if ticks are a problem on the farm.
+ This was evaluated on a likert scale.
+ The majority of farmers, over 60 percent, report that ticks is a huge problem,
+ and there seems to be no different between the two regions.
+ Next, we ask if East Coast Fever is a problem on the farm and use the same
+ likert scale.
+ We find that two thirds of farmers indicate East Coast Fever is a problem
+ in the southwestern milk shed, while this is only 45 percent in the central
+ milk shed.
+ The difference in subjectively assessed severance of East Coast Fever between
+ the two sheds is confirmed using a chi square test (p<0.001).
+ We also find that more than 95 percent of farmer report to be spraying
+ the cows against ticks.
+ In the southwest, only 3 out of the 352 farmers reported they did not use
+ acaraicides.
+ More than 90 percent of households have at least one knapsack sprayer used
+ to apply the pesticide to the cowskin.
+ Again, this proportion is highest in the southwest.
+ 
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Adoption-and-distance"
+
+\end_inset
+
+ shows how adoption of improved animals varies with distance to infrastructure
+ and services.
+ In the top left panel, a non-parametric regression shows that there is
+ a negative relationship between the proportion of improved animals and
+ distance to a milk collection center.
+ We show seperate curves for the southwest and the central shed.
+ The figure clearly shows that adoption is higher among farmers that live
+ close to a milk collection center.
+ In the central milk shed, farmers that are living virtually next to a milk
+ collection center have on average 1 improved animal for every second one.
+ For farmers that live 20 km away from the nearest milk collection center,
+ the adoption rate is only about 35 percent.
+ In the southwestern shed, adoption is generally higher, but the negative
+ correlation with distance to milk collection center is even more outspoken:
+ while farmers that live very close to a milk collection center have adoption
+ rates that are statically indistinguishable from 100 percent, this is only
+ 75 percent for farmers that live about 10 km away from the milk collection
+ center.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Reason? Improved cows an over production, you don't want to throw away stuff?
+\end_layout
+
+\end_inset
+
+The top panel on the left in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Adoption-and-distance"
+
+\end_inset
+
+ shows a similar non-parametric regression, but this time with distance
+ to the nearest market on the x-axis.
+ Markets, generally organized only at particular days during the week, seem
+ less important for farmers that have invested in improved breeds.
+ Furthermore, yield increasing investments in the form of improved animals
+ also do not seem to vary with distance to road infrastructure (not shown).
+ The above suggests that access to a cold chain, where milk can be deposited
+ daily, is an important pull factor for yield increasing technology adoption
+ among smallholder farmers.
+\end_layout
+
+\begin_layout Standard
+As mentioned above, ticks, and the associated East Coast Fever, are an important
+ threat to improved cows.
+ The bottom part of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Adoption-and-distance"
+
+\end_inset
+
+ shows non-parametric regressions showing the relation between adoption
+ of improved animals and distance to the nearest veterinary drug store.
+ The pattern suggests that households that live closer to a veterinary drug
+ store have higher adoption rates than households further away.
+ The pattern is less present if we look at correlation between adoption
+ of exotic animals and distance to a vet.
+ This suggests that it is particularly the ticks that are causing havoc,
+ and that other veterinary services such as artificial insemination are
+ of secondary importance.
+ It seem that the ability to obtain acaricides is more important in the
+ decision to invest in higher yielding livestock.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename exotic_adoption_space.pdf
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Adoption and distance
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Adoption-and-distance"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -712,10 +953,8 @@ We also asked to each farm household how many cows were in milk during the
  day during the wet season and 30 liters per day during the dry season.
  However, the distribution is severely skewed; corresponding medians are
  12 liters and 14 liters.
-\end_layout
-
-\begin_layout Standard
-Our data suggests that a local cow is about 300 USD and an exot is 400 USD.
+ Our data suggests that a local cow is about 300 USD and an exot is 400
+ USD.
  For heifers it is 210 and 260, for calves it is 80 and 105.
 \end_layout
 
@@ -727,8 +966,8 @@ Market Participation
 During the rainy season, we find that farmer sell on average about 21 liters
  of milk daily.
  During the dry season, this is only 13 liter.
- As for production, sales is also heavily skewed to the right, and median
- values are 10 liters and 7 liters respectively.
+ As is the case for production, sales is also heavily skewed to the right,
+ and median values are 10 liters and 7 liters respectively.
  
 \end_layout
 
@@ -742,7 +981,7 @@ reference "fig:Share-of-milk"
 
  compares the distribution of the share of milk sold in the total amount
  of milk produced int the rainy season and in the dry season, separately
- for the cental milk shed (top panel) and the southwestern milk shed (bottom
+ for the central milk shed (top panel) and the southwestern milk shed (bottom
  panel).
  Compared to other agricultural commodities commonly produced by these farmers,
  such as maize and beans, market participation rates are high 
@@ -753,13 +992,22 @@ key "BARRETT2008299"
 \end_inset
 
 .
+ We clearly see that the southwestern milk shed is much more commercialized
+ than the central milk shed.
+ In the rainy season, the modal farmer in the southwest sells three quarters
+ of his milk.
+ Also in the dry season, most of the farmers still sell more than half of
+ the milk they produce.
+ In the central milk shed, we find that in the rainy season most farmers
+ sell between 30 and 50 percent of the milk they produce.
+ During the dry season, the modal farmer sells half of what was produced.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -800,6 +1048,611 @@ name "fig:Share-of-milk"
 
 \end_layout
 
+\begin_layout Standard
+The advent of small traders and transporters, specializing in collecting
+ small amounts of milk using motorbikes or bicycles to deliver to milk cooling
+ centers was also mentioned as an important characteristic of a modern dairy
+ value chain.
+ This change has affected marketing behavior of farmers.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Market-participation"
+
+\end_inset
+
+ provides information on market participation behaviour of dairy farmers
+ in our sample, again separately for the central milk shed and the southern
+ milk shed.
+ 
+\end_layout
+
+\begin_layout Standard
+We see that milk is widely traded locally between neigbours.
+ In the central milk shed, 31 percent of the farmer indicate that they have
+ sold milk to a neighbour in the last week.
+ Interestingly, in the milk shed that is dominated by a dairy export sector,
+ sales between neigbours in the village is much less common.
+ Here, only 11 percent of the farmers indicate that they sold milk to a
+ neighbour in the last 7 days.
+ In both milk sheds, selling milk at the farmgate to a middleman is most
+ common.
+ In the central milk shed, 40 percent of households report that they sold
+ to an itinerant trader, while this was one in two farmers in the southwestern
+ milk shed.
+ The majority of these are sales to traders that take the milk to milk collectio
+n centers (as opposed to traders that sell to consumers directly, to processors,
+ or to milk shops).
+ About 11 and 14 percent of farmers also report that they use transporters
+ to take the milk to milk collection centers.
+ We find that a significant share of farmers report the sold directly to
+ milk collection centers at least once in the last week, especially in the
+ soutwestern milk shed.
+ Direct sales to milk shops is negligible.
+ These results indicate that production is much more for local consumption
+ in the central milk shed than in the southwestern milk shed.
+\end_layout
+
+\begin_layout Standard
+The table also shows, for each trader type, the average number of transactions
+ that were reported in the previous week.
+ In general, farmers transact each day of the week, and there does not seem
+ to be much difference by trader type.
+ In general, cows are milked only once in Uganda.
+ This is done in the morning, and milk should arrive at the cooler within
+ 3 hours, otherwise the milk will not pass the alcohol test.
+ Few farmers also milk in the evening.
+ Often, this milk is used for home consumption, as milk collection centers
+ often cease to accept milk after 11 am.
+\end_layout
+
+\begin_layout Standard
+We also asked with how many different agents of each trader type transactions
+ were made.
+ For instance, we find that in the central milk shed, the average farmer
+ sold milk to about 3 different neighbours in the week previous to the survey.
+ In the southwestern milk shed, this is almost four.
+ In the southwestern milk shed, farmers seem to work with a designated trader.
+ In the central shed, the number of traders used is almost two.
+ In the southwest, farmers that directly supply milk collection centers
+ also usually ship to one and the same.
+ This is different in the central region, where to some extent, farmers
+ seem to try different milk collection centers.
+ Most likely, this is because, in the southwest, collection centers follow
+ prices set by the processors.
+ In the central region, milk collection centers deliver to varying outlets,
+ which may lead to higher variance in prices.
+ Farmers may attempt to take advantage of this and ship milk to different
+ milk collection centers depending on where highest prices are offered.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+This is something we need to check later at the mcc level
+\end_layout
+
+\end_inset
+
+ Formal testing using an exact Wilcoxon Mann Whitney Rank Sum Test confirms
+ that the number of milk collection centers used by the average farmer differs
+ significantly between the two milk sheds (p-value=0.002).
+\end_layout
+
+\begin_layout Standard
+The table also reports prices that were received by farmers conditional
+ on marketing channel, again separately for the central milk shed and the
+ southwestern milk shed.
+ In the central milk shed, we find that highest prices are offered by milk
+ collection centers.
+ We also see that, generally, high prices are obtained when milk is sold
+ to neighbours.
+ This is different from what is generally found for other commodities such
+ as maize or rice, where sales to neighbours usually happens at relatively
+ low price because the farmer needs cash urgently
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+I have often found this to be the case for maize, where if I regress price
+ on market channel, sales to neighbours generally comes out as fetching
+ the lowest price.
+ This is often because the men want a beer and have no money, so they sell
+ some maize to the neighbour at dumping prices (but this stereotypical interpret
+ation of things feels more like anthropology).
+ I always do this to check if the 
+\begin_inset Quotes eld
+\end_inset
+
+middlemen are parasites
+\begin_inset Quotes erd
+\end_inset
+
+ conspiracy theory applies, but I can not recall ever reporting this in
+ a paper.
+ Any ideas of papers where this is documented?
+\end_layout
+
+\end_inset
+
+.
+ Prices reportedly received from traders and transporters are significantly
+ lower.
+ This suggests that transport and other transaction costs that the trader
+ or transporter incurs are passed on to producers.
+ In the southwestern milk shed, it seems that, by far, the lowest prices
+ are offered by milk collection centers.
+ We also note that even in the shed that is dominated by a well functioning
+ export industry, sales of milk to neighbours remains a remunerative business.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Market participation
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Market-participation"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccc} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   	&	neighbour	&	trader	&	transporter	&	mcc	&	milk shop	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-6} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{5}{c}{
+\backslash
+textit{central milk shed}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+proportion selling to...	&	0.31	&	0.40	&	0.11	&	0.10	&	0.02	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+average number of transactions per week with...	&	5.78	&	6.31	&	6.52	&	6.42	&	6.65	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+average number within trader type	&	3.07	&	1.71	&	1.50	&	2.84	&	3.22	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+average price (UGX)	&	906	&	784	&	814	&	928	&	938	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+average quantity in last transaction (liters)	& 5	&	16	&	20	&	27	&	13	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{5}{c}{
+\backslash
+textit{southwestern milk shed}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+proportion selling to...	&	0.11	&	0.50	&	0.14	&	0.22	&	0.03	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+average number of transactions per week with...	&	7.38	&	7.18	&	6.71	&	6.92	&	6.50	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+average number within trader type	&	3.79	&	1.17	&	1.24	&	1.14	&	1.10	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+average price (UGX)	&	917	&	730	&	700	&	582	&	710	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+average quantity in last transaction (liters) &	7	&	24	&	27	&	27	&	22	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Based on author's calculations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally, we also report average quantities that were sold in the last transactio
+n for each particular channel.
+ As was to be expected, quantities sold to neighbours are lowest, on average
+ on 5 to 7 liters depending on the milk shed.
+ Amounts sold to traders and transporters are between 15 and 30 liters on
+ average.
+ The pattern also suggests that especially larger farmers engage directly
+ with milk collection centers.
+ For almost all categories, average amounts marketed are higher in the southwest
+ern milk shed than in the central milk shed, which is again consistent with
+ the hypothesis that the southwestern milk shed is more commercially oriented
+ than the central milk shed.
+\end_layout
+
+\begin_layout Section*
+Traders and middlemen
+\end_layout
+
+\begin_layout Standard
+A second important group of actors in the dairy value chain link producers
+ to other actors downstream, such as milk collection centers, milk shops
+ or processors.
+ Typically, this link consists of individuals that collect milk at the farm
+ gate in the villages using a bicycle or a light Indian or Chinese made
+ motorbike and transporting the milk to the next node in the value chain.
+ We differentiate between two types of actors.
+ First, there are individuals who buy milk at the farm-gate, transport the
+ milk and sell it to actors downstream.
+ A key characteristic of these actors is that they assume ownership of the
+ milk during transportation.
+ A second group acts as transport service providers.
+ They receive a fee to transport the milk of the farmer to its destination,
+ such as to the milk collection center.
+ Here, ownership of the milk remains with the producer.
+ 
+\end_layout
+
+\begin_layout Standard
+Competition between traders is important to prevent them from extracting
+ excess rents form the value chain.
+ We have asked each trader how many traders or transporters have similar
+ trading activities as yours in your trading area.
+ We find that there are on average almost 14 other traders to compete with.
+ However, the distribution is skewed with the median being 8 competitors.
+ Still, there is only one trader who reports no competition and only 9 that
+ report that there is only one other trader.
+ Interestingly, using an Exact Wilcoxon-Mann-Whitney Test, we conclude that
+ competition is significantly lower in the southwestern area (p<0.001).
+ We also asked each trader to estimate how many traders or transporters
+ had similar trading activities as yours in your trading area at the time
+ they started trading, which we use to calculate the average yearly increase
+ in competition.
+ We find that between the time the average trader started his business,
+ the number of competitors has increased yearly by about 18 percent.
+ There is no difference in increase of competition over time between the
+ two areas.
+\end_layout
+
+\begin_layout Standard
+Traders are typically men.
+ Also, compared to other actors in the dairy value chain, they are very
+ young; on average 30 years old.
+ Trading is indeed typically an activity for young men who are forced to
+ look for off-farm activities due to persistent record population growth
+ rates in Uganda.
+ 
+\end_layout
+
+\begin_layout Standard
+Traders and transporters have also experience substantial technological
+ change over the last decades.
+ First, the advent of mobile telephones with coverage even deep in rural
+ areas has had a profound impact on the agricultural sector, particularly
+ on agricultural markets 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "nakasone2014power"
+
+\end_inset
+
+.
+ Second, Uganda experienced a rapid increase in the import of Indian motorcyles.
+ While these so-called 
+\emph on
+boda boda's
+\emph default
+ were initially confined to the capital Kampala to transport individuals,
+ they have now also penetrated rural areas, where they are also used to
+ transport agricultural commodities.
+ Third, the DDA has sensitized both farmers and traders on the importance
+ of hygiene in the entire dairy value chain.
+ In particular, it is obligatory to use the special aluminum milk cans when
+ milk is stored and transported, as the alternative that is used, jerrycans,
+ can not be cleaned thoroughly.
+ Traders use seeves to keep cow hair and other foreign material out of the
+ milk.
+ 
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Trader-assets"
+
+\end_inset
+
+ compares traders in the central and southwestern milk sheds in terms of
+ assets related to the above three technological innovations.
+ We see that 90 percent of traders have at least one mobile phone, and there
+ is no difference between the two milk sheds.
+ In the central region, 71 percent of traders reports to be using a boda
+ boda for transporting milk; in the southwestern milk shed, this is almost
+ 80 percent.
+ For farmers that reported to be using a boda boda, we further asked if
+ they had adapted they motorbike for milk transportation.
+ Generally, this means that iron bars are welded on the motorbike to easily
+ fit the milk cans or jerrycans.
+ About half of the traders adopted their motorbike, and this is only slightly
+ higher in the more commercialized milk shed.
+ The largest difference between the two milk sheds is found for the use
+ of milk cans (generally cans of 50 liters).
+ We find that in the central milk shed, only about 40 percent of traders
+ uses aluminum milk cans, while this is 92 percent in the southwestern milk
+ shed.
+ At the same time, the use of seeves is slightly higher in the central region.
+ Virtually all traders in the southwestern milk shed keep records.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename trader_inov.pdf
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Trader assets
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Trader-assets"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Section*
+milk collection and bulking centers
+\end_layout
+
+\begin_layout Standard
+question: is variance in milk prices higher among mccs in the central region
+ than in the soutern region????
+\end_layout
+
 \begin_layout Section*
 Processors
 \end_layout
@@ -810,17 +1663,36 @@ Pearl Dairy is by far the largest exporter.
  total export.
 \end_layout
 
+\begin_layout Standard
+Price analysis
+\end_layout
+
+\begin_layout Standard
+Here, we compare prices received for milk conditional on the marketing channel.
+ Given that the increase in the number of traders and transporters and the
+ increase in milk collection centers have been identified as important changes
+ in the value chain, we differentiate between farmers that sell directly
+ to milk collection centers, farmers that sell to traders and transporters,
+ and farmers that sell to others (mostly direct to neighbors).
+ For farmers that sell to traders and transporters, we additionally differentiat
+e between farmers that sell to traders that then sell to milk collection
+ centers, traders that sell to processors, and traders that use other marketing
+ channels (eg milk shops, markets,...).
+\end_layout
+
+\begin_layout Standard
+How do we do this? Using OLS? Regression explaining prices are often used
+ in the literature.
+ 
+\end_layout
+
 \begin_layout Section*
 Conclusion
 \end_layout
 
 \begin_layout Standard
-We find that, overall, herd size increase by about 15 percent over the last
- 10 years.
- More striking is the change in the composition of the herd: while 10 years
- ago only one in five cows was exotic, these days half of the herd consists
- of improved animals.
- Possible reasons include
+We find that local dairy value chains are catching up very quickly in terms
+ of technology adoption.
 \end_layout
 
 \begin_layout Standard

@@ -1,3 +1,6 @@
+
+library(ggplot2)
+library(ggridges)
 mccs <- read.csv("/home/bjvca/data/projects/PIMDVC/data/public/mccs.csv")
 
 mccs$average_collected <-  as.numeric(as.character(mccs$mcc.q42))
@@ -36,3 +39,16 @@ ggplot(to_plot_means, aes(reason, percentage)) +
   coord_flip() + theme(axis.text=element_text(size=12),
         axis.title=element_text(size=14,face="bold")) + ylim(0,100)
 dev.off()
+
+mccs$mcc.q39[mccs$mcc.q39==999] <- NA
+mccs$mcc.q40[mccs$mcc.q40==999] <- NA
+
+
+tapply(mccs$mcc.q39,mccs$shed,sd, na.rm=T)
+tapply(mccs$mcc.q40,mccs$shed,sd, na.rm=T)
+
+mccs$av_price <- (mccs$mcc.q39 + mccs$mcc.q40)/2
+
+
+
+
