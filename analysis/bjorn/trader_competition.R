@@ -102,8 +102,39 @@ pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/trader_inov.pdf")
 ggradar(df, font.radar = "Times",legend.text.size = 15)
 dev.off()
 
+traders$traders <- FALSE
+traders$traders[traders$trader.q16==1 | traders$trader.q16==3 ] <- TRUE
+traders$transporters <- FALSE
+traders$transporters[traders$trader.q16==2 | traders$trader.q16==3 ] <- TRUE
+traders$trader.q36[traders$trader.q36==999] <- NA
+traders$trader.q48[traders$trader.q48==999] <- NA
+traders$trader.q37[traders$trader.q37==999] <- NA
+traders$trader.q49[traders$trader.q49==999] <- NA
+traders$trader.q33[traders$trader.q33==999] <- NA
+traders$trader.q46[traders$trader.q46==999] <- NA
+### how many farmers
+tapply(traders$trader.q36[traders$traders ],traders$shed[traders$traders ] ,mean, na.rm=T)[1]
+tapply(traders$trader.q36[traders$transporters ],traders$shed[traders$transporters ] ,mean, na.rm=T)
 
+tapply(traders$trader.q48[traders$traders ],traders$shed[traders$traders ] ,mean, na.rm=T)
+tapply(traders$trader.q48[traders$transporters ],traders$shed[traders$transporters ] ,mean, na.rm=T)
+### how much liters collected
+tapply(traders$trader.q37[traders$traders ],traders$shed[traders$traders ] ,mean, na.rm=T)
+tapply(traders$trader.q37[traders$transporters ],traders$shed[traders$transporters ] ,mean, na.rm=T)
 
+tapply(traders$trader.q49[traders$traders ],traders$shed[traders$traders ] ,mean, na.rm=T)
+tapply(traders$trader.q49[traders$transporters ],traders$shed[traders$transporters ] ,mean, na.rm=T)
+### prices
+tapply(traders$trader.q33[traders$traders ],traders$shed[traders$traders ] ,mean, na.rm=T)
+tapply(traders$trader.q33[traders$transporters ],traders$shed[traders$transporters ] ,mean, na.rm=T)
+
+tapply(traders$trader.q46[traders$traders ],traders$shed[traders$traders ] ,mean, na.rm=T)
+tapply(traders$trader.q46[traders$transporters ],traders$shed[traders$transporters ] ,mean, na.rm=T)
+
+traders$trader.q72[traders$trader.q72>998] <- NA
+
+traders$coop <- (traders$trader.q73 == 3 | traders$trader.q73 == 4)
+summary(lm(trader.q64~coop+shed, data=traders))
 
 
 
