@@ -97,11 +97,11 @@ res[7,1] <- mean(farmers$herdsize_local_b[farmers$shed=="C"], na.rm=T)
 res[8,1] <-  mean(farmers$herdsize_local[farmers$shed=="C"], na.rm=T)
 res <- data.frame(res)
 
-res[c(1,3,5,7),2] <- "10 years ago"
+res[c(1,3,5,7),2] <- "10 y ago"
 res[c(2,4,6,8),2] <- "now"
 res[c(1,2,5,6),3] <- "exotics"
 res[c(3,4,7,8),3] <- "local"
-res[1:4,4] <- "Southwestern shed"
+res[1:4,4] <- "Southwest shed"
 res[5:8,4] <- "Central shed"
 
 names(res) <- c("number","time","type","shed")
@@ -109,6 +109,11 @@ pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/herd_time.pdf")
 ggplot(res, aes(x = time, y = number, fill = type)) + 
   geom_bar(stat = "identity")  + facet_grid(. ~ shed) + theme(axis.text=element_text(size=14),
         axis.title=element_text(size=16,face="bold"))  + theme(legend.text=element_text(size=14)) + theme(strip.text.x = element_text(size = 14))
+dev.off()
+pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/herd_time_pres.pdf")
+ggplot(res, aes(x = time, y = number, fill = type)) + 
+  geom_bar(stat = "identity")  + facet_grid(. ~ shed) + theme(axis.text=element_text(size=24),
+        axis.title=element_text(size=24,face="bold"))  + theme(legend.text=element_text(size=24)) + theme(strip.text.x = element_text(size = 24)) + theme(legend.title = element_blank()) 
 dev.off()
 
  mean(farmers$herdsize_exot_b, na.rm=T)/mean(farmers$herdsize_local_b+farmers$herdsize_exot_b, na.rm=T)
@@ -516,6 +521,202 @@ ggplot(to_plot, aes(x = value, y = variable, fill = variable)) +
   theme_ridges() +
   theme(legend.position = "none") + scale_x_continuous(limits = c(0,1)) + facet_grid(shed ~ .)
 dev.off()
-###
+### cooperative membership - does it affect hygene?
+
+farmers$coop <- (farmers$hh_head.HH.cooperative.q266==1 | farmers$hh_head.HH.cooperative.q266==2) 
+farmers$education_prim <- (farmers$hh_head.HH.q6 != 1)
+farmers$education_sec <- (farmers$hh_head.HH.q6 == 4 | farmers$hh_head.HH.q6 == 5 | farmers$hh_head.HH.q6 == 6)
+farmers$dairy <- farmers$hh_head.HH.Housing.q17==2
+
+controls <- "shed+education_prim+education_sec+dairy"
+
+
+
+## milk in shed
+shed <- lm( as.formula(paste("(farmers$hh_head.HH.food_safety.q181==1)~coop",controls,sep="+")),data=farmers)
+
+#wash udders with lukewarm water
+wash <- lm( as.formula(paste("(hh_head.HH.food_safety.q186 == 2)~coop",controls,sep="+")),data=farmers)
+#udders dried with clean towel
+dry <- lm( as.formula(paste("(hh_head.HH.food_safety.q188 ==3)~coop",controls,sep="+")),data=farmers)
+#milking cream used
+cream <- lm( as.formula(paste("(hh_head.HH.food_safety.q187 == 'Yes')~coop",controls,sep="+")),data=farmers)
+
+
+##uses aluminum buckets for milking
+bucket <- lm( as.formula(paste("(hh_head.HH.food_safety.q190.4 ==T)~coop",controls,sep="+")),data=farmers)
+##store milk in cans
+milk_cans <- lm( as.formula(paste("(hh_head.HH.livestock_assets.q243 == 'Yes')~coop",controls,sep="+")),data=farmers)
+##wash hands with soap
+wash_hands <- lm( as.formula(paste("(hh_head.HH.food_safety.q192 ==3)~coop",controls,sep="+")),data=farmers)
+
+
+
+credplot.gg <- function(d,units){
+ # d is a data frame with 4 columns
+ # d$x gives variable names
+ # d$y gives center point
+ # d$ylo gives lower limits
+ # d$yhi gives upper limits
+ require(ggplot2)
+ p <- ggplot(d, aes(x=x, y=y, ymin=ylo, ymax=yhi))+
+ geom_pointrange(position=position_dodge(-.4), color="blue")+ 
+geom_text(aes(label=format(round(y, 2), nsmall = 2)), nudge_x = .1, hjust=-0.1)+
+ geom_hline(yintercept = 0, linetype=2)+
+ coord_flip()+
+ xlab('') + ylab(units)+ theme(axis.text=element_text(size=18),
+        axis.title=element_text(size=14,face="bold"),legend.text=element_text(size=18), legend.title=element_blank())+
+    geom_errorbar(aes(ymin=ylo, ymax=yhi),position=position_dodge(-.4),width=0,cex=1.5, color="blue") 
+ return(p)
+}
+
+
+
+sig <- 1.64  ## 90 percent
+plot_ag <- data.frame(matrix(NA, 4,5))
+names(plot_ag) <- c("x","y","ylo","yhi","grp")
+h <- 7
+plot_ag[7,1] <- "Hands washed with soap?"
+plot_ag[6,1] <- "Milk cans used to store?"
+plot_ag[5,1] <- "Milk bucket used to milk?"
+plot_ag[4,1] <- "Used udder cream?"
+plot_ag[3,1] <- "Udders dried with clean towel?"
+plot_ag[2,1] <- "Udders washed with lukewarm water?"
+
+plot_ag[1,1] <- "Milk in shed?"
+
+plot_ag[7,2] <- coef(wash_hands)[2]
+plot_ag[6,2] <- coef(milk_cans)[2]
+plot_ag[5,2] <- coef(bucket)[2]
+plot_ag[4,2] <- coef(cream)[2]
+plot_ag[3,2] <- coef(dry)[2]
+plot_ag[2,2] <- coef(wash)[2]
+
+plot_ag[1,2] <-  coef(shed)[2]
+
+
+plot_ag[7,3] <- confint(wash_hands)[2,1]
+plot_ag[6,3] <- confint(milk_cans)[2,1]
+plot_ag[5,3] <- confint(bucket)[2,1]
+plot_ag[4,3] <- confint(cream)[2,1]
+plot_ag[3,3] <- confint(dry)[2,1]
+plot_ag[2,3] <- confint(wash)[2,1]
+
+plot_ag[1,3] <- confint(shed)[2,1]
+
+plot_ag[7,4] <- confint(wash_hands)[2,2]
+plot_ag[6,4] <- confint(milk_cans)[2,2]
+plot_ag[5,4] <- confint(bucket)[2,2]
+plot_ag[4,4] <- confint(cream)[2,2]
+plot_ag[3,4] <- confint(dry)[2,2]
+plot_ag[2,4] <- confint(wash)[2,2]
+
+plot_ag[1,4] <- confint(shed)[2,2]
+
+plot_ag$x <- factor(plot_ag$x, levels=plot_ag$x)
+
+
+pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/hygene.pdf")
+credplot.gg(plot_ag,'%')
+dev.off()
+
+farmers$contract <- NA
+farmers$contract[farmers$hh_head.HH.sales.R29==1] <- "oral"
+farmers$contract[farmers$hh_head.HH.sales.R29==2] <- "written"
+farmers$contract[farmers$hh_head.HH.sales.R29==3] <- "no"
+
+tapply(farmers$herdsize_exot/(farmers$herdsize_exot+farmers$herdsize_local),farmers$contract, mean, na.rm=T)
+
+farmers$contract <- NA
+farmers$contract[farmers$hh_head.HH.sales.q93==1 | farmers$hh_head.HH.sales.q111==1 | farmers$hh_head.HH.sales.q129==1] <- "oral"
+farmers$contract[farmers$hh_head.HH.sales.q93==2 | farmers$hh_head.HH.sales.q111==2 | farmers$hh_head.HH.sales.q129==2] <- "written"
+farmers$contract[farmers$hh_head.HH.sales.q93==3 | farmers$hh_head.HH.sales.q111==3 | farmers$hh_head.HH.sales.q129==3] <- "no"
+
+tapply(farmers$herdsize_exot/(farmers$herdsize_exot+farmers$herdsize_local),farmers$contract, mean, na.rm=T)
+
+
+farmers$contract <- NA
+farmers$contract[farmers$hh_head.HH.sales.q147==1 | farmers$hh_head.HH.sales.q166==1 | farmers$hh_head.HH.sales.R9==1] <- "oral"
+farmers$contract[farmers$hh_head.HH.sales.q147==2 | farmers$hh_head.HH.sales.q166==2 | farmers$hh_head.HH.sales.R9==2] <- "written"
+farmers$contract[farmers$hh_head.HH.sales.q147==3 | farmers$hh_head.HH.sales.q166==3 | farmers$hh_head.HH.sales.R9==3] <- "no"
+
+tapply(farmers$herdsize_exot/(farmers$herdsize_exot+farmers$herdsize_local),farmers$contract, mean, na.rm=T)
+
+### all
+
+farmers$contract <- NA
+farmers$contract[farmers$hh_head.HH.sales.R29==1 | farmers$hh_head.HH.sales.q93==1 | farmers$hh_head.HH.sales.q111==1 | farmers$hh_head.HH.sales.q129==1|farmers$hh_head.HH.sales.q147==1 | farmers$hh_head.HH.sales.q166==1 | farmers$hh_head.HH.sales.R9==1] <- "oral"
+farmers$contract[farmers$hh_head.HH.sales.R29==2 | farmers$hh_head.HH.sales.q93==2 | farmers$hh_head.HH.sales.q111==2 | farmers$hh_head.HH.sales.q129==2 | farmers$hh_head.HH.sales.q147==2 | farmers$hh_head.HH.sales.q166==2 | farmers$hh_head.HH.sales.R9==2] <- "written"
+farmers$contract[farmers$hh_head.HH.sales.R29==3 | farmers$hh_head.HH.sales.q93==3 | farmers$hh_head.HH.sales.q111==3 | farmers$hh_head.HH.sales.q129==3 |farmers$hh_head.HH.sales.q147==3 | farmers$hh_head.HH.sales.q166==3 | farmers$hh_head.HH.sales.R9==3] <- "no"
+
+### adoption of cows
+pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/adoption_contract1.pdf")
+barplot(tapply(farmers$herdsize_exot/(farmers$herdsize_exot+farmers$herdsize_local),farmers$contract, mean, na.rm=T), xlab="contract type", ylab="share of cross-bred cows in total herd")
+dev.off()
+pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/adoption_contract2.pdf")
+### adoption of milk cans for storage
+barplot(tapply(farmers$hh_head.HH.food_safety.q190.6==T,farmers$contract, mean, na.rm=T), xlab="contract type", ylab="stores milk in milk cans (% of farmers)")
+
+dev.off()
+
+pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/adoption_contract3.pdf")
+### no free range
+barplot(tapply(farmers$hh_head.HH.food_safety.q196.1!=T  ,farmers$contract, mean, na.rm=T), xlab="contract type", ylab="uses improved feeding (% of farmers)")
+dev.off()
+
+
+res <- matrix(NA,3,3)
+
+res[1,] <- tapply(farmers$herdsize_exot/(farmers$herdsize_exot+farmers$herdsize_local),farmers$contract, mean, na.rm=T)
+res[2,] <- tapply(farmers$hh_head.HH.food_safety.q190.6==T,farmers$contract, mean, na.rm=T)
+res[3,] <- tapply(farmers$hh_head.HH.food_safety.q196.1!=T  ,farmers$contract, mean, na.rm=T)
+
+services <- c("share of cross-bred cows in total herd",
+"stores milk in milk cans (% of farmers)",
+"uses improved feeding (% of farmers)")
+
+res <- data.frame(services, res)
+names(res) <- c("innovation","no","oral","written")
+
+
+res_m <- melt(res)
+
+names(res_m) <-  c("services","contract","share")
+pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/contract.pdf")
+ggplot(data=res_m, aes(x=reorder(services,share), y=share, fill=contract)) +
+geom_bar(stat="identity", position=position_dodge()) + coord_flip() +  theme(axis.text = element_text(size = 12))+ theme(axis.title = element_text(size = 12)) + theme(text = element_text(size = 12)) + theme(axis.title.y=element_blank()) + theme(legend.text=element_text(size=12))
+dev.off()
+
+ggplot(data=res_m, aes(x=reorder(services,share), y=share, fill=contract)) +
+geom_bar(stat="identity", position=position_dodge()) + coord_flip() +  theme(axis.text = element_text(size = 35))+ theme(axis.title = element_text(size = 25)) + theme(text = element_text(size = 25)) + theme(axis.title.y=element_blank()) + theme(legend.text=element_text(size=25))
+
+farmers$hh_head.HH.recall.q236[farmers$hh_head.HH.recall.q236==999] <- NA
+
+farmers$prod_b <- as.numeric(as.character(farmers$hh_head.HH.recall.q236))
+
+tapply((farmers$prod_dry +farmers$prod_rain)/2, farmers$shed, mean, na.rm=T)
+tapply(farmers$prod_b, farmers$shed, mean, na.rm=T)
+
+       C       SW 
+28.97966 53.90917 
+
+tapply(farmers$prod_b, farmers$shed, mean, na.rm=T)
+       C       SW 
+18.31287 35.65895 
+
+
+df <- data.frame(year=c("2008", "2018","2008", "2018"),
+                prod=c(18.31287, 28.97966, 35.65895 ,53.90917 ), shed= c("C","C","SW","SW"))
+head(df)
+
+
+pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/production_pres.pdf")
+ggplot(data=df, aes(x=year, y=prod, group=shed, col=shed)) +
+  geom_line(size=3)+
+  geom_point(size=6)+ theme(axis.text=element_text(size=30),
+        axis.title=element_text(size=30,face="bold"),legend.text=element_text(size=30), legend.title=element_blank())
+dev.off()
+
+
 
 

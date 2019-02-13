@@ -111,15 +111,15 @@ test_data <-
   data.frame(
    liters = c(9.496439,12.06651, 19.93746, 10.284458, 28.72254 ,32.59935),
     rur_urb = c("rural","rural","rural","urban","urban","urban" ),
-    time = c("2005/06","2009/10","2012/13","2005/06","2009/10","2012/13")
+    time = c("2005","2009","2012","2005","2009","2012")
   )
-pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/consumption.pdf")
+pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/consumption_pres.pdf")
  
 
 ggplot(data=test_data, aes(x=time, y=liters, group=rur_urb, colour=rur_urb)) +
-    geom_line(size=1.5) +
-    geom_point() + theme(axis.text=element_text(size=14),
-        axis.title=element_text(size=16,face="bold")) + ylim(0,35) + theme(legend.title=element_blank()) + theme(legend.text=element_text(size=16))
+    geom_line(size=3) +
+    geom_point(size=6) + theme(axis.text=element_text(size=30),
+        axis.title=element_text(size=30,face="bold")) + ylim(0,35) + theme(legend.title=element_blank()) + theme(legend.text=element_text(size=30))
 dev.off()
 
 ### consumption as reported by farmers in the survey
