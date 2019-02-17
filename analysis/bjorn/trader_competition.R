@@ -62,9 +62,9 @@ names(to_plot_means)[1] <- "liters_av"
 to_plot_means$outlet <- ordered(to_plot_means$outlet,levels = c("processor","coop_mcc","private_mcc","to_shops","direct"))
                                 
 pdf("/home/bjvca/data/projects/PIMDVC/presentations/trader_sold_to.pdf")
-ggplot(to_plot_means, aes(type, liters_av)) +   
+ggplot(to_plot_means, aes(type, liters_av)) +   theme_bw() +
   geom_bar(aes(fill = outlet), position = "dodge", stat="identity")  +
-  coord_flip() + theme(axis.text=element_text(size=12),
+  coord_flip() + theme(axis.text=element_text(size=12) 
     
 df <- data.frame(c("C","SW"))
 
@@ -99,7 +99,7 @@ library(ggradar)
 names(df) <- c("shed","has mobile","uses boda","adapted boda","uses milk cans","uses seeves","keeps records")
 
 pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/trader_inov.pdf")
-ggradar(df, font.radar = "Times",legend.text.size = 15)
+ggradar(df, font.radar = "Times",legend.text.size = 15) + scale_colour_grey(start = .2, end = .6)
 dev.off()
 
 traders$traders <- FALSE

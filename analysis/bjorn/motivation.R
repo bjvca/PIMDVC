@@ -113,13 +113,18 @@ test_data <-
     rur_urb = c("rural","rural","rural","urban","urban","urban" ),
     time = c("2005","2009","2012","2005","2009","2012")
   )
-pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/consumption_pres.pdf")
- 
-
+pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/consumption.pdf")
 ggplot(data=test_data, aes(x=time, y=liters, group=rur_urb, colour=rur_urb)) +
     geom_line(size=3) +
-    geom_point(size=6) + theme(axis.text=element_text(size=30),
-        axis.title=element_text(size=30,face="bold")) + ylim(0,35) + theme(legend.title=element_blank()) + theme(legend.text=element_text(size=30))
+    geom_point(size=6) +  theme_bw()+theme(axis.text=element_text(size=18),
+        axis.title=element_text(size=18,face="bold")) + ylim(0,35)  + theme(legend.title=element_blank()) + theme(legend.text=element_text(size=18))  + scale_colour_grey(start = .2, end = .8)
+dev.off()
+
+pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/consumption_pres.pdf")
+ggplot(data=test_data, aes(x=time, y=liters, group=rur_urb, colour=rur_urb)) +
+    geom_line(size=3) +
+    geom_point(size=6)+theme(axis.text=element_text(size=30),
+        axis.title=element_text(size=30,face="bold")) + ylim(0,35)  + theme(legend.title=element_blank()) + theme(legend.text=element_text(size=30))  
 dev.off()
 
 ### consumption as reported by farmers in the survey

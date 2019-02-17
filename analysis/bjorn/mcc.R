@@ -97,7 +97,7 @@ res_m <- melt(res)
 names(res_m) <-  c("services","ownership","percent")
 pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/services.pdf")
 ggplot(data=res_m, aes(x=reorder(services,percent), y=percent, fill=ownership)) +
-geom_bar(stat="identity", position=position_dodge()) + coord_flip() +  theme(axis.text = element_text(size = 12))+ theme(axis.title = element_text(size = 12)) + theme(text = element_text(size = 12)) + theme(axis.title.y=element_blank()) + theme(legend.text=element_text(size=12))
+geom_bar(stat="identity", position=position_dodge()) + coord_flip() +  theme_bw() +theme(axis.text = element_text(size = 12))+ theme(axis.title = element_text(size = 12)) + theme(text = element_text(size = 12)) + theme(axis.title.y=element_blank()) + theme(legend.text=element_text(size=12)) +  scale_fill_grey(start = .2, end = .7)
 dev.off()
 
 ##redo for presentation
