@@ -109,6 +109,14 @@ farmers_SW <- farmers_SW[c(names(farmers_SW)[1:230],"hh_head.HH.sales.q105",name
 farmers_C <- farmers_C[c(names(farmers_C)[1:231],"hh_head.HH.sales.q105x",names(farmers_C)[232:573])]
 
 
+### insert GPS coordinates - for liz 
+#mccs_C <- cbind(mccs_C,read.csv("/home/bjvca/data/projects/PIMDVC/data/raw/MCCs.csv")[c("mcc._gps_latitude", "mcc._gps_longitude", "mcc._gps_altitude")])
+#mccs_SW <- cbind(mccs_SW,read.csv("/home/bjvca/data/projects/PIMDVC/data/raw/Mbarara_MCC.csv")[c("mcc._gps_latitude", "mcc._gps_longitude", "mcc._gps_altitude")])
+
+
+#farmers_C <- cbind(farmers_C,read.csv("/home/bjvca/data/projects/PIMDVC/data/raw/dairy_farmers.csv")[c("hh_head.HH._gps_latitude", "hh_head.HH._gps_longitude", "hh_head.HH._gps_altitude")])
+#farmers_SW <- cbind(farmers_SW,read.csv("/home/bjvca/data/projects/PIMDVC/data/raw/Mbarara_farmers.csv")[c("hh_head.HH._gps_latitude", "hh_head.HH._gps_longitude", "hh_head.HH._gps_altitude"  )])
+
 mccs_SW$shed <- "SW"
 mccs_C$shed <- "C"
 mccs <-  rbind(mccs_SW, mccs_C)
@@ -126,8 +134,13 @@ farmers$ID <- paste("F", rownames(farmers), sep="_")
 traders$ID <- paste("T", rownames(traders), sep="_")
 mccs$ID <- paste("M", rownames(mccs), sep="_")
 
+### uncomment if you also want gps coordinates
+#write.csv(farmers, "/home/bjvca/data/projects/PIMDVC/data/public/farmers_gps.csv")
+#write.csv(traders, "/home/bjvca/data/projects/PIMDVC/data/public/traders_gps.csv")
+#write.csv(mccs, "/home/bjvca/data/projects/PIMDVC/data/public/mccs_gps.csv")
 
 write.csv(farmers, "/home/bjvca/data/projects/PIMDVC/data/public/farmers.csv")
 write.csv(traders, "/home/bjvca/data/projects/PIMDVC/data/public/traders.csv")
 write.csv(mccs, "/home/bjvca/data/projects/PIMDVC/data/public/mccs.csv")
+
 

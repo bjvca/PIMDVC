@@ -97,7 +97,7 @@ res[7,1] <- mean(farmers$herdsize_local_b[farmers$shed=="C"], na.rm=T)
 res[8,1] <-  mean(farmers$herdsize_local[farmers$shed=="C"], na.rm=T)
 res <- data.frame(res)
 
-res[c(1,3,5,7),2] <- "10 y ago"
+res[c(1,3,5,7),2] <- "10 years ago"
 res[c(2,4,6,8),2] <- "now"
 res[c(1,2,5,6),3] <- "exotics"
 res[c(3,4,7,8),3] <- "local"
@@ -107,13 +107,13 @@ res[5:8,4] <- "Central shed"
 names(res) <- c("number","time","type","shed")
 pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/herd_time.pdf")
 ggplot(res, aes(x = time, y = number, fill = type)) + 
-  geom_bar(stat = "identity")  + facet_grid(. ~ shed) + theme(axis.text=element_text(size=14),
-        axis.title=element_text(size=16,face="bold"))  + theme(legend.text=element_text(size=14)) + theme(strip.text.x = element_text(size = 14))
+  geom_bar(stat = "identity")  + facet_grid(. ~ shed) + theme_bw() + theme(axis.text=element_text(size=18),
+        axis.title=element_text(size=18,face="bold"))  + theme(legend.text=element_text(size=18)) + theme(strip.text.x = element_text(size = 18))   + theme(legend.title = element_blank()) +  scale_fill_grey(start = .2, end = .7) 
 dev.off()
 pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/herd_time_pres.pdf")
 ggplot(res, aes(x = time, y = number, fill = type)) + 
   geom_bar(stat = "identity")  + facet_grid(. ~ shed) + theme(axis.text=element_text(size=24),
-        axis.title=element_text(size=24,face="bold"))  + theme(legend.text=element_text(size=24)) + theme(strip.text.x = element_text(size = 24)) + theme(legend.title = element_blank()) 
+        axis.title=element_text(size=24,face="bold"))  + theme(legend.text=element_text(size=24)) + theme(strip.text.x = element_text(size = 24)) + theme(legend.title = element_blank()) +  scale_fill_grey(start = .2, end = .7)
 dev.off()
 
  mean(farmers$herdsize_exot_b, na.rm=T)/mean(farmers$herdsize_local_b+farmers$herdsize_exot_b, na.rm=T)
@@ -207,13 +207,13 @@ farmers$hh_head.HH.animal_health.q201[farmers$hh_head.HH.animal_health.q201>900]
 farmers$hh_head.HH.animal_health.q202[farmers$hh_head.HH.animal_health.q202>900] <- NA
 
 ### distance to milk collection center
-p1 <- ggplot(farmers, aes(hh_head.HH.distance.q11, herdsize_exot/herdsize, colour=shed)) + geom_smooth()  + xlab("distance to milk collection center") + ylab("share of exotic cows")  + coord_cartesian(xlim = c(0, 20), ylim=c(0,1))
+p1 <- ggplot(farmers, aes(hh_head.HH.distance.q11, herdsize_exot/herdsize, colour=shed)) + geom_smooth()  + theme_bw()  + xlab("distance to milk collection center") + ylab("share of exotic cows")  + coord_cartesian(xlim = c(0, 20), ylim=c(0.3,1)) + scale_colour_grey(start = .2, end = .6)
 #murram
-p2 <-  ggplot(farmers, aes(hh_head.HH.distance.q10, herdsize_exot/herdsize, colour=shed)) + geom_smooth()  + xlab("distance to all weather road") + ylab("share of exotic cows")  + coord_cartesian(xlim = c(0, 20), ylim=c(0,1))
+p2 <-  ggplot(farmers, aes(hh_head.HH.distance.q10, herdsize_exot/herdsize, colour=shed)) + geom_smooth()  + theme_bw() + xlab("distance to all weather road") + ylab("share of exotic cows")  + coord_cartesian(xlim = c(0, 20), ylim=c(0.3,1)) + scale_colour_grey(start = .2, end = .6)
 ###distance to shop for medicien
-p3 <- ggplot(farmers, aes(hh_head.HH.animal_health.q202, herdsize_exot/herdsize, colour=shed))  + coord_cartesian(xlim = c(0, 20), ylim=c(.25,1))+  geom_smooth()  + xlab("distance to drug store (km)") + ylab("share of exotic cows")
+p3 <- ggplot(farmers, aes(hh_head.HH.animal_health.q202, herdsize_exot/herdsize, colour=shed)) + theme_bw()  + coord_cartesian(xlim = c(0, 20), ylim=c(.3,1))+  geom_smooth()  + xlab("distance to drug store (km)") + ylab("share of exotic cows") + scale_colour_grey(start = .2, end = .6)
 ###distance to shop for medicien
-p4 <- ggplot(farmers, aes(hh_head.HH.animal_health.q201, herdsize_exot/herdsize, colour=shed))  + coord_cartesian(xlim = c(0, 20), ylim=c(.25,1))+  geom_smooth()  + xlab("distance to vet (km)") + ylab("share of exotic cows")
+p4 <- ggplot(farmers, aes(hh_head.HH.animal_health.q201, herdsize_exot/herdsize, colour=shed)) + theme_bw()  + coord_cartesian(xlim = c(0, 20), ylim=c(.3,1))+  geom_smooth()  + xlab("distance to vet (km)") + ylab("share of exotic cows") + scale_colour_grey(start = .2, end = .6)
 
 
 pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/exotic_adoption_space.pdf")
@@ -516,9 +516,9 @@ to_plot <- melt(farmers[c("shed","sold_dry_share","sold_rain_share")])
 
 levels(to_plot$variable) <- c("dry season","rainy season") 
 pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/market_part.pdf")
-ggplot(to_plot, aes(x = value, y = variable, fill = variable)) +
+ggplot(to_plot, aes(x = value, y = variable, fill = variable)) + theme_bw() +
   geom_density_ridges() +
-  theme_ridges() +
+  theme_ridges() +  scale_fill_grey(start = .2, end = .7) +
   theme(legend.position = "none") + scale_x_continuous(limits = c(0,1)) + facet_grid(shed ~ .)
 dev.off()
 ### cooperative membership - does it affect hygene?
@@ -682,9 +682,10 @@ names(res) <- c("innovation","no","oral","written")
 res_m <- melt(res)
 
 names(res_m) <-  c("services","contract","share")
+
 pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/contract.pdf")
 ggplot(data=res_m, aes(x=reorder(services,share), y=share, fill=contract)) +
-geom_bar(stat="identity", position=position_dodge()) + coord_flip() +  theme(axis.text = element_text(size = 12))+ theme(axis.title = element_text(size = 12)) + theme(text = element_text(size = 12)) + theme(axis.title.y=element_blank()) + theme(legend.text=element_text(size=12))
+geom_bar(stat="identity", position=position_dodge()) + coord_flip() + theme_bw() +  theme(axis.text = element_text(size = 12))+ theme(axis.title = element_text(size = 12)) + theme(text = element_text(size = 12)) + theme(axis.title.y=element_blank()) + theme(legend.text=element_text(size=12))+scale_fill_grey(start = .2, end = .7) 
 dev.off()
 
 ggplot(data=res_m, aes(x=reorder(services,share), y=share, fill=contract)) +
