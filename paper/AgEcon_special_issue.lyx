@@ -1,0 +1,4996 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, urlcolor=blue, citecolor=blue, pdfstartview={FitH}, hyperfootnotes=false, unicode=true"
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+author{Bjorn Van Campenhout
+\backslash
+thanks{Development Strategy and Governance Division, International Food
+ Policy Research Institute, Leuven, Belgium - corresponding author: b.vancampenho
+ut@cgiar.org} 
+\backslash
+footnotemark[3] , Bart Minten
+\backslash
+thanks{Development Strategy and Governance Division, International Food
+ Policy Research Institute, Addis Abeba, Ethiopia}, and Johan Swinnen
+\backslash
+thanks{LICOS Center for Institutions and Economic Performance, KULeuven,
+ Belgium}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Domestic versus export-led agricultural transformation: Evidence from Uganda’s
+ dairy value chain 
+\end_layout
+
+\begin_layout Abstract
+Driven by increased demand from both local and export markets and facilitated
+ by far-reaching liberalization and privatization policies, the dairy sub-sector
+ in Uganda has undergone significant changes in the last few decades.
+ With a comparative advantage in milk production, the southwest of Uganda
+ has started to attract considerable Foreign Direct Investment (FDI) in
+ processing capacity, mainly targeting the export market.
+ At the same time, other milk producing areas such as the central region
+ have stepped in to cater for the local market, particularly urban consumers
+ in Kampala and other secondary towns.
+ We exploit this evolution of the value chain at two speeds to document
+ trends in key technological and institutional innovations that both result
+ from the emergence of export-led dairy value chains and drive further upgrading.
+ Furthermore, as most processors are to some extent involved in export,
+ we also correlate these innovations to the level of integration into formal
+ value chains as a robustness check.
+ 
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+The dairy value chain in Uganda has undergone substantial changes in the
+ last few decades.
+ These changes were driven by a variety of factors.
+ On the demand side, consumption of milk has been on the rise.
+ As regional poverty has decreased dramatically, higher incomes resulted
+ in rapidly increasing consumption of dairy products, which are known to
+ be highly income elastic 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "COLEN2018116,10.1093/jn/133.11.3907S"
+
+\end_inset
+
+.
+ Especially in cities, consumers are confronted with an increasing availability
+ of various dairy products such as milk, yogurt and ice cream in both informal
+ shops and emerging supermarkets, and consumers become increasingly aware
+ of the health benefits of dairy products 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ruel2017urbanization,francesconi2010evolution"
+
+\end_inset
+
+.
+ But not only local demand for dairy products has increased.
+ The dairy sub-sector has also become an important export sector for Uganda.
+ On the supply side, the government's liberalization push in the late nineties
+ and the eventual privatization of the state parastatal led to a gradual
+ increase in competition between processors.
+ But the most important supply push is probably the influx of Foreign Direct
+ Investment (FDI) in processing capacity geared towards the export market
+ from 2014 onward.
+ These demand and supply drivers led to a significant transformation of
+ the dairy value chain.
+ In this paper, we document some of the endogenous innovations that simultaneous
+ly occurred at different levels within the chain.
+ 
+\end_layout
+
+\begin_layout Standard
+Interestingly, due to a combination of agglomeration effects and a comparative
+ advantage in milk production, the influx of foreign direct investment concentra
+ted almost exclusively in the so-called southwestern milk shed, located
+ around the town of Mbarara.
+ As a result, this area has become tightly integrated in a global export-led
+ value chain: in the course of only a few years, the value chain has changed
+ dramatically, with large processors sourcing raw milk from farmers, often
+ organized in cooperatives, converting raw milk into complex products with
+ a long shelf life, such as Ultra High Temperature (UHT) treated milk, mostly
+ for export.
+ At the same time, a nearby area similar in agro-ecological conditions and
+ with similar aggregate production levels, has taken over milk production
+ for the local market.
+ This area, referred to as the central milk shed, has become the main supplier
+ for dairy products in the capital city, Kampala.
+ This bifurcation allows us to explore differences between export market-led
+ value chain transformation and domestic market-led dynamics.
+ At the same time, even in the central milk shed, some farmers reported
+ producing for processors that are also engaged in export.
+ We therefore also construct and indicator of integration into export-led
+ value chains based on links between producers, traders and consumers to
+ triangulate our findings.
+\end_layout
+
+\begin_layout Standard
+Our study mainly relies on primary data, supplemented with data from secondary
+ sources.
+ The primary data was collected at different nodes in the value chain and
+ is used to first describe the structure of the value chain.
+ Upstream, we interviewed cattle farmers that produce milk, most of it for
+ the market.
+ These farmers generally sell raw milk at the farm gate to traders, the
+ second category of actors we collected data from.
+ However, in the central milk shed, important amounts of milk are also directly
+ sold to neighbours, whereas in the southwest, a significant number of farmers
+ also sell directly to milk collection centers, often because they are members
+ of the cooperative that runs the center.
+ Traders and transporters in turn, ship this unprocessed milk to milk collection
+ centers, the third category of actors we interviewed.
+ In the southwestern milk shed traders also deliver relatively important
+ quantities to milk shops.
+ Another important actor in the dairy value chain is the processor, who
+ sources milk mostly from milk collection centers.
+ However, in the central region, milk collection centers also often double
+ as shops where neighbours can come and purchase milk.
+ Throughout the value chain, volumes of milk in the southwestern milk shed
+ are twice as large as volumes in the central milk shed.
+ We collected primary data on 1,600 producers, 700 small traders, and 100
+ milk collection centers.
+ We also collected qualitative data from two processors.
+\end_layout
+
+\begin_layout Standard
+We then provide a descriptive analysis of the behaviour of the different
+ value chain actors.
+ We find significant quantities of milk are marketed.
+ In the central milk shed, milk is often sold to neighbours in small quantities.
+ Milk fetches relatively high prices on the informal market.
+ Farmers sell to traders or use transporters with whom they have an important
+ trust relationship.
+ Traders visit farmers daily and payments happen weekly or even monthly.
+ Farmers that work with one and the same transporter who provides a service
+ for a fee seems particularly important in the southwestern milk shed.
+ Cooperatives not only seem important for quality control, the often also
+ facilitate access to veterinary services.
+ All value chain actors struggle with seasonality.
+ 
+\end_layout
+
+\begin_layout Standard
+Next, we consider innovations that simultaneously occurred at different
+ levels within the chain.
+ We find some evidence that technology adoption is correlated with being
+ integrated in global value chains.
+ In the southwestern milk shed, almost 87 percent of animals are of an improved
+ breed.
+ The central milk shed, half of the cows are still local varieties.
+ We also see correlations with milk sanitation: Throughout the dairy value
+ chain, custom milk containers are becoming the norm in the export led milk
+ shed.
+ There are also innovations in terms of how parts of the chain is organized:
+ in the export oriented milk shed, proportionally more producers report
+ that they are a member of a dairy cooperative.
+ Also at the level of the milk collection centers, we also see that cooperatives
+ are more prevalent in the southwest.
+ We also provide a more in-depth analysis of these innovations and its relation
+ to inclusion in export-led value chains using regression analysis and matching
+ estimators.
+\end_layout
+
+\begin_layout Standard
+Our study contributes to the literature in various ways.
+ First, most existing studies on value chains in developing countries analyze
+ either export-chains 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "maertens2009trade,maertens2009horticulture,minten2009global"
+
+\end_inset
+
+ or domestic chains 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "minten2016feeding,JANSSEN2019327"
+
+\end_inset
+
+.
+ This makes it difficult to draw conclusions since one often has to compare
+ too many different variables.
+ Here we have a case where both export and domestic consumption are an important
+ outlet for the same commodity and in the same country.
+ This allows us to better capture the importance of the type of value chain
+ (export-led versus local) for the innovations we consider.
+ Second, with almost 700 small traders interviewed, our study provides evidence
+ on the behavior of a group of value chain actors that are hard to capture
+ and poorly understood 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "sitko2014exploitative"
+
+\end_inset
+
+.
+ Third, while there is a substantial gray literature on dairy value chains
+ in Uganda, most of these rely on qualitative data and are limited in terms
+ of representatives.
+ Our study thus provides an important contribution to understanding the
+ dairy sub-sector in Uganda.
+ 
+\end_layout
+
+\begin_layout Standard
+The rest of this article is organized as follows.
+ The next section uses secondary data to highlight the drivers behind the
+ transformation of diary sub-sctor.
+ We point out potential demand side drivers and explain how policy reforms
+ created an enabling environment that attracted considerable foreign direct
+ investment.
+ We then present the primary data that was collected at different nodes
+ in the value chain in the central and the southwestern milk shed.
+ The data is also combined to visualize how raw milk flows through the value
+ chain.
+ Next, we provide descriptive statistics on key behaviour of the actors
+ in the value chain, separately for the two milk sheds.
+ For instance, we look at production and market participation of farmers,
+ document trader marketing patterns, describe milk collection center operations,
+ and processing capacity and export value.
+ We then identify a range of innovations that are observed within the chain
+ and document how they differ between export-led value chains and domestic-led
+ value chains.
+ First, this is done by simply describing differences by milk shed.
+ Next, a different indicator of integration in global value chains is used
+ and a more formal analysis is presented.
+ A final section concludes.
+\end_layout
+
+\begin_layout Section
+Drivers of dairy value chain transformation
+\end_layout
+
+\begin_layout Standard
+The dairy sub-sector in Uganda has grown substantially.
+ According to the Uganda Dairy Development Authority, annual milk production
+ has increased from 1.4 billion litres of milk in 2006 to 2.2 billion litres
+ in 2017/2018.
+ The expansion of the sub-sector is driven by an increase in demand, both
+ from within Uganda as well as from abroad.
+ At the same time, pro-market policy reforms encouraged investment in the
+ sub-sector.
+\end_layout
+
+\begin_layout Subsection
+Demand factors
+\end_layout
+
+\begin_layout Subsubsection
+Local consumption
+\end_layout
+
+\begin_layout Standard
+Consumption of dairy products has been increasing over time in Uganda.
+ According to Uganda Dairy Development Authority, the per capita consumption
+ of milk in Uganda has increased from 25 litres in 1986 to 62 litres in
+ 2017.
+ However, if we use the official nationally representative Uganda National
+ Household Surveys (UNHS), average per capita milk consumption seems much
+ lower.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Consumption-of-liquid"
+
+\end_inset
+
+ shows yearly per capita liquid milk consumption in liters as estimated
+ using four different waves of the UNHS.
+ We see that according to this data, as recent as 2001/02, the average Ugandan
+ consumed only about 12 liter of milk per person per year.
+ At that time, consumption in rural and urban areas was virtually the same,
+ underlining the importance of the informal market and autoconsumption of
+ milk.
+ By 2012/13, average consumption per capita has doubled.
+ The figure shows that most of the increase in milk consumption is due to
+ an increase in demand in urban areas, reaching 33 liters per capita per
+ year in 2012/13.
+ In rural areas, milk consumption seems to fluctuate between 10 and 20 liters
+ per capita per year.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename dairy/innovations/consumption.pdf
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Consumption of liquid milk over time
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Consumption-of-liquid"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The consumption reported in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Consumption-of-liquid"
+
+\end_inset
+
+ captures only liquid milk.
+ However, Ugandans also consume dairy products in other forms.
+ For instance, in rural areas, 
+\emph on
+bongo
+\emph default
+, a type of buttermilk that can be stored longer than liquid milk, is very
+ popular
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Often, milk that can not be sold (eg.
+ because it fails the alcohol test) is processed into bongo.
+\end_layout
+
+\end_inset
+
+.
+ Furthermore, in rural areas, ghee is used in cooking, and in urban areas,
+ butter and yogurt consumption is taking off.
+ Unfortunately, the UNHS does not explicitly differentiate between different
+ dairy products.
+ Only ghee consumption is recorded separately, but there is no mention of
+\emph on
+ bongo
+\emph default
+, which is likely to be more important as a source of micro-nutrients.
+ Primary data collected from about 1,600 milk farmers in the central and
+ southwestern milk shed (which will be described in detail later) suggests
+ that more than half of the farmers consume bongo on a regular basis and
+ the volumes consumed are only slightly lower than milk.
+ As a result, the consumption of dairy products is likely to be substantially
+ higher than what is reported in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Consumption-of-liquid"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Export-led
+\end_layout
+
+\begin_layout Standard
+Not only national consumption has increased.
+ Over time, and especially since 2014 after the establishment of various
+ processing plants in the southwestern milk shed and boosted by a depreciating
+ local currency, dairy exports have increased exponentially (Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Import-and-export"
+
+\end_inset
+
+).
+ The latest available data suggests that US$ 130 million worth of dairy
+ products have been exported in 2017.
+ The DDA reports that almost half of the export value, 55 million, was exported
+ by a single processor (Pearl Dairy Farms Ltd).
+ This processor exports mostly milk powder to countries on the Arabian peninsula
+, but also to Nigeria and even to Japan.
+ About 20 percent of the total export value is exported to Kenya through
+ Brookside Ltd.
+ Birunga Dairies Industries, located in the Southwestern tip of Uganda (and
+ outside our study area), exports about 18 million USD worth of milk to
+ the Democratic Republic of Congo and Rwanda.
+ Amos Dairies Ltd focuses on casein exports to the United states (11 million
+ USD).
+ Smaller processors such as Lakeside Diaries Ltd.
+ specialize in other locations such as South Sudan.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/bjvca/data/projects/PIMDVC/presentations/exports.pdf
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Import and export of dairy products (in millions USD)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Import-and-export"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The success of dairy as an export commodity came as a surprise.
+ For instance 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "sheperd"
+
+\end_inset
+
+ is hesitant about the future of the dairy sub-sector in Uganda as a strong
+ export oriented sector, pointing out informality of relationships constrained
+ the development of contractual interactions, resulting in supply uncertainties
+ at the level of the processors.
+ Dairy is not considered a priority sector from an export point of view,
+ yet it has become the third most important export commodity, after coffee
+ (US$ 555 million) and fish (US$ 140 million), and leaves other traditional
+ export sectors such as tea (US$ 80 million) and flowers (US$ 60 million)
+ trailing behind.
+ Uganda's dairy exports are now similar to South Africa and on its way to
+ become the largest dairy exporter on the continent in the near future.
+ 
+\end_layout
+
+\begin_layout Subsection
+Institutional environment
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Institutional-environment"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+The transformation of the dairy sub-sector in Uganda is also driven by a
+ range of policy reforms.
+ In the past, the (formal) dairy sector was heavily centralized, and all
+ milk needed to pass through the National Dairy Corporation, a parastratal
+ dairy processing organization.
+ The privatization push of the new government of Museveni that came to power
+ in 1986 also impacted the dairy sector.
+ One of the first milestones was the passing of the Dairy Industry Act in
+ parliament in 1998, which established the Dairy Development Authority (DDA).
+ This entity under Uganda's Ministry of Agriculture, Animal Industries,
+ and Fisheries (MAAIF) was established to create an enabling environment
+ for the sector.
+ As such, it assumes the dual role of both promoting diary production and
+ regulating the industry.
+ However, it was only in 2006 that the National Dairy Corporation was privatized
+, and even then, the state monopoly was simply replaced by another monopoly:
+ the National Dairy Corporation was bought by Sameer Agriculture and Livestock
+ Ltd.
+ As part of the deal, Sameer also acquired all the milk collection centers,
+ coolers and bulking centers that were part of the cold chain.
+ This left smallholder milk producers with few options other than selling
+ to Sameer at very low prices.
+ 
+\end_layout
+
+\begin_layout Standard
+Due to this, and the realization that much money was left on the table,
+ both individual investors as well as cooperatives began to install their
+ own coolers and organize milk collection and bulking.
+ One noteworthy initiative was taken by the Uganda Crane Creameries Cooperative
+ Union (UCCCU), an umbrella organization that brings together dairy cooperatives
+ in Uganda.
+ The UCCCU approached the Agricultural Business Initiative (aBi) Trust,
+ a multi-donor entity devoted to private sector agribusiness development,
+ to assist in the procurement of 100 milk coolers, 92 generators, 92 sets
+ of milk testing equipment, 1,500 stainless steel milk storage cans, and
+ 10 insulated milk tankers.
+ 
+\end_layout
+
+\begin_layout Standard
+Some observers say that the sector only really took off with the advent
+ of processing companies that, attracted by low prices, produce mostly for
+ export.
+ For instance, Amos Dairies Limited, a diary processing company, based in
+ Punjab, India, set up a processing plant in Kirihura that focuses on the
+ extraction of casein in 2014.
+ Pearl Dairy Farms Limited opened in 2013 and mostly processed milk into
+ powder.
+ The success of these processors also attracted a range of smaller processors
+ to the area, often in the form of (Indian) foreign direct investment.
+ 
+\end_layout
+
+\begin_layout Standard
+Today, the sector can be described as fairly competitive.
+ The creation of the East African Community means that milk, which can be
+ produced relatively cheaply in Uganda, is in high demand in neighboring
+ countries, Kenya in particular.
+ That said, there are still substantial policy related uncertainties.
+ Tanzania, for example, keeps protecting its local dairy market.
+ Furthermore, during an extended drought in 2017, Kenya single-handedly
+ decided to levy an import tax on milk, temporary suspending the EAC for
+ milk.
+\end_layout
+
+\begin_layout Standard
+Uganda's privatization push also affected livestock farmers directly.
+ Traditionally, livestock farmers in the cattle belt, a semi-arid area that
+ stretches from the southwest all the way to the northeast, were nomadic
+ pastorals.
+ They roamed across communal land, seeking forage and water.
+ Especially for the Ankole tribe of southwestern Uganda, livestock is an
+ important part of their cultural identity, and prestige is derived from
+ the size of the herd.
+ The herd was depended upon for subsistence, and only if cash was needed,
+ occasionally animals were sold.
+ However, due to privatization, communal lands were fenced off, depriving
+ nomadic farmers from grazing land and, more importantly, water sources.
+ This gradually led to a shift away from livestock ownership as a store
+ of wealth, toward a more commercially oriented, sedentary livestock sub-sector,
+ where maximization of productivity of cattle became the main objective
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "kisamba2006impacts"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+We should also clearly state why Indian firms came to Uganda.
+ This is because Indian firms can not export milk under Modi.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Primary Data
+\end_layout
+
+\begin_layout Subsection
+Structure of the value chain
+\end_layout
+
+\begin_layout Standard
+Uganda is divided into so-called milk sheds, each with different characteristics
+ in terms of agro-ecological conditions, farm typologies and market dynamics.
+ The southwestern milk shed around Mbarara and the central milk shed comprising
+ of the districts Kyankwanzi, Kiboga and Nakaseke, are the two most important
+ milk sheds.
+ While the agro-ecological conditions and farmer types are pretty similar
+ between the two sheds (both lie in the part of the cattle corridor with
+ highest seasonal rainfall), market dynamics are different.
+ In the southwestern milk shed, low prices have attracted processors that
+ are able to compete in the international market.
+ This has pushed the supply market for the local dairy value chain that
+ supplies Kampala to the central milk shed.
+ This resulted in substantial differences in the organization and functioning
+ of the value chain and how these areas are integrated in the wider economy.
+ 
+\end_layout
+
+\begin_layout Standard
+There are many actors involved in the dairy value chain.
+ Upstream, there are the producers who produce for own consumption, but
+ also sell significant amounts of milk.
+ Often, these are small producers that reside in remote areas.
+ Small traders and transporters collect milk in villages at the farm gate
+ daily, and transport this to milk collection centers using bicycles, motorbikes
+, or sometimes cars.
+ Milk collection centers bulk the milk in coolers for further transport
+ to processors or consumer markets.
+ There are also a range of actors that provide services related to the value
+ chain, such as veterinary services, or sell inputs such as feeding supplements.
+ Finally, milk is consumed in different forms and by different consumers,
+ ranging from neighbors in the village that consume raw milk to consumers
+ in the US that use products based on the casein protein (glue, paint,...).
+\end_layout
+
+\begin_layout Subsection
+Data collection
+\end_layout
+
+\begin_layout Standard
+We collected survey data on three value chain actors.
+ In total, we collected data on 1,600 milk producers, 700 traders and 100
+ milk collection centers.
+ We started by selecting 14 subcounties from six districts (Mbarara, Kiruhura,
+ Kyankwanzi, Kiboga, Nakaseke and Masindi).
+ These subcounties were selected to reflect geographic dispersion of actors
+ within the value chain.
+ We proceeded with a two stage random sampling strategy, where first villages
+ were selected with probability proportional to village size.
+ In each selected village, we then consulted village household lists to
+ randomly select farmers.
+ The number of households selected within each village was again proportional
+ to the total number of households residing in the village.
+ Milk collection centers we selected through simple random sampling from
+ the list of milk collection centers in each subcounty obtained from the
+ DDA.
+ Finally, traders and transporters were sampled using a systematic sampling
+ technique where enumerators interviewed the 
+\begin_inset Quotes eld
+\end_inset
+
+nth
+\begin_inset Quotes erd
+\end_inset
+
+ trader that came to deliver milk to the center
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+This sampling technique did not entirely turn out satisfactory, as it is
+ likely to lead to over-representation of traders and transporters that
+ deliver to milk collection centers, who may be different from traders that
+ sell to eg.
+ milk shops in town, or directly to consumers.
+ This caveat should be kept in mind when interpreting results.
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Southwestern milk shed
+\end_layout
+
+\begin_layout Standard
+A total of 312 producers were sampled in the southwestern milk shed.
+ More in particular, we interviewed 80 farmers that are located relatively
+ close to Mbarara, the second largest town in Uganda and the center of dairy
+ processing for export, as well as 232 farmers in Kiruhura, a large district
+ located northeast of Mbarara that is heavily relied upon by the export
+ processors in Mbarara.
+ In Kiruhura, about 50 farmers were interviewed in two villages in Sanga
+ sub-county, which is along the highway that connects Mbarara to Kampala
+ in the south of the District.
+ Adjacent to the north, we interviewed another 50 farmers that are further
+ from the road.
+ We further interviewed about 158 farmers that are located in the center
+ of the district, in Kenshunga sub-county.
+ Finally, we added another 35 farmers from Kazo sub-county in the remote
+ northwestern tip of the district.
+ We also collected information on 37 milk collection centers distributed
+ over the two districts and interviewed 153 traders that operate in the
+ area.
+\end_layout
+
+\begin_layout Subsubsection
+Central milk shed
+\end_layout
+
+\begin_layout Standard
+In the central milk shed we interviewed farmers in Kyankwanzi and Kiboga
+ districts.
+ Both districts are relatively well connected to Kampala through the Hoima-Kampa
+la highway.
+ Kiboga is the district that is closest to Kampala and some areas have a
+ high population density.
+ We interviewed 282 farmers in Nsambya, a very large sub-county in the north
+ west of Kyankwanzi district, along the banks of the Nsuka-Kabi river.
+ In the same district, we interviewed another 57 farmers in Wattuba in the
+ southeast and closer to the highway.
+ In Koboga, we interviewed farmers in 2 different sub-counties.
+ Most of them were located close to the highway, but at varying distance
+ to Kampala.
+ Furthermore, in the central shed, we also interviewed farmers in Nakaseke
+ district.
+ As there is no highway that transects this district, it is relatively more
+ inaccessible than Kyankwanzi and Kiboga.
+ Often, it is more convenient for traders to transport milk to Kampala using
+ the Masindi-Kampala highway located to the North East of the district.
+ In this district, we interviewed a total of 267 farmers distributed over
+ two sub-counties.
+ In the central milk shed, we interviewed about 500 traders and also surveyed
+ 50 milk collection centers.
+\end_layout
+
+\begin_layout Standard
+We also included Masindi district in our sample.
+ Technically, this district does not belong to the central milk shed, but
+ to the western milk shed.
+ We focus on sub-counties that are just north of the Nsuka-Kabi river (Bwijanga
+ and Kimengo; about 300 farmers interviewed), and hence similar in agro-ecology
+ to Kyankwanzi and Nakaseke.
+ Over time, the western milk shed has been gaining in importance.
+ The discovery of oil in the area has attracted a lot of foreign direct
+ investment, and the dairy industry is anticipating a surge in demand.
+ We thus also included one sub-county more into the interior of the district,
+ Miirya, where we interviewed 178 farmers.
+ We also included about 30 farmers from the peri-urban area around Masindi
+ town.
+ In Masindi district, we also interviewed 36 traders and surveyed 5 milk
+ collection centers.
+\end_layout
+
+\begin_layout Subsection
+Milk flows
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Milk-flows"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Milk-Flows"
+
+\end_inset
+
+ shows how milk flows through the dairy value chain, differentiating between
+ the central milk shed that is catering mostly for local milk consumption
+ (top) and the more export oriented southwestern milk shed (bottom)
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+An interactive version of this chart can be found at 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://bjornvancampenhout.com/wp-content/uploads/2019/01/milk_flow.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ Starting from the quantity sold by the average farmer in each shed, it
+ shows how the milk is distributed over the value chain.
+ The average farmer in the central milk shed puts about 84 liter of milk
+ on the market per week (measured in the week before the survey, which was
+ at the onset of the dry season).
+ Most of this milk, 40 liters, is sold to traders.
+ Farmers also sell a lot of their milk to milk collection centers, either
+ directly (18 liters), or by contracting a transporter to take the milk
+ from the farm-gate to the milk collection center (15 liters)
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+As will be explained later, we differentiate between traders, who acquire
+ ownership of the milk, and transporters, who provide the services of transporta
+tion against a fee.
+\end_layout
+
+\end_inset
+
+.
+ Finally, about 10 liters is sold directly to neighbours.
+ Farmers in the southwestern milk shed sell double of what farmers in the
+ central milk shed bring to the market (163 liters of milk per week).
+ Also here, small traders that collect milk in the rural areas are very
+ important, buying up more than half of all marketed milk (86 liters).
+ One quarter of the milk is directly sold to milk collection centers (42
+ liters per week).
+ The use of transport services is, relative to the central shed, somewhat
+ less important in the southwestern milk shed.
+ Small quantities of milk are also directly sold to neighbours (6 liters)
+ and to milk shops in the village or in nearby trading centers (4 liters).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+Central Milk Shed
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename dairy/innovations/central.png
+	scale 32
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Southwestern Milk Shed
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename dairy/innovations/SW_flow.png
+	scale 31
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Milk Flows
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Milk-Flows"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We next estimate how much of the quantities that traders procure (40 liters
+ in the central shed and 86 liters in the southwestern shed) is distributed
+ over actors further downstream.
+ In the central milk shed, traders almost exclusively ship to milk collection
+ centers (35 liters).
+ The remaining 5 liters is shared between processors (2 liters), milk shops
+ (2 liters), and direct sales to villagers (1 liter).
+ Trader behaviour is clearly different in the southwestern milk shed.
+ Apart from supplying milk to milk collection centers (56 liters), substantial
+ quantities of milk are also delivered to milk shops (18 liters) and directly
+ to processors (8 liters).
+ Traders selling to villagers also seems not uncommon in the southwest (5
+ liters).
+ Doing the same for transporters, we find that in both milk sheds, transporters
+ deliver most of the milk to milk collection centers.
+ 
+\end_layout
+
+\begin_layout Standard
+In the next step, we estimate how the quantities collected by milk collection
+ centers (66 liter in the central shed and 122 liter in the southwestern
+ shed) are disposed of.
+ In both sheds, most milk goes to processors.
+ Interestingly, in the central milk shed, milk collection centers also seem
+ to be important to sustain local milk consumption, as 21 percent of the
+ milk is sold to villagers (14 liters).
+ In the southwestern milk shed, sales by milk collection centers to villagers
+ is marginal (3 liters).
+ In the southwest, milk collection centers also often sell to large traders
+ (21 liters, representing 17 percent of total sales by the milk collection
+ center).
+ These traders generally take milk to Brookside in Kampala.
+ While milk collection centers from the center also sell to traders, this
+ is relatively less important (6 liters or about 10 percent of total milk
+ sold by the milk collection center).
+ Finally, fierce competition for supplies in the southwest means that processors
+ will also buy non negligible amounts of milk directly from traders (8 liters).
+\end_layout
+
+\begin_layout Subsection
+Descriptives
+\end_layout
+
+\begin_layout Standard
+Here, we describe some of the activities of the actors that are central
+ to the value chain.
+ In particular, we look at milk production and market participation of producers.
+ We also look at marketing patterns for traders and milk collection centers.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Production and market participation
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Production-and-market"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There is significant variation in milk yields, defined as liters produced
+ per day per cow.
+ Some of this variation is due to seasonality.
+ During the rainy season, cows produce on average 5 liter per day.
+ This is only 3.7 in the dry season.
+ There is also a significant difference in milk yield between the milk sheds.
+ Cows in the central region produce on average 3 liters per day, cows in
+ the southwestern milk shed produce 4 liters per day.
+ We also asked to each farm household how many cows were in milk during
+ the last rainy season (March to May 2018) as well as in the last dry season
+ (December 2017 to February 2018).
+ Overall, farmers have about 8 animals in milk, which represents 25 % of
+ the total herd.
+ We do not find that these numbers differ between rainy and dry season.
+\end_layout
+
+\begin_layout Standard
+Together with the average amounts of milk per cow produced, this enables
+ us to get an idea of the total amount of milk produced at the household
+ level.
+ We find that the average household produces about 40 liters of milk per
+ day during the wet season and 30 liters per day during the dry season.
+ However, the distribution is severely skewed; corresponding medians are
+ 12 liters and 14 liters.
+ Furthermore, there are large differences between the two milk sheds.
+ Averaging over both rainy and dry seasons, average production per household
+ per days is about 30 liters in the central shed, but almost 55 liter in
+ the southwest.
+ We also asked farmers to estimate how much milk they used to produce 10
+ years ago.
+ This was only 35 liter in the southwestern milk shed, and less than 20
+ liters in the central milk shed.
+ 
+\end_layout
+
+\begin_layout Standard
+Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Milk-flows"
+
+\end_inset
+
+ reported milk marketing in the week preceding the survey.
+ We saw that producers in the southwest market about 163 liters in that
+ week.
+ In the central region, only about 84 liters was marketed.
+ In line with seasonality in production, there is also significant variation
+ in market participation.
+ During the rainy season, we find that farmer sell on average about 147
+ liters of milk daily per week.
+ During the dry season, this is only 91 liter.
+ As is the case for production, sales are also heavily skewed to the right,
+ and median values of sales per week amounting to 70 liters and 49 liters
+ for the respective seasons.
+ 
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Share-of-milk"
+
+\end_inset
+
+ compares the distribution of the share of milk sold in the total amount
+ of milk produced in the rainy season and in the dry season, separately
+ for the central milk shed (top panel) and the southwestern milk shed (bottom
+ panel).
+ Compared to other agricultural commodities commonly produced by these farmers,
+ such as maize and beans, market participation rates are high 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "BARRETT2008299"
+
+\end_inset
+
+.
+ We see that the southwestern milk shed is much more commercialized than
+ the central milk shed.
+ In the rainy season, the modal farmer in the southwest sells three quarters
+ of his or her milk.
+ Also in the dry season, most of the farmers still sell more than half of
+ the milk they produce.
+ In the central milk shed, we find that in the rainy season most farmers
+ sell between 30 and 50 percent of the milk they produce.
+ During the dry season, the modal farmer sells half of what was produced.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename dairy/innovations/market_part.pdf
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Share of milk sold
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Share-of-milk"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Market-participation"
+
+\end_inset
+
+ provides detailed information by market channels used by dairy farmers
+ in our sample, again separately for the central milk shed and the southern
+ milk shed.
+ We see that milk is widely traded locally between neigbours.
+ In the central milk shed, 31 percent of the farmer indicate that they have
+ sold milk to a neighbour in the last week.
+ Interestingly, in the milk shed that is dominated by a dairy export sector,
+ sales between neigbours in the village is much less common.
+ Here, only 11 percent of the farmers indicate that they sold milk to a
+ neighbour in the last 7 days.
+ In both milk sheds, selling milk at the farm-gate to a middleman is most
+ common.
+ In the central milk shed, 40 percent of households report that they sold
+ to an itinerant trader, while this was one in two farmers in the southwestern
+ milk shed.
+ About 11 and 14 percent of farmers also report that they use transporters
+ to take the milk to milk collection centers.
+ We find that a significant share of farmers report that they sold directly
+ to milk collection centers at least once in the last week.
+ Direct sales to milk collection centers is especially important in the
+ southwestern milk shed, where many MCCs are organized as farmer cooperatives.
+ Direct sales to milk shops is negligible.
+\end_layout
+
+\begin_layout Standard
+The table also shows, for each trader type, the average number of transactions
+ that were reported in the previous week.
+ In general, farmers transact each day of the week, and there does not seem
+ to be much difference by trader type.
+ Normally, cows are milked only once in Uganda.
+ This is done in the morning, and milk should arrive at the cooler within
+ 3 hours, otherwise the milk will not pass the alcohol test.
+ Few farmers also milk in the evening.
+ If milking was done in the evening, this milk is used for home consumption,
+ as milk collection centers generally cease to accept milk after 11 am.
+\end_layout
+
+\begin_layout Standard
+We also asked with how many different agents of each trader type transactions
+ were made.
+ For instance, we find that in the central milk shed, the average farmer
+ sold milk to about 3 different neighbours in the week previous to the survey.
+ In the southwestern milk shed, this is almost four.
+ In the southwestern milk shed, farmers seem to work with a designated trader.
+ In the central shed, the average number of traders used is almost two.
+ In the southwest, farmers that directly supply milk collection centers
+ also usually ship to one and the same center.
+ This is different in the central region, where farmers seem to work with
+ more than one milk collection center (exact Wilcoxon Mann Whitney Rank
+ Sum Test of difference in average number of MCCs by milk shed is significant
+ at p-value=0.002).
+ Most likely, this is because, in the southwest, collection centers follow
+ prices set by the processors as a function of international prices.
+ In the central region, milk collection centers deliver to varying outlets,
+ which may lead to higher variance in prices.
+ Farmers may attempt to take advantage of this and ship milk to different
+ milk collection centers depending on where highest prices are offered.
+ This explanation is consistent with the finding that the standard deviation
+ of prices offered by milk collection centers in the central region is significa
+ntly higher than the standard deviation of prices offered by milk collection
+ southwestern region in the central region (two-sided F-test significant
+ at p-value=0.003).
+\end_layout
+
+\begin_layout Standard
+The table also reports prices that were received by farmers conditional
+ on marketing channel, again separately for the central milk shed and the
+ southwestern milk shed.
+ In the central milk shed, we find that highest prices are offered by milk
+ collection centers.
+ We also see that fairly high prices are obtained when milk is sold to neighbour
+s.
+ This is different from what is generally found for other commodities such
+ as for example maize, where sales to neighbours often happen in the from
+ of distress sales, where farmers sell at relatively low prices because
+ cash is urgently needed 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.1093/qje/qjy034,stephens2011incomplete"
+
+\end_inset
+
+.
+ Prices reportedly received from traders and transporters are significantly
+ lower.
+ This suggests that transport and other transaction costs that the trader
+ or transporter incurs are passed on to producers.
+ In the southwestern milk shed, it seems that, by far, the lowest prices
+ are offered by milk collection centers.
+ We also note that even in the shed that is dominated by a well functioning
+ export industry, sales of milk to neighbours remains a remunerative business.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Market participation
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Market-participation"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccc} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   	&	neighbour	&	trader	&	transporter	&	mcc	&	milk shop	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-6} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{5}{c}{
+\backslash
+textit{central milk shed}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+proportion selling to...	&	0.31	&	0.40	&	0.11	&	0.10	&	0.02	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+average number of transactions per week with...	&	5.78	&	6.31	&	6.52	&	6.42	&	6.65	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+average number within trader type	&	3.07	&	1.71	&	1.50	&	2.84	&	3.22	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+average price (UGX)	&	906	&	784	&	814	&	928	&	938	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+average quantity in last transaction (liters)	& 5	&	16	&	20	&	27	&	13	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{5}{c}{
+\backslash
+textit{southwestern milk shed}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+proportion selling to...	&	0.11	&	0.50	&	0.14	&	0.22	&	0.03	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+average number of transactions per week with...	&	7.38	&	7.18	&	6.71	&	6.92	&	6.50	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+average number within trader type	&	3.79	&	1.17	&	1.24	&	1.14	&	1.10	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+average price (UGX)	&	917	&	730	&	700	&	582	&	710	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+average quantity in last transaction (liters) &	7	&	24	&	27	&	27	&	22	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Based on author's calculations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally, the table also reports average quantities that were sold in the
+ last transaction for each marketing channel.
+ As was to be expected, quantities sold to neighbours are lowest, on average
+ only 5 to 7 liters depending on the milk shed.
+ Amounts sold to traders and transporters are between 15 and 30 liters on
+ average.
+ The pattern also suggests that especially larger farmers engage directly
+ with milk collection centers.
+ For almost all categories, average amounts marketed are higher in the southwest
+ern milk shed than in the central milk shed.
+\end_layout
+
+\begin_layout Standard
+Generally, commodity trade in rural villages are settled cash on delivery.
+ Even though farmers will often sell to the same trader and trust relationships
+ are important 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "fafchamps2001social"
+
+\end_inset
+
+, transactions are often too few and irregular for a more efficient payment
+ arrangement.
+ This is different for dairy value chains, where farmers deal with the same
+ agents on an almost daily basis.
+ Indeed, we see that in the majority of cases where farmers sell to milk
+ collection centers, either directly or through traders or transporters,
+ payment is weekly or monthly.
+ Recent research has shown that, in the absence of formal savings and credit
+ markets, such infrequent payment also provides a commitment device, enabling
+ farmers to save for bulky expenses 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "casaburi2019demand"
+
+\end_inset
+
+.
+ For sales to neigbours, direct payment is still the most common arrangement.
+\end_layout
+
+\begin_layout Subsubsection
+Trader marketing patterns
+\end_layout
+
+\begin_layout Standard
+A second important group of actors in the dairy value chain, the traders,
+ link producers to other actors downstream, such as milk collection centers,
+ milk shops or processors.
+ Typically, these traders are individuals that collect milk at the farm
+ gate in the villages using a bicycle or a light Indian or Chinese made
+ motorbike and transport the milk to the next node in the value chain.
+ We differentiate between two types of such middlemen.
+ First, there are individuals who buy milk at the farm-gate, transport the
+ milk and sell it to actors downstream.
+ A key characteristic of these actors is that they assume ownership of the
+ milk during transportation.
+ This group will be denoted as traders.
+ A second group acts as transport service providers.
+ They receive a fee to transport the milk of the farmer to its destination,
+ such as to the milk collection center.
+ Here, ownership of the milk remains with the producer.
+ These are called transporters.
+ The data shows that almost half of all middlemen we interviewed report
+ to be only transporting milk on account of their clients.
+ About 30 percent report that they buy milk and sell it further downstream.
+ The rest report to be doing both.
+ The relatively high percentage of transporters seems to suggest that, in
+ the context of daily recurring transactions, sufficient levels of trust
+ can be built between the farmer and the middlemen.
+ The relatively high level of transporters may also indicate credit constraints
+ or an attempt of traders to transfer some of the risk associated with transport
+ing milk to the farmer.
+ For instance, if milk is rejected at the milk collection center, a transporter
+ simply returns the milk to the farmer.
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Volumes-and-value"
+
+\end_inset
+
+ gives some statistics on volumes and associated values that are handled
+ by traders and transporters.
+ The top panel gives details on the central milk shed, while the bottom
+ panel provides corresponding statistics for the southwestern milk shed.
+ We start by looking at how many farmers are visited on an average day by
+ a trader and by a transporter.
+ Traders seem to visit more clients in a given day than transporters do.
+ In the southwest, the traders visit substantially more farmers, up to 12
+ on average in the rainy season.
+ In terms of liters procured, averages range from 100 liters during the
+ dry season in the central milk shed to about 500 liters during the rainy
+ season in the southwestern milk shed.
+ Note that, although transporters visit fewer producers, they collect about
+ the same amounts of milk, suggesting that milk traders who procure and
+ sell are particularly important for producers that sell smaller quantities
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "sitko2014exploitative"
+
+\end_inset
+
+.
+ Given that the average transport capacity is about 164 liters in the central
+ region and almost 200 liter in southwest, this means that in the dry season
+ in the central milk shed, transporters make trips with milk cans that are
+ only half full, while in the southern milk shed during the rainy season,
+ traders make more than 2.5 trips to the milk collection center, milk shop,
+ or processor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Volumes and value traded
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Volumes-and-value"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcc} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{3}{c}{central milk shed}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	traders	&	transporters	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-3} 
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{dry season}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+number of clients visted per day	&	6	&	5	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+liters procured per day	&	109	&	107	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+price received per liter	&	1,053	&	1,060	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+value of traded milk per day	&	115,229	&	113,643	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{rainy season}}	
+\backslash
+
+\backslash
+ 				
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+number of clients visted per day	&	8	&	6	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+liters procured per day	&	201	&	182	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+price received per liter	&	704	&	733	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+value of traded milk per day	&	141,108	&	133,119	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{3}{c}{southwestern milk shed}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	traders	&	transporters	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-3} 
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{dry season}}	
+\backslash
+
+\backslash
+				
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+number of clients visted per day	&	11	&	8	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+liters procured per day	&	303	&	348	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+price received per liter	&	994	&	1,017	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+value of traded milk per day	&	301,455	&	353,512	
+\backslash
+
+\backslash
+ 				
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{rainly season}}	
+\backslash
+
+\backslash
+ 				
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+number of clients visted per day	&	12	&	8	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+liters procured per day	&	507	&	489	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+price received per liter	&	551	&	514	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+value of traded milk per day	&	279,574	&	251,081	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Based on author's calculations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The price paid for milk to traders and to transporters is similar.
+ More interestingly, during the dry season the price per liter is about
+ 1,000 UGX, and there seems to be no difference between the central and
+ southwestern milk shed.
+ During the rainy season, prices decrease dramatically.
+ In the central region, prices are about 40 percent lower than in the dry
+ season.
+ In the southwestern milk shed, prices are only about half of what they
+ are in the rainy season.
+ This is surprising, as one would expect that the presence of processors
+ that process milk into products with longer shelf life would reduce inter-tempo
+ral price volatility, particularly in situations where processors produce
+ below capacity.
+\end_layout
+
+\begin_layout Subsubsection
+Milk collection centers operations
+\end_layout
+
+\begin_layout Standard
+Another key link in the dairy value chain in Uganda is the milk collection
+ center.
+ Milk collection centers are structures that have the infrastructure in
+ place to bulk and chill the milk as it waits for further transport.
+ Generally, milk collection centers form the start of the cold chain.
+ Often, these centers are located in rural areas where production of milk
+ is high.
+ At the same time, it is also important that milk tankers can reach the
+ center to further transport the milk down the value chain.
+ Most centers power their coolers using generators.
+ 
+\end_layout
+
+\begin_layout Standard
+In the last decade, many milk collections centers have been established.
+ In the central milk shed, there are, according to data obtained from district
+ officials, 18 milk collection centers in Kyankwanzi, 19 in Kiboga and about
+ 20 in Nakaseke.
+ In Masindi, there are only 5.
+ In the southern milk shed, there seem to be many more milk collection centers:
+ in Kiruhura district alone, there are more than 160 cooling centers, often
+ with more than one cooler.
+ The proliferation of milk collection centers in the southwestern shed is
+ also reflect in the farm level survey data.
+ In the central milk shed, average distance to a milk collection center
+ is 10 km, while this is only 5.4 km in the southwest.
+ In the central milk shed, most of these are privately owned (about 70 percent).
+ In the southwestern milk shed, half of all milk collection centers are
+ cooperatives.
+ 
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Volumes-and-value"
+
+\end_inset
+
+ shows statistics on volumes handled and prices paid in both rainy and dry
+ seasons and by milk shed.
+ The average milk collection center has a capacity of about 5,600 liters,
+ and there is no difference between the two sheds.
+ The table shows that there is considerable under-use of this capacity in
+ the dry season, especially in the central milk shed, where tanks are on
+ average only 30 percent full.
+ Even during the rainy season, the average milk collection center in the
+ central milk shed is only filled 60 percent.
+ Only in the southwest, there is more milk than milk collection centers
+ can handle.
+ Here, 75 percent of all milk collection centers we surveyed reported they
+ are operating at full capacity during the rainy season.
+ This is also clearly reflected in the prices that milk collection centers
+ pay for milk.
+ Prices during rainy season are 70 percent of what they are in the dry season
+ in the central shed while they are only 54 percent of what they are in
+ the dry season in the southwestern shed.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Prices and volumes handled by milk collection centers
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Prices-and-volumes"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcc} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	central shed	&	southwestern shed	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{dry season}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+liters collected per day	&	1693	&	2558	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+capacity used (
+\backslash
+%)	&	31	&	57	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+price offered (UGX)	&	1105	&	1027	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{rainy season}}	
+\backslash
+
+\backslash
+ 				
+\end_layout
+
+\begin_layout Plain Layout
+
+liters collected per day	&	3294	&	5342	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+capacity used (
+\backslash
+%)	&	62	&	94	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+price offered (UGX)	&	766	&	558	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Based on author's calculations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Processor capacity and export value
+\end_layout
+
+\begin_layout Standard
+These days, Uganda has quite a few dairy processing companies.
+ According to data obtained from the Dairy Development Authority, there
+ are six large scale processors in Uganda with a capacity to process more
+ than 100,000 liters per day
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+However, we found substantial differences between capacities reported in
+ the DDA data and capacity reported by the processors we interviewed.
+ This may indicate that processors are rapidly increasing capacity.
+\end_layout
+
+\end_inset
+
+.
+ Most of these are located in the Southwestern milk shed.
+ GBK Dairy Products Limited is the oldest in Mbarara, with a capacity of
+ about 100,000 liters per day.
+ Pearl Dairy Farms Limited is the largest.
+ Founded in 2013, the plant can currently process up to 800,000 liters of
+ milk per day.
+ However, during the dry season the factory runs at less than 40 percent
+ of its capacity, and even in the rainy season they only reach about 80
+ percent.
+ The second largest processor in the southwest is Amos Dairies, with, according
+ to the DDA information, a capacity of processing 400,000 liters per day.
+ Lakeside, founded in 2014, currently only has a capacity of 50,000 liters
+ per day but plans to expand to 100,000.
+ 
+\end_layout
+
+\begin_layout Standard
+Brookside dairy is also still a large player, but the latest figures we
+ could find still put it way behind Pearl in terms of processing capacity
+ (560,000 liters per day).
+ Located in Kampala, the processor sources milk from different areas.
+ According to the data we collected from milk collection centers in the
+ central milk shed, about 40 percent of the milk collection centers supply
+ processors take their milk to Brookside.
+ Jesa is another large processor with processing facilities in Busujju in
+ Wakiso district.
+ It is currently processing 200,000 liters of milk per day.
+ Jesa supplies most of the milk in Kampala in the form of pasteurized milk
+ packaged in plastic bags.
+ 
+\end_layout
+
+\begin_layout Standard
+Many of these processors produce for both the local market and the export
+ market, and although there is some specialization, recently the consumer
+ market seems to become more competitive with processors that used to only
+ produce UHT for export now also producing pasteurized milk for urban markets.
+ Pearl Dairy is by far the largest exporter.
+ About 90 percent of what they produce is exported.
+ In 2017, the company exported worth 55 million USD, about 42 percent of
+ total export.
+ However, recently, the company has launched its local brand called LATO
+ milk, which is quickly becoming popular in Kampala.
+ Jesa also exports to Kenya.
+ Even smaller players such as Lakeside sell UHT to South Sudan and Kenya.
+ 
+\end_layout
+
+\begin_layout Section
+Innovations: Patterns 
+\end_layout
+
+\begin_layout Subsection
+Descriptive analysis of differences between milk shed
+\end_layout
+
+\begin_layout Standard
+At the micro level, the extent to which a farmer is integrated in modern
+ commercial value chains and his level of technology adoption is determined
+ simultaneously.
+ Innovating farmers may be more likely to participate in modern value chains
+ simply because they are more likely to produce a stable marketable surplus
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "mather2013explaining"
+
+\end_inset
+
+.
+ Processors in modern value chains may have stringent quality standards
+ which only innovating farmers can guarantee 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "reardon2009agrifood"
+
+\end_inset
+
+.
+ At the same time, poorly functioning input and output markets erode the
+ profitability of a technology, leading some farmers to opt-out 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "suri2011selection"
+
+\end_inset
+
+.
+ Integration into modern value chains may make new technologies profitable
+ for various reasons.
+ For instance, it may result in a reduction in the risk that no buyer is
+ found.
+ Buyers may decide to carry some of the transaction cost.
+ Processors may decide to offer credit to buy inputs, or even go a step
+ further and provide the inputs themselves against future supply.
+\end_layout
+
+\begin_layout Subsubsection
+Adoption of improved breeds
+\end_layout
+
+\begin_layout Standard
+An important technological innovation in dairy farming in Uganda is the
+ introduction of
+\series bold
+ 
+\series default
+improved breeds, in particular Fresian cows.
+ The type of animal also helps explain heterogeneous yields reported in
+ section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Production-and-market"
+
+\end_inset
+
+: in our sample, an exotic animal produces on average 5.7 liters of milk
+ per day, while a local cow only produces 3 liters.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Herd-size-and"
+
+\end_inset
+
+ compares herd size as reported by farmers in our sample now and 10 years
+ ago, for the central milk shed in the left panel and for the southwestern
+ milk shed in the right panel.
+ We see that over time, herd size increased form on average 26 cows to 31
+ cows in the central milk shed and from 31 to 34 in the central milk shed.
+ In the southwestern milk shed, almost 87 percent of animals are of an improved
+ breed.
+ The central milk shed is catching up with the southwestern milk shed in
+ terms of adoption of crossbred cows: while 10 years ago, only 2 out of
+ 26 cows were improved, this has now become almost 14 out of 31.
+ The higher average milk yield per cow in the southwest that was reported
+ in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Production-and-market"
+
+\end_inset
+
+ should be partly attributed to the higher share of improved cows there.
+ In addition to yield differences, the animal type further affects differences
+ in production because exotic cows are longer in milk than local cows.
+ In our sample, farmers have on average 4.3 crossbreeds in milk and 3.7 local
+ cows in milk.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename dairy/innovations/herd_time.pdf
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Adoption of crossbred cows
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Herd-size-and"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Institutional-environment"
+
+\end_inset
+
+, it was noted that this intensification process, whereby local breeds are
+ replaced by cows that produce more milk, is partly driven by privatization
+ of pastures.
+ We find that the average farmer in the central region has about 45 acres
+ of land that he or she can use for grazing the animals.
+ This is slightly lower in the southwest.
+ However, in the southwest, only about 93 percent of farmers report that
+ (at least part) of this land is fenced.
+ In the central region, this is only 64 percent.
+ Consistent with this, 80 percent of farmers in the central milk shed report
+ that they rely on free range for grazing the animals, while is some cases
+ the cows are tethered.
+ In the southwest, on the contrary, almost half of the farmers report that
+ they use paddocking, a much more controlled way of grazing.
+ Supplemental feeding was virtually non-existent.
+ 
+\end_layout
+
+\begin_layout Standard
+A more sedentary livestock production system in the southwest also affects
+ water provision on the farm.
+ In the central region, 12 percent of farmers relies on rivers as a source
+ of water for the animals.
+ In the southwest, almost 70 percent of farmers report that they rely on
+ dams that they constructed on their land.
+ This also results in differential access to water.
+ In the southwest, 71 percent of farmers report they either have no problems
+ or only occasional problems in sourcing sufficient amounts of water.
+ This is then percentage points lower in the central milk shed.
+ In the central milk shed, 12 percent of farmers report that they always
+ have trouble getting sufficient water for their dairy activities, while
+ this is only 8 percent in the southwest.
+\end_layout
+
+\begin_layout Standard
+Various reasons were reported by farmers as to why adoption of improved
+ dairy animals was not even more widespread.
+ The most important reason why farmers do not invest in improved animals
+ is related to the higher susceptibility to pests and diseases
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Other reasons included intensive management requirements, no feeding industry,
+ and lacking or poor quality artificial insemination services
+\end_layout
+
+\end_inset
+
+.
+ East Coast fever in particular, a tick-borne disease caused by the protozoan
+ parasite, 
+\emph on
+Theileria Parva
+\emph default
+, was reported to be killing many animals.
+ Over time, the ticks have become resistant to acaricides.
+ Local breeds are much more resistant to these ticks and also have shorter
+ hair on the cowskin, making it easier to detect ticks early on.
+ East coast fever is such as big problems that some farmers were of the
+ opinion that extension should focus on animal survival first before trying
+ to increase milk yields.
+\end_layout
+
+\begin_layout Standard
+We thus also collected some information on the extent of the problem and
+ what farmers do about it.
+ First, we simply asked farmers if ticks are a problem on their farm.
+ This was evaluated on a likert scale.
+ The majority of farmers, over 60 percent, report that ticks are a huge
+ problem, and there seems to be no difference between the two regions.
+ Next, we ask if East Coast Fever is a problem on the farm and use the same
+ likert scale.
+ We find that two thirds of farmers indicate East Coast Fever is a problem
+ in the southwestern milk shed, while this is only 45 percent in the central
+ milk shed.
+ The difference in subjectively assessed severity of East Coast Fever between
+ the two sheds is confirmed using a chi square test (p<0.001).
+ We also find that more than 95 percent of farmer report to be spraying
+ the cows against ticks.
+ In the southwest, only 3 out of the 352 farmers reported they did not use
+ acaraicides.
+ More than 90 percent of households have at least one knapsack sprayer used
+ to apply the pesticide to the cowskin.
+ Again, this proportion is highest in the southwest.
+\end_layout
+
+\begin_layout Subsubsection
+Milk handling and sanitation
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Milk-handling-and"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A second important innovations is related to milk handling and sanitation.
+ The use of stainless steel or aluminum buckets and milk cans is very important
+ to safeguard the quality of the milk.
+ However, farmers often use plastic buckets during milking.
+ More problematic is the use of plastic jerry cans by transporters and traders.
+ Plastic jerry cans are difficult to clean and the surface is easily scratched.
+ This increases the likelihood of microbial contamination.
+ Jerry cans easily heat up in the sun, accelerating bacterial growth.
+ 
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Use-of-milk"
+
+\end_inset
+
+ shows that, throughout the dairy value chain, custom milk containers are
+ becoming the norm in the export led milk shed.
+ The central milk shed is still far behind, especially upstream.
+ For instance, while we find that almost 65 percent of farmers in the southwest
+ use stainless steel or aluminum buckets or containers to collect and store
+ the milk, this is only 20 percent in the central milk shed.
+ Here the majority of farmers report they are using plastic buckets or plastic
+ jars.
+ We also find that farmers typically have at least one stainless steel or
+ aluminum bucket and one stainless steel or aluminum milk can in the southwest.
+ In the central milk shed, almost no farmer has a milk can.
+ About 60 percent of the traders that were interviewed in the southwest
+ reported that they only use proper milk cans for there business.
+ This was only 10 percent in the central region.
+ A trader in the southwest has on average 4.4 milk cans.
+ Most of these are 25 liter cans.
+ The differences are smaller at the milk collection center level.
+ In the central milk shed, 62 percent of mccs reported to be using only
+ stainless steel or aluminum containers.
+ In the southwest this is 84 percent.
+ Milk collection centers in the southwest have on average 35 milk cans.
+ However, this is because some cooperatives supply cans to farmers and traders
+ they work with.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Use of milk containers
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Use-of-milk"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcc} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	central shed	&	southwestern shed	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{farmers}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Uses stainless steel or aluminum bucket or container	&	19.46
+\backslash
+%	&	64.49
+\backslash
+%	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Number of stainless steel or aluminum buckets	&	0.46	&	1.31	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Number of stainless steel or aluminum milk cans	&	0.16	&	1.28	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{traders and transporters}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Uses only milk cans	&	10.35
+\backslash
+%	&	58.82
+\backslash
+%	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Number of milk cans	&	1.08	&	4.41	
+\backslash
+
+\backslash
+ 				
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{milk collection centers}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Uses only milk cans	&	62.26
+\backslash
+%	&	83.78
+\backslash
+%	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Number of milk cans	&	5.33	&	34.68	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Based on author's calculations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Cooperatives
+\end_layout
+
+\begin_layout Standard
+Not only do we see technological innovations within the sub-sector; institutiona
+l innovation may also emerge to address particular problems within the value
+ chain.
+ For instance, as many individual producers supply a milk collection center,
+ traceability becomes difficult and milk collection centers have to rely
+ on the collective reputation of the product they supply.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "10.1111/j.0002-9092.2005.00712.x"
+
+\end_inset
+
+ point out similarities between collective reputation and a common property
+ resource in which asymmetric information about the quality that is delivered
+ leads to over-extraction from the stock of reputation.
+ A cooperative organization of the milk collection center may be an endogenous
+ response to the challenges related to collective reputation and quality
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+It should be noted, however, that cooperatives often struggle with governance
+ issues, which may affect its effectiveness.
+ For instance, in Ethiopia, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "RePEc:trn:csnjrn:v:1:i:1:p:85-103"
+
+\end_inset
+
+ do not find a significant effect of cooperative membership on milk hygiene,
+ and a negative impact on milk quality.
+\end_layout
+
+\end_inset
+
+.
+ Such an explanation is also consistent with the fact that no price premia
+ are paid to farmers for quality.
+ 
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Cooperatives"
+
+\end_inset
+
+ shows that in the export oriented milk shed, proportionally more producers
+ report that they are a member of a dairy cooperative (p-value<0.001).
+ This is not because, for some reason, cooperatives in general are more
+ common in the southwest: about 20 percent of farmers report that they are
+ (also) a member of non-diary cooperatives, such as a savings or credit
+ organization, and this proportion is not different between the two areas
+ (p-value = 0.374).
+ At the trader level, we find that the share of traders that reports to
+ be a member of a cooperative or union is actually higher in the central
+ milk shed, but the difference is not significant (p-value = 0.450).
+ However, if we look at where these farmers take their milk, we again see
+ that in the export oriented milk shed, a significantly larger share of
+ traders report they supply cooperative milk collection centers (p-value
+ < 0.001).
+ Finally, at the level of the milk collection centers, we also see that
+ cooperatives are more prevalent in the southwest (p-value = 0.053).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/bjvca/data/projects/PIMDVC/analysis/bjorn/coop.pdf
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Cooperatives
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Cooperatives"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cooperatives also provide complementary services to their members.
+ We find that cooperatives assist farmers in the area of animal health.
+ For instance, almost 30 percent of cooperative milk collection centers
+ report they are supplying medication and provide vaccination services;
+ this is only 10 percent for private milk collection centers.
+ Similarly, 20 percent of cooperative milk collection centers report they
+ have a vet on call, while this is again only 10 percent for private milk
+ collection centers.
+ We also find that cooperatives provide significantly more training to members.
+\end_layout
+
+\begin_layout Subsubsection
+Specialization
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Specialization"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Traders and transporters are typically men.
+ Also, compared to other actors in the dairy value chain, they are very
+ young; on average 30 years old.
+ Trading or transporting is indeed typically an activity for young men who
+ are often forced to look for off-farm activities due to high population
+ growth rates in Uganda.
+ Most traders and transporters are independent and work for their own account,
+ although in the southwestern milk shed there is also a sizable proportion
+ of traders that work for a cooperative milk collection center (14 percent).
+ Middlemen are generally recent to the business.
+ Traders and transporters in the central shed have only 3 year of experience
+ and those in the southwest have on average 4 and a half years of experience.
+ However, it should be noted that these low figures might suffer from survivor-s
+hip bias, as middlemen that go bankrupt disappear from the sample if they
+ become farmer again.
+ Most middlemen in our sample specialize in milk.
+ 
+\end_layout
+
+\begin_layout Standard
+Competition between middlemen is important to prevent them from extracting
+ excess rents form the value chain 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "moser2009spatial,New1"
+
+\end_inset
+
+.
+ We have asked each trader or transporter how many traders or transporters
+ have similar trading activities in their trading area.
+ We find that there are on average almost 14 other middlemen to compete
+ with.
+ However, the distribution is skewed, with the median being 8 competitors.
+ Still, there is only one person who reports no competition and only 9 that
+ report that there is only one other trader or transporter.
+ Interestingly, using an Exact Wilcoxon-Mann-Whitney Test, we conclude that
+ competition is significantly lower in the southwestern area (p<0.001).
+ We also asked each trader to estimate how many traders or transporters
+ had similar trading activities as in their trading area at the time they
+ started trading, which we use to calculate the average yearly increase
+ in competition.
+ We find that between the time the average middleman started his business
+ and now, the number of competitors has increased yearly by about 18 percent.
+ There is no difference in increase of competition over time between the
+ two areas.
+\end_layout
+
+\begin_layout Subsection
+Models
+\end_layout
+
+\begin_layout Standard
+The previous section explores how key innovations within the dairy value
+ chain differs between export led and local value chains by simply comparing
+ the southwestern milk shed to the central milk shed.
+ However, it may be that in the central milk shed, some actors are also
+ integrated in an export led value chain.
+ For instance, many farmers from the central region supply Brookside in
+ Kampala, which exports substantial parts to Kenya.
+ Also, Jesa Dairy Ltd in Wakiso procures most of its milk from the central
+ shed.
+ According to DDA statistics, Jesa also exports considerable amounts of
+ milk.
+ At the same time, not all actors located in the southwest produce for the
+ export market.
+ But simply assuming all actors in the southwest are engaged in dairy export
+ and all actors in the central region produce for local markets, differences
+ between export-led and local value chains may be attenuated.
+ 
+\end_layout
+
+\begin_layout Standard
+In this section, we construct a more fine grained indicator of participation
+ in export-led value chains than simply considering milk shed.
+ We do this for two actor in the value chain: farmers and traders.
+ For farmers, we create an indicator of integration within the export-led
+ dairy value chain that is true if the farmer delivered milk to a milk collectio
+n center every day during the week before the survey.
+ This could either be deliveries made directly, or indirectly through a
+ trader or a transporter.
+ Using this definition, we find that half of the farmers in our sample are
+ integrated into export-led value chains.
+ As expected, there is a clear difference between the sheds: in the central
+ region, only about 40 percent is part of an export-led value chain.
+ In the southwest, this is almost three quarters of the farmers that were
+ interviewed.
+\end_layout
+
+\begin_layout Standard
+For the trader or transporter, we create an indicator of integration within
+ the export-led dairy value chain that is true if the trader or transporter
+ reports delivering exclusively to an mcc or directly to the processor.
+ According to this definition, about 43 percent of traders are integrated
+ into export led value chains.
+ As for traders, there is a difference between the sheds, with about 38
+ percent of farmers integrated in export-led chains in the cental region,
+ while this is 62 percent in the southwestern region.
+ 
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Innovations-in-export"
+
+\end_inset
+
+ summarizes the main results from an analysis of the relation between export-led
+ value chains defined in this way and the various innovations described
+ in the previous section.
+ Additional results are presented in the Appendix (Tables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Regressions-for-farmer"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Regressions-for-trader"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Farmers
+\end_layout
+
+\begin_layout Standard
+In the top panel of the table, we present results for dairy farmers.
+ The first row looks at the correlation between being integrated in export-led
+ dairy value chains and the adoption of improved breeds, defined as the
+ share of exotics in the total herd.
+ In the first column of the table, means in the subgroup of farmers that
+ are not integrated in export led value chains (the control group) are reported.
+ We find that the share of exotic animals in the control group is 0.40.
+ The second column shows a simple difference between the control group mean
+ adoption rate and the average adoption rate among farmers that are integrated
+ in export-led value chains.
+ We see this is 27 percentage points higher, corresponding to an average
+ adoption rate in this group of 0.67.
+ The difference is statistically significant at the 1 percent significance
+ level.
+ 
+\end_layout
+
+\begin_layout Standard
+The third column in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Innovations-in-export"
+
+\end_inset
+
+ also shows the difference between the control group and the subset of farmers
+ that are part of an international value chain.
+ However, we now estimate conditional means in a regression framework.
+ In particular, we control for a range of farmer and context characteristics.
+ For instance, we add controls for the age of the household head, sex of
+ the household head, household size, whether the household head has attended
+ at least secondary school, the distance of the farm to the nearest neighbour,
+ distance to a shop where veterinary supplies can be bought, access to credit,
+ and the size of land that can be used for grazing the animals.
+ We also include a set of dummy variables that indicate the district the
+ farm is located in
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Note that this implicitly means we also control for milk shed, as 2 districts
+ form the southwestern milk shed and the other four districts belong to
+ the central milk shed.
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We find that after controlling for these variables, the difference in adoption
+ of improved cows between integration in export led value chains and local
+ value chains is still significant.
+ However, the difference has reduced to about 12 percent, indicating that
+ the simple difference picks up effects that should be attributed to other
+ variables.
+ Full results for the regression are presented in column 1 of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Regressions-for-farmer"
+
+\end_inset
+
+.
+ Most of the control variables in the regression take on the expected sign.
+ For instance, we find that older farmers have lower adoption of improved
+ cows.
+ As we mentioned earlier that especially exotic cows are susceptible to
+ pests and diseases, it should not surprise that farmers that are located
+ further from veterinary supply shops have lower average adoption rates.
+ We also find that access to credit is correlated to higher adoption rates.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Innovations in export led value chains
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Innovations-in-export"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccc} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(1) & (2)	&	(3) & (4)	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{4}{c}{
+\backslash
+textit{farmers}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-5} 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Adoption of improved breeds 	&	0.40	&	0.27$^{**}$	&	0.12$^{**}$	&	0.12$^{**}$	
+\backslash
+
+\backslash
+ 	&		&	0.02		&	0.02		&	0.03		
+\backslash
+
+\backslash
+ Use of aluminum buckets and cans 	&	0.16	&	0.27$^{**}$	&	0.14$^{**}$	&	0.17$^{**}$	
+\backslash
+
+\backslash
+ 	&		&	0.02		&	0.02		&	0.03		
+\backslash
+
+\backslash
+ Is member of diary coop	&	0.17	&	0.08$^{**}$	&	0.03		&	0.03		
+\backslash
+
+\backslash
+ 	&		&	0.02		&	0.02		&	0.02		
+\backslash
+
+\backslash
+ 	&		&			&			&			
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{4}{c}{
+\backslash
+textit{traders}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-5} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Uses only milk cans	&	0.18	&	0.04		&	-0.02		&	-0.04		
+\backslash
+
+\backslash
+ 	&		&	0.03		&	0.03		&	0.04		
+\backslash
+
+\backslash
+ Member of coop or union	&	0.41	&	-0.05		&	-0.07$^{+}$	&	-0.07		
+\backslash
+
+\backslash
+ 	&		&	0.04		&	0.04		&	0.05		
+\backslash
+
+\backslash
+ Specialize in milk	&	0.35	&	0.13$^{**}$	&	0.13$^{**}$	&	0.19$^{**}$	
+\backslash
+
+\backslash
+ 	&		&	0.04		&	0.04		&	0.05		
+\backslash
+
+\backslash
+ Number of competitors	&	14.80	&	-3.72$^{**}$	&	-2.50$^{+}$	&	-2.77$^{+}$	
+\backslash
+
+\backslash
+ 	&		&	1.28		&	1.32		&	1.47		
+\backslash
+
+\backslash
+ Fixes price	&	0.35	&	-0.12$^{**}$	&	-0.11$^{**}$	&	-0.12$^{**}$	
+\backslash
+
+\backslash
+ 	&		&	0.04		&	0.04		&	0.04		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Based on author's calculations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally, the last column of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Innovations-in-export"
+
+\end_inset
+
+ we present results for the difference in average adoption rates between
+ the two groups after making both groups more comparable using propensity
+ score matching.
+ To estimate the propensity score, we use the same variables as the ones
+ we used in the regression model in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Regressions-for-farmer"
+
+\end_inset
+
+.
+ We use nearest neigbour matching with a caliper of 0.05
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+This means that only comparison units within a certain width of the propensity
+ score of the treated units get matched, the distance threshold being .05
+ standard deviations of the propensity score.
+ While this reduces the number of observations that can be matched, it greatly
+ increases balance.
+\end_layout
+
+\end_inset
+
+.
+ Doing so, we were able to match 374 farmers that participate in export-led
+ value chains to 374 farmers that supply local markets.
+ Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance-on-covariates"
+
+\end_inset
+
+ shows that this procedure improves balance between the sample of farmers
+ that is integrated in global value chains and those that are not.
+ We again find that farmers that are participating in global value chains
+ have on average 12 percentage points higher adoption rates.
+ 
+\end_layout
+
+\begin_layout Standard
+The second row in the top panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Innovations-in-export"
+
+\end_inset
+
+ shows results for correlations between export led value chains and attention
+ to sanitation.
+ As in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Milk-handling-and"
+
+\end_inset
+
+, we compare the likelihood that farmers use aluminum buckets to collect
+ milk and aluminum cans to store it.
+ We see that among farmers that are not part of a global value chain, only
+ 16 percent reports using proper equipment (column 1).
+ This percentage increases to 43 among farmers that report supplying the
+ export sector (+27 percentage points, second column).
+ In the third column, we again add control variable to estimate conditional
+ means.
+ This reduces the difference to about 14 percentage points.
+ Full results from the regression are reported in the second column of Appendix
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Regressions-for-farmer"
+
+\end_inset
+
+.
+ We see that access to credit also partly explains some of the variance
+ in the use of aluminum equipment.
+ We also conclude larger farms have a higher propensity to use proper equipment,
+ while the likelihood is lower if the household head is older.
+ The coefficient stays significant and large after matching (column 4).
+\end_layout
+
+\begin_layout Standard
+The last row in the top panel shows the association between export led value
+ chains and membership of cooperatives.
+ It shows that among farmers that are not integrated in export-led value
+ chains, 17 percent is member of a dairy cooperative.
+ Judged by a simple difference in means, we do find that significantly more
+ farmers are member of a cooperative in export led value chains (column
+ 2).
+ However, once we control for a range of observable characteristics, either
+ in a regression framework or though propensity score matching, the difference
+ disappears.
+ Further exploration using regression analysis reveals that, while the coefficie
+nt on the indicator dummy for integration into modern value chains is not
+ significant, its interaction with the indicator for the southwestern milk
+ shed is.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Regressions-for-farmer"
+
+\end_inset
+
+ further reveals that cooperatives are an important vehicle for access to
+ credit.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Traders
+\end_layout
+
+\begin_layout Standard
+The bottom part of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Innovations-in-export"
+
+\end_inset
+
+ shows results for a similar analysis using the trader data.
+ We start by looking at sanitation at the trader level, defined as the use
+ aluminum milk containers for storing and transporting milk in the first
+ row.
+ We find that in the trader does not exclusively delivers directly to a
+ milk collection center or processor, proper equipment is used by only 18
+ percent of the traders.
+ We find that this percentage is not significantly different among traders
+ that are integrated in export-led value chains (column 2).
+ In the third column, we report the difference between traders that are
+ participating in export value chains and those that are not after controlling
+ for observable trader characteristics and environmental variables.
+ These controls include age of the trader, sex of the traders, whether the
+ trader has attended at least secondary school and whether the trader is
+ the head of a household.
+ We further control for the number of household members that are in the
+ household that the trader is part of, the number of years he or she has
+ been operating as a milk trader, and whether he or she reported to have
+ access to finance.
+ We also add dummies for the different districts where traders operate.
+ Full results for the regressions are in Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Regressions-for-trader"
+
+\end_inset
+
+.
+ Also according to this model, there is no difference in the use of milk
+ cans between traders that are integrated in modern value chains and those
+ that trade in the informal sector.
+\end_layout
+
+\begin_layout Standard
+The fourth column in the bottom part of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Innovations-in-export"
+
+\end_inset
+
+ reports differences after pre-processing the traders data to increase balance
+ on a range of observables using propensity score matching.
+ We match on the same variables that were used as controls in the regressions,
+ and we again use nearest neigbour matching with a caliper of 0.05.
+ Doing so results in a total of 454 observations that were matched, half
+ in each group.
+ As can be seen in Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance-traders"
+
+\end_inset
+
+, this procedure makes both groups comparable on the observed characteristics.
+ Comparing mean use of milk cans between traders that are integrated in
+ global value chains and those that are not in the matched sample does not
+ seem to affect our earlier conclusion that there is no significant difference.
+ This finding, together with the large difference observed when we compare
+ milk sheds in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Milk-handling-and"
+
+\end_inset
+
+ leads us to conclude that the use of milk cans by traders is primarily
+ related to geographic location.
+\end_layout
+
+\begin_layout Standard
+The second row in the bottom panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Innovations-in-export"
+
+\end_inset
+
+ looks at the likelihood that a trader is member of a cooperative or a union.
+ We find that about 41 of traders that are part of the local dairy value
+ chain are member of a cooperative or union.
+ Simply comparing traders that are integrated in export oriented value chains
+ to those that are not, we find no difference in membership.
+ However, after controlling for other characteristics in a regression (column
+ 3), the difference becomes significantly negative, albeit only at the 10
+ percent significance level.
+ The result is not very robust and disappears again when using propensity
+ score matching.
+\end_layout
+
+\begin_layout Standard
+The next rows in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Innovations-in-export"
+
+\end_inset
+
+ present results on the degree of specialization among traders.
+ In particular, we look at the likelihood that farmers transport only milk
+ against a transport fee (as opposed to (also) transporting or trading other
+ dairy products or even other crops).
+ We find that about 35 percent of traders that are integrated in local value
+ chains specialize in milk according to this definition.
+ We find that this is about 13 percentage points higher among farmers that
+ are supplying the export sector (column 2), and this difference remains
+ after controlling for a range of observable characteristics (column 3).
+ Full regression results, reported in column 3 in Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Regressions-for-trader"
+
+\end_inset
+
+ show that the likelihood of specialization is also correlated to many of
+ these other characteristics.
+ For instance, we especially you and lower educated traders specialize in
+ milk transportation.
+ The fact that being the head is negatively correlated to specialization
+ can be explained by the fact that farmers often use relatives (their son)
+ to transport milk.
+ Traders that have access to credit are more likely to buy and sell for
+ their own account, instead of merely transporting against a fee for someone
+ else.
+ The difference in the degree of specialization between the two trader groups
+ becomes even larger after matching.
+\end_layout
+
+\begin_layout Standard
+Next, we consider the number of other traders or transporters that work
+ in the area the trader usually works.
+ Consistent with what we found in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Specialization"
+
+\end_inset
+
+, the average trader that is integrated in local supply chains competes
+ with about 14 other traders (column 1).
+ However, the number of competitors is significantly lower if reported by
+ traders that are working in export-led value chains.
+ While the difference reduces somewhat after controlling for obserables,
+ it remains significant at the 10 percent significance level.
+ Finally, we asked if traders have agreements with other traders on what
+ prices to offer to farmers, as a proxy for the extent of price fixing that
+ prevails in the diary value chain.
+ Despite the fact that competition seems to be lower among traders that
+ work in export-led value chains, price fixing seems to be substantially
+ lower as well.
+\end_layout
+
+\begin_layout Section
+Conclusions
+\end_layout
+
+\begin_layout Standard
+As a result of increased demand for dairy products, both locally and from
+ abroad, and facilitated by privatization and liberalization, the dairy
+ sub-sector in Uganda has transformed substantially.
+ Using data collected from farmers, traders, milk collection centers and
+ processors, we highlight some of the differences and similarities between
+ the central milk shed that caters for the local market and the southwestern
+ milk shed that supplies the processors that produce for the export market.
+ We also explore patterns in key innovations that are both a cause and consequen
+ce of transforming value chains.
+\end_layout
+
+\begin_layout Standard
+We find seasonality to be a defining feature of dairy farming in Uganda.
+ During the rainy season, almost twice as much milk is produced than during
+ the dry season.
+ This seasonality cuts across the entire value chain.
+ In the dry season in the central milk shed, transporters make trips with
+ milk cans that are only half full, while in the southern milk shed during
+ the rainy season, traders make more than 2.5 trips.
+ At the level of milk collection centers, there is considerable under-use
+ of this capacity in the dry season, especially in the central milk shed,
+ where tanks are on average only 30 percent full.
+ Processors complain they can not source sufficient milk, yet they keep
+ increasing capacity.
+ Prices are relatively high in both sheds during the dry season.
+ In rainy season, prices decrease substantially, especially in the southwestern
+ milk shed.
+ 
+\end_layout
+
+\begin_layout Standard
+A second important finding that emerges from this study is that increased
+ specialization and a reduction in the number of smallholder traders does
+ not necessarily mean farmers profit less from diary value chains.
+ Indeed, we find that in modern value chains, transporters are less likely
+ to engage in price fixing than in informal market where traders work for
+ their own account.
+ Apparently, prices are determined as a competitive process at the processor
+ level, closely tracking the international milk price.
+ Actors upstream seem to follow this price, and in the context of frequent
+ transactions and a commodity where quality is important, a stable trading
+ relationship seems important.
+\end_layout
+
+\begin_layout Standard
+Third, while for other commodities, prices when sold to neigbours are low,
+ this is not the case for milk.
+ In fact, we find that in the central region, farmers get the best prices
+ when they sell directly to fellow villagers.
+ This illustrates the importance of the local milk market.
+ However, the existence of a local market for which there are less quality
+ requirements may hamper (further) development of the dairy value chain.
+ For instance, processors may be reluctant to invest in processors (eg.
+ by organizing training, providing credit or inputs), if there is a high
+ likelihood that the farmer will sell the milk in the local market instead
+ of to the processor 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "swinnen2015quality"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+We further establish that technology adoption is correlated with being integrate
+d in global value chains.
+ In the southwestern milk shed, almost 87 percent of animals are of an improved
+ breed.
+ The central milk shed, half of the cows are still local varieties.
+ We also see correlations with milk sanitation: Throughout the dairy value
+ chain, custom milk containers are becoming the norm in the export led milk
+ shed.
+ There are also innovations in terms of how parts of the chain is organized:
+ in the export oriented milk shed, proportionally more producers report
+ that they are a member of a dairy cooperative.
+ Also at the level of the milk collection centers, we also see that cooperatives
+ are more prevalent in the southwest.
+ 
+\end_layout
+
+\begin_layout Standard
+Even though we try to reduce bias due to selection inherent to observational
+ data by conditioning on a range of observables using regression and propensity
+ score matching, it should be stressed that the dairy value chain innovations
+ we consider in this study are endogenous: innovations happen in response
+ to transforming value chains while at the same time, these same innovations
+ lead to a transformation of the value chain.
+ Therefore, our results can not be interpreted as the causal effect of export-le
+d value chains on technology adoption, sanitation, or aspects of industrial
+ organization such as cooperative membership and specialization.
+ 
+\end_layout
+
+\begin_layout Section*
+Acknowledgments
+\end_layout
+
+\begin_layout Standard
+This research was funded by the CGIAR Research Program on Policies, Institutions
+, and Markets (PIM), led by the International Food Policy Research Institute
+ (IFPRI) and carried out with support from the CGIAR Fund contributors (https://
+www.cgiar.org/funders/).
+ We thank Wilberforce Walukano and Marc Charles Wanume for excellent field
+ support.
+ We are grateful for discussion with Rinus Van Klinken and Sarah Mubiru.
+ This paper has benefited from comments provided by participants of a workshop
+ held in Leuven at LICOS/KULeuven.
+ The analysis contained here is the sole responsibility of the authors,
+ and does not reflect the views of any funding agency or organization mentioned
+ here.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "FDI_dairy"
+options "IFPRI_Style"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{table}{0} 
+\backslash
+renewcommand{
+\backslash
+thetable}{A.
+\backslash
+arabic{table}} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Regressions for farmer
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Regressions-for-farmer"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{@{
+\backslash
+extracolsep{5pt}}lccc}  
+\backslash
+
+\backslash
+[-1.8ex]
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]   & 
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{Dependent variable:}} 
+\backslash
+
+\backslash
+  
+\backslash
+cline{2-4}  
+\backslash
+
+\backslash
+[-1.8ex] & (1) & (2) & (3)
+\backslash
+
+\backslash
+  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]
+\end_layout
+
+\begin_layout Plain Layout
+
+ Integrated in export-led chain & 0.124$^{***}$ & 0.145$^{***}$ & 0.029 
+\backslash
+
+\backslash
+    & (0.021) & (0.025) & (0.019) 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ Age of household head & $-$0.002$^{***}$ & $-$0.001$^{*}$ & 0.001 
+\backslash
+
+\backslash
+    & (0.001) & (0.001) & (0.001) 
+\backslash
+
+\backslash
+    Head is woman & $-$0.035 & 0.002 & $-$0.003 
+\backslash
+
+\backslash
+    & (0.025) & (0.030) & (0.024) 
+\backslash
+
+\backslash
+    Household size & 0.0002 & 0.004 & $-$0.003 
+\backslash
+
+\backslash
+    & (0.003) & (0.003) & (0.003) 
+\backslash
+
+\backslash
+    Head has secondary education & 0.002 & 0.012 & 0.001 
+\backslash
+
+\backslash
+    & (0.022) & (0.026) & (0.020) 
+\backslash
+
+\backslash
+      Distance to nearest neighbour & $-$0.016 & 0.011 & $-$0.001 
+\backslash
+
+\backslash
+    & (0.013) & (0.015) & (0.012) 
+\backslash
+
+\backslash
+    Distance to vet meds & $-$0.004$^{***}$ & $-$0.002 & $-$0.001 
+\backslash
+
+\backslash
+    & (0.001) & (0.001) & (0.001) 
+\backslash
+
+\backslash
+    Access to finance & 0.073$^{***}$ & 0.052$^{**}$ & 0.130$^{***}$ 
+\backslash
+
+\backslash
+    & (0.019) & (0.022) & (0.018) 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Size grazing land & 0.0002 & 0.001$^{***}$ & 0.0004$^{***}$ 
+\backslash
+
+\backslash
+    & (0.0002) & (0.0002) & (0.0002) 
+\backslash
+
+\backslash
+    Constant & 0.402$^{***}$ & 0.095$^{*}$ & 0.063 
+\backslash
+
+\backslash
+    & (0.047) & (0.056) & (0.044) 
+\backslash
+
+\backslash
+   
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  Observations & 1,478 & 1,485 & 1,485 
+\backslash
+
+\backslash
+  R$^{2}$ & 0.297 & 0.238 & 0.121 
+\backslash
+
+\backslash
+  Adjusted R$^{2}$ & 0.291 & 0.231 & 0.113 
+\backslash
+
+\backslash
+  Residual Std.
+ Error & 0.339 & 0.404  & 0.318  
+\backslash
+
+\backslash
+  F Statistic & 44.245$^{***}$ & 32.849$^{***}$ & 14.498$^{***}$ 
+\backslash
+
+\backslash
+  
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  
+\backslash
+textit{Note:}  & 
+\backslash
+multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} 
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}   
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Balance on covariates before and after matching (farmers)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Balance-on-covariates"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccc} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{before matching}} &
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{after matching}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	export VC	&	local VC	&	export VC	&	local VC	
+\backslash
+
+\backslash
+ Distance	&	0.65	&	0.40	&	0.51	&	0.50	
+\backslash
+
+\backslash
+ Age of head	&	47.76	&	48.03	&	47.33	&	47.17	
+\backslash
+
+\backslash
+ Head is woman	&	0.14	&	0.15	&	0.15	&	0.16	
+\backslash
+
+\backslash
+ Household size	&	7.41	&	7.05	&	7.28	&	7.44	
+\backslash
+
+\backslash
+ Head has secondary education	&	0.24	&	0.25	&	0.26	&	0.21	
+\backslash
+
+\backslash
+ Distance to nearest neighbor	&	0.51	&	0.45	&	0.47	&	0.45	
+\backslash
+
+\backslash
+Distance to vet meds	&	8.20	&	8.36	&	7.94	&	7.90	
+\backslash
+
+\backslash
+ Access to finance	&	0.68	&	0.61	&	0.67	&	0.67	
+\backslash
+
+\backslash
+ district=KIRUHURA	&	0.30	&	0.06	&	0.13	&	0.10	
+\backslash
+
+\backslash
+ district=KYANKWANZI	&	0.13	&	0.26	&	0.22	&	0.19	
+\backslash
+
+\backslash
+ district=MASINDI	&	0.25	&	0.37	&	0.36	&	0.41	
+\backslash
+
+\backslash
+ district=MBARARA	&	0.04	&	0.07	&	0.07	&	0.07	
+\backslash
+
+\backslash
+ districtNAKASEKE	&	0.24	&	0.09	&	0.14	&	0.16	
+\backslash
+
+\backslash
+ landsize	&	61.99	&	30.43	&	48.07	&	43.80	
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Based on author's calculations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Regressions for trader
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Regressions-for-trader"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{@{
+\backslash
+extracolsep{5pt}}lccccc}  
+\backslash
+
+\backslash
+[-1.8ex]
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]   & 
+\backslash
+multicolumn{5}{c}{
+\backslash
+textit{Dependent variable:}} 
+\backslash
+
+\backslash
+  
+\backslash
+cline{2-6}  
+\backslash
+
+\backslash
+[-1.8ex] & (1) & (2) & (3) & (4) & (5)
+\backslash
+
+\backslash
+  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]   Integrated in export-led chain & $-$0.023 & $-$0.067$^{*}$ & 0.127$^{***}
+$ & $-$2.503$^{*}$ & $-$0.108$^{***}$ 
+\backslash
+
+\backslash
+    & (0.028) & (0.037) & (0.038) & (1.320) & (0.037) 
+\backslash
+
+\backslash
+    Age of trader & 0.001 & 0.003 & $-$0.008$^{***}$ & $-$0.219$^{***}$ & $-$0.005$^{
+**}$ 
+\backslash
+
+\backslash
+    & (0.002) & (0.002) & (0.002) & (0.084) & (0.002) 
+\backslash
+
+\backslash
+     Trader has secondary education & 0.027 & 0.054 & $-$0.087$^{**}$ & 1.837
+ & 0.013 
+\backslash
+
+\backslash
+    & (0.030) & (0.040) & (0.041) & (1.396) & (0.039) 
+\backslash
+
+\backslash
+   Traders is woman & $-$0.012 & 0.097 & $-$0.002 & $-$0.145 & $-$0.018 
+\backslash
+
+\backslash
+    & (0.176) & (0.233) & (0.239) & (8.237) & (0.230) 
+\backslash
+
+\backslash
+   Trader is household head & $-$0.032 & 0.050 & $-$0.110$^{**}$ & 2.864$^{*}$
+ & 0.043 
+\backslash
+
+\backslash
+    & (0.035) & (0.046) & (0.047) & (1.619) & (0.045) 
+\backslash
+
+\backslash
+   Household size & $-$0.002 & 0.007 & 0.002 & 0.106 & 0.005 
+\backslash
+
+\backslash
+    & (0.004) & (0.005) & (0.005) & (0.165) & (0.005) 
+\backslash
+
+\backslash
+    Experience as trader & 0.006$^{*}$ & 0.007 & $-$0.007 & 0.306$^{*}$ & 0.013$^{***
+}$ 
+\backslash
+
+\backslash
+    & (0.003) & (0.004) & (0.005) & (0.156) & (0.004) 
+\backslash
+
+\backslash
+     Access to finance & 0.029 & 0.202$^{***}$ & $-$0.113$^{***}$ & 1.149 &
+ $-$0.003 
+\backslash
+
+\backslash
+    & (0.029) & (0.039) & (0.040) & (1.366) & (0.038) 
+\backslash
+
+\backslash
+       Constant & 0.240$^{***}$ & 0.288$^{***}$ & 0.701$^{***}$ & 19.931$^{***}$
+ & 0.515$^{***}$ 
+\backslash
+
+\backslash
+    & (0.066) & (0.088) & (0.090) & (3.100) & (0.087) 
+\backslash
+
+\backslash
+    
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  Observations & 659 & 659 & 659 & 659 & 659 
+\backslash
+
+\backslash
+  R$^{2}$ & 0.291 & 0.141 & 0.117 & 0.067 & 0.054 
+\backslash
+
+\backslash
+  Adjusted R$^{2}$ & 0.276 & 0.124 & 0.099 & 0.049 & 0.035 
+\backslash
+
+\backslash
+  Residual Std.
+ Error & 0.344 & 0.456 & 0.467 & 16.096 & 0.449 
+\backslash
+
+\backslash
+  F Statistic & 20.320$^{***}$ & 8.165$^{***}$ & 6.586$^{***}$ & 3.590$^{***}$
+ & 2.844$^{***}$ 
+\backslash
+
+\backslash
+  
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  
+\backslash
+textit{Note:}  & 
+\backslash
+multicolumn{5}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} 
+\backslash
+
+\backslash
+  
+\backslash
+end{tabular}  
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Balance on covariates before and after matching (traders)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Balance-traders"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccc} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{before matching}} &
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{after matching}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	export VC	&	local VC	&	export VC	&	local VC	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Distance (ps score)	&	0.48	&	0.40	&	0.44	&	0.44	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Age of trader	&	30.27	&	29.96	&	30.06	&	30.03	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Trader has secondary education	&	0.28	&	0.36	&	0.30	&	0.30	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Trader is woman	&	0.00	&	0.01	&	0.00	&	0.00	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Trader is head	&	0.60	&	0.67	&	0.64	&	0.60	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Household size	&	7.59	&	7.51	&	7.76	&	8.15	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Experience as trader	&	3.63	&	3.87	&	3.59	&	3.68	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Access to finance	&	0.69	&	0.63	&	0.68	&	0.68	
+\backslash
+
+\backslash
+ district=KIRUHURA	&	0.28	&	0.10	&	0.17	&	0.16	
+\backslash
+
+\backslash
+ district=KYANKWANZI	&	0.22	&	0.22	&	0.25	&	0.21	
+\backslash
+
+\backslash
+ district=MASINDI	&	0.04	&	0.06	&	0.04	&	0.02	
+\backslash
+
+\backslash
+ district=MBARARA	&	0.02	&	0.04	&	0.03	&	0.03	
+\backslash
+
+\backslash
+ district=NAKASEKE	&	0.31	&	0.41	&	0.36	&	0.41	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Based on author's calculations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

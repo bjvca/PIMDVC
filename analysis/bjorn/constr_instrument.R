@@ -55,10 +55,13 @@ children$share_fem <- children$ind_fem/children$counter
 farmers[c("hh_head.HH.cattle_ownership.q23", "hh_head.HH.cattle_ownership.q25","hh_head.HH.cattle_ownership.q27","hh_head.HH.cattle_ownership.q29", "hh_head.HH.cattle_ownership.q31","hh_head.HH.cattle_ownership.q33")] <- lapply(farmers[c("hh_head.HH.cattle_ownership.q23", "hh_head.HH.cattle_ownership.q25","hh_head.HH.cattle_ownership.q27","hh_head.HH.cattle_ownership.q29", "hh_head.HH.cattle_ownership.q31","hh_head.HH.cattle_ownership.q33")], function(x) replace(x, x == 999, NA) )
 farmers$herdsize <- rowSums(farmers[c("hh_head.HH.cattle_ownership.q23", "hh_head.HH.cattle_ownership.q25","hh_head.HH.cattle_ownership.q27","hh_head.HH.cattle_ownership.q29", "hh_head.HH.cattle_ownership.q31","hh_head.HH.cattle_ownership.q33")], na.rm=T)
 
+farmers$herdsize_imp <- rowSums(farmers[c("hh_head.HH.cattle_ownership.q29", "hh_head.HH.cattle_ownership.q31","hh_head.HH.cattle_ownership.q33")], na.rm=T)
+farmers$herdsize_loc <- rowSums(farmers[c("hh_head.HH.cattle_ownership.q23", "hh_head.HH.cattle_ownership.q25","hh_head.HH.cattle_ownership.q27")], na.rm=T)
+
 farmers <- merge(farmers, children, by = "ID", all.x=T)
 farmers$share_fem[is.na(farmers$share_fem)] <- 0
 
-summary(lm(herdsize~share_fem,data=farmers))
+summary(lm((herdsize_imp/herdsize)~share_fem,data=farmers))
 ### this is significant, but has the wrong sign...
 
 

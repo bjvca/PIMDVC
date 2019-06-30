@@ -1,6 +1,7 @@
 rm(list=ls())
 library(ggplot2)
 library(ggridges)
+library(stargazer)
 # Multiple plot function
 #
 # ggplot objects can be passed in ..., or to plotlist (as a list of ggplot objects)
@@ -116,16 +117,16 @@ ggplot(res, aes(x = time, y = number, fill = type)) +
         axis.title=element_text(size=24,face="bold"))  + theme(legend.text=element_text(size=24)) + theme(strip.text.x = element_text(size = 24)) + theme(legend.title = element_blank()) +  scale_fill_grey(start = .2, end = .7)
 dev.off()
 
- mean(farmers$herdsize_exot_b, na.rm=T)/mean(farmers$herdsize_local_b+farmers$herdsize_exot_b, na.rm=T)
- mean(farmers$herdsize_exot, na.rm=T)/mean(farmers$herdsize_local+farmers$herdsize_exot, na.rm=T)
+ mean(farmers$herdsize_exot_b/(farmers$herdsize_local_b+farmers$herdsize_exot_b), na.rm=T)
+ mean(farmers$herdsize_exot/(farmers$herdsize_local+farmers$herdsize_exot), na.rm=T)
 
 
- mean(farmers$herdsize_exot_b[farmers$shed=="C"], na.rm=T)/mean(farmers$herdsize_local_b[farmers$shed=="C"]+farmers$herdsize_exot_b[farmers$shed=="C"], na.rm=T)
- mean(farmers$herdsize_exot[farmers$shed=="C"], na.rm=T)/mean(farmers$herdsize_local[farmers$shed=="C"]+farmers$herdsize_exot[farmers$shed=="C"], na.rm=T)
+ mean(farmers$herdsize_exot_b[farmers$shed=="C"]/(farmers$herdsize_local_b[farmers$shed=="C"]+farmers$herdsize_exot_b[farmers$shed=="C"]), na.rm=T)
+ mean(farmers$herdsize_exot[farmers$shed=="C"]/(farmers$herdsize_local[farmers$shed=="C"]+farmers$herdsize_exot[farmers$shed=="C"]), na.rm=T)
 
 
- mean(farmers$herdsize_exot_b[farmers$shed=="SW"], na.rm=T)/mean(farmers$herdsize_local_b[farmers$shed=="SW"]+farmers$herdsize_exot_b[farmers$shed=="SW"], na.rm=T)
- mean(farmers$herdsize_exot[farmers$shed=="SW"], na.rm=T)/mean(farmers$herdsize_local[farmers$shed=="SW"]+farmers$herdsize_exot[farmers$shed=="SW"], na.rm=T)
+ mean(farmers$herdsize_exot_b[farmers$shed=="SW"]/(farmers$herdsize_local_b[farmers$shed=="SW"]+farmers$herdsize_exot_b[farmers$shed=="SW"]), na.rm=T)
+ mean(farmers$herdsize_exot[farmers$shed=="SW"]/(farmers$herdsize_local[farmers$shed=="SW"]+farmers$herdsize_exot[farmers$shed=="SW"]), na.rm=T)
 
 ### ticks
 ## are ticks a problem (likert 1-5)
@@ -399,6 +400,9 @@ dev.off()
 farmers$hh_head.HH.land.q21[farmers$hh_head.HH.land.q21==999] <- NA 
 tapply(farmers$hh_head.HH.land.q21 , farmers$shed,  mean, na.rm = T)
 tapply(farmers$hh_head.HH.land.q21 , farmers$shed,  median, na.rm = T)
+library(coin)
+wilcox_test(hh_head.HH.land.q21~shed, data=farmers, distribution="exact") 
+prop.table(table(farmers$hh_head.HH.land.q21b , farmers$shed),2)
 
 ### price of cows
 farmers$price_cow_local <- as.numeric(as.character(farmers$hh_head.HH.cattle_ownership.q24))
@@ -449,6 +453,12 @@ summary(c(farmers$liters_rain_exot,farmers$liters_rain_local))
 
 summary(c(farmers$liters_rain_exot,farmers$liters_dry_exot))
 summary(c(farmers$liters_rain_local,farmers$liters_dry_local))
+
+
+df <- data.frame(cbind(c(farmers$liters_rain_local,farmers$liters_dry_local),c(farmers$shed,farmers$shed)))
+names(df) <- c("price","shed")
+tapply(df$price,df$shed,mean,na.rm=T)
+
 ### total daily production in dry season (av yield*number of animals in milk)
 farmers$in_milk_dry_local <-  as.numeric(as.character(farmers$hh_head.HH.dairy_ouput.q35))
 farmers$in_milk_dry_local[farmers$in_milk_dry_local > 200] <- NA
@@ -479,6 +489,15 @@ farmers$prod_rain_exot[!is.na(farmers$in_milk_rain_exot) & farmers$in_milk_rain_
 
 farmers$prod_rain <- farmers$prod_rain_exot + farmers$prod_rain_local
 farmers$prod_rain[farmers$prod_rain>1000] <- NA
+
+farmers$in_milk_rain <- farmers$in_milk_rain_local + farmers$in_milk_rain_exot 
+farmers$in_milk_dry <- farmers$in_milk_dry_local + farmers$in_milk_dry_exot 
+
+
+df <- data.frame(cbind(c(farmers$in_milk_rain,farmers$in_milk_dry),c(farmers$shed,farmers$shed)))
+names(df) <- c("in_milk","shed")
+mean(df$in_milk, na.rm=T)
+tapply(df$in_milk,df$shed,mean,na.rm=T)
 
 ### sold
 farmers$sold_dry <- as.numeric(as.character(farmers$hh_head.HH.dairy_ouput.qX3))
@@ -523,10 +542,18 @@ ggplot(to_plot, aes(x = value, y = variable, fill = variable)) + theme_bw() +
 dev.off()
 ### cooperative membership - does it affect hygene?
 
+
 farmers$coop <- (farmers$hh_head.HH.cooperative.q266==1 | farmers$hh_head.HH.cooperative.q266==2) 
+farmers$nondairy_coop <- (farmers$hh_head.HH.cooperative.q267==1 | farmers$hh_head.HH.cooperative.q267==2) 
 farmers$education_prim <- (farmers$hh_head.HH.q6 != 1)
 farmers$education_sec <- (farmers$hh_head.HH.q6 == 4 | farmers$hh_head.HH.q6 == 5 | farmers$hh_head.HH.q6 == 6)
 farmers$dairy <- farmers$hh_head.HH.Housing.q17==2
+
+ prop.table(table(farmers$shed,farmers$coop),1)
+ prop.table(table(farmers$shed,farmers$nondairy_coop),1)
+
+ prop.test(table(farmers$shed,farmers$coop))
+ prop.test(table(farmers$shed,farmers$nondairy_coop))
 
 controls <- "shed+education_prim+education_sec+dairy"
 
@@ -719,5 +746,216 @@ ggplot(data=df, aes(x=year, y=prod, group=shed, col=shed)) +
 dev.off()
 
 
+
+prop.table(table(farmers$hh_head.HH.sales.q81[!(farmers$hh_head.HH.sales.q81=="n/a")],farmers$shed[!(farmers$hh_head.HH.sales.q81=="n/a")]),2)
+
+
+prop.table(table(farmers$hh_head.HH.food_safety.q190.4==T | farmers$hh_head.HH.food_safety.q190.6==T, farmers$shed),2)
+
+##number of steel cans
+farmers$hh_head.HH.livestock_assets.q244 <- as.numeric(as.character(farmers$hh_head.HH.livestock_assets.q244))
+farmers$hh_head.HH.livestock_assets.q244[is.na(farmers$hh_head.HH.livestock_assets.q244)] <- 0
+ tapply(farmers$hh_head.HH.livestock_assets.q244,farmers$shed, mean)
+##number of steel buckets
+farmers$hh_head.HH.livestock_assets.q246 <- as.numeric(as.character(farmers$hh_head.HH.livestock_assets.q246))
+farmers$hh_head.HH.livestock_assets.q246[is.na(farmers$hh_head.HH.livestock_assets.q246)] <- 0
+ tapply(farmers$hh_head.HH.livestock_assets.q246,farmers$shed, mean)
+
+### analysis of margins
+
+### prices
+
+farmers[c("hh_head.HH.sales.q71", "hh_head.HH.sales.q85", "hh_head.HH.sales.q103", "hh_head.HH.sales.q121", "hh_head.HH.sales.q139", "hh_head.HH.sales.q158", "hh_head.HH.sales.R1", "hh_head.HH.sales.R20", "hh_head.HH.sales.R40")] <- lapply(farmers[c("hh_head.HH.sales.q71", "hh_head.HH.sales.q85", "hh_head.HH.sales.q103", "hh_head.HH.sales.q121", "hh_head.HH.sales.q139", "hh_head.HH.sales.q158", "hh_head.HH.sales.R1", "hh_head.HH.sales.R20", "hh_head.HH.sales.R40")], function(x) replace(x, is.na(x),0) )
+
+## how do we define if a farmer is integrated into the export value chain?
+farmers$export_ind <- FALSE
+farmers$export_ind <- (farmers$hh_head.HH.sales.q158 + farmers$hh_head.HH.sales.q103  + farmers$hh_head.HH.sales.R20)>=7
+
+farmers[c("hh_head.HH.sales.q73", "hh_head.HH.sales.q87", "hh_head.HH.sales.q105", "hh_head.HH.sales.q123", "hh_head.HH.sales.q141", "hh_head.HH.sales.q160", "hh_head.HH.sales.R3", "hh_head.HH.sales.R23", "hh_head.HH.sales.R42")] <- lapply(farmers[c("hh_head.HH.sales.q73", "hh_head.HH.sales.q87", "hh_head.HH.sales.q105", "hh_head.HH.sales.q123", "hh_head.HH.sales.q141", "hh_head.HH.sales.q160", "hh_head.HH.sales.R3", "hh_head.HH.sales.R23", "hh_head.HH.sales.R42")], function(x) replace(x, is.na(x),0) )
+
+farmers[c("hh_head.HH.sales.q74", "hh_head.HH.sales.q88", "hh_head.HH.sales.q106", "hh_head.HH.sales.q124", "hh_head.HH.sales.q142", "hh_head.HH.sales.q161", "hh_head.HH.sales.R4", "hh_head.HH.sales.R24", "hh_head.HH.sales.R43")] <- lapply(farmers[c("hh_head.HH.sales.q74", "hh_head.HH.sales.q88", "hh_head.HH.sales.q106", "hh_head.HH.sales.q124", "hh_head.HH.sales.q142", "hh_head.HH.sales.q161", "hh_head.HH.sales.R4", "hh_head.HH.sales.R24", "hh_head.HH.sales.R43")] , function(x) replace(x, is.na(x),0) )
+
+
+##weekly income = price*daily quantity*number of transactions in a week
+farmers$weekly_income <- rowSums(farmers[c("hh_head.HH.sales.q73", "hh_head.HH.sales.q87", "hh_head.HH.sales.q105", "hh_head.HH.sales.q123", "hh_head.HH.sales.q141", "hh_head.HH.sales.q160", "hh_head.HH.sales.R3", "hh_head.HH.sales.R23", "hh_head.HH.sales.R42")] *farmers[c("hh_head.HH.sales.q74", "hh_head.HH.sales.q88", "hh_head.HH.sales.q106", "hh_head.HH.sales.q124", "hh_head.HH.sales.q142", "hh_head.HH.sales.q161", "hh_head.HH.sales.R4", "hh_head.HH.sales.R24", "hh_head.HH.sales.R43")]*farmers[c("hh_head.HH.sales.q71", "hh_head.HH.sales.q85", "hh_head.HH.sales.q103", "hh_head.HH.sales.q121", "hh_head.HH.sales.q139", "hh_head.HH.sales.q158", "hh_head.HH.sales.R1", "hh_head.HH.sales.R20", "hh_head.HH.sales.R40")] )
+###subtract from this:
+
+#labour
+labour <- paste("hh_head.HH.training.q", 209:228, sep="")
+farmers[labour] <- lapply(farmers[labour] , function(x)  as.numeric(as.character(x)) ) 
+farmers[labour] <- lapply(farmers[labour] , function(x)  replace(x, x==999,0) )
+farmers[labour] <- lapply(farmers[labour] , function(x)  replace(x, is.na(x),0) )
+### we may want to apply some sort of equivalence scales here
+## count male family labour for .8 hired equivalent
+farmers[paste("hh_head.HH.training.q", 209:213, sep="")] <-  farmers[paste("hh_head.HH.training.q", 209:213, sep="")] *0
+farmers[paste("hh_head.HH.training.q", 214:218, sep="")] <-  farmers[paste("hh_head.HH.training.q", 214:218, sep="")] *0
+farmers[paste("hh_head.HH.training.q", 219:228, sep="")] <-  farmers[paste("hh_head.HH.training.q", 219:228, sep="")] *0
+###hired labour
+farmers$hh_head.HH.training.q230 <- as.numeric(as.character(farmers$hh_head.HH.training.q230))
+farmers$hh_head.HH.training.q230[farmers$hh_head.HH.training.q230 == 999] <- 0
+farmers$hh_head.HH.training.q230[is.na(farmers$hh_head.HH.training.q230)] <- 0
+farmers$man_hours <- rowSums(farmers[labour]) + farmers$hh_head.HH.training.q230
+### how do we value man hours? 
+farmers$hh_head.HH.training.q231 <- as.numeric(as.character(farmers$hh_head.HH.training.q231))
+farmers$hh_head.HH.training.q231[farmers$hh_head.HH.training.q231 == 999] <- NA 
+
+### imputation of missing wages
+farmers <- within(farmers, {mean_wage = ave(hh_head.HH.training.q231,sub,FUN=function(x) median(x, na.rm=T))} )
+#farmers$hh_head.HH.training.q231[is.na(farmers$hh_head.HH.training.q231)] <- farmers$mean_wage[is.na(farmers$hh_head.HH.training.q231)] 
+#farmers$weekly_labour_cost <- (farmers$hh_head.HH.training.q231/8*farmers$man_hours)*7
+farmers$weekly_labour_cost <- (farmers$mean_wage/8*farmers$man_hours)*7
+### expenses on animal health
+farmers$hh_head.HH.animal_health.q205 <- as.numeric(as.character(farmers$hh_head.HH.animal_health.q205))
+farmers$hh_head.HH.animal_health.q205[is.na(farmers$hh_head.HH.animal_health.q205)] <- 0
+farmers$hh_head.HH.animal_health.q205[farmers$hh_head.HH.animal_health.q205==999] <- 0
+farmers$vet_exp <- farmers$hh_head.HH.animal_health.q205/52
+farmers$vet_exp[ farmers$vet_exp>30000] <- NA
+
+### cost of cows
+
+farmers$hh_head.HH.cattle_ownership.q24 <- as.numeric(as.character(farmers$hh_head.HH.cattle_ownership.q24))
+farmers <- within(farmers, {mean_p_local_cow = ave(hh_head.HH.cattle_ownership.q24,sub,FUN=function(x) median(x, na.rm=T))} )
+#farmers$cost_local <- farmers$hh_head.HH.cattle_ownership.q23* farmers$hh_head.HH.cattle_ownership.q24/(12*52)  ## average cow lives 12 years
+#farmers$cost_local[is.na(farmers$cost_local )] <-  farmers$hh_head.HH.cattle_ownership.q23[is.na(farmers$cost_local )] * farmers$mean_p_local_cow[is.na(farmers$cost_local )]  /(12*52)  ## average cow lives 12 years
+farmers$cost_local <-  farmers$hh_head.HH.cattle_ownership.q23*(farmers$mean_p_local_cow/(12*52))  ## average cow lives 12 years
+
+farmers$hh_head.HH.cattle_ownership.q30 <- as.numeric(as.character(farmers$hh_head.HH.cattle_ownership.q30))
+farmers <- within(farmers, {mean_p_imp_cow = ave(hh_head.HH.cattle_ownership.q30,sub,FUN=function(x) median(x, na.rm=T))} )
+#farmers$cost_improved <- farmers$hh_head.HH.cattle_ownership.q29* farmers$hh_head.HH.cattle_ownership.q30 /(12*52)  ## average cow lives 12 years
+#farmers$cost_improved[is.na(farmers$cost_improved )] <- farmers$hh_head.HH.cattle_ownership.q29[is.na(farmers$cost_improved )]* farmers$mean_p_imp_cow[is.na(farmers$cost_improved )]  /(12*52)  ## average cow lives 12 years
+farmers$cost_improved <- farmers$hh_head.HH.cattle_ownership.q29*( farmers$mean_p_imp_cow/(12*52))  ## average cow lives 12 years
+#regression 
+#exogenous controls - age and education level
+
+farmers$age_head <- ifelse(farmers$hh_head.HH.hh_member.1..q5b == 1,farmers$hh_head.HH.hh_member.1..q5d, ifelse(farmers$hh_head.HH.hh_member.2..q5b == 1,farmers$hh_head.HH.hh_member.2..q5d,ifelse(farmers$hh_head.HH.hh_member.3..q5b == 1,farmers$hh_head.HH.hh_member.3..q5d,ifelse(farmers$hh_head.HH.hh_member.4..q5b == 1,farmers$hh_head.HH.hh_member.4..q5d,ifelse(farmers$hh_head.HH.hh_member.5..q5b == 1,farmers$hh_head.HH.hh_member.5..q5d,ifelse(farmers$hh_head.HH.hh_member.6..q5b == 1,farmers$hh_head.HH.hh_member.6..q5d,ifelse(farmers$hh_head.HH.hh_member.7..q5b == 1,farmers$hh_head.HH.hh_member.7..q5d,ifelse(farmers$hh_head.HH.hh_member.8..q5b == 1,farmers$hh_head.HH.hh_member.8..q5d,ifelse(farmers$hh_head.HH.hh_member.9..q5b == 1,farmers$hh_head.HH.hh_member.9..q5d,ifelse(farmers$hh_head.HH.hh_member.10..q5b == 1,farmers$hh_head.HH.hh_member.10..q5d,ifelse(farmers$hh_head.HH.hh_member.11..q5b == 1,farmers$hh_head.HH.hh_member.11..q5d,ifelse(farmers$hh_head.HH.hh_member.12..q5b == 1,farmers$hh_head.HH.hh_member.12..q5d,ifelse(farmers$hh_head.HH.hh_member.13..q5b == 1,farmers$hh_head.HH.hh_member.13..q5d,ifelse(farmers$hh_head.HH.hh_member.14..q5b == 1,farmers$hh_head.HH.hh_member.14..q5d,ifelse(farmers$hh_head.HH.hh_member.15..q5b == 1,farmers$hh_head.HH.hh_member.15..q5d,ifelse(farmers$hh_head.HH.hh_member.16..q5b == 1,farmers$hh_head.HH.hh_member.16..q5d,ifelse(farmers$hh_head.HH.hh_member.17..q5b == 1,farmers$hh_head.HH.hh_member.17..q5d,ifelse(farmers$hh_head.HH.hh_member.18..q5b == 1,farmers$hh_head.HH.hh_member.18..q5d,ifelse(farmers$hh_head.HH.hh_member.19..q5b == 1,farmers$hh_head.HH.hh_member.19..q5d,ifelse(farmers$hh_head.HH.hh_member.20..q5b == 1,farmers$hh_head.HH.hh_member.20..q5d,NA))))))))))))))))))))
+farmers$age_head[is.na(farmers$age_head)] <- farmers$hh_head.HH.hh_member.1..q5d[is.na(farmers$age_head)]
+farmers$age_head[farmers$age_head==999] <- NA
+
+farmers$fem_head <- ifelse(farmers$hh_head.HH.hh_member.1..q5b == 1,farmers$hh_head.HH.hh_member.1..gender, ifelse(farmers$hh_head.HH.hh_member.2..q5b == 1,farmers$hh_head.HH.hh_member.2..gender,ifelse(farmers$hh_head.HH.hh_member.3..q5b == 1,farmers$hh_head.HH.hh_member.3..gender,ifelse(farmers$hh_head.HH.hh_member.4..q5b == 1,farmers$hh_head.HH.hh_member.4..gender,ifelse(farmers$hh_head.HH.hh_member.5..q5b == 1,farmers$hh_head.HH.hh_member.5..gender,ifelse(farmers$hh_head.HH.hh_member.6..q5b == 1,farmers$hh_head.HH.hh_member.6..gender,ifelse(farmers$hh_head.HH.hh_member.7..q5b == 1,farmers$hh_head.HH.hh_member.7..gender,ifelse(farmers$hh_head.HH.hh_member.8..q5b == 1,farmers$hh_head.HH.hh_member.8..gender,ifelse(farmers$hh_head.HH.hh_member.9..q5b == 1,farmers$hh_head.HH.hh_member.9..gender,ifelse(farmers$hh_head.HH.hh_member.10..q5b == 1,farmers$hh_head.HH.hh_member.10..gender,ifelse(farmers$hh_head.HH.hh_member.11..q5b == 1,farmers$hh_head.HH.hh_member.11..gender,ifelse(farmers$hh_head.HH.hh_member.12..q5b == 1,farmers$hh_head.HH.hh_member.12..gender,ifelse(farmers$hh_head.HH.hh_member.13..q5b == 1,farmers$hh_head.HH.hh_member.13..gender,ifelse(farmers$hh_head.HH.hh_member.14..q5b == 1,farmers$hh_head.HH.hh_member.14..gender,ifelse(farmers$hh_head.HH.hh_member.15..q5b == 1,farmers$hh_head.HH.hh_member.15..gender,ifelse(farmers$hh_head.HH.hh_member.16..q5b == 1,farmers$hh_head.HH.hh_member.16..gender,ifelse(farmers$hh_head.HH.hh_member.17..q5b == 1,farmers$hh_head.HH.hh_member.17..gender,ifelse(farmers$hh_head.HH.hh_member.18..q5b == 1,farmers$hh_head.HH.hh_member.18..gender,ifelse(farmers$hh_head.HH.hh_member.19..q5b == 1,farmers$hh_head.HH.hh_member.19..gender,ifelse(farmers$hh_head.HH.hh_member.20..q5b == 1,farmers$hh_head.HH.hh_member.20..gender,NA))))))))))))))))))))
+farmers$fem_head[is.na(farmers$fem_head)] <- farmers$hh_head.HH.hh_member.1..gender[is.na(farmers$fem_head)]
+farmers$fem_head[is.na(farmers$fem_head)] <- 2
+farmers$fem_head  <- farmers$fem_head == 1
+
+farmers$edu_sec <- farmers$hh_head.HH.q6  %in% c(4,5,6)
+
+farmers$hh_size <- farmers$hh_head.HH.q4
+farmers$nearest_neighbor <- farmers$hh_head.HH.distance.q13
+farmers$nearest_milkshop <- farmers$hh_head.HH.distance.q12
+farmers$nearest_mcc <- farmers$hh_head.HH.distance.q11
+farmers$distance_vetshop <- farmers$hh_head.HH.animal_health.q202
+
+farmers$access_finance <- farmers$hh_head.HH.access_finance.q268=="Yes"
+farmers$landsize <- farmers$hh_head.HH.land.q21
+
+#taken a loan to invest in dairy business?
+prop.table(table(farmers$hh_head.HH.access_finance.q272 == "Yes", farmers$shed),2)
+#average amount?
+farmers$hh_head.HH.access_finance.q271  <- as.numeric(as.character(farmers$hh_head.HH.access_finance.q271 ))
+tapply(farmers$hh_head.HH.access_finance.q271[farmers$hh_head.HH.access_finance.q272 == "Yes"], farmers$shed[farmers$hh_head.HH.access_finance.q272 == "Yes"], mean)/3600
+#where obtained?
+##coop
+ prop.table(table(farmers$hh_head.HH.access_finance.q269.1[farmers$hh_head.HH.access_finance.q272 == "Yes"] == TRUE, farmers$shed[farmers$hh_head.HH.access_finance.q272 == "Yes"]),2)
+##bank
+ prop.table(table(farmers$hh_head.HH.access_finance.q269.2[farmers$hh_head.HH.access_finance.q272 == "Yes"] == TRUE, farmers$shed[farmers$hh_head.HH.access_finance.q272 == "Yes"]),2)
+##friends
+ prop.table(table(farmers$hh_head.HH.access_finance.q269.3[farmers$hh_head.HH.access_finance.q272 == "Yes"] == TRUE, farmers$shed[farmers$hh_head.HH.access_finance.q272 == "Yes"]),2)
+##vsla
+ prop.table(table(farmers$hh_head.HH.access_finance.q269.4[farmers$hh_head.HH.access_finance.q272 == "Yes"] == TRUE, farmers$shed[farmers$hh_head.HH.access_finance.q272 == "Yes"]),2)
+farmers$ind_loan <- farmers$hh_head.HH.access_finance.q272 == "Yes"
+
+#regression 
+#exogenous controls - age and education level
+farmers$margin <- farmers$weekly_income  - farmers$weekly_labour_cost - farmers$vet_exp  - farmers$cost_local - farmers$cost_improved 
+# - farmers$weekly_labour_cost - farmers$cost_local - farmers$cost_improved 
+
+farmers$use_cans <- farmers$hh_head.HH.food_safety.q190.4==T | farmers$hh_head.HH.food_safety.q190.6==T
+farmers$share_exot <- farmers$herdsize_exot/farmers$herdsize
+
+farmers$sprayer <- farmers$hh_head.HH.livestock_assets.q264>0
+farmers$improved_feed <- farmers$hh_head.HH.food_safety.q196.2==T
+farmers$use_dam <- farmers$hh_head.HH.food_safety.q198==1
+
+### indicator that farmer sells to milk collection center
+farmers$ind_assist <- FALSE
+farmers$ind_assist <-  farmers$hh_head.HH.sales.q83=="Yes" | farmers$hh_head.HH.sales.q97=="Yes" | farmers$hh_head.HH.sales.q115=="Yes" | farmers$hh_head.HH.sales.q133=="Yes" | farmers$hh_head.HH.sales.q151=="Yes" | farmers$hh_head.HH.sales.q170=="Yes" | farmers$hh_head.HH.sales.R13=="Yes" | farmers$hh_head.HH.sales.R33=="Yes" | farmers$hh_head.HH.sales.R52=="Yes"
+farmers$assist_training <- FALSE
+farmers$assist_training <-  farmers$hh_head.HH.sales.q84.1==T | farmers$hh_head.HH.sales.q98.1==T | farmers$hh_head.HH.sales.q116.1==T | farmers$hh_head.HH.sales.q134.1==T | farmers$hh_head.HH.sales.q152.1==T | farmers$hh_head.HH.sales.q171.1==T | farmers$hh_head.HH.sales.R14.1==T | farmers$hh_head.HH.sales.R34.1==T | farmers$hh_head.HH.sales.R53.1==T
+
+farmers$assist_inputs <-  farmers$hh_head.HH.sales.q84.2==T | farmers$hh_head.HH.sales.q98.2==T | farmers$hh_head.HH.sales.q116.2==T | farmers$hh_head.HH.sales.q134.2==T | farmers$hh_head.HH.sales.q152.2==T | farmers$hh_head.HH.sales.q171.2==T | farmers$hh_head.HH.sales.R14.2==T | farmers$hh_head.HH.sales.R34.2==T | farmers$hh_head.HH.sales.R53.2==T
+
+farmers$assist_credit <-  farmers$hh_head.HH.sales.q84.3==T | farmers$hh_head.HH.sales.q98.3==T | farmers$hh_head.HH.sales.q116.3==T | farmers$hh_head.HH.sales.q134.3==T | farmers$hh_head.HH.sales.q152.3==T | farmers$hh_head.HH.sales.q171.3==T | farmers$hh_head.HH.sales.R14.3==T | farmers$hh_head.HH.sales.R34.3==T | farmers$hh_head.HH.sales.R53.3==T
+
+summary(lm(ind_assist ~export_ind, data=farmers))
+summary(lm(assist_training ~export_ind, data=farmers))
+summary(lm(assist_inputs ~export_ind, data=farmers))
+summary(lm(assist_credit ~export_ind, data=farmers))
+summary(lm(coop ~export_ind, data=farmers))
+summary(lm(share_exot~export_ind, data=farmers))
+summary(lm(sprayer ~export_ind, data=farmers))
+summary(lm(improved_feed ~export_ind, data=farmers))
+summary(lm(ind_loan ~export_ind, data=farmers))
+summary(lm(use_dam ~export_ind, data=farmers))
+summary(lm(use_cans ~export_ind, data=farmers))
+
+mean(farmers$ind_assist[farmers$export_ind==F], na.rm=T)
+mean(farmers$assist_training[farmers$export_ind==F], na.rm=T)
+mean(farmers$assist_inputs[farmers$export_ind==F], na.rm=T)
+mean(farmers$assist_credit[farmers$export_ind==F], na.rm=T)
+mean(farmers$coop[farmers$export_ind==F], na.rm=T)
+mean(farmers$share_exot[farmers$export_ind==F], na.rm=T)
+mean(farmers$sprayer[farmers$export_ind==F], na.rm=T)
+mean(farmers$improved_feed[farmers$export_ind==F], na.rm=T)
+mean(farmers$ind_loan[farmers$export_ind==F], na.rm=T)
+mean(farmers$use_dam[farmers$export_ind==F], na.rm=T)
+mean(farmers$use_cans[farmers$export_ind==F], na.rm=T)
+
+r1 <-lm(ind_assist~age_head+fem_head+ hh_size+ farmers$edu_sec +export_ind +nearest_neighbor+ distance_vetshop+access_finance+district+landsize, data=farmers)
+r2 <- lm(assist_training ~age_head+fem_head+ hh_size+ farmers$edu_sec +export_ind +nearest_neighbor+ distance_vetshop+access_finance+district+landsize, data=farmers)
+r3 <- lm(assist_inputs ~age_head+fem_head+ hh_size+ farmers$edu_sec +export_ind +nearest_neighbor+ distance_vetshop+access_finance+district+landsize, data=farmers)
+r4 <-lm(assist_credit~age_head+fem_head+ hh_size+ farmers$edu_sec +export_ind +nearest_neighbor+ distance_vetshop+access_finance+district+landsize, data=farmers)
+r5 <-lm(coop~age_head+fem_head+ hh_size+ farmers$edu_sec +export_ind +nearest_neighbor+ distance_vetshop+access_finance+district+landsize, data=farmers)
+r6 <-lm(share_exot~age_head+fem_head+ hh_size+ farmers$edu_sec +export_ind +nearest_neighbor+ distance_vetshop+access_finance+district+landsize, data=farmers)
+r7 <-lm(sprayer~age_head+fem_head+ hh_size+ farmers$edu_sec +export_ind +nearest_neighbor+ distance_vetshop+access_finance+district+landsize, data=farmers)
+r8 <-lm(improved_feed~age_head+fem_head+ hh_size+ farmers$edu_sec +export_ind +nearest_neighbor+ distance_vetshop+access_finance+district+landsize, data=farmers)
+r9 <-lm(ind_loan~age_head+fem_head+ hh_size+ farmers$edu_sec +export_ind +nearest_neighbor+ distance_vetshop+access_finance+district+landsize, data=farmers)
+r10 <-lm(use_dam~age_head+fem_head+ hh_size+ farmers$edu_sec +export_ind +nearest_neighbor+ distance_vetshop+access_finance+district+landsize, data=farmers)
+r11 <-lm(use_cans~age_head+fem_head+ hh_size+ farmers$edu_sec +export_ind +nearest_neighbor+ distance_vetshop+access_finance+district+landsize, data=farmers)
+stargazer(r1,r2,r3,r4)
+stargazer(r5,r6,r7,r8)
+stargazer(r9,r10,r11)
+
+library(MatchIt)
+farmers_cpy <- farmers
+farmers <- farmers[complete.cases(farmers[c("ID","export_ind","age_head","fem_head","hh_size","edu_sec","export_ind","nearest_neighbor","distance_vetshop","access_finance","district","landsize","nearest_mcc")]),]
+farmers <- farmers[c("ID","export_ind","age_head","fem_head","hh_size","edu_sec","export_ind","nearest_neighbor","distance_vetshop","access_finance","district","landsize","nearest_mcc")]
+  
+match.it <- matchit(export_ind ~ age_head+fem_head+ hh_size+ edu_sec +nearest_neighbor+ distance_vetshop+access_finance+district+landsize, data = farmers, caliper=.05,method="nearest")
+a <- summary(match.it)
+
+kable(a$nn, digits = 2, align = 'c', caption = 'Table 2: Sample sizes')
+
+kable(a$sum.matched[c(1,2,4)], digits = 2, align = 'c', caption = 'Table 3: Summary of balance for matched data')
+plot(match.it, type = 'jitter', interactive = FALSE)
+
+df.match <- match.data(match.it)[1:ncol(farmers)]
+summary(lm(ind_assist~export_ind,data=merge(df.match,farmers_cpy[c("ID","ind_assist")])))
+summary(lm(assist_training~export_ind,data=merge(df.match,farmers_cpy[c("ID","assist_training")])))
+summary(lm(assist_inputs~export_ind,data=merge(df.match,farmers_cpy[c("ID","assist_inputs")])))
+summary(lm(assist_credit~export_ind,data=merge(df.match,farmers_cpy[c("ID","assist_credit")])))
+summary(lm(coop~export_ind,data=merge(df.match,farmers_cpy[c("ID","coop")])))
+summary(lm(share_exot~export_ind,data=merge(df.match,farmers_cpy[c("ID","share_exot")])))
+summary(lm(sprayer~export_ind,data=merge(df.match,farmers_cpy[c("ID","sprayer")])))
+summary(lm(improved_feed~export_ind,data=merge(df.match,farmers_cpy[c("ID","improved_feed")])))
+summary(lm(ind_loan~export_ind,data=merge(df.match,farmers_cpy[c("ID","ind_loan")])))
+summary(lm(use_dam~export_ind,data=merge(df.match,farmers_cpy[c("ID","use_dam")])))
+summary(lm(use_cans~export_ind,data=merge(df.match,farmers_cpy[c("ID","use_cans")])))
+
+
+
+library(AER)
+
+summary(ivreg(share_exot~export_ind +age_head+fem_head+ hh_size+ farmers$edu_sec+nearest_neighbor+ distance_vetshop+access_finance+landsize+district | age_head+fem_head+ hh_size+ farmers$edu_sec +nearest_neighbor+ distance_vetshop+access_finance+landsize+district+nearest_mcc, data=farmers), diagnostics=T)
+summary(ivreg(use_cans~export_ind +age_head+fem_head+ hh_size+ farmers$edu_sec+nearest_neighbor+ distance_vetshop+access_finance+landsize+district | age_head+fem_head+ hh_size+ farmers$edu_sec +nearest_neighbor+ distance_vetshop+access_finance+landsize+district+nearest_mcc, data=farmers), diagnostics=T)
+summary(ivreg(coop~export_ind +age_head+fem_head+ hh_size+ farmers$edu_sec+nearest_neighbor+ distance_vetshop+access_finance+landsize+district | age_head+fem_head+ hh_size+ farmers$edu_sec +nearest_neighbor+ distance_vetshop+access_finance+landsize+district+nearest_mcc, data=farmers), diagnostics=T)
 
 
