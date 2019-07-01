@@ -6,7 +6,7 @@
 \origin unavailable
 \textclass article
 \begin_preamble
-
+\sloppy
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -124,17 +124,20 @@ Domestic versus export-led agricultural transformation: Evidence from Uganda’s
 \begin_layout Abstract
 Driven by increased demand from both local and export markets and facilitated
  by far-reaching liberalization and privatization policies, the dairy sub-sector
- in Uganda has undergone significant changes in the last few decades.
+ in Uganda has undergone significant changes in the last decade.
  With a comparative advantage in milk production, the southwest of Uganda
  has started to attract considerable Foreign Direct Investment (FDI) in
  processing capacity, mainly targeting the export market.
+ As a result, processing capacity increased five-fold and dairy became Uganda's
+ third most important export product, coming from negligible amounts a decade
+ earlier.
  In this study, we use observational data collected at different nodes within
  the value chain to compare the structure of the chain and the roles and
  economic activities of different actors between export-led value chains
  and value chains that cater for the local market.
- Doing so allows us to identify the likely technological and institutional
- innovations that both result from the emergence of export-led dairy value
- chains and at the same time drive further upgrading.
+ Doing so allows us to identify the technological and institutional innovations
+ that both result from the emergence of export-led dairy value chains and
+ at the same time drive further upgrading.
  Our analysis underscores the importance of milk collection centers, which
  often take the form of farmer cooperatives, in providing many of the support
  services that enable other actors in the value chain to produce sufficient
@@ -176,9 +179,8 @@ key "ruel2017urbanization,francesconi2010evolution"
  But not only local demand for dairy products has taken off.
  The dairy sub-sector has also become an important export sector for Uganda.
  On the supply side, the government's liberalization push in the late nineties
- led to a gradual increase in competition between processors.
- Low production costs in parts of the country also attracted considerable
- Foreign Direct Investment (FDI).
+ led to a gradual increase in competition between processors by attracting
+ significant Foreign Direct Investment (FDI).
  
 \end_layout
 
@@ -201,7 +203,7 @@ Interestingly, due to a combination of agglomeration effects and a comparative
 \begin_layout Standard
 The co-existence of both export-led and domestic market-led value chains
  for the same commodity in a single country provides an interesting case.
- Generally, studies on value chains transformation in developing countries
+ Generally, studies on value chain transformation in developing countries
  analyze either export-led chains for commodities with little or no local
  market 
 \begin_inset CommandInset citation
@@ -225,13 +227,13 @@ key "minten2016feeding,JANSSEN2019327"
  shed to value chains from the central milk shed and document differences
  in key technological and institutional dynamics.
  However, we acknowledge that defining inclusion in export-led value chains
- or not solely on the basis of location may not be completely accurate.
+ solely on the basis of location may not be completely accurate.
  Indeed, there may be dairy farmers located in the southwestern milk shed
  that supply only to the local market, just as well as there are likely
  to be traders operating in the central milk shed that ship to processors
  that export.
  We therefor also define an alternative indicator that captures inclusion
- in formal value chains.
+ in modern value chains.
  
 \end_layout
 
@@ -243,8 +245,8 @@ Our study mainly relies on primary data, supplemented with data from secondary
  market.
  These farmers generally sell raw milk at the farm gate to traders, the
  second category of actors we collected data from.
- Traders and transporters in turn, ship this unprocessed milk to milk collection
- centers, the third category of actors we interviewed.
+ Traders and transporters in turn, ship this unprocessed milk mostly to
+ milk collection centers, the third category of actors we interviewed.
  Another important actor in the dairy value chain is the processor, who
  sources milk mostly from milk collection centers.
  We collected qualitative data from two processors.
@@ -253,13 +255,13 @@ Our study mainly relies on primary data, supplemented with data from secondary
 \begin_layout Standard
 We find that milk collection centers are central to value chain upgrading.
  They are key in guaranteeing processors the quantities and quality of milk
- they need to compete on the international market.
+ they need to compete on the international and modern local market.
  At the same time, they provide a stable market for producers (either directly
  or indirectly through middlemen).
  But these centers appear to do much more then just bulking and chilling
  milk for further transport.
- They also seem to provide a range of services to farmers that enable and
- sustain additional innovations upstream.
+ They also provide a range of services to farmers that enable and sustain
+ additional innovations upstream.
  For example, milk collection centers also assist farmers with medicines
  and vacations, enabling farmers to adopt improved cross-bred cows that
  produce more milk but are also much more susceptible to pests and diseases.
@@ -288,8 +290,8 @@ key "sitko2014exploitative"
 .
  Second, we collected data on almost 100 milk collection centers, an institution
  that is specific to the sub-sector and key to its development.
- In most other value chain studies, sample size for similar value chain
- actors are generally much lower
+ In most other value chain studies, the sample size for similar value chain
+ actors is generally much lower
 \begin_inset Foot
 status collapsed
 
@@ -310,7 +312,7 @@ key "minten2014new"
 .
  Finally, while there is a substantial gray literature on dairy value chains
  in Uganda, most of these rely on qualitative data and are limited in terms
- of representatives.
+ of representativeness.
  Our study thus provides an important contribution to understanding the
  dairy sub-sector in Uganda.
  
@@ -319,7 +321,7 @@ key "minten2014new"
 \begin_layout Standard
 The rest of this article is organized as follows.
  The next section uses secondary data to highlight the drivers behind the
- transformation of dairy sub-sector.
+ transformation of the dairy sub-sector.
  We point out potential demand side drivers and explain how policy reforms
  created an enabling environment that attracted considerable foreign direct
  investment.
@@ -334,9 +336,9 @@ The rest of this article is organized as follows.
  We identify milk collection centers as an important innovation, and also
  look at technology adoption among farmer, dynamics in value chain financing,
  feeding practices, and quality assurance.
- We then construct an indicator of integration into formal dairy value chains
- and compare a range of innovations within this chain to more informal configura
-tions using more formal models.
+ We then construct an indicator of integration into modern dairy value chains
+ and compare a range of innovations within this chain to traditional configurati
+ons using more formal models.
  A final section concludes.
 \end_layout
 
@@ -376,9 +378,7 @@ reference "fig:Consumption-of-liquid"
  using four different waves of the UNHS.
  We see that according to this data, as recent as 2001/02, the average Ugandan
  consumed only about 12 liter of milk per person per year.
- At that time, consumption in rural and urban areas was virtually the same,
- underlining the importance of the informal market and autoconsumption of
- milk.
+ At that time, consumption in rural and urban areas was virtually the same.
  By 2012/13, average consumption per capita had doubled.
  The figure shows that most of the increase in milk consumption is due to
  an increase in demand in urban areas, reaching 33 liters per capita per
@@ -408,14 +408,35 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Consumption of liquid milk (liters per capita per year)
+Consumption of liquid milk (liters per capita per year; source: Uganda National
+ Household Surveys, multiple years)
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Consumption-of-liquid"
 
 \end_inset
 
+ 
+\end_layout
 
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+[Bart]Are these the most recent data? A lot of action happened since.
+ In the talk with the DDA guy, it see in my notes that he mentioned an increase
+ of dairy consumption from 20 l/person/day to 70 l/person/day over the last
+ 15 years.
+ If these are official data, they could possibly be triangulated to show
+ somehow dramatically increased consumption.
+ [Bjorn] will check if I can find the UNHS 2015/16.
+ But DDA figures are indeed much higher, but I do not trust their statistics.
+ I think they take averages of only households that report consuming milk
+ (and drop all the zeros).
+ 
 \end_layout
 
 \end_inset
@@ -494,8 +515,9 @@ reference "fig:Import-and-export"
 \end_inset
 
 ).
- The latest available data show that US$ 130 million worth of dairy products
- have been exported in 2017.
+ The latest available data, obtained from the Dairy Development Authority,
+ show that US$ 130 million worth of dairy products have been exported in
+ 2017.
  The Dairy Development Authority reports that almost half of the export
  value, US$ 55 million, was exported by a single processor (Pearl Dairy
  Farms Ltd).
@@ -533,7 +555,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Import and export of dairy products (in millions USD)
+Export of dairy products (in millions USD; source: Dairy Development Authority)
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Import-and-export"
@@ -570,7 +592,7 @@ key "sheperd"
  yet today dairy has become the third most important export product, after
  coffee (US$ 555 million) and fish (US$ 140 million), and leaves other tradition
 al export sectors such as tea (US$ 80 million) and flowers (US$ 60 million)
- training behind.
+ trailing behind.
  Uganda's dairy exports are now similar to South Africa.
  
 \end_layout
@@ -590,7 +612,7 @@ name "subsec:Institutional-environment"
 The transformation of the dairy sub-sector in Uganda was also driven by
  a range of policy reforms.
  In the past, the (formal) dairy sector was heavily centralized, and all
- milk needed to pass through the National Dairy Corporation, a parastratal
+ milk needed to pass through the National Dairy Corporation, a parastatal
  dairy processing organization.
  The privatization push of the new government of Museveni that came to power
  in 1986 also impacted the dairy sector.
@@ -607,6 +629,13 @@ The transformation of the dairy sub-sector in Uganda was also driven by
  of the cold chain.
  This left smallholder milk producers with few options other than selling
  to Sameer at very low prices.
+\begin_inset CommandInset citation
+LatexCommand citep
+key "agriterra"
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -616,17 +645,44 @@ This monopoly did not last long.
  milk producing areas in the country, actively promoted the development
  of the sector by encouraging dairy farmers to unite in cooperatives and
  set up their own milk collection centers.
- Furthermore, through various tax breaks, foreign direct investment into
- processing capacity was lured in.
- Today, the sector can be described as fairly competitive.
- The creation of the East African Community means that milk, which can be
- produced relatively cheaply in Uganda, is in high demand in neighboring
+ Furthermore, Uganda facilitated international trade relationships in different
+ ways.
+ Through various tax breaks (as well as giving free land), FDI into dairy
+ processing capacity was lured in and they make now up the large majority
+ of processing capacity in the country.
+ Some of these investors were attracted by low production costs in Uganda
+ but they were also interested due to problems for their operations in other
+ countries.
+ For example, Amos reportedly invested in Uganda given price wars in liquid
+ milk markets in India leading to low margins in their domestic market 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "economictimes"
+
+\end_inset
+
+.
+ The creation of the East African Community further meant easier trade with
+ neighboring countries and had as a consequence that milk, which can be
+ produced relatively cheaply in Uganda, was in high demand in neighboring
  countries, Kenya in particular.
  That said, there are still substantial policy related uncertainties.
  Tanzania, for example, keeps protecting its local dairy market with large
  import duties.
- During an extended drought in 2017, Kenya temporarily instituted an import
- tax on milk.
+ Furthermore, during an extended drought in 2017, Kenya temporarily introduced
+ duties on imported milk.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+[Bart] replace introduced by removed [Bjorn] did I get this wrong? I thought
+ Rinus said that during the drought Kenya closed their borders because they
+ did not like the flood of milk coming in from Uganda?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -653,6 +709,21 @@ key "kisamba2006impacts"
 \end_inset
 
 .
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+[Bart]This section is based on a reference from 2006, i.e.
+ before the privatization really took off.
+ So, is the link with privatization appropriate? [Bjorn] I think so.
+ Privatization started in 1986.
+ This is really about how fencing changed the way people farm (making the
+ emergence of the dairy industry possible)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -673,9 +744,9 @@ Uganda is divided into so-called milk sheds, each with different characteristics
  between the two sheds, market dynamics are very different.
  In the southwestern milk shed, low prices have attracted processors that
  are able to compete in the international market.
- This has pushed the supply market for the local dairy value chain that
- supplies Kampala to the central milk shed, leading to substantial differences
- in the organization and functioning of the value chain and how these areas
+ This has pushed the supply base for the local dairy value chain that supplies
+ Kampala to the central milk shed, leading to substantial differences in
+ the organization and functioning of the value chain and how these areas
  are integrated in the wider economy.
  
 \end_layout
@@ -684,7 +755,7 @@ Uganda is divided into so-called milk sheds, each with different characteristics
 There are many actors involved in the dairy value chain.
  Upstream, there are the producers who produce for own consumption, but
  also sell significant amounts of milk.
- Often, these are small producers that reside in remote areas.
+ Often, these are small producers that reside in rural areas.
  Small traders and transporters collect milk in villages at the farm gate
  daily, and transport this to milk collection centers using bicycles, motorbikes
 , or sometimes pick-up trucks.
@@ -712,7 +783,7 @@ We collected survey data on three value chain actors.
  randomly select farmers.
  The number of households selected within each village was again proportional
  to the total number of households residing in the village.
- Milk collection centers we selected through simple random sampling from
+ Milk collection centers were selected through simple random sampling from
  the list of milk collection centers in each subcounty obtained from the
  DDA.
  Finally, traders and transporters were sampled using a systematic sampling
@@ -899,7 +970,8 @@ In the next step, we estimate how the quantities collected by milk collection
  In the southwest, milk collection centers also often sell to large traders
  (21 liters, representing 17 percent of total sales by the milk collection
  center).
- These traders generally take milk to Brookside in Kampala.
+ These traders generally take milk to the processor Brookside Ltd.
+ in Kampala.
  While milk collection centers from the center also sell to traders, this
  is relatively less important (6 liters or about 10 percent of total milk
  sold by the milk collection center).
@@ -912,10 +984,10 @@ Innovations in dairy value chains
 \end_layout
 
 \begin_layout Standard
-in this section, we document various innovations that characterize the dairy
+In this section, we document various innovations that characterize the dairy
  value chain transformation.
  We want to stress the endogenous nature of these innovations, where a particula
-r innovation may both drive value chain upgrading and a the same time be
+r innovation may both drive value chain upgrading and at the same time be
  a result of it.
  For example, the extent to which a farmer is integrated in modern commercial
  value chains and his level of technology adoption is determined simultaneously.
@@ -994,8 +1066,7 @@ Milk collection centers are central actors in modern dairy value chains.
 \begin_layout Standard
 While milk collection centers have been in use for some time, the innovations
  lies in their increasing availability and scale, their changing role as
- a midstream service providers, and the organizational form as farmer cooperativ
-es.
+ midstream service providers, and the organizational form as farmer cooperatives.
  We discuss each in turn.
 \end_layout
 
@@ -1055,7 +1126,7 @@ reference "fig:Evolution-of-milk"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1103,7 +1174,8 @@ The proliferation of milk collection centers does not only manifest itself
  over time.
  We find that, on average, an extra capacity of about 750 liters per year
  was added over the last 10 years.
- However, there is no significant difference between milk sheds.
+ However, there is no significant difference in the rate of capacity expansion
+ between milk sheds.
 \end_layout
 
 \begin_layout Standard
@@ -1127,7 +1199,7 @@ reference "fig:Services-provided-by"
  further than only provision of training.
  Here, about 45 percent of centers also provide aluminum milk cans to their
  clients.
- This proportion is significant lower in the central milk shed.
+ This percentage is significantly lower in the central milk shed.
  We also see that in the southwest, more milk collection centers supply
  veterinary medicines and vaccinations, which, as we will see below, is
  particularly important for cross-bred cows.
@@ -1179,9 +1251,9 @@ Not only do we see an evolution in the number of milk collection centers
  and the services they provide, we also find that more of these collection
  centers are organized as cooperatives.
  This may be partly explained by the fact that quality becomes more important
- in global value chains: As many individual small producers supply a milk
- collection center, traceability becomes difficult and milk collection centers
- have to rely on the collective reputation of the product they supply.
+ in value chains: As many individual small producers supply a milk collection
+ center, traceability becomes difficult and milk collection centers have
+ to rely on the collective reputation of the product they supply.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1224,7 +1296,7 @@ In addition, cooperatives may also emerge as a response to issues related
  value chain actors upstream, processors try to increase the productivity
  of farmers, the quality of the milk they market, and enhance their loyalty
  as suppliers.
- However, with fierce competition between processors, dairy farmer also
+ However, with fierce competition between processors, dairy farmers also
  have more opportunities for side-selling and less incentives to maintain
  quality.
  In the context of a vibrant local market for milk with few standards or
@@ -1318,7 +1390,7 @@ An important technological innovation in dairy farming in Uganda is the
 \series bold
  
 \series default
-improved breeds, in particular Fresian cows.
+improved breeds, mostly of the Fresian type.
  The adoption of higher yielding cows is necessary to increase the supply
  of milk.
  In our sample, an cross-bred cow produces on average 5.7 liters of milk
@@ -1423,7 +1495,7 @@ rn milk shed.
  the southwest than in the central shed.
  The farmers used the money to get treatment for their animals (44 percent)
  or to buy improved cows (34 percent).
- Less then 5 percent of farmers report that they used it for artificial
+ Less than 5 percent of farmers report that they used it for artificial
  insemination.
 \end_layout
 
@@ -1817,7 +1889,7 @@ reference "tab:VCfinancing"
  or provide upfront payments (about 30 percent).
  About 27 percent of traders indicate that they used the money to buy a
  motorbike.
- There are also many traders that indicate that they used to money to buy
+ There are also many traders that indicate that they used the money to buy
  cows.
  This may mean that traders are also dairy farmers themselves or that they
  want to become dairy farmers in the future.
@@ -2165,7 +2237,7 @@ Note: Based on author's calculations
 
 \begin_layout Standard
 About 60 percent of the traders that were interviewed in the southwest reported
- that they only use proper milk cans for there business.
+ that they only use proper milk cans for their business.
  This was only 10 percent in the central region (p<0.001).
  A trader in the southwest has on average 4.4 milk cans.
  Most of these are 25 liter cans.
@@ -2200,7 +2272,7 @@ Milk sanitation is not only determined by the type of containers in which
 \end_layout
 
 \begin_layout Subsection
-Integration into modern dairy value chains - models
+Innovation and integration into modern dairy value chains - models
 \end_layout
 
 \begin_layout Standard
@@ -2222,16 +2294,15 @@ The previous section explored how key innovations within the dairy value
  Simply comparing actors in the southwest to actors in the central region
  may thus not accurately capture differences between modern value chains
  involving complex products that are able to compete in export markets and
- more informal value chains geared towards local consumption of less processed
- commodities.
+ value chains geared towards local consumption of less processed commodities.
  
 \end_layout
 
 \begin_layout Standard
-In this section, we construct slightly different indicator, now focusing
+In this section, we construct a slightly different indicator, now focusing
  more on participation in modern value chains (including export led, but
  also comprising of the formal sector that supplies the local market).
- For farmers, we create an indicator of integration within the formal dairy
+ For farmers, we create an indicator of integration within the modern dairy
  value chains that is true if the farmer delivered milk to a milk collection
  center every day during the week before the survey.
  This could either be deliveries made directly, or indirectly through a
@@ -2243,14 +2314,14 @@ In this section, we construct slightly different indicator, now focusing
  In the southwest, this is almost three quarters of the farmers that were
  interviewed.
  For the trader or transporter, we create an indicator of integration within
- formal dairy value chains that is true if the trader or transporter reports
+ modern dairy value chains that is true if the trader or transporter reports
  delivering exclusively to a milk collection center or directly to a processor.
  According to this definition, about 43 percent of traders are integrated
  into modern value chains.
  As for traders, there is also a difference between the sheds, with about
  38 percent of farmers integrated in formal chains in the central region,
  while this is 62 percent in the southwestern region.
- Finally, for milk collection centers, the indicator is based on the whether
+ Finally, for milk collection centers, the indicator is based on whether
  they report to be delivering to processors or not.
  Here differences between milk sheds are smaller: according to this definition,
  78 percent of milk collection centers located in the central milk shed
@@ -2290,8 +2361,8 @@ reference "tab:Innovations-in-export"
  that are not integrated in modern value chains (the control group) are
  reported for reference.
  The second column (2) shows a simple difference between the average among
- farmers that are integrated in export-led value chains and the control
- group that is not.
+ farmers that are integrated in modern value chains and the control group
+ that is not.
  The third column (3) in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2300,7 +2371,7 @@ reference "tab:Innovations-in-export"
 \end_inset
 
  also shows the difference between the subset of farmers that are part of
- a formal value chain and the control group, but now estimated in a regression
+ a modern value chain and the control group, but now estimated in a regression
  framework, where we control for a range of farmer and context characteristics.
  In particular, we add controls for the age of the household head, sex of
  the household head, household size, whether the household head has attended
@@ -2712,22 +2783,25 @@ textwidth}}{Note: First column (1) reports averages among farmers that are
 
 \begin_layout Plain Layout
 
-Second column (3) shows difference between farmers that are part of modern
- value chains and those that are part of traditional 
+Second column (2) shows the difference between farmers that are part of
+ modern value chains and those that are part of traditional 
 \end_layout
 
 \begin_layout Plain Layout
 
 value chains.
- Third column (3) shows difference between farmers that are part of modern
- value chains and those that are part of traditional 
+ Third column (3) shows the difference between farmers that are part of
+ modern value chains and those that are part of traditional 
 \end_layout
 
 \begin_layout Plain Layout
 
 value chains after controlling for a range of farmer and context characteristics
-, and last column (4) shows difference between farmers that are part of
- modern value chains and those that are part of traditional after matching.}
+, and last column (4) shows the difference between farmers that are part
+ of modern value chains and those that are part of traditional value chains
+ after matching.
+ + denotes significance at 10 percent level, * at 5 percent, and ** at 1
+ percent.}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2790,8 +2864,8 @@ This means that only comparison units within a certain width of the propensity
 \end_inset
 
 .
- Doing so, we were able to match 373 farmers that participate in export-led
- value chains to 373 farmers that supply local markets.
+ Doing so, we were able to match 373 farmers that participate in modern
+ value chains to 373 traditional farmers.
  Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2800,7 +2874,7 @@ reference "tab:Balance-on-covariates"
 \end_inset
 
  shows that this procedure considerably improves balance between the sample
- of farmers that is integrated in global value chains and those that are
+ of farmers that is integrated in modern value chains and those that are
  not.
  
 \end_layout
@@ -2813,8 +2887,8 @@ reference "subsec:Milk-handling-and"
 
 \end_inset
 
-, an important innovation in export-led dairy value chains is the mid-stream
- service delivery by milk collection centers.
+, an important innovation in the dairy value chains is mid-stream service
+ delivery by milk collection centers.
  More in particular, Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2824,7 +2898,7 @@ reference "fig:Services-provided-by"
 
  shows the various services that milk collection centers report they provide
  to their clients.
- Here, we look at service received from the person or organization they
+ Here, we look at services received from the person or organization they
  sell to, as reported by the farmers.
  The first row is general and asks if any service is provided by the buyer.
  We find that, about 14 percent of farmers in local value chains report
@@ -2859,10 +2933,10 @@ The following three rows (training/advice, inputs and advances) look at
  services provided by buyers in greater detail.
  We find that very few farmers receive training from downstream value chain
  actors, and that this is only slightly higher in modern value chains.
- Input provision buy the buyer is more common.
- Surprisingly, input provision seems more common in informal value chains.
+ Input provision by the buyer is more common.
+ Surprisingly, input provision seems more common in traditional value chains.
  Finally, about 3 percent of farmers mention that they received advances
- from actors down the value chain in informal value chains.
+ from actors down the value chain in traditional value chains.
  This percentage increases to 12 in modern value chains if we consider the
  simple difference (column 2).
  If we consider the matching model as the preferred model, the difference
@@ -2882,7 +2956,7 @@ reference "tab:Regressions-for-farmer"
 \begin_layout Standard
 An important institutional innovation was the cooperative.
  Therefore, we compare levels of cooperative membership among farmers between
- informal and modern dairy value chains.
+ traditional and modern dairy value chains.
  We find that in the control group, about 8 percent of farmers report to
  be a member of a dairy cooperative.
  Judged by a simple difference in means, we find this proportion to be more
@@ -2903,9 +2977,9 @@ reference "tab:Innovations-in-export"
 
 \end_inset
 
- shows that in the control group of farmers that are integrate in informal
- markets, about 40 percent of cows are of an improved type (column 1, row
- 6).
+ shows that in the control group of farmers that are integrated in traditional
+ dairy value chains, about 40 percent of cows are of an improved type (column
+ 1, row 6).
  Adoption of improved cows increases by almost 27 percentage points among
  farmers that are integrated in modern value chains.
  Accounting for a range of other observables, either in a regression or
@@ -2935,13 +3009,13 @@ reference "tab:Innovations-in-export"
 
 \begin_layout Standard
 The next two rows present results for innovations in feeding practices.
- In particular, we look improved pasture management and the construction
+ In particular, we look at improved pasture management and the construction
  of dams for access to water.
  We find that 14 percent uses rotational grazing through paddocking in the
  control group and that this is higher among farmers that are in modern
  value chains.
- But again, the different disappears entirely if controls are added in a
- regression or through matching.
+ But again, the difference disappears entirely if controls are added in
+ a regression or through matching.
  Again, this is probably because paddocking is especially prevalent in the
  southwest; farmers here seem to engage in paddocking even if they are supplying
  the local market.
@@ -2955,10 +3029,10 @@ The next two rows present results for innovations in feeding practices.
 \begin_layout Standard
 Finally, the introduction of aluminum buckets and cans to increase the quality
  of milk is also an important innovation.
- We find that only 14 percent of farmers in the informal dairy sector use
- proper equipment for milking.
+ We find that only 14 percent of farmers in the tradtional dairy sector
+ use proper equipment for milking.
  We register a large increase in this proportion among farmers that are
- integrated into formal value chains.
+ integrated into modern value chains.
  The difference remains significant even after accounting for other factors
  such as the milk shed or scale of the farm.
  
@@ -2978,8 +3052,8 @@ reference "tab:Innovations-traders"
 
  shows results for a similar analysis using the trader data.
  Also here, we show averages in the sub-sample of traders that are integrated
- in informal value chains (column 1) and differences with those that are
- integrated in formal value chains (column 2).
+ in tradtional value chains (column 1) and differences with those that are
+ integrated in modern value chains (column 2).
  We then add conditioning variables in column 3.
  Full results for these regressions can be found in the appendix (Table
  
@@ -3010,8 +3084,8 @@ reference "tab:Balance-traders"
 
 \begin_layout Standard
 We start by looking if there is a difference between cooperative ownership
- between traders that are operating within formal value chains versus those
- that are working in informal chains.
+ between traders that are operating within modern value chains versus those
+ that are working in traditional chains.
  We see that cooperative membership is fairly high among traders: 41 percent
  of traders respond that they are a member of a cooperative.
  We do not find that cooperative membership differs between the two types
@@ -3276,22 +3350,23 @@ textwidth}}{Note: First column (1) reports averages among traders that are
 
 \begin_layout Plain Layout
 
-Second column (3) shows difference between traders that are part of modern
- value chains and those that are part of traditional 
+Second column (2) shows the difference between traders that are part of
+ modern value chains and those that are part of traditional 
 \end_layout
 
 \begin_layout Plain Layout
 
 value chains.
- Third column (3) shows difference between traders that are part of modern
- value chains and those that are part of traditional 
+ Third column (3) shows the difference between traders that are part of
+ modern value chains and those that are part of traditional 
 \end_layout
 
 \begin_layout Plain Layout
 
-value chains after controlling for a range of farmer and context characteristics
-, and last column (4) shows difference between traders that are part of
- modern value chains and those that are part of traditional after matching.}
+value chains after controlling for a range of trader and context characteristics
+, and last column (4) shows the difference between traders that are part
+ of modern value chains and those that are part of traditional value chains
+ after matching.}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3331,9 +3406,10 @@ We also found above that traders in the central milk shed are more likely
  to take out a loan to invest in their business, even though the amounts
  are smaller than the average amount borrowed in the southwestern milk shed.
  Using integration into modern value chains as a conditioning variable,
- we now find that about 20 percent of traders that are working in the informal
- milk sub-sector have borrowed to invest in their business, and their is
- no significant difference between traders in the informal and formal sub-sector.
+ we now find that about 20 percent of traders that are working in the traditiona
+l milk sub-sector have borrowed to invest in their business, and their is
+ no significant difference between traders in the traditional and modern
+ sub-sector.
 \end_layout
 
 \begin_layout Standard
@@ -3348,10 +3424,11 @@ reference "tab:Innovations-traders"
  We see that about 20 percent of traders in local dairy value chains use
  only aluminum cans for transporting milk.
  While we found a sizable difference in these proportions between the two
- milk sheds, this difference disappears when we compare formal and informal
+ milk sheds, this difference disappears when we compare modern and traditional
  value chains.
- This seems to suggest that the ban on transporting milk in inappropriate
- containers is particularly enforced in the southwest.
+ This seems to suggest that enforcement of policies and regulations by the
+ DDA, and in particular the ban on transporting milk in inappropriate containers
+, is particularly enforced in the southwest.
  About 74 percent of these traders use a motorbike, reducing the time between
  milking and chilling.
  Also here, while the difference was significant if we compared milk sheds,
@@ -3799,14 +3876,16 @@ multicolumn{5}{p{1
 \backslash
 textwidth}}{Note: First column (1) reports averages among milk collection
  centers that are integrated in traditional value chains.
- Second column (3) shows difference between milk collection centers that
- are part of modern value chains and those that are part of traditional
+ Second column (2) shows the difference between milk collection centers
+ that are part of modern value chains and those that are part of traditional
  value chains.
- Third column (3) shows difference between milk collection centers that
+ Third column (3) shows the difference between milk collection centers that
  are part of modern value chains and those that are part of traditional
- value chains after controlling for a range of farmer and context characteristic
-s, and last column (4) shows difference between farmers that are part of
- modern value chains and those that are part of traditional after matching.}
+ value chains after controlling for a range of milk collection centers and
+ context characteristics, and last column (4) shows the difference between
+ milk collection centers that are part of modern value chains and those
+ that are part of traditional value chains after matching.
+ + denotes significance at 10 percent level.}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3853,7 +3932,8 @@ reference "tab:Regressions-for-mccs"
  The table also shows that a collection center is less likely to be a cooperativ
 e if it is a sub center.
  This is probably because many of the collection centers from the privatized
- National Dairy Corporation are still in use.
+ National Dairy Corporation are still in use and are classified as sub collectio
+n center.
  
 \end_layout
 
@@ -3896,7 +3976,7 @@ reference "fig:Services-provided-by"
  are more likely to provide milk cans to their supplies.
  Finally, the higher use of milk cans by milk collection centers also seems
  to be the same irrespective of whether the milk collection center is integrated
- in the formal sector or not.
+ in the modern sector or not.
  The difference found in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3957,7 +4037,7 @@ We found that a key innovation happened midstream, with the proliferation
 At the farmer level, integration into export-led and modern dairy value
  chains was correlated with increased adoption of cross-bred cows.
  Adoption of higher yielding animals is important to meet the demand from
- the export sector.
+ the sector.
  However, many farmers do not invest in improved animals because of their
  higher susceptibility to pests and diseases
 \begin_inset Foot
@@ -3985,7 +4065,7 @@ Theileria Parva
 Cutting across the entire value chain, we found evidence of increased attention
  to quality and milk sanitation, especially in export-led value chains.
  However, up to now, this seemed to be especially through enforcement of
- a ban on transporting milk in jerry cans by Dairy Development Authority.
+ a ban on transporting milk in jerry cans by the Dairy Development Authority.
  Currently, the Authority focuses on policing the southwestern milk shed,
  but this may become too costly at a larger scales.
  In addition, milk quality involves much more than just using proper milk
@@ -4001,46 +4081,65 @@ Cutting across the entire value chain, we found evidence of increased attention
 \end_layout
 
 \begin_layout Standard
-We also documented a shift in value chain financing from friends and family
- towards more formal financing through financial institutions.
+In export-led value chains, we also documented a shift in value chain financing
+ from friends and family towards more formal financing through financial
+ institutions.
  However, most of the financing seemed to go to preserving the animal stock
- (farmer level – buying medicine and paying for veterinary services) increase
- in working capital (trader level), as opposed to investment.
+ (farmer level – buying medicine and paying for veterinary services) and
+ to increasing working capital (trader level), as opposed to investment.
  Longer run credit with better interest rates are likely to further upgrading
  of the value chain.
  Milk collection centers seem to provide credit to their suppliers, and
  traders also use most of the credit they get to pay advances to farmers
  to secure more milk.
- However, such advances are most likely used bu farmers to finance immediate
+ However, such advances are most likely used by farmers to finance immediate
  consumption needs.
  Credit is perhaps better supplied by a third party to avoid situations
- where farmers work themselves into debt and are then exploited by milk
- collection centers or traders.
+ where farmers work themselves into debt and are then locked into a situation
+ where milk collection centers or traders force farmers to supply milk at
+ low prices.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+[Bart]Can also happen with third party?[Bjorn] Less likely, I think.
+ A third party will just want to make money, but has no interest in getting
+ low prices.
+ 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Finally, we also found signs that rotational grazing is taking off in export-led
- value chains, and that farmers in such value chains try constructed dams
- to get a stable water supply.
- However, the use of additional feeding practices, such as hay making and
- silage, is not very common.
+ value chains, and that farmers in such value chains constructed dams to
+ get a stable water supply.
+ However, this is only a start.
+ To come to substantial productivity gains, the water will also need to
+ be distributed within the farms to avoid cows from having to walk long
+ distances.
+ The use of additional feeding practices, such as hay making and silage,
+ is not very common.
 \end_layout
 
 \begin_layout Standard
 While we highlighted some key innovations and pointed out the importance
- of milk collection centers in mid-stream service provision, we thus also
- think the sector stands to gain from further development of the dairy service
+ of milk collection centers in mid-stream service provision, we also think
+ the sector stands to gain from further development of the dairy service
  sector.
  Services provided by milk collection centers related to animal health,
  generally limited to the supply of acaricides seem insufficient at present.
  Ticks become quickly resistant to the acaricides, and some farmers are
- disadopting cross-bred cows because they simply dying.
+ disadopting cross-bred cows because they are simply dying.
  Clearly, milk collection centers do not have the capacity to carry out
  research on resistance to acaricides.
  More generally, many services would benefit from the development of a specializ
-ed diary service sector supporting milk producers.
+ed dairy service sector supporting milk producers.
  For instance, (cross-bred) cows produce much less than what would be possible
- because of the absence of a feeds sector.
+ because of the absence of a modern feed sector.
  Our data also suggests that artificial insemination is almost non-existent.
  But the lack of a supporting service sector also constrains the further
  development of the sector at higher levels.
@@ -4064,9 +4163,9 @@ This research was funded by the CGIAR Research Program on Policies, Institutions
 www.cgiar.org/funders/).
  We thank Wilberforce Walukano and Marc Charles Wanume for excellent field
  support.
- We are grateful for discussion with Rinus Van Klinken and Sarah Mubiru,
- and we appreciate comments and suggestions from seminar participants at
- the KULeuven and IFPRI-Addis Abeba.
+ We are grateful for discussion with Rinus Van Klinken, Sarah Mubiru and
+ Jaap Blom, and we appreciate comments and suggestions from seminar participants
+ at the KULeuven and IFPRI-Addis Abeba.
  This paper has benefited from comments provided by participants of a workshop
  held in Leuven at LICOS/KULeuven.
  The analysis contained here is the sole responsibility of the authors,

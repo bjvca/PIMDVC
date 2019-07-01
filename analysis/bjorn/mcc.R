@@ -102,6 +102,7 @@ names(res) <- c("services","Central","Southwest")
 
 
 res_m <- melt(res)
+res_m$value <- res_m$value*100
 
 names(res_m) <-  c("services","location","percent")
 pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/services.pdf")
