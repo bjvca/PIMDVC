@@ -151,13 +151,87 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-The dairy value chain in Uganda has undergone substantial changes in the
- last few decades.
- These changes were driven by a variety of factors.
- On the demand side, consumption of milk has been on the rise.
- As regional poverty has decreased dramatically, higher incomes resulted
- in rapidly increasing consumption of dairy products, which are known to
- be highly income elastic 
+Agricultural value chains are rapidly changing in developing countries,
+ also in Africa 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "eg. "
+key "reardon2012quiet,reardon2015transformation,jayne2019transformation"
+
+\end_inset
+
+, but the nature and causes of these changes – and especially the role of
+ Foreign Direct Investment (FDI) – are not well understood.
+ FDI has been shown to have been a major diver of the upgrading of value
+ chains in a number of developing countries, in particular through relaxing
+ of capital constraints and the transfer of technology and know-how 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "e.g."
+key "reardon2000agroindustrialization,blalock2008welfare,blomstrom1998multinational,stokke2009multinational"
+
+\end_inset
+
+.
+ In the case of the dairy sector, investments by multinational companies
+ can lead to important and quick upgrading of value chains 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "e.g."
+key "farina2002consolidation"
+
+\end_inset
+
+, sometimes through the set-up of vertical integration mechanisms 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "e.g."
+key "dries2009farmers,dries2004foreign"
+
+\end_inset
+
+.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "vandeplas2013multinationals"
+
+\end_inset
+
+ have further shown in India how farmers supplying dairy multinationals
+ are more efficient than farmers in the cooperative and traditional value
+ chains.
+ 
+\end_layout
+
+\begin_layout Standard
+However, evidence on this phenomenon is still limited in developing countries,
+ especially so in Africa.
+ In this paper, we will look at FDI, modernization, and innovation in the
+ case of dairy value chain transformation driven by local and export incentives
+ in Uganda.
+ Uganda is an interesting case as the dairy value chain has undergone substantia
+l and rapid changes as seen by a number of indicators.
+ First, national production has increased by more than 50 percent in the
+ last decade, from 1.4 to 2.2 billion liters annually.
+ Second, there has been quick modernization in dairy value chains through
+ large investments in processing plants – for the large majority through
+ FDI – leading to a five-fold increase in processing capacity (to about
+ 2.5 million liters per day) over the last decade.
+ Third, while a decade ago, Uganda imported more dairy products than it
+ exported and there was little hope that this would change 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "sheperd"
+
+\end_inset
+
+, in 2018 dairy had become Uganda’s third most important export product.
+ Fourth, while good recent data are lacking, available household surveys
+ suggests that dairy consumption has increased substantially: As regional
+ poverty has decreased dramatically, higher incomes resulted in rapidly
+ increasing consumption of dairy products, which are known to be highly
+ income elastic 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "COLEN2018116,10.1093/jn/133.11.3907S"
@@ -176,12 +250,6 @@ key "ruel2017urbanization,francesconi2010evolution"
 \end_inset
 
 .
- But not only local demand for dairy products has taken off.
- The dairy sub-sector has also become an important export sector for Uganda.
- On the supply side, the government's liberalization push in the late nineties
- led to a gradual increase in competition between processors by attracting
- significant Foreign Direct Investment (FDI).
- 
 \end_layout
 
 \begin_layout Standard
@@ -2300,8 +2368,9 @@ The previous section explored how key innovations within the dairy value
 
 \begin_layout Standard
 In this section, we construct a slightly different indicator, now focusing
- more on participation in modern value chains (including export led, but
- also comprising of the formal sector that supplies the local market).
+ more on participation in modern value chains (including export-led value
+ chains, but also comprising of the local value chains that supply pasteurized
+ milk to the local market).
  For farmers, we create an indicator of integration within the modern dairy
  value chains that is true if the farmer delivered milk to a milk collection
  center every day during the week before the survey.
@@ -2319,7 +2388,7 @@ In this section, we construct a slightly different indicator, now focusing
  According to this definition, about 43 percent of traders are integrated
  into modern value chains.
  As for traders, there is also a difference between the sheds, with about
- 38 percent of farmers integrated in formal chains in the central region,
+ 38 percent of farmers integrated in modern chains in the central region,
  while this is 62 percent in the southwestern region.
  Finally, for milk collection centers, the indicator is based on whether
  they report to be delivering to processors or not.
@@ -2337,7 +2406,7 @@ Farmers
 \begin_layout Standard
 We start with the analysis of the farmer level data and compare innovations
  between farmers that are part of modern value chains to those that operate
- more in the informal sphere.
+ more in a more traditional context.
  We present results for three different models: simple differences-in-means,
  conditional means that also control for a range of observables, and difference-
 in-means after making both groups more comparable using propensity score
@@ -3002,7 +3071,7 @@ reference "tab:Innovations-in-export"
  shows few farmers in the control group reported that they took a loan (8
  percent).
  Simple differences reveal that this is almost 15 percent in the group of
- farmers that are integrated in formal value chains.
+ farmers that are integrated in modern value chains.
  After correcting for household and contextual characteristics, the difference
  reduces and eventually becomes statistically indistinguishable from zero.
 \end_layout
@@ -3915,7 +3984,7 @@ end{center}
 \begin_layout Standard
 For the milk collection centers, we start by looking if there is a difference
  in organizational structure depending on whether the milk collection center
- supplies the local market or the formal sub-sector.
+ supplies the traditional market or the modern market.
  We find that about 36 of the milk collection centers that supply the local
  market are cooperatives.
  This proportion seems to be slightly higher in value chains where collection
