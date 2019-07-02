@@ -255,7 +255,7 @@ key "ruel2017urbanization,francesconi2010evolution"
 \begin_layout Standard
 Interestingly, due to a combination of agglomeration effects and a comparative
  advantage in milk production, the transformation was more outspoken in
- the so-called southwestern milk shed, located around the town of Mbarara.
+ the so-called southwestern milk shed.
  Most of the FDI was concentrated here, and as a result, this area has become
  tightly integrated in a global export-led value chain, with large processors
  sourcing raw milk from farmers and converting raw milk into complex products
@@ -335,9 +335,9 @@ We find that milk collection centers are central to value chain upgrading.
  produce more milk but are also much more susceptible to pests and diseases.
  They are also important for quality assurance.
  Often they provide milk cans to their suppliers.
- Many are cooperatives, which may be an effective organizational form to
- safeguard collective reputation in cases where traceability is hard and
- provide loyalty when side-selling is an attractive option.
+ Many milk collection centers are cooperatives, which may be an effective
+ organizational form to safeguard collective reputation in cases where traceabil
+ity is hard and provide loyalty when side-selling is an attractive option.
  We further observe a shift from informal to formal value chain financing
  and the adoption of rotational grazing practices.
 \end_layout
@@ -393,10 +393,8 @@ The rest of this article is organized as follows.
  We point out potential demand side drivers and explain how policy reforms
  created an enabling environment that attracted considerable foreign direct
  investment.
- We then present the primary data that was collected at different nodes
- in the value chain in the central and the southwestern milk shed.
- The data is also combined to visualize how raw milk flows through the value
- chain.
+ We then describe the structure of the value chain and visualize how raw
+ milk flows through the value chain.
  We then turn to important innovations that we observe within the value
  chain.
  We first describe differences between the export oriented milk shed and
@@ -406,7 +404,7 @@ The rest of this article is organized as follows.
  feeding practices, and quality assurance.
  We then construct an indicator of integration into modern dairy value chains
  and compare a range of innovations within this chain to traditional configurati
-ons using more formal models.
+ons using more formal models in an econometric analysis.
  A final section concludes.
 \end_layout
 
@@ -543,8 +541,8 @@ Often, milk that can not be sold is processed into bongo.
 \end_inset
 
 .
- Furthermore, in rural areas, ghee is used in cooking, and in urban areas,
- butter and yogurt consumption is taking off.
+ Furthermore, in rural areas, butter (or ghee) and yogurt consumption is
+ taking off.
  Unfortunately, the UNHS only records milk and ghee consumption; there is
  no separate category for
 \emph on
@@ -587,15 +585,21 @@ reference "fig:Import-and-export"
  show that US$ 130 million worth of dairy products have been exported in
  2017.
  The Dairy Development Authority reports that almost half of the export
- value, US$ 55 million, was exported by a single processor (Pearl Dairy
- Farms Ltd).
+ value, US$ 55 million, was exported by a single processor (See Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Largest-exporters-in"
+
+\end_inset
+
+).
  This processor exports mostly milk powder to countries on the Arabian peninsula
-, but also to Nigeria and even to Japan.
- About 20 percent of the total export value is exported to Kenya through
- Brookside Ltd.
+, but also to Nigeria.
+ About 20 percent of the total export value is exported to mostly neighboring
+ countries through Brookside Ltd.
  Birunga Dairies Industries, located in the Southwestern tip of Uganda (and
  outside our study area), exports about US$ 18 million worth of milk to
- the Democratic Republic of Congo and Rwanda.
+ the Democratic Republic of Congo, Burundi and Rwanda.
  Amos Dairies Ltd focuses on casein exports to the United states (US$ 11
  million).
  Smaller processors such as Lakeside Diaries Ltd.
@@ -603,10 +607,279 @@ reference "fig:Import-and-export"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Largest exporters in Uganda
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Largest-exporters-in"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccc} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Company	&
+\backslash
+begin{tabular}{@{}c@{}}export value
+\backslash
+
+\backslash
+ (million USD)
+\backslash
+end{tabular}  & share in total & exports to & products 	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+Pearl Dairy farmers Ltd & 55 & 42 & 
+\backslash
+begin{tabular}{@{}c@{}}COMESA countries,
+\backslash
+
+\backslash
+ West Africa, India, 
+\backslash
+
+\backslash
+Nepal, UAE
+\backslash
+end{tabular}  & milk powder
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Brookside Ltd & 25 & 20 & 
+\backslash
+begin{tabular}{@{}c@{}}Indian Ocean Islands,
+\backslash
+
+\backslash
+ East Africa, Rwanda, 
+\backslash
+
+\backslash
+Burundi
+\backslash
+end{tabular}  & UHT milk
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Birunga dairies industries & 18 & 14 & 
+\backslash
+begin{tabular}{@{}c@{}}DRC, Rwanda, 
+\backslash
+
+\backslash
+Burundi
+\backslash
+end{tabular}  & UHT milk
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Jesa farm dairy Ltd & 15 & 11 & 
+\backslash
+begin{tabular}{@{}c@{}}Kenya
+\backslash
+end{tabular}  & ESL (extended shelf life) milk
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Amos & 18 & 14 & 
+\backslash
+begin{tabular}{@{}c@{}}US
+\backslash
+end{tabular}  & caseine
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+Total & 130 & 100 & & 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Based on author's calculations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -795,11 +1068,7 @@ status collapsed
 \end_layout
 
 \begin_layout Section
-Primary Data
-\end_layout
-
-\begin_layout Subsection
-Data collected and sampling
+Structure of the value chain
 \end_layout
 
 \begin_layout Standard
@@ -807,7 +1076,14 @@ Uganda is divided into so-called milk sheds, each with different characteristics
  in terms of agro-ecological conditions, farm typologies and market dynamics.
  The southwestern milk shed around Mbarara and the central milk shed comprising
  of the districts Kyankwanzi, Kiboga and Nakaseke, are the two most important
- milk sheds.
+ milk sheds (see Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Map-of-Uganda"
+
+\end_inset
+
+).
  While the agro-ecological conditions and farmer types are pretty similar
  between the two sheds, market dynamics are very different.
  In the southwestern milk shed, low prices have attracted processors that
@@ -816,7 +1092,51 @@ Uganda is divided into so-called milk sheds, each with different characteristics
  Kampala to the central milk shed, leading to substantial differences in
  the organization and functioning of the value chain and how these areas
  are integrated in the wider economy.
- 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename map.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Map of Uganda and its milk sheds (source: Dairy Development Authority)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Map-of-Uganda"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -864,17 +1184,6 @@ nth
 \end_inset
 
  trader that came to deliver milk to the center.
-\end_layout
-
-\begin_layout Subsection
-Milk flows
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:Milk-flows"
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -1094,17 +1403,6 @@ key "suri2011selection"
  we uncover in the following sections.
 \end_layout
 
-\begin_layout Subsection
-Descriptive analysis of differences between milk shed
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:Descriptive-analysis-of"
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Standard
 In this section, we simply compare actors located and operating in the export
  oriented southwestern milk shed to the central milk shed to assess the
@@ -1114,7 +1412,7 @@ In this section, we simply compare actors located and operating in the export
  and water, and at sanitation throughout the value chain.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Milk collection centers
 \end_layout
 
@@ -1448,7 +1746,7 @@ name "fig:Cooperatives"
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Adoption of improved breeds
 \end_layout
 
@@ -1524,7 +1822,7 @@ name "fig:Herd-size-and"
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Value chain financing
 \end_layout
 
@@ -1963,7 +2261,7 @@ reference "tab:VCfinancing"
  want to become dairy farmers in the future.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Feeding and water
 \end_layout
 
@@ -2009,7 +2307,7 @@ A more sedentary livestock production system in the southwest also affects
  this is only 8 percent in the southwest.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Milk handling and sanitation
 \begin_inset CommandInset label
 LatexCommand label
@@ -2339,8 +2637,9 @@ Milk sanitation is not only determined by the type of containers in which
  milk shed, and this difference is significant (p=0.003).
 \end_layout
 
-\begin_layout Subsection
-Innovation and integration into modern dairy value chains - models
+\begin_layout Section
+Innovation and integration into modern dairy value chains - econometric
+ analysis
 \end_layout
 
 \begin_layout Standard
@@ -2399,14 +2698,14 @@ In this section, we construct a slightly different indicator, now focusing
  
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Farmers
 \end_layout
 
 \begin_layout Standard
-We start with the analysis of the farmer level data and compare innovations
- between farmers that are part of modern value chains to those that operate
- more in a more traditional context.
+We start with the analysis of the farmer level data and compare a range
+ of innovations between farmers that are part of modern value chains to
+ those that operate more in a more traditional context.
  We present results for three different models: simple differences-in-means,
  conditional means that also control for a range of observables, and difference-
 in-means after making both groups more comparable using propensity score
@@ -2426,12 +2725,16 @@ reference "tab:Innovations-in-export"
 \end_inset
 
 .
- In the first column (1) of the table, means in the subgroup of farmers
- that are not integrated in modern value chains (the control group) are
- reported for reference.
- The second column (2) shows a simple difference between the average among
+ The different innovations are indicated in the left column.
+ For instance, we look at mid-stream service delivery (such as the provision
+ of training, inputs and credit), adoption of improved animals, adoption
+ of improved pasture management and innovations in the sphere of milk sanitation.
+ In the first column (1) of the table, means of each innovation in the subgroup
+ of farmers that are not integrated in modern value chains (the control
+ group) are reported for reference.
+ The second column (2) shows a simple differences between the average among
  farmers that are integrated in modern value chains and the control group
- that is not.
+ that is not for each of the innovation indicated in the left column.
  The third column (3) in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2439,9 +2742,10 @@ reference "tab:Innovations-in-export"
 
 \end_inset
 
- also shows the difference between the subset of farmers that are part of
- a modern value chain and the control group, but now estimated in a regression
- framework, where we control for a range of farmer and context characteristics.
+ also shows for each innovation the difference between the subset of farmers
+ that are part of a modern value chain and the control group, but now estimated
+ in a regression framework, where we control for a range of farmer and context
+ characteristics.
  In particular, we add controls for the age of the household head, sex of
  the household head, household size, whether the household head has attended
  at least secondary school, the distance of the farm to the nearest neighbour,
@@ -2845,8 +3149,9 @@ begin{tabular}{lcccc}
 \backslash
 multicolumn{5}{p{1
 \backslash
-textwidth}}{Note: First column (1) reports averages among farmers that are
- integrated in traditional value chains.
+textwidth}}{Note: First column (1) reports averages of the variables indicated
+ in the first column among farmers that are integrated in traditional value
+ chains.
  
 \end_layout
 
@@ -3107,7 +3412,7 @@ Finally, the introduction of aluminum buckets and cans to increase the quality
  
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Traders
 \end_layout
 
@@ -3412,14 +3717,10 @@ begin{tabular}{lcccc}
 \backslash
 multicolumn{5}{p{1
 \backslash
-textwidth}}{Note: First column (1) reports averages among traders that are
- integrated in traditional value chains.
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-Second column (2) shows the difference between traders that are part of
+textwidth}}{Note: First column (1) reports averages of the variables indicated
+ in the first column among traders that are integrated in traditional value
+ chains.
+ Second column (2) shows the difference between traders that are part of
  modern value chains and those that are part of traditional 
 \end_layout
 
@@ -3505,7 +3806,7 @@ reference "tab:Innovations-traders"
  delivering exclusively to a milk collection center or processor.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Milk collection centers
 \end_layout
 
@@ -3943,8 +4244,9 @@ begin{tabular}{lcccc}
 \backslash
 multicolumn{5}{p{1
 \backslash
-textwidth}}{Note: First column (1) reports averages among milk collection
- centers that are integrated in traditional value chains.
+textwidth}}{Note: First column (1) reports averages of the variables indicated
+ in the first column among milk collection centers that are integrated in
+ traditional value chains.
  Second column (2) shows the difference between milk collection centers
  that are part of modern value chains and those that are part of traditional
  value chains.

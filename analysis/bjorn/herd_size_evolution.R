@@ -958,4 +958,6 @@ summary(ivreg(share_exot~export_ind +age_head+fem_head+ hh_size+ farmers$edu_sec
 summary(ivreg(use_cans~export_ind +age_head+fem_head+ hh_size+ farmers$edu_sec+nearest_neighbor+ distance_vetshop+access_finance+landsize+district | age_head+fem_head+ hh_size+ farmers$edu_sec +nearest_neighbor+ distance_vetshop+access_finance+landsize+district+nearest_mcc, data=farmers), diagnostics=T)
 summary(ivreg(coop~export_ind +age_head+fem_head+ hh_size+ farmers$edu_sec+nearest_neighbor+ distance_vetshop+access_finance+landsize+district | age_head+fem_head+ hh_size+ farmers$edu_sec +nearest_neighbor+ distance_vetshop+access_finance+landsize+district+nearest_mcc, data=farmers), diagnostics=T)
 
+hh_head.HH.distance.q10
+
 
