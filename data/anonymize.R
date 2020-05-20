@@ -113,9 +113,13 @@ farmers_C <- farmers_C[c(names(farmers_C)[1:231],"hh_head.HH.sales.q105x",names(
 #mccs_C <- cbind(mccs_C,read.csv("/home/bjvca/data/projects/PIMDVC/data/raw/MCCs.csv")[c("mcc._gps_latitude", "mcc._gps_longitude", "mcc._gps_altitude")])
 #mccs_SW <- cbind(mccs_SW,read.csv("/home/bjvca/data/projects/PIMDVC/data/raw/Mbarara_MCC.csv")[c("mcc._gps_latitude", "mcc._gps_longitude", "mcc._gps_altitude")])
 
+#traders_C <- cbind(traders_C,read.csv("/home/bjvca/data/projects/PIMDVC/data/raw/traders.csv")[c("trader._gps_latitude", "trader._gps_longitude", "trader._gps_altitude")])
+#traders_SW <- cbind(traders_SW,read.csv("/home/bjvca/data/projects/PIMDVC/data/raw/Mbarara_Traders.csv")[c("trader._gps_latitude", "trader._gps_longitude", "trader._gps_altitude"  )])
 
 #farmers_C <- cbind(farmers_C,read.csv("/home/bjvca/data/projects/PIMDVC/data/raw/dairy_farmers.csv")[c("hh_head.HH._gps_latitude", "hh_head.HH._gps_longitude", "hh_head.HH._gps_altitude")])
 #farmers_SW <- cbind(farmers_SW,read.csv("/home/bjvca/data/projects/PIMDVC/data/raw/Mbarara_farmers.csv")[c("hh_head.HH._gps_latitude", "hh_head.HH._gps_longitude", "hh_head.HH._gps_altitude"  )])
+
+
 
 mccs_SW$shed <- "SW"
 mccs_C$shed <- "C"
@@ -134,10 +138,14 @@ farmers$ID <- paste("F", rownames(farmers), sep="_")
 traders$ID <- paste("T", rownames(traders), sep="_")
 mccs$ID <- paste("M", rownames(mccs), sep="_")
 
-### uncomment if you also want gps coordinates
+#### uncomment if you also want gps coordinates
 #write.csv(farmers, "/home/bjvca/data/projects/PIMDVC/data/public/farmers_gps.csv")
 #write.csv(traders, "/home/bjvca/data/projects/PIMDVC/data/public/traders_gps.csv")
 #write.csv(mccs, "/home/bjvca/data/projects/PIMDVC/data/public/mccs_gps.csv")
+
+#merge in travel time in minutes to nearest small town (>50,000 inhabitants -  Weiss et al. (2018) https://www.nature.com/articles/nature25181/) 
+
+farmers <- merge(farmers, read.csv("/home/bjvca/data/projects/PIMDVC/data/non_public/TravelTimeNearest50kCity_farmers.csv")[c("ID","Travel_time_min")] ,all.x=T)
 
 write.csv(farmers, "/home/bjvca/data/projects/PIMDVC/data/public/farmers.csv")
 write.csv(traders, "/home/bjvca/data/projects/PIMDVC/data/public/traders.csv")

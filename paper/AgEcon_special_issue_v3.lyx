@@ -610,7 +610,7 @@ reference "tab:Largest-exporters-in"
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -862,7 +862,7 @@ scriptsize
 
 \begin_layout Plain Layout
 
-Note: Based on author's calculations
+Note: Based on data obtained from the Dairy Development Authority
 \end_layout
 
 \end_inset
@@ -1103,8 +1103,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename map.png
-	scale 50
+	filename map_final.png
+	scale 10
 
 \end_inset
 
@@ -1115,7 +1115,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Map of Uganda and its milk sheds (source: Dairy Development Authority)
+Map of Uganda and data collection sites 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Map-of-Uganda"
