@@ -99,15 +99,24 @@ res <- data.frame(services, res)
 names(res) <- c("services","Central","Southwest")
 
 
+prop.test(table(mccs$mcc.q52.a, mccs$shed))
+prop.test(table(mccs$mcc.q52.b, mccs$shed))
+prop.test(table(mccs$mcc.q52.c, mccs$shed))
+prop.test(table(mccs$mcc.q52.d, mccs$shed))
+prop.test(table(mccs$mcc.q52.e, mccs$shed))
+prop.test(table(mccs$mcc.q52.f, mccs$shed))
+prop.test(table(mccs$mcc.q52.g, mccs$shed))
+prop.test(table(mccs$mcc.q52.j, mccs$shed))
+
 
 
 res_m <- melt(res)
 res_m$value <- res_m$value*100
 
 names(res_m) <-  c("services","location","percent")
-pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/services.pdf")
+pdf("/home/bjvca/data/projects/PIMDVC/paper/dairy/innovations/services_annoted.pdf")
 ggplot(data=res_m, aes(x=reorder(services,percent), y=percent, fill=location)) +
-geom_bar(stat="identity", position=position_dodge()) + coord_flip() +  theme_bw() +theme(axis.text = element_text(size = 14))+ theme(axis.title = element_text(size = 14)) + theme(text = element_text(size = 14)) + theme(axis.title.y=element_blank()) + theme(legend.text=element_text(size=12)) +  scale_fill_grey(start = .2, end = .7)
+geom_bar(stat="identity", position=position_dodge()) + ylim(0,100) +coord_flip() +  theme_bw() +theme(axis.text = element_text(size = 14))+ theme(axis.title = element_text(size = 14)) + theme(text = element_text(size = 14)) + theme(axis.title.y=element_blank()) + theme(legend.text=element_text(size=12)) +  scale_fill_grey(start = .2, end = .7) 
 dev.off()
 
 ### milk cans and jerrycans
