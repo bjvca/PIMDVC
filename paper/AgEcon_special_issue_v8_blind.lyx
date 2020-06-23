@@ -14,7 +14,7 @@
 \language english
 \language_package default
 \inputencoding utf8
-\fontencoding \font_roman "times" "default"
+\fontencoding global
 \font_roman "default" "default"
 \font_sans "lmss" "default"
 \font_typewriter "default" "default"
@@ -92,38 +92,6 @@
 \begin_body
 
 \begin_layout Title
-\begin_inset Preview
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-author{Bjorn Van Campenhout
-\backslash
-thanks{Development Strategy and Governance Division, International Food
- Policy Research Institute, Leuven, Belgium - corresponding author: b.vancampenho
-ut@cgiar.org} 
-\backslash
-footnotemark[3] , Bart Minten
-\backslash
-thanks{Development Strategy and Governance Division, International Food
- Policy Research Institute, Addis Abeba, Ethiopia}, and Johan Swinnen
-\backslash
-thanks{LICOS Center for Institutions and Economic Performance, KULeuven,
- Belgium}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
 Leading the way - Foreign Direct Investment and dairy value chain upgrading
  in Uganda
 \end_layout
@@ -155,26 +123,7 @@ Driven by increased demand from both local and export markets and facilitated
  
 \end_layout
 
-\begin_layout Section*
-Acknowledgments
-\end_layout
-
 \begin_layout Standard
-This research was partly funded by the CGIAR Research Program on Policies,
- Institutions, and Markets (PIM), led by the International Food Policy Research
- Institute (IFPRI) and carried out with support from the CGIAR Fund contributors
- (https://www.cgiar.org/funders/).
- Additional financial support was provided by the KU Leuven (Long term structura
-l funding – Methusalem funding by the Flemish Government), and the Research
- Foundation Flanders (FWO) under grant G0G4318N (EOS ID 30784531).
- We thank Leocardia Nabwire, Wilberforce Walukano and Marc Charles Wanume
- for excellent research support.
- We are grateful for discussion with Rinus Van Klinken, Sarah Mubiru and
- Jaap Blom, and we appreciate comments and suggestions from seminar participants
- at the KULeuven and IFPRI-Addis Abeba.
- The analysis contained here is the sole responsibility of the authors,
- and does not reflect the views of any funding agency or organization mentioned
- here.
 \begin_inset Newpage newpage
 \end_inset
 
@@ -5197,13 +5146,10 @@ arabic{table}}
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -5532,10 +5478,6 @@ end{center}
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -5545,7 +5487,7 @@ end{center}
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -5939,7 +5881,7 @@ end{center}
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -6236,6 +6178,15 @@ hline
 
 \backslash
 [-1.8ex]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
 \backslash
 end{tabular}
 \end_layout
@@ -6251,14 +6202,14 @@ scriptsize
 
 
 \backslash
-begin{tabular}{lcccc} 
+begin{tabular}{lccc} 
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{5}{p{1
+multicolumn{4}{p{1
 \backslash
 textwidth}}{Note: all models include district fixed effects; * denotes significa
 nce at 10 percent level, ** at 5 percent, and *** at 1 percent.}
@@ -6298,7 +6249,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Balance on covariates before and after matching - farmers
+Balance on covariates before and after matching: farmers
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Balance-on-covariates"
@@ -6449,7 +6400,6 @@ District=KIRUHURA	&	0.30	&	0.06	&	0.12	&	0.10
 \backslash
 
 \backslash
- Fourth, while good recent data are lacking, available household surveys
  
 \end_layout
 
@@ -6546,7 +6496,7 @@ scriptsize
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -6880,10 +6830,6 @@ end{center}
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -6893,7 +6839,7 @@ end{center}
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -7142,7 +7088,7 @@ scriptsize
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -7468,7 +7414,7 @@ end{center}
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
