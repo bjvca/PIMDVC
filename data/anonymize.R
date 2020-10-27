@@ -20,7 +20,6 @@ mccs$enumerator <- paste("EN",as.numeric(mccs$enumerator),sep="_")
 traders$enumerator <- paste("EN",as.numeric(traders$enumerator),sep="_")
 
 ####remove additional data that may identify individuals
-
 farmers <- farmers[,!(names(farmers) %in% c("parish","village","hh_head.consent", "hh_head.HH.q3", "hh_head.HH.q3b","hh_head.HH.child_name")) ]
 farmers <- farmers[,!(names(farmers) %in%  unlist(lapply(1:20, function( i) paste(paste("hh_head.HH.hh_member",i,sep="."),"q5a",sep=".."))))]
 farmers$district <- toupper(farmers$district)
@@ -119,24 +118,59 @@ farmers_C <- farmers_C[c(names(farmers_C)[1:231],"hh_head.HH.sales.q105x",names(
 #farmers_C <- cbind(farmers_C,read.csv("/home/bjvca/data/projects/PIMDVC/data/raw/dairy_farmers.csv")[c("hh_head.HH._gps_latitude", "hh_head.HH._gps_longitude", "hh_head.HH._gps_altitude")])
 #farmers_SW <- cbind(farmers_SW,read.csv("/home/bjvca/data/projects/PIMDVC/data/raw/Mbarara_farmers.csv")[c("hh_head.HH._gps_latitude", "hh_head.HH._gps_longitude", "hh_head.HH._gps_altitude"  )])
 
+#### insert telephone numbers for follow up
+farmers_C_follow_up <-  cbind(farmers_C[c("district","sub")],read.csv("/home/bjvca/data/projects/PIMDVC/data/raw/dairy_farmers.csv")[c("parish","village","hh_head.HH.q3", "hh_head.HH.q3b")])
+farmers_SW_follow_up <-  cbind(farmers_SW[c("district","sub")],read.csv("/home/bjvca/data/projects/PIMDVC/data/raw/Mbarara_farmers.csv")[c("parish","village","hh_head.HH.q3", "hh_head.HH.q3b")])
+
+traders_C_follow_up <-  cbind(traders_C[c("district","sub")],read.csv("/home/bjvca/data/projects/PIMDVC/data/raw/traders.csv")[c("parish","village","trader.q1","trader.q2")])
+traders_SW_follow_up <-  cbind(traders_SW[c("district","sub")],read.csv("/home/bjvca/data/projects/PIMDVC/data/raw/Mbarara_Traders.csv")[c("parish","village","trader.q1","trader.q2")])
+
+mccs_C_follow_up <-  cbind(mccs_C[c("district","sub_county")],read.csv("/home/bjvca/data/projects/PIMDVC/data/raw/MCCs.csv")[c("parish","village", "mcc.q2", "mcc.q7", "mcc.q3")])
+mccs_SW_follow_up <-  cbind(mccs_SW[c("district","sub_county")],read.csv("/home/bjvca/data/projects/PIMDVC/data/raw/Mbarara_MCC.csv")[c("parish","village", "mcc.q2", "mcc.q7", "mcc.q3")])
 
 
 mccs_SW$shed <- "SW"
 mccs_C$shed <- "C"
 mccs <-  rbind(mccs_SW, mccs_C)
 
+mccs_SW_follow_up$shed <- "SW"
+mccs_C_follow_up$shed <- "C"
+mccs_follow_up <-  rbind(mccs_SW_follow_up, mccs_C_follow_up)
+
+
 traders_SW$shed <- "SW"
 traders_C$shed <- "C"
 traders <- rbind(traders_SW, traders_C)
+
+traders_SW_follow_up$shed <- "SW"
+traders_C_follow_up$shed <- "C"
+traders_follow_up <- rbind(traders_SW_follow_up, traders_C_follow_up)
 
 farmers_SW$shed <- "SW"
 farmers_C$shed <- "C"
 farmers <- rbind(farmers_SW, farmers_C)
 
+farmers_SW_follow_up$shed <- "SW"
+farmers_C_follow_up$shed <- "C"
+farmers_follow_up <- rbind(farmers_SW_follow_up, farmers_C_follow_up)
+
 ### fix id
 farmers$ID <- paste("F", rownames(farmers), sep="_")
 traders$ID <- paste("T", rownames(traders), sep="_")
 mccs$ID <- paste("M", rownames(mccs), sep="_")
+
+farmers_follow_up$ID <- paste("F", rownames(farmers_follow_up), sep="_")
+traders_follow_up$ID <- paste("T", rownames(traders_follow_up), sep="_")
+mccs_follow_up$ID <- paste("M", rownames(mccs_follow_up), sep="_")
+
+farmers_follow_up <- subset(farmers_follow_up, hh_head.HH.q3b != 999 )
+traders_follow_up <- subset(traders_follow_up, trader.q2 != 999)
+
+
+write.csv(farmers_follow_up, "/home/bjvca/data/projects/PIMDVC/data/raw/farmers_follow_up.csv")
+write.csv(traders_follow_up, "/home/bjvca/data/projects/PIMDVC/data/raw/traders_follow_up.csv")
+write.csv(mccs_follow_up, "/home/bjvca/data/projects/PIMDVC/data/raw/mccs_follow_up.csv")
+
 
 #### uncomment if you also want gps coordinates
 #write.csv(farmers, "/home/bjvca/data/projects/PIMDVC/data/public/farmers_gps.csv")
