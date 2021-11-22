@@ -84,8 +84,8 @@ farmers_SW <- cbind(farmers_SW,read.csv("G:/My Drive/Classroom/Documents from Dr
 
 #### insert telephone numbers and names of household members
 farmers_C_raw <-  cbind(farmers_C[c("ID","district","sub","hh_head.HH._gps_latitude", "hh_head.HH._gps_longitude")],read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/dairy_farmers.csv")[c("parish","village","hh_head.HH.q3", 
-                                                                                                                            "hh_head.HH.q3b","hh_head.HH.hh_member.1..q5a","hh_head.HH.hh_member.2..q5a","hh_head.HH.hh_member.3..q5a","hh_head.HH.hh_member.4..q5a","hh_head.HH.hh_member.5..q5a","hh_head.HH.hh_member.6..q5a","hh_head.HH.hh_member.7..q5a")])
-farmers_SW_raw <-  cbind(farmers_SW[c("ID","district","sub","hh_head.HH._gps_latitude", "hh_head.HH._gps_longitude")],read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/Mbarara_farmers.csv")[c("parish","village","hh_head.HH.q3", "hh_head.HH.q3b","hh_head.HH.hh_member.1..q5a","hh_head.HH.hh_member.2..q5a","hh_head.HH.hh_member.3..q5a","hh_head.HH.hh_member.4..q5a","hh_head.HH.hh_member.5..q5a","hh_head.HH.hh_member.6..q5a","hh_head.HH.hh_member.7..q5a")])
+                                                                                                                            "hh_head.HH.q3b","hh_head.HH.hh_member.1..q5a","hh_head.HH.hh_member.2..q5a","hh_head.HH.hh_member.3..q5a","hh_head.HH.hh_member.4..q5a","hh_head.HH.hh_member.5..q5a","hh_head.HH.hh_member.6..q5a","hh_head.HH.hh_member.7..q5a", "hh_head.HH.Housing.q17")])
+farmers_SW_raw <-  cbind(farmers_SW[c("ID","district","sub","hh_head.HH._gps_latitude", "hh_head.HH._gps_longitude")],read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/Mbarara_farmers.csv")[c("parish","village","hh_head.HH.q3", "hh_head.HH.q3b","hh_head.HH.hh_member.1..q5a","hh_head.HH.hh_member.2..q5a","hh_head.HH.hh_member.3..q5a","hh_head.HH.hh_member.4..q5a","hh_head.HH.hh_member.5..q5a","hh_head.HH.hh_member.6..q5a","hh_head.HH.hh_member.7..q5a", "hh_head.HH.Housing.q17")])
 
 traders_C_raw <-  cbind(traders_C[c("ID","district","sub","trader._gps_latitude", "trader._gps_longitude")],read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/traders.csv")[c("parish","village","trader.q1","trader.q2")])
 traders_SW_raw <-  cbind(traders_SW[c("ID","district","sub","trader._gps_latitude", "trader._gps_longitude")],read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/Mbarara_traders.csv")[c("parish","village","trader.q1","trader.q2")])
@@ -115,14 +115,13 @@ mccs_raw$ID <- paste("M", rownames(mccs_raw), sep="_")
 farmers_raw <- subset(farmers_raw, hh_head.HH.q3b != 999 )
 traders_raw <- subset(traders_raw, trader.q2 != 999)
 
-
 #sampling all SW farmers 
 SW_farm<- subset(farmers_raw, shed=="SW")
 table(farmers_raw$shed=="SW") #323
 
-#sampling 677 of the C farmers 
+#sampling 877 of the C farmers 
 C_farm<- subset(farmers_raw, shed=="C")
-sample_id<-data.frame(sample(C_farm$ID, size=677))
+sample_id<-data.frame(sample(C_farm$ID, size=877))
 
 names(sample_id)[1] <- "ID" #changing var name 
 
@@ -134,9 +133,9 @@ final<-rbind(merge,SW_farm)
 SW_trade<- subset(traders_raw, shed=="SW")
 table(traders_raw$shed=="SW") #138
 
-#sampling 162 of the C traders
+#sampling 362 of the C traders
 C_trade<- subset(traders_raw, shed=="C")
-sample_idt<-data.frame(sample(C_trade$ID, size=162))
+sample_idt<-data.frame(sample(C_trade$ID, size=362))
 
 names(sample_idt)[1] <- "ID" #changing var name 
 
@@ -153,4 +152,8 @@ write.csv(final, "G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Pa
 write.csv(mccs_raw, "G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/mcc_sample.csv")
 write.csv(final_trader, "G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/traders_sample.csv")
 
+
+#39.15% of the MCCs should be from SW
+#We have 37 from SW, we need 3 more
+#We have 55 from C, we need 5 more 
 
