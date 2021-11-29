@@ -130,18 +130,18 @@ merge<-merge(sample_id, C_farm, all.x=TRUE)
 final<-rbind(merge,SW_farm)
 
 #sampling all SW traders 
-SW_trade<- subset(traders_raw, shed=="SW")
-table(traders_raw$shed=="SW") #138
+#SW_trade<- subset(traders_raw, shed=="SW")
+#table(traders_raw$shed=="SW") #138
 
 #sampling 362 of the C traders
-C_trade<- subset(traders_raw, shed=="C")
-sample_idt<-data.frame(sample(C_trade$ID, size=362))
+#C_trade<- subset(traders_raw, shed=="C")
+#sample_idt<-data.frame(sample(C_trade$ID, size=362))
 
-names(sample_idt)[1] <- "ID" #changing var name 
+#names(sample_idt)[1] <- "ID" #changing var name 
 
 #merging to get final trader sample 
-merge_trade<-merge(sample_idt, C_trade, all.x=TRUE)  
-final_trader<-rbind(merge_trade,SW_trade)
+#merge_trade<-merge(sample_idt, C_trade, all.x=TRUE)  
+#final_trader<-rbind(merge_trade,SW_trade)
 
 
 names(mccs_raw)[11] <- "main_collection_centre" #changing var name 
@@ -150,7 +150,7 @@ table(mccs_raw$shed=="SW") #37 from SW and 55 from C
 
 write.csv(final, "G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/farmers_sample.csv")
 write.csv(mccs_raw, "G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/mcc_sample.csv")
-write.csv(final_trader, "G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/traders_sample.csv")
+write.csv(traders_raw, "G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/traders_sample.csv")
 
 
 #39.15% of the MCCs should be from SW
