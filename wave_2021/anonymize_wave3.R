@@ -3,8 +3,49 @@ library(dplyr)
 #Reading in raw data
 #FARMERS
 farmers <- read.csv("G:/My Drive/Classroom/Documents from Drive/KUL PhD/Uganda_PIMDVC/PIMDVC/wave_2021/raw_data/farmers/Farmers_DairyV3.csv")
+
+#since some farmers were in the tool but not in the list, date like q17, hh-id has not been obtained for these farmers ----- this has to be filled in
+farmers_old <- read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/farmers_raw_SW_C.csv")
+
+farmers_sample<- read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/farmers_sample.csv")
+
+table(farmers$q17)  #156 n/a 
+table(farmers$hh_name=="n/a") #TRUE = 156 
+list(farmers$hh_namex[farmers$hh_name=="n/a"]) #list of farmer names which have n/a for hh_id, q17 etc. 
+
+
+#matching farmer names, village, sub-county and district from 2018 sample and filling in q17 data 
+farmers$q17n <- farmers_old[match(paste(farmers$hh_namex, farmers$district, farmers$sub, farmers$village),
+                                  paste(farmers_old$hh_head.HH.q3, farmers_old$district, farmers_old$sub, farmers_old$village)), "hh_head.HH.Housing.q17"] #39 unmatched 
+farmers$q17n <- ifelse(is.na(farmers$q17n), 0, farmers$q17n) #changing NA to 0
+
+list(farmers$hh_namex[farmers$q17n==0])
+
+list<- subset(farmers, farmers$q17n==0) #can see the unmatched data
+
+
 farmers<-farmers[-c(1:8, 11:13, 17, 26, 27, 418:423 )] #removing variables not needed
 farmers=farmers[,!grepl("X_", names(farmers))]  #removing variables starting with X_
+
+#dairy.g18 has not been captured properly --- even if dairy.g16=q17, the enumerators have inserted answer for the change in most imp source of income being a result of COVID
+table(farmers$dairy.g18)
+
+table(farmers$dairy.g16[farmers$dairy.g18==1])
+table(farmers$q17[farmers$dairy.g18==1])
+
+table(farmers$dairy.g16[farmers$dairy.g18==2])
+table(farmers$q17[farmers$dairy.g18==2])
+
+table(farmers$dairy.g16[farmers$dairy.g18==3])
+table(farmers$q17[farmers$dairy.g18==3])
+
+table(farmers$dairy.g16[farmers$dairy.g18=="n/a"]) 
+table(farmers$q17[farmers$dairy.g18=="n/a"])
+#the changes are when the value is "n/a"
+
+#So, dropping dairy.g18 completely
+farmers$dairy.g18 <- NULL
+
 
 #------------------------------------------------------------#
 

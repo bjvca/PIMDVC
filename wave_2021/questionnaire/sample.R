@@ -115,6 +115,8 @@ mccs_raw$ID <- paste("M", rownames(mccs_raw), sep="_")
 farmers_raw <- subset(farmers_raw, hh_head.HH.q3b != 999 )
 traders_raw <- subset(traders_raw, trader.q2 != 999)
 
+write.csv(farmers_raw, "G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/farmers_raw_SW_C.csv")
+
 #sampling all SW farmers 
 SW_farm<- subset(farmers_raw, shed=="SW")
 table(farmers_raw$shed=="SW") #323
