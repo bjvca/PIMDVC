@@ -13,15 +13,38 @@ table(farmers$q17)  #156 n/a
 table(farmers$hh_name=="n/a") #TRUE = 156 
 list(farmers$hh_namex[farmers$hh_name=="n/a"]) #list of farmer names which have n/a for hh_id, q17 etc. 
 
+#prepping data for merging 
+farm<- subset(farmers_old[c(2,9, 10, 18, 19)])
+farm$hh_namex<-farm$hh_head.HH.q3 
+farm$allshed <- farm$shed
+farm<- subset(farm[-c(2,5)])
 
-#matching farmer names, village, sub-county and district from 2018 sample and filling in q17 data 
-farmers$q17n <- farmers_old[match(paste(farmers$hh_namex, farmers$district, farmers$sub, farmers$village),
-                                  paste(farmers_old$hh_head.HH.q3, farmers_old$district, farmers_old$sub, farmers_old$village)), "hh_head.HH.Housing.q17"] #39 unmatched 
-farmers$q17n <- ifelse(is.na(farmers$q17n), 0, farmers$q17n) #changing NA to 0
+#trim trailing space 
+farm$hh_namex <- trimws(farm$hh_namex, which = c("right"))
 
-list(farmers$hh_namex[farmers$q17n==0])
+#merge
+farmer_final<- merge(farmers, farm, by="hh_namex")
 
-list<- subset(farmers, farmers$q17n==0) #can see the unmatched data
+#after merging, farmer_final has 2 extra obs 
+#check for duplicates 
+dup<-subset(farmer_final,duplicated(hh_namex)) 
+
+#Duplicate 1 --- Asaba Bukenya
+table(farmer_final$ID[farmer_final$hh_namex=="Asaba Bukenya"]) #F_977 --- 2, looks like same farmer interviewed twice 
+table(farmer_final$village[farmer_final$hh_namex=="Asaba Bukenya"]) #both from same village
+which(farmer_final$hh_namex == 'Asaba Bukenya')
+farmer_final[48,]
+farmer_final[49,] #most values are n/a, looks like interview was stopped in between realising repetation 
+#should drop row 49
+
+#Duplicate 2 --- Bulemu Hassan
+table(farmer_final$ID[farmer_final$hh_namex=="Bulemu Hassan"])
+table(farmer_final$village[farmer_final$hh_namex=="Bulemu Hassan"]) #both from same village
+which(farmer_final$hh_namex == 'Bulemu Hassan')
+farmer_final[124,]
+farmer_final[125,]
+bulemu<- farmer_final[124:125,] #data varies for both the farmers 
+
 
 
 farmers<-farmers[-c(1:8, 11:13, 17, 26, 27, 418:423 )] #removing variables not needed
