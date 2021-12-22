@@ -29,14 +29,15 @@ farmer_final<- merge(farmers, farm, by="hh_namex")
 #check for duplicates 
 dup<-subset(farmer_final,duplicated(hh_namex)) 
 
+#enumerator selected wrong farmer 
 #Duplicate 1 --- Asaba Bukenya
-table(farmer_final$ID[farmer_final$hh_namex=="Asaba Bukenya"]) #F_977 --- 2, looks like same farmer interviewed twice 
+table(farmer_final$ID[farmer_final$hh_namex=="Asaba Bukenya"]) #F_977 --- 2
 table(farmer_final$village[farmer_final$hh_namex=="Asaba Bukenya"]) #both from same village
 which(farmer_final$hh_namex == 'Asaba Bukenya')
 farmer_final[48,]
-farmer_final[49,] #most values are n/a, looks like interview was stopped in between realising repetation 
-#should drop row 49
+farmer_final[49,] 
 
+#enumerator selected wrong farmer 
 #Duplicate 2 --- Bulemu Hassan
 table(farmer_final$ID[farmer_final$hh_namex=="Bulemu Hassan"])
 table(farmer_final$village[farmer_final$hh_namex=="Bulemu Hassan"]) #both from same village
@@ -45,29 +46,126 @@ farmer_final[124,]
 farmer_final[125,]
 bulemu<- farmer_final[124:125,] #data varies for both the farmers 
 
+#enumerator selected wrong farmer 
+#Duplicate 3 - DIDASI TUMWESIGE
+table(farmer_final$ID[farmer_final$hh_namex=="DIDASI TUMWESIGE"]) 
+table(farmer_final$village[farmer_final$hh_namex=="DIDASI TUMWESIGE"])  #both from same village
+which(farmer_final$hh_namex == 'DIDASI TUMWESIGE')
+farmer_final[164,]
+farmer_final[165,]
+didasi<- farmer_final[164:165,] #data varies for both the farmers 
 
 
-farmers<-farmers[-c(1:8, 11:13, 17, 26, 27, 418:423 )] #removing variables not needed
-farmers=farmers[,!grepl("X_", names(farmers))]  #removing variables starting with X_
+#Duplicate 4 - Dudu Godfrey
+table(farmer_final$ID[farmer_final$hh_namex=="Dudu Godfrey"]) #different IDs
+table(farmer_final$village[farmer_final$hh_namex=="Dudu Godfrey"])  #both from same village
+which(farmer_final$hh_namex == 'Dudu Godfrey')
+farmer_final[166,]
+farmer_final[167,]
+#In the raw data collected, only F_1162 is there, so we drop F_1199
+
+#enumerator selected wrong farmer 
+#Duplicate 5 - Kamurasi Isa
+table(farmer_final$ID[farmer_final$hh_namex=="Kamurasi Isa"]) #same IDs
+table(farmer_final$village[farmer_final$hh_namex=="Kamurasi Isa"])  #both from same village
+which(farmer_final$hh_namex == 'Kamurasi Isa')
+farmer_final[356,]
+farmer_final[357,]
+isa<- farmer_final[356:357,]
+
+#enumerator selected wrong farmer 
+#Duplicate 6 - Kankyiriho Apollo
+table(farmer_final$ID[farmer_final$hh_namex=="Kankyiriho Apollo"]) #same IDs
+table(farmer_final$village[farmer_final$hh_namex=="Kankyiriho Apollo"])  #both from same village
+which(farmer_final$hh_namex == 'Kankyiriho Apollo')
+farmer_final[366,]
+farmer_final[367,]
+
+#enumerator selected wrong farmer 
+#Duplicate 7 - Kazungu misaki steven
+table(farmer_final$ID[farmer_final$hh_namex=="Kazungu misaki steven"]) #same IDs
+table(farmer_final$village[farmer_final$hh_namex=="Kazungu misaki steven"])  #both from same village
+which(farmer_final$hh_namex == 'Kazungu misaki steven')
+farmer_final[424,]
+farmer_final[425,]
+
+#Duplicate 8 - Mbabazi Justine
+table(farmer_final$ID[farmer_final$hh_namex=="Mbabazi Justine"]) #different IDs
+table(farmer_final$village[farmer_final$hh_namex=="Mbabazi Justine"])  #both from same village
+which(farmer_final$hh_namex == 'Mbabazi Justine')
+farmer_final[541,] #should only keep this 
+farmer_final[542,]
+#delete the duplicate as it does not exist in the collected data 
+
+#enumerator selected wrong farmer 
+#Duplicate 9 - Mutabazi Frank
+table(farmer_final$ID[farmer_final$hh_namex=="Mutabazi Frank"]) #same IDs
+table(farmer_final$village[farmer_final$hh_namex=="Mutabazi Frank"])  #both from same village
+which(farmer_final$hh_namex == 'Mutabazi Frank')
+farmer_final[649,] 
+farmer_final[650,]
+
+#duplicate 10 - Mwesigye David
+table(farmer_final$ID[farmer_final$hh_namex=="Mwesigye David"]) #different IDs
+table(farmer_final$village[farmer_final$hh_namex=="Mwesigye David"])  #both from same village
+which(farmer_final$hh_namex == 'Mwesigye David')
+farmer_final[673,] 
+farmer_final[674,]
+#The ID F_213 is the one in the collected data, so remove the other one. 
+
+#enumerator selected wrong farmer 
+#duplicate 11 - Mwesigye Godfrey Mujwiga
+table(farmer_final$ID[farmer_final$hh_namex=="Mwesigye Godfrey Mujwiga"]) #same IDs
+table(farmer_final$village[farmer_final$hh_namex=="Mwesigye Godfrey Mujwiga"])  #both from same village
+which(farmer_final$hh_namex == 'Mwesigye Godfrey Mujwiga')
+farmer_final[678,] 
+farmer_final[679,]
+
+#enumerator selected wrong farmer 
+#duplicate 12 - Rwamishango Yonnah
+table(farmer_final$ID[farmer_final$hh_namex=="Rwamishango Yonnah"]) #same IDs
+table(farmer_final$village[farmer_final$hh_namex=="Rwamishango Yonnah"])  #both from same village
+which(farmer_final$hh_namex == 'Rwamishango Yonnah')
+farmer_final[855,] 
+farmer_final[856,]
+
+#enumerator selected wrong farmer 
+#duplicate 13 - Rwomushana Geofrey
+table(farmer_final$ID[farmer_final$hh_namex=="Rwomushana Geofrey"]) #same IDs
+table(farmer_final$village[farmer_final$hh_namex=="Rwomushana Geofrey"])  #both from same village
+which(farmer_final$hh_namex == 'Rwomushana Geofrey')
+farmer_final[875,] 
+farmer_final[876,]
+
+
+#dropping duplicate rows based on decisions made above 
+farmer_final<-subset(farmer_final[-(167),])
+farmer_final<-subset(farmer_final[-(542),])
+farmer_final<-subset(farmer_final[-(673),])
+
+farmer_final<-farmer_final[-c(1:9, 13, 17, 26, 27, 438)] #removing variables not needed
+farmer_final=farmer_final[,!grepl("X_", names(farmer_final))]   #removing variables starting with X_
+farmer_final<-farmer_final[-c(405:410)]
+
 
 #dairy.g18 has not been captured properly --- even if dairy.g16=q17, the enumerators have inserted answer for the change in most imp source of income being a result of COVID
-table(farmers$dairy.g18)
+table(farmer_final$dairy.g18)
 
-table(farmers$dairy.g16[farmers$dairy.g18==1])
-table(farmers$q17[farmers$dairy.g18==1])
+table(farmer_final$dairy.g16[farmer_final$dairy.g18==1])
+table(farmer_final$q17[farmer_final$dairy.g18==1])
 
-table(farmers$dairy.g16[farmers$dairy.g18==2])
-table(farmers$q17[farmers$dairy.g18==2])
+table(farmer_final$dairy.g16[farmer_final$dairy.g18==2])
+table(farmer_final$q17[farmer_final$dairy.g18==2])
 
-table(farmers$dairy.g16[farmers$dairy.g18==3])
-table(farmers$q17[farmers$dairy.g18==3])
+table(farmer_final$dairy.g16[farmer_final$dairy.g18==3])
+table(farmer_final$q17[farmer_final$dairy.g18==3])
 
-table(farmers$dairy.g16[farmers$dairy.g18=="n/a"]) 
-table(farmers$q17[farmers$dairy.g18=="n/a"])
+table(farmer_final$dairy.g16[farmer_final$dairy.g18=="n/a"]) 
+table(farmer_final$q17[farmer_final$dairy.g18=="n/a"])
 #the changes are when the value is "n/a"
 
 #So, dropping dairy.g18 completely
-farmers$dairy.g18 <- NULL
+farmer_final$dairy.g18 <- NULL
 
 
 #------------------------------------------------------------#
