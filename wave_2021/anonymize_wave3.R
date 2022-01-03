@@ -167,6 +167,36 @@ table(farmer_final$q17[farmer_final$dairy.g18=="n/a"])
 #So, dropping dairy.g18 completely
 farmer_final$dairy.g18 <- NULL
 
+#checking most important source of income
+table(farmer_final$hh_head.HH.Housing.q17)
+table(farmer_final$dairy.g16)
+
+table(farmer_final$hh_head.HH.Housing.q17==1)
+table(farmer_final$dairy.g16[farmer_final$hh_head.HH.Housing.q17=="1"])
+
+table(farmer_final$hh_head.HH.Housing.q17==2)
+table(farmer_final$dairy.g16[farmer_final$hh_head.HH.Housing.q17=="2"])
+
+table(farmer_final$hh_head.HH.Housing.q17==3)
+table(farmer_final$dairy.g16[farmer_final$hh_head.HH.Housing.q17=="3"])
+
+table(farmer_final$hh_head.HH.Housing.q17==4)
+table(farmer_final$dairy.g16[farmer_final$hh_head.HH.Housing.q17=="4"])
+
+table(farmer_final$hh_head.HH.Housing.q17==5)
+table(farmer_final$dairy.g16[farmer_final$hh_head.HH.Housing.q17=="5"])
+
+table(farmer_final$hh_head.HH.Housing.q17==6)
+table(farmer_final$dairy.g16[farmer_final$hh_head.HH.Housing.q17=="6"])
+
+table(farmer_final$hh_head.HH.Housing.q17==7)
+table(farmer_final$dairy.g16[farmer_final$hh_head.HH.Housing.q17=="7"])
+
+table(farmer_final$hh_head.HH.Housing.q17==96)
+table(farmer_final$dairy.g16[farmer_final$hh_head.HH.Housing.q17=="96"])
+
+table(farmer_final$hh_head.HH.Housing.q17==98)
+table(farmer_final$dairy.g16[farmer_final$hh_head.HH.Housing.q17=="98"])
 
 #------------------------------------------------------------#
 
