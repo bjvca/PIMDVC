@@ -1,4 +1,5 @@
 library(dplyr)
+library(plyr)
 
 #Reading in raw data
 #FARMERS
@@ -137,6 +138,8 @@ which(farmer_final$hh_namex == 'Rwomushana Geofrey')
 farmer_final[875,] 
 farmer_final[876,]
 
+#trim trailing space for village 
+farmer_final$village <- trimws(farmer_final$village, which = c("both"))
 
 #dropping duplicate rows based on decisions made above 
 farmer_final<-subset(farmer_final[-(167),])
@@ -167,7 +170,7 @@ table(farmer_final$q17[farmer_final$dairy.g18=="n/a"])
 #So, dropping dairy.g18 completely
 farmer_final$dairy.g18 <- NULL
 
-#checking most important source of income
+#checking most important source of income -- dairy.g16 is from 2021
 table(farmer_final$hh_head.HH.Housing.q17)
 table(farmer_final$dairy.g16)
 
@@ -197,6 +200,30 @@ table(farmer_final$dairy.g16[farmer_final$hh_head.HH.Housing.q17=="96"])
 
 table(farmer_final$hh_head.HH.Housing.q17==98)
 table(farmer_final$dairy.g16[farmer_final$hh_head.HH.Housing.q17=="98"])
+
+
+#### COMPETITION
+
+#number of traders in the neighbourhood 
+table(farmer_final$dairy.sales.q95)
+
+farmer_final$nr_trad <- farmer_final$dairy.sales.q95
+
+#a farmer reported 0 trader in the neighbourhood but sold to one trader - so changing the value to 1 
+farmer_final$nr_trad [farmer_final$dairy.sales.q95=="0"] <- 1
+
+farmer_final$nr_trad [farmer_final$dairy.sales.q95=="999"] <- NA
+farmer_final$nr_trad [farmer_final$dairy.sales.q95=="9999"] <- NA
+farmer_final$nr_trad [farmer_final$dairy.sales.q95=="n/a"] <- NA
+table (farmer_final$nr_trad)
+
+mean(as.numeric(farmer_final$nr_trad), na.rm=T) #trader competition at the farmer level
+  
+count_farm<-data.frame(cbind(lm(farmer_final$nr_trad~-1+farmer_final$village)$coef)) #average number of traders in each village
+count_farm$village <- rownames(count_farm)
+colnames(count_farm)[1] <- "avg" 
+count_farm$village<-gsub("farmer_final$village","",count_farm$village,fixed = TRUE)
+rownames(count_farm) <- 1:nrow(count_farm)
 
 #------------------------------------------------------------#
 
@@ -280,8 +307,8 @@ trader_new$hh_id<-NA
 trad$trader.when<-NA
 
 #dropping variables not needed
-trad<-trad[-c(1:9, 12:14,16, 20:21)]
-trader_new<-trader_new[-c(1:9, 12:13, 15:16)]
+trad<-trad[-c(1:9, 13:14,16, 20:21)]
+trader_new<-trader_new[-c(1:9, 13, 15:16)]
 
 #trader dataset
 traders <- rbind(trad, trader_new)
@@ -289,5 +316,31 @@ traders <- rbind(trad, trader_new)
 traders=traders[,!grepl("X_", names(traders))] 
 #removing location (GPS) variables 
 traders<-traders[-c(278:283)]
+
+#trim trailing space 
+traders$village <- trimws(traders$village, which = c("both"))
+
+#assigning IDs to all traders 
+traders_ID <- cbind(ID=paste("T",rownames(traders),sep="_"), traders)
+
+count<- count(traders_ID, "village") #counting number of traders in each village 
+
+##COMPETITION
+traders_ID<-traders_ID[c("ID", "village")] #subset
+traders_ID$village<-toupper(traders_ID$village) #changing case
+comp<-merge(traders_ID, count_farm) #merging 
+#we only get 28 matches --- check if this is correct
+mean(comp$avg, na.rm=T) #4.12381
+
+traders$trader.secC_group.secC_groupcomp.q24 [traders$trader.secC_group.secC_groupcomp.q24=="999"] <- NA
+traders$trader.secC_group.secC_groupcomp.q24 [traders$trader.secC_group.secC_groupcomp.q24=="n/a"] <- NA
+table(traders$trader.secC_group.secC_groupcomp.q24)
+
+#average number of traders competing as reported by the traders 
+mean(as.numeric(traders$trader.secC_group.secC_groupcomp.q24), na.rm=T)  # 23.07197
+#average number of traders competing as reported by the traders whose area of operation is a village 
+mean(as.numeric(traders$trader.secC_group.secC_groupcomp.q24[traders$trader.secC_group.q94==1]), na.rm=T) #  25.29333
+
+
 
 #------------------------------------------------------------#
