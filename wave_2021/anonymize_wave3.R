@@ -24,6 +24,7 @@ farm<- subset(farm[-c(2,5)])
 farm$hh_namex <- trimws(farm$hh_namex, which = c("right"))
 
 #merge
+farmer_fin<- merge(farmers, farm, by="hh_namex")
 farmer_final<- merge(farmers, farm, by="hh_namex")
 
 #after merging, farmer_final has 2 extra obs 
@@ -312,6 +313,7 @@ trader_new<-trader_new[-c(1:9, 13, 15:16)]
 
 #trader dataset
 traders <- rbind(trad, trader_new)
+trad_dairy <- rbind(trad, trader_new)
 #removing some variables starting with X_
 traders=traders[,!grepl("X_", names(traders))] 
 #removing location (GPS) variables 
@@ -344,3 +346,30 @@ mean(as.numeric(traders$trader.secC_group.secC_groupcomp.q24[traders$trader.secC
 
 
 #------------------------------------------------------------#
+
+
+
+library(leaflet)
+
+#create map
+#traders <-  traders[ is.na(traders$nr_traders),]
+
+names(trad_dairy)[283] <-"dairy._gps_longitude"
+names(trad_dairy)[282] <-"dairy._gps_latitude"
+
+to_plot_f <- farmer_fin[c("dairy._gps_longitude", "dairy._gps_latitude","village")]
+to_plot_t <- trad_dairy[c("dairy._gps_longitude", "dairy._gps_latitude","village")]
+to_plot_f$actor <- "farmer"
+to_plot_t$actor <- "trader"
+to_plot <- rbind(to_plot_f,to_plot_t)
+
+pal <- colorFactor(c("green", "red"), domain = c("farmer", "trader"))
+
+m <- leaflet() %>% setView(lat = 0.6, lng = 33.5, zoom=9)  %>%  addTiles(group="OSM") %>% addTiles(urlTemplate = "https://mts1.google.com/vt/lyrs=s&hl=en&src=app&x={x}&y={y}&z={z}&s=G",  group="Google", attribution = 'Google') %>% addProviderTiles(providers$OpenTopoMap, group="Topography") %>% addCircleMarkers(data=to_plot, lng=~as.numeric(as.character(dairy._gps_longitude)), 
+                                                                                    lat=~as.numeric(as.character(dairy._gps_latitude)),radius= 3, label=~as.character(village),color=~pal(actor), group="X_uuid")   %>%  addLayersControl(baseGroups=c('OSM','Google','Topography'))
+
+m
+
+
+library(htmlwidgets)
+saveWidget(m, file="farm_trad_dairy.html")
