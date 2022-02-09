@@ -1,14 +1,23 @@
 library(dplyr)
 library(plyr)
 
-#Reading in raw data
-#FARMERS
-farmers <- read.csv("G:/My Drive/Classroom/Documents from Drive/KUL PhD/Uganda_PIMDVC/PIMDVC/wave_2021/raw_data/farmers/Farmers_DairyV3.csv")
+#CHANGE PATH
+
+#setwd("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin")
+path2 <- getwd() 
 
 #since some farmers were in the tool but not in the list, date like q17, hh-id has not been obtained for these farmers ----- this has to be filled in
-farmers_old <- read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/farmers_raw_SW_C.csv")
+farmers_old <- read.csv(paste(path2,"USAID_SME_project/Country folders/Uganda dairy/data/raw/farmers_raw_SW_C.csv", sep="/"), stringsAsFactors = FALSE)
+farmers_sample <- read.csv(paste(path2,"USAID_SME_project/Country folders/Uganda dairy/data/raw/farmers_sample.csv", sep="/"), stringsAsFactors = FALSE)
 
-farmers_sample<- read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/farmers_sample.csv")
+#CHANGE PATH
+
+#setwd("G:/My Drive/Classroom/Documents from Drive/KUL PhD/Uganda_PIMDVC/PIMDVC/wave_2021")
+path <- getwd()
+
+#Reading in raw data
+#FARMERS
+farmers <- read.csv(paste(path,"raw_data/farmers/Farmers_DairyV3.csv", sep="/"), stringsAsFactors = FALSE)
 
 table(farmers$q17)  #156 n/a 
 table(farmers$hh_name=="n/a") #TRUE = 156 
@@ -31,118 +40,10 @@ farmer_final<- merge(farmers, farm, by="hh_namex")
 #check for duplicates 
 dup<-subset(farmer_final,duplicated(hh_namex)) 
 
-#enumerator selected wrong farmer 
-#Duplicate 1 --- Asaba Bukenya
-table(farmer_final$ID[farmer_final$hh_namex=="Asaba Bukenya"]) #F_977 --- 2
-table(farmer_final$village[farmer_final$hh_namex=="Asaba Bukenya"]) #both from same village
-which(farmer_final$hh_namex == 'Asaba Bukenya')
-farmer_final[48,]
-farmer_final[49,] 
-
-#enumerator selected wrong farmer 
-#Duplicate 2 --- Bulemu Hassan
-table(farmer_final$ID[farmer_final$hh_namex=="Bulemu Hassan"])
-table(farmer_final$village[farmer_final$hh_namex=="Bulemu Hassan"]) #both from same village
-which(farmer_final$hh_namex == 'Bulemu Hassan')
-farmer_final[124,]
-farmer_final[125,]
-bulemu<- farmer_final[124:125,] #data varies for both the farmers 
-
-#enumerator selected wrong farmer 
-#Duplicate 3 - DIDASI TUMWESIGE
-table(farmer_final$ID[farmer_final$hh_namex=="DIDASI TUMWESIGE"]) 
-table(farmer_final$village[farmer_final$hh_namex=="DIDASI TUMWESIGE"])  #both from same village
-which(farmer_final$hh_namex == 'DIDASI TUMWESIGE')
-farmer_final[164,]
-farmer_final[165,]
-didasi<- farmer_final[164:165,] #data varies for both the farmers 
-
-
-#Duplicate 4 - Dudu Godfrey
-table(farmer_final$ID[farmer_final$hh_namex=="Dudu Godfrey"]) #different IDs
-table(farmer_final$village[farmer_final$hh_namex=="Dudu Godfrey"])  #both from same village
-which(farmer_final$hh_namex == 'Dudu Godfrey')
-farmer_final[166,]
-farmer_final[167,]
-#In the raw data collected, only F_1162 is there, so we drop F_1199
-
-#enumerator selected wrong farmer 
-#Duplicate 5 - Kamurasi Isa
-table(farmer_final$ID[farmer_final$hh_namex=="Kamurasi Isa"]) #same IDs
-table(farmer_final$village[farmer_final$hh_namex=="Kamurasi Isa"])  #both from same village
-which(farmer_final$hh_namex == 'Kamurasi Isa')
-farmer_final[356,]
-farmer_final[357,]
-isa<- farmer_final[356:357,]
-
-#enumerator selected wrong farmer 
-#Duplicate 6 - Kankyiriho Apollo
-table(farmer_final$ID[farmer_final$hh_namex=="Kankyiriho Apollo"]) #same IDs
-table(farmer_final$village[farmer_final$hh_namex=="Kankyiriho Apollo"])  #both from same village
-which(farmer_final$hh_namex == 'Kankyiriho Apollo')
-farmer_final[366,]
-farmer_final[367,]
-
-#enumerator selected wrong farmer 
-#Duplicate 7 - Kazungu misaki steven
-table(farmer_final$ID[farmer_final$hh_namex=="Kazungu misaki steven"]) #same IDs
-table(farmer_final$village[farmer_final$hh_namex=="Kazungu misaki steven"])  #both from same village
-which(farmer_final$hh_namex == 'Kazungu misaki steven')
-farmer_final[424,]
-farmer_final[425,]
-
-#Duplicate 8 - Mbabazi Justine
-table(farmer_final$ID[farmer_final$hh_namex=="Mbabazi Justine"]) #different IDs
-table(farmer_final$village[farmer_final$hh_namex=="Mbabazi Justine"])  #both from same village
-which(farmer_final$hh_namex == 'Mbabazi Justine')
-farmer_final[541,] #should only keep this 
-farmer_final[542,]
-#delete the duplicate as it does not exist in the collected data 
-
-#enumerator selected wrong farmer 
-#Duplicate 9 - Mutabazi Frank
-table(farmer_final$ID[farmer_final$hh_namex=="Mutabazi Frank"]) #same IDs
-table(farmer_final$village[farmer_final$hh_namex=="Mutabazi Frank"])  #both from same village
-which(farmer_final$hh_namex == 'Mutabazi Frank')
-farmer_final[649,] 
-farmer_final[650,]
-
-#duplicate 10 - Mwesigye David
-table(farmer_final$ID[farmer_final$hh_namex=="Mwesigye David"]) #different IDs
-table(farmer_final$village[farmer_final$hh_namex=="Mwesigye David"])  #both from same village
-which(farmer_final$hh_namex == 'Mwesigye David')
-farmer_final[673,] 
-farmer_final[674,]
-#The ID F_213 is the one in the collected data, so remove the other one. 
-
-#enumerator selected wrong farmer 
-#duplicate 11 - Mwesigye Godfrey Mujwiga
-table(farmer_final$ID[farmer_final$hh_namex=="Mwesigye Godfrey Mujwiga"]) #same IDs
-table(farmer_final$village[farmer_final$hh_namex=="Mwesigye Godfrey Mujwiga"])  #both from same village
-which(farmer_final$hh_namex == 'Mwesigye Godfrey Mujwiga')
-farmer_final[678,] 
-farmer_final[679,]
-
-#enumerator selected wrong farmer 
-#duplicate 12 - Rwamishango Yonnah
-table(farmer_final$ID[farmer_final$hh_namex=="Rwamishango Yonnah"]) #same IDs
-table(farmer_final$village[farmer_final$hh_namex=="Rwamishango Yonnah"])  #both from same village
-which(farmer_final$hh_namex == 'Rwamishango Yonnah')
-farmer_final[855,] 
-farmer_final[856,]
-
-#enumerator selected wrong farmer 
-#duplicate 13 - Rwomushana Geofrey
-table(farmer_final$ID[farmer_final$hh_namex=="Rwomushana Geofrey"]) #same IDs
-table(farmer_final$village[farmer_final$hh_namex=="Rwomushana Geofrey"])  #both from same village
-which(farmer_final$hh_namex == 'Rwomushana Geofrey')
-farmer_final[875,] 
-farmer_final[876,]
-
 #trim trailing space for village 
 farmer_final$village <- trimws(farmer_final$village, which = c("both"))
 
-#dropping duplicate rows based on decisions made above 
+#dropping duplicate rows based on decisions made after checking farmers
 farmer_final<-subset(farmer_final[-(167),])
 farmer_final<-subset(farmer_final[-(542),])
 farmer_final<-subset(farmer_final[-(673),])
@@ -207,8 +108,8 @@ table(farmer_final$dairy.g16[farmer_final$hh_head.HH.Housing.q17=="98"])
 
 #MCCS
 #we have two sets of raw data, follow-up mccs and new mccs
-mcc <- read.csv("G:/My Drive/Classroom/Documents from Drive/KUL PhD/Uganda_PIMDVC/PIMDVC/wave_2021/raw_data/MCC/MCC_DairyV3_2021.csv")
-mcc_new <- read.csv("G:/My Drive/Classroom/Documents from Drive/KUL PhD/Uganda_PIMDVC/PIMDVC/wave_2021/raw_data/MCC/NEW_MCC_2021.csv")
+mcc <- read.csv(paste(path,"raw_data/MCC/MCC_DairyV3_2021.csv", sep="/"), stringsAsFactors = FALSE)
+mcc_new <- read.csv(paste(path,"raw_data/MCC/NEW_MCC_2021.csv", sep="/"), stringsAsFactors = FALSE)
 
 #dropping variables not needed
 mcc<-mcc[-c(1:9, 13:14,16:17, 23, 24, 25, 26 )]
@@ -239,10 +140,11 @@ mcc_new$mcc.secB_group.b05.96<- NA
 
 #mcc dataset
 mccs <- rbind(mcc, mcc_new)
-#removing some variables starting with X_
-mccs=mccs[,!grepl("X_", names(mccs))] 
 
 mcc_loc<-mccs
+
+#removing some variables starting with X_
+mccs=mccs[,!grepl("X_", names(mccs))] 
 
 #removing location (GPS) variables 
 mccs<-mccs[-c(237:242)]
@@ -251,9 +153,9 @@ mccs<-mccs[-c(237:242)]
 
 #TRADERS
 #we have 3 sets of raw data - follow up traders (with random sampling), new traders, trader_xxx with the entire sample
-trader <- read.csv("G:/My Drive/Classroom/Documents from Drive/KUL PhD/Uganda_PIMDVC/PIMDVC/wave_2021/raw_data/traders/TRADER_DairyV3.csv")
-trader_new <- read.csv("G:/My Drive/Classroom/Documents from Drive/KUL PhD/Uganda_PIMDVC/PIMDVC/wave_2021/raw_data/traders/TRADER_NEW_2021.csv")
-trader_xxx <- read.csv("G:/My Drive/Classroom/Documents from Drive/KUL PhD/Uganda_PIMDVC/PIMDVC/wave_2021/raw_data/traders/TRADER_XXX_2021.csv")
+trader <- read.csv(paste(path,"raw_data/traders/TRADER_DairyV3.csv", sep="/"), stringsAsFactors = FALSE)
+trader_new <- read.csv(paste(path,"raw_data/traders/TRADER_NEW_2021.csv", sep="/"), stringsAsFactors = FALSE)
+trader_xxx <- read.csv(paste(path,"raw_data/traders/TRADER_XXX_2021.csv", sep="/"), stringsAsFactors = FALSE)
 
 #trader and trader_xxx have same variables 
 trad <- rbind(trader, trader_xxx)
@@ -310,7 +212,7 @@ traders_ID <- cbind(ID=paste("T",rownames(traders),sep="_"), traders)
 
 ### CHECKING IF VILLAGE NAMES MATCH FOR FARMERS, TRADERS AND MCCS BASED ON THE MAP    --------  TO BE DONE 
 table(traders$village[traders$village=="Commercial street"])
-table(mccs$village[mccs$village=="Commercial street"])
+table(mccs$village=="Commercial street")
 
 #------------------------------------------------------------#
 
@@ -321,7 +223,7 @@ table(farmer_final$dairy.sales.q95)
 
 farmer_final$nr_trad <- farmer_final$dairy.sales.q95
 
-#a farmer reported 0 trader in the neighbourhood but sold to one trader - so changing the value to 1 
+#a farmer reported 0 tratraderder in the neighbourhood but sold to one trader - so changing the value to 1 
 farmer_final$nr_trad [farmer_final$dairy.sales.q95=="0"] <- 1
 
 farmer_final$nr_trad [farmer_final$dairy.sales.q95=="999"] <- NA
@@ -410,3 +312,4 @@ m_all #traders, farmers and mccs
 library(htmlwidgets)
 saveWidget(m, file="farm_trad_dairy.html") #traders and farmers 
 saveWidget(m_all, file="dairy_21.html") #traders, farmers and mccs 
+

@@ -4,10 +4,12 @@ set.seed(11921)
 ### for central milk shed
 rm(list=ls())
 
-farmers <- read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/dairy_farmers.csv")
-mccs <- read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/MCCs.csv")
-traders <- read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/traders.csv")
+setwd("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin")
+path <- getwd()
 
+farmers <- read.csv(paste(path,"USAID_SME_project/Country folders/Uganda dairy/data/raw/dairy_farmers.csv", sep="/"), stringsAsFactors = FALSE)
+mccs <- read.csv(paste(path,"USAID_SME_project/Country folders/Uganda dairy/data/raw/MCCs.csv", sep="/"), stringsAsFactors = FALSE)
+traders <- read.csv(paste(path,"USAID_SME_project/Country folders/Uganda dairy/data/raw/traders.csv", sep="/"), stringsAsFactors = FALSE)
 
 farmers$district <- toupper(farmers$district)
 farmers$sub <- toupper(farmers$sub)
@@ -27,9 +29,9 @@ mccs_C <- cbind(ID=paste("M",rownames(mccs),sep="_"), mccs)
 
 #### now for SW milkshed
 
-farmers <- read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/Mbarara_farmers.csv")
-mccs <- read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/Mbarara_MCC.csv")
-traders <- read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/Mbarara_Traders.csv")
+farmers <- read.csv(paste(path,"USAID_SME_project/Country folders/Uganda dairy/data/raw/Mbarara_farmers.csv", sep="/"), stringsAsFactors = FALSE)
+mccs <- read.csv(paste(path,"USAID_SME_project/Country folders/Uganda dairy/data/raw/Mbarara_MCC.csv", sep="/"), stringsAsFactors = FALSE)
+traders <- read.csv(paste(path,"USAID_SME_project/Country folders/Uganda dairy/data/raw/Mbarara_Traders.csv", sep="/"), stringsAsFactors = FALSE)
 
 farmers$district <- toupper(farmers$district)
 farmers$sub <- toupper(farmers$sub)
@@ -73,25 +75,26 @@ farmers_C <- farmers_C[c(names(farmers_C)[1:231],"hh_head.HH.sales.q105x",names(
 
 
 ### insert GPS coordinates 
-mccs_C <- cbind(mccs_C,read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/MCCs.csv")[c("mcc._gps_latitude", "mcc._gps_longitude", "mcc._gps_altitude")])
-mccs_SW <- cbind(mccs_SW,read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/Mbarara_MCC.csv")[c("mcc._gps_latitude", "mcc._gps_longitude", "mcc._gps_altitude")])
 
-traders_C <- cbind(traders_C,read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/traders.csv")[c("trader._gps_latitude", "trader._gps_longitude", "trader._gps_altitude")])
-traders_SW <- cbind(traders_SW,read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/Mbarara_Traders.csv")[c("trader._gps_latitude", "trader._gps_longitude", "trader._gps_altitude"  )])
+mccs_C <- cbind(mccs_C,read.csv(paste(path,"USAID_SME_project/Country folders/Uganda dairy/data/raw/MCCs.csv", sep="/"))[c("mcc._gps_latitude", "mcc._gps_longitude", "mcc._gps_altitude")])
+mccs_SW <- cbind(mccs_SW,read.csv(paste(path,"USAID_SME_project/Country folders/Uganda dairy/data/raw/Mbarara_MCC.csv", sep="/"))[c("mcc._gps_latitude", "mcc._gps_longitude", "mcc._gps_altitude")])
 
-farmers_C <- cbind(farmers_C,read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/dairy_farmers.csv")[c("hh_head.HH._gps_latitude", "hh_head.HH._gps_longitude", "hh_head.HH._gps_altitude")])
-farmers_SW <- cbind(farmers_SW,read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/Mbarara_farmers.csv")[c("hh_head.HH._gps_latitude", "hh_head.HH._gps_longitude", "hh_head.HH._gps_altitude"  )])
+traders_C <- cbind(traders_C,read.csv(paste(path,"USAID_SME_project/Country folders/Uganda dairy/data/raw/traders.csv", sep="/"))[c("trader._gps_latitude", "trader._gps_longitude", "trader._gps_altitude")])
+traders_SW <- cbind(traders_SW,read.csv(paste(path,"USAID_SME_project/Country folders/Uganda dairy/data/raw/Mbarara_Traders.csv", sep="/"))[c("trader._gps_latitude", "trader._gps_longitude", "trader._gps_altitude"  )])
+
+farmers_C <- cbind(farmers_C,read.csv(paste(path,"USAID_SME_project/Country folders/Uganda dairy/data/raw/dairy_farmers.csv", sep="/"))[c("hh_head.HH._gps_latitude", "hh_head.HH._gps_longitude", "hh_head.HH._gps_altitude")])
+farmers_SW <- cbind(farmers_SW,read.csv(paste(path,"USAID_SME_project/Country folders/Uganda dairy/data/raw/Mbarara_farmers.csv", sep="/"))[c("hh_head.HH._gps_latitude", "hh_head.HH._gps_longitude", "hh_head.HH._gps_altitude"  )])
 
 #### insert telephone numbers and names of household members
-farmers_C_raw <-  cbind(farmers_C[c("ID","district","sub","hh_head.HH._gps_latitude", "hh_head.HH._gps_longitude")],read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/dairy_farmers.csv")[c("parish","village","hh_head.HH.q3", 
+farmers_C_raw <-  cbind(farmers_C[c("ID","district","sub","hh_head.HH._gps_latitude", "hh_head.HH._gps_longitude")],read.csv(paste(path,"USAID_SME_project/Country folders/Uganda dairy/data/raw/dairy_farmers.csv", sep="/"))[c("parish","village","hh_head.HH.q3", 
                                                                                                                             "hh_head.HH.q3b","hh_head.HH.hh_member.1..q5a","hh_head.HH.hh_member.2..q5a","hh_head.HH.hh_member.3..q5a","hh_head.HH.hh_member.4..q5a","hh_head.HH.hh_member.5..q5a","hh_head.HH.hh_member.6..q5a","hh_head.HH.hh_member.7..q5a", "hh_head.HH.Housing.q17")])
-farmers_SW_raw <-  cbind(farmers_SW[c("ID","district","sub","hh_head.HH._gps_latitude", "hh_head.HH._gps_longitude")],read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/Mbarara_farmers.csv")[c("parish","village","hh_head.HH.q3", "hh_head.HH.q3b","hh_head.HH.hh_member.1..q5a","hh_head.HH.hh_member.2..q5a","hh_head.HH.hh_member.3..q5a","hh_head.HH.hh_member.4..q5a","hh_head.HH.hh_member.5..q5a","hh_head.HH.hh_member.6..q5a","hh_head.HH.hh_member.7..q5a", "hh_head.HH.Housing.q17")])
+farmers_SW_raw <-  cbind(farmers_SW[c("ID","district","sub","hh_head.HH._gps_latitude", "hh_head.HH._gps_longitude")],read.csv(paste(path,"USAID_SME_project/Country folders/Uganda dairy/data/raw/Mbarara_farmers.csv", sep="/"))[c("parish","village","hh_head.HH.q3", "hh_head.HH.q3b","hh_head.HH.hh_member.1..q5a","hh_head.HH.hh_member.2..q5a","hh_head.HH.hh_member.3..q5a","hh_head.HH.hh_member.4..q5a","hh_head.HH.hh_member.5..q5a","hh_head.HH.hh_member.6..q5a","hh_head.HH.hh_member.7..q5a", "hh_head.HH.Housing.q17")])
 
-traders_C_raw <-  cbind(traders_C[c("ID","district","sub","trader._gps_latitude", "trader._gps_longitude")],read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/traders.csv")[c("parish","village","trader.q1","trader.q2")])
-traders_SW_raw <-  cbind(traders_SW[c("ID","district","sub","trader._gps_latitude", "trader._gps_longitude")],read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/Mbarara_traders.csv")[c("parish","village","trader.q1","trader.q2")])
+traders_C_raw <-  cbind(traders_C[c("ID","district","sub","trader._gps_latitude", "trader._gps_longitude")],read.csv(paste(path,"USAID_SME_project/Country folders/Uganda dairy/data/raw/traders.csv", sep="/"))[c("parish","village","trader.q1","trader.q2")])
+traders_SW_raw <-  cbind(traders_SW[c("ID","district","sub","trader._gps_latitude", "trader._gps_longitude")],read.csv(paste(path,"USAID_SME_project/Country folders/Uganda dairy/data/raw/Mbarara_traders.csv", sep="/"))[c("parish","village","trader.q1","trader.q2")])
 
-mccs_C_raw <-  cbind(mccs_C[c("ID","district","sub_county","mcc._gps_latitude", "mcc._gps_longitude")],read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/MCCs.csv")[c("parish","village", "mcc.q2", "mcc.q7", "mcc.q3","mcc.q10")])
-mccs_SW_raw <-  cbind(mccs_SW[c("ID","district","sub_county","mcc._gps_latitude", "mcc._gps_longitude")],read.csv("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin/USAID_SME_project/Country folders/Uganda dairy/data/raw/Mbarara_MCC.csv")[c("parish","village", "mcc.q2", "mcc.q7", "mcc.q3","mcc.q10")])
+mccs_C_raw <-  cbind(mccs_C[c("ID","district","sub_county","mcc._gps_latitude", "mcc._gps_longitude")],read.csv(paste(path,"USAID_SME_project/Country folders/Uganda dairy/data/raw/MCCs.csv", sep="/"))[c("parish","village", "mcc.q2", "mcc.q7", "mcc.q3","mcc.q10")])
+mccs_SW_raw <-  cbind(mccs_SW[c("ID","district","sub_county","mcc._gps_latitude", "mcc._gps_longitude")],read.csv(paste(path,"USAID_SME_project/Country folders/Uganda dairy/data/raw/Mbarara_MCC.csv", sep="/"))[c("parish","village", "mcc.q2", "mcc.q7", "mcc.q3","mcc.q10")])
 
 
 mccs_SW_raw$shed <- "SW"
