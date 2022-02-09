@@ -203,29 +203,6 @@ table(farmer_final$hh_head.HH.Housing.q17==98)
 table(farmer_final$dairy.g16[farmer_final$hh_head.HH.Housing.q17=="98"])
 
 
-#### COMPETITION
-
-#number of traders in the neighbourhood 
-table(farmer_final$dairy.sales.q95)
-
-farmer_final$nr_trad <- farmer_final$dairy.sales.q95
-
-#a farmer reported 0 trader in the neighbourhood but sold to one trader - so changing the value to 1 
-farmer_final$nr_trad [farmer_final$dairy.sales.q95=="0"] <- 1
-
-farmer_final$nr_trad [farmer_final$dairy.sales.q95=="999"] <- NA
-farmer_final$nr_trad [farmer_final$dairy.sales.q95=="9999"] <- NA
-farmer_final$nr_trad [farmer_final$dairy.sales.q95=="n/a"] <- NA
-table (farmer_final$nr_trad)
-
-mean(as.numeric(farmer_final$nr_trad), na.rm=T) #trader competition at the farmer level
-  
-count_farm<-data.frame(cbind(lm(farmer_final$nr_trad~-1+farmer_final$village)$coef)) #average number of traders in each village
-count_farm$village <- rownames(count_farm)
-colnames(count_farm)[1] <- "avg" 
-count_farm$village<-gsub("farmer_final$village","",count_farm$village,fixed = TRUE)
-rownames(count_farm) <- 1:nrow(count_farm)
-
 #------------------------------------------------------------#
 
 #MCCS
@@ -234,8 +211,8 @@ mcc <- read.csv("G:/My Drive/Classroom/Documents from Drive/KUL PhD/Uganda_PIMDV
 mcc_new <- read.csv("G:/My Drive/Classroom/Documents from Drive/KUL PhD/Uganda_PIMDVC/PIMDVC/wave_2021/raw_data/MCC/NEW_MCC_2021.csv")
 
 #dropping variables not needed
-mcc<-mcc[-c(1:9, 12:14,16:17, 23, 24, 25, 26 )]
-mcc_new<-mcc_new[-c(1:9, 12, 14:17 )]
+mcc<-mcc[-c(1:9, 13:14,16:17, 23, 24, 25, 26 )]
+mcc_new<-mcc_new[-c(1:9, 14:17 )]
 
 #adding variables missing to be consistent in both datasets
 mcc_new$hh_id<- NA
@@ -264,6 +241,9 @@ mcc_new$mcc.secB_group.b05.96<- NA
 mccs <- rbind(mcc, mcc_new)
 #removing some variables starting with X_
 mccs=mccs[,!grepl("X_", names(mccs))] 
+
+mcc_loc<-mccs
+
 #removing location (GPS) variables 
 mccs<-mccs[-c(237:242)]
 
@@ -325,9 +305,42 @@ traders$village <- trimws(traders$village, which = c("both"))
 #assigning IDs to all traders 
 traders_ID <- cbind(ID=paste("T",rownames(traders),sep="_"), traders)
 
+
+#------------------------------------------------------------#
+
+### CHECKING IF VILLAGE NAMES MATCH FOR FARMERS, TRADERS AND MCCS BASED ON THE MAP    --------  TO BE DONE 
+table(traders$village[traders$village=="Commercial street"])
+table(mccs$village[mccs$village=="Commercial street"])
+
+#------------------------------------------------------------#
+
+#### COMPETITION - FARMERS DATASET
+
+#number of traders in the neighbourhood 
+table(farmer_final$dairy.sales.q95)
+
+farmer_final$nr_trad <- farmer_final$dairy.sales.q95
+
+#a farmer reported 0 trader in the neighbourhood but sold to one trader - so changing the value to 1 
+farmer_final$nr_trad [farmer_final$dairy.sales.q95=="0"] <- 1
+
+farmer_final$nr_trad [farmer_final$dairy.sales.q95=="999"] <- NA
+farmer_final$nr_trad [farmer_final$dairy.sales.q95=="9999"] <- NA
+farmer_final$nr_trad [farmer_final$dairy.sales.q95=="n/a"] <- NA
+table (farmer_final$nr_trad)
+
+mean(as.numeric(farmer_final$nr_trad), na.rm=T) #trader competition at the farmer level
+
+count_farm<-data.frame(cbind(lm(farmer_final$nr_trad~-1+farmer_final$village)$coef)) #average number of traders in each village
+count_farm$village <- rownames(count_farm)
+colnames(count_farm)[1] <- "avg" 
+count_farm$village<-gsub("farmer_final$village","",count_farm$village,fixed = TRUE)
+rownames(count_farm) <- 1:nrow(count_farm)
+
+##COMPETITION - TRADERS DATASET
+
 count<- count(traders_ID, "village") #counting number of traders in each village 
 
-##COMPETITION
 traders_ID<-traders_ID[c("ID", "village")] #subset
 traders_ID$village<-toupper(traders_ID$village) #changing case
 comp<-merge(traders_ID, count_farm) #merging 
@@ -344,6 +357,11 @@ mean(as.numeric(traders$trader.secC_group.secC_groupcomp.q24), na.rm=T)  # 23.07
 mean(as.numeric(traders$trader.secC_group.secC_groupcomp.q24[traders$trader.secC_group.q94==1]), na.rm=T) #  25.29333
 
 
+count_trad<-data.frame(cbind(lm(traders$trader.secC_group.secC_groupcomp.q24~-1+traders$village)$coef)) #average trader competition according to traders 
+count_trad$village <- rownames(count_trad)
+colnames(count_trad)[1] <- "avg" 
+count_trad$village<-gsub("traders$village","",count_trad$village,fixed = TRUE)
+rownames(count_trad) <- 1:nrow(count_trad)
 
 #------------------------------------------------------------#
 
@@ -354,22 +372,41 @@ library(leaflet)
 #create map
 #traders <-  traders[ is.na(traders$nr_traders),]
 
+farmer_fin<-subset (farmer_fin, dairy._gps_longitude!="n/a") #38 farmers - NAs
+mcc_loc<- subset (mcc_loc, mcc._gps_longitude!="n/a") #7 NAs
+
+#changing names of the location variables to match
 names(trad_dairy)[283] <-"dairy._gps_longitude"
 names(trad_dairy)[282] <-"dairy._gps_latitude"
+names(mcc_loc)[240] <-"dairy._gps_longitude"
+names(mcc_loc)[239] <-"dairy._gps_latitude"
+
+trad_dairy<-subset (trad_dairy, dairy._gps_longitude!="n/a") #16 are NAs
 
 to_plot_f <- farmer_fin[c("dairy._gps_longitude", "dairy._gps_latitude","village")]
 to_plot_t <- trad_dairy[c("dairy._gps_longitude", "dairy._gps_latitude","village")]
+to_plot_m <- mcc_loc[c("dairy._gps_longitude", "dairy._gps_latitude","village")]
+
 to_plot_f$actor <- "farmer"
 to_plot_t$actor <- "trader"
+to_plot_m$actor <- "mcc"
+
+#data for plotting
 to_plot <- rbind(to_plot_f,to_plot_t)
+to_plot_all <- rbind(to_plot_f,to_plot_t, to_plot_m)
 
 pal <- colorFactor(c("green", "red"), domain = c("farmer", "trader"))
+pal_all <- colorFactor(c("green", "red", "blue"), domain = c("farmer", "trader", "mcc"))
 
 m <- leaflet() %>% setView(lat = 0.6, lng = 33.5, zoom=9)  %>%  addTiles(group="OSM") %>% addTiles(urlTemplate = "https://mts1.google.com/vt/lyrs=s&hl=en&src=app&x={x}&y={y}&z={z}&s=G",  group="Google", attribution = 'Google') %>% addProviderTiles(providers$OpenTopoMap, group="Topography") %>% addCircleMarkers(data=to_plot, lng=~as.numeric(as.character(dairy._gps_longitude)), 
                                                                                     lat=~as.numeric(as.character(dairy._gps_latitude)),radius= 3, label=~as.character(village),color=~pal(actor), group="X_uuid")   %>%  addLayersControl(baseGroups=c('OSM','Google','Topography'))
 
-m
+m #traders and farmers
 
+m_all <- leaflet() %>% setView(lat = 0.6, lng = 33.5, zoom=9)  %>%  addTiles(group="OSM") %>% addTiles(urlTemplate = "https://mts1.google.com/vt/lyrs=s&hl=en&src=app&x={x}&y={y}&z={z}&s=G",  group="Google", attribution = 'Google') %>% addProviderTiles(providers$OpenTopoMap, group="Topography") %>% addCircleMarkers(data=to_plot_all, lng=~as.numeric(as.character(dairy._gps_longitude)), 
+                                                                                                                                                                                                                                                                                                                        lat=~as.numeric(as.character(dairy._gps_latitude)),radius= 2, label=~as.character(village),color=~pal_all(actor), group="X_uuid")   %>%  addLayersControl(baseGroups=c('OSM','Google','Topography'))
+m_all #traders, farmers and mccs 
 
 library(htmlwidgets)
-saveWidget(m, file="farm_trad_dairy.html")
+saveWidget(m, file="farm_trad_dairy.html") #traders and farmers 
+saveWidget(m_all, file="dairy_21.html") #traders, farmers and mccs 
