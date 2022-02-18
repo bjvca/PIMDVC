@@ -3,7 +3,7 @@ library(plyr)
 
 #CHANGE PATH
 
-#setwd("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin")
+setwd("G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/CLONE_Origin")
 path2 <- getwd() 
 
 #since some farmers were in the tool but not in the list, date like q17, hh-id has not been obtained for these farmers ----- this has to be filled in
@@ -12,12 +12,12 @@ farmers_sample <- read.csv(paste(path2,"USAID_SME_project/Country folders/Uganda
 
 #CHANGE PATH
 
-#setwd("G:/My Drive/Classroom/Documents from Drive/KUL PhD/Uganda_PIMDVC/PIMDVC/wave_2021")
+setwd("G:/My Drive/Classroom/Documents from Drive/KUL PhD/Uganda_PIMDVC/PIMDVC/wave_2021")
 path <- getwd()
 
 #Reading in raw data
 #FARMERS
-farmers <- read.csv(paste(path,"raw_data/farmers/Farmers_DairyV3.csv", sep="/"), stringsAsFactors = FALSE)
+farmers <- read.csv(paste(path,"raw_data_NOCOMMIT/farmers/Farmers_DairyV3.csv", sep="/"), stringsAsFactors = FALSE)
 
 table(farmers$q17)  #156 n/a 
 table(farmers$hh_name=="n/a") #TRUE = 156 
@@ -108,8 +108,8 @@ table(farmer_final$dairy.g16[farmer_final$hh_head.HH.Housing.q17=="98"])
 
 #MCCS
 #we have two sets of raw data, follow-up mccs and new mccs
-mcc <- read.csv(paste(path,"raw_data/MCC/MCC_DairyV3_2021.csv", sep="/"), stringsAsFactors = FALSE)
-mcc_new <- read.csv(paste(path,"raw_data/MCC/NEW_MCC_2021.csv", sep="/"), stringsAsFactors = FALSE)
+mcc <- read.csv(paste(path,"raw_data_NOCOMMIT/MCC/MCC_DairyV3_2021.csv", sep="/"), stringsAsFactors = FALSE)
+mcc_new <- read.csv(paste(path,"raw_data_NOCOMMIT/MCC/NEW_MCC_2021.csv", sep="/"), stringsAsFactors = FALSE)
 
 #dropping variables not needed
 mcc<-mcc[-c(1:9, 13:14,16:17, 23, 24, 25, 26 )]
@@ -153,9 +153,9 @@ mccs<-mccs[-c(237:242)]
 
 #TRADERS
 #we have 3 sets of raw data - follow up traders (with random sampling), new traders, trader_xxx with the entire sample
-trader <- read.csv(paste(path,"raw_data/traders/TRADER_DairyV3.csv", sep="/"), stringsAsFactors = FALSE)
-trader_new <- read.csv(paste(path,"raw_data/traders/TRADER_NEW_2021.csv", sep="/"), stringsAsFactors = FALSE)
-trader_xxx <- read.csv(paste(path,"raw_data/traders/TRADER_XXX_2021.csv", sep="/"), stringsAsFactors = FALSE)
+trader <- read.csv(paste(path,"raw_data_NOCOMMIT/traders/TRADER_DairyV3.csv", sep="/"), stringsAsFactors = FALSE)
+trader_new <- read.csv(paste(path,"raw_data_NOCOMMIT/traders/TRADER_NEW_2021.csv", sep="/"), stringsAsFactors = FALSE)
+trader_xxx <- read.csv(paste(path,"raw_data_NOCOMMIT/traders/TRADER_XXX_2021.csv", sep="/"), stringsAsFactors = FALSE)
 
 #trader and trader_xxx have same variables 
 trad <- rbind(trader, trader_xxx)
@@ -213,6 +213,35 @@ traders_ID <- cbind(ID=paste("T",rownames(traders),sep="_"), traders)
 ### CHECKING IF VILLAGE NAMES MATCH FOR FARMERS, TRADERS AND MCCS BASED ON THE MAP    --------  TO BE DONE 
 table(traders$village[traders$village=="Commercial street"])
 table(mccs$village=="Commercial street")
+
+table(traders$village[traders$village=="Nyabugando"])
+table(farmer_final$village[farmer_final$village=="Nyabugando"])
+table(farmer_final$village[farmer_final$village=="KACENCE WEST"])
+traders$village[traders$village=="Nyabugando"] <- "KACENCE WEST"
+
+table(traders$village[traders$village=="Nyakizzi"])
+table(farmer_final$village[farmer_final$village=="Nyakizzi"])
+table(traders$village[traders$village=="Nyakizi"])
+table(farmer_final$village[farmer_final$village=="Nyakizi"])
+table(traders$village[traders$village=="Kakoba"])
+table(farmer_final$village[farmer_final$village=="Kakoba"])
+traders$village[traders$village=="Nyakizzi"] <- "KACENCE WEST"
+traders$village[traders$village=="Nyakizi"] <- "KACENCE WEST"
+traders$village[traders$village=="Kakoba"] <- "KACENCE WEST"
+
+table(traders$village[traders$village=="Katete"]) #2
+traders$village[traders$village=="Katete"] <- "KACENCE WEST"
+table(traders$village[traders$village=="Kibega"]) #4
+traders$village[traders$village=="Kibega" & traders$trader.when=="2018-02-01"] <- "KIGARAMA"
+traders$village[traders$village=="Kibega"] <- "KACENCE WEST"
+table(traders$village[traders$village=="Kanyabyeru"]) #1
+traders$village[traders$village=="Kanyabyeru"] <- "KACENCE WEST"
+table(traders$village[traders$village=="Kyaryabuganda"]) #1
+traders$village[traders$village=="Kyaryabuganda"] <- "KACENCE WEST"
+table(traders$village[traders$village=="Rwishamiro"]) #2
+traders$village[traders$village=="Rwishamiro"] <- "BUTAGATSI"
+table(traders$village[traders$village=="Biharwe"]) #8
+traders$village[traders$village=="Biharwe"] <- "RWOBUYENJE"
 
 #------------------------------------------------------------#
 
@@ -300,7 +329,7 @@ to_plot_all <- rbind(to_plot_f,to_plot_t, to_plot_m)
 pal <- colorFactor(c("green", "red"), domain = c("farmer", "trader"))
 pal_all <- colorFactor(c("green", "red", "blue"), domain = c("farmer", "trader", "mcc"))
 
-m <- leaflet() %>% setView(lat = 0.6, lng = 33.5, zoom=9)  %>%  addTiles(group="OSM") %>% addTiles(urlTemplate = "https://mts1.google.com/vt/lyrs=s&hl=en&src=app&x={x}&y={y}&z={z}&s=G",  group="Google", attribution = 'Google') %>% addProviderTiles(providers$OpenTopoMap, group="Topography") %>% addCircleMarkers(data=to_plot, lng=~as.numeric(as.character(dairy._gps_longitude)), 
+m <- leaflet() %>% setView(lat = 0.6, lng = 33.5, zoom=12)  %>%  addTiles(group="OSM") %>% addTiles(urlTemplate = "https://mts1.google.com/vt/lyrs=s&hl=en&src=app&x={x}&y={y}&z={z}&s=G",  group="Google", attribution = 'Google') %>% addProviderTiles(providers$OpenTopoMap, group="Topography") %>% addCircleMarkers(data=to_plot, lng=~as.numeric(as.character(dairy._gps_longitude)), 
                                                                                     lat=~as.numeric(as.character(dairy._gps_latitude)),radius= 3, label=~as.character(village),color=~pal(actor), group="X_uuid")   %>%  addLayersControl(baseGroups=c('OSM','Google','Topography'))
 
 m #traders and farmers
