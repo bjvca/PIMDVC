@@ -19,6 +19,19 @@ path <- getwd()
 #FARMERS
 farmers <- read.csv(paste(path,"raw_data_NOCOMMIT/farmers/Farmers_DairyV3.csv", sep="/"), stringsAsFactors = FALSE)
 
+#creating anonymized farmers dataset from wave 3
+farm_wave3<-farmers
+#trim trailing space for village 
+farm_wave3$village <- trimws(farm_wave3$village, which = c("both"))
+
+farm_wave3<-farm_wave3[-c(1:8, 11:13, 17, 26, 27, 436)] #removing variables not needed
+farm_wave3=farm_wave3[,!grepl("X_", names(farm_wave3))]   #removing variables starting with X_
+farm_wave3<-farm_wave3[-c(404:409)]
+
+write.csv(farm_wave3,"farmers.csv",row.names = F)  #anonymized data
+          
+
+#checking data
 table(farmers$q17)  #156 n/a 
 table(farmers$hh_name=="n/a") #TRUE = 156 
 list(farmers$hh_namex[farmers$hh_name=="n/a"]) #list of farmer names which have n/a for hh_id, q17 etc. 
@@ -142,12 +155,15 @@ mcc_new$mcc.secB_group.b05.96<- NA
 mccs <- rbind(mcc, mcc_new)
 
 mcc_loc<-mccs
+mcc<-mccs
 
 #removing some variables starting with X_
 mccs=mccs[,!grepl("X_", names(mccs))] 
 
 #removing location (GPS) variables 
-mccs<-mccs[-c(237:242)]
+mccs<-mccs[-c(2:3, 237:243)]
+
+write.csv(mccs,"mccs.csv", row.names = F)  #anonymized data
 
 #------------------------------------------------------------#
 
@@ -204,6 +220,9 @@ traders<-traders[-c(278:283)]
 #trim trailing space 
 traders$village <- trimws(traders$village, which = c("both"))
 
+trad_ano<-traders[-c(3,278:280)]
+write.csv(trad_ano,"traders.csv", row.names = F)  #anonymized data
+
 #assigning IDs to all traders 
 traders_ID <- cbind(ID=paste("T",rownames(traders),sep="_"), traders)
 
@@ -212,7 +231,7 @@ traders_ID <- cbind(ID=paste("T",rownames(traders),sep="_"), traders)
 
 ### CHECKING IF VILLAGE NAMES MATCH FOR FARMERS, TRADERS AND MCCS BASED ON THE MAP    --------  TO BE DONE 
 table(traders$village[traders$village=="Commercial street"])
-table(mccs$village=="Commercial street")
+table(mcc$village=="Commercial street")
 
 table(traders$village[traders$village=="Nyabugando"])
 table(farmer_final$village[farmer_final$village=="Nyabugando"])
