@@ -361,3 +361,75 @@ library(htmlwidgets)
 saveWidget(m, file="farm_trad_dairy.html") #traders and farmers 
 saveWidget(m_all, file="dairy_21.html") #traders, farmers and mccs 
 
+
+
+
+################################################################################################################
+
+#CHANGE PATH
+
+setwd("G:/My Drive/Classroom/Documents from Drive/KUL PhD/Uganda_PIMDVC/PIMDVC")
+pathp <- getwd()
+
+#Reading in data
+#TRADERS
+traders_wave0 <- read.csv(paste(pathp,"data/wave_0/traders.csv", sep="/"), stringsAsFactors = FALSE) #694 obs
+colnames(traders_wave0)[2] <- "hh_id"
+
+traders_wave1 <- read.csv(paste(pathp,"data/wave_1/traders.csv", sep="/"), stringsAsFactors = FALSE) #340 obs
+traders_wave2 <- read.csv(paste(pathp,"data/wave_2/traders.csv", sep="/"), stringsAsFactors = FALSE) #556 obs
+
+traders_wave3 <- read.csv(paste(pathp,"wave_2021/traders.csv", sep="/"), stringsAsFactors = FALSE) #348 obs
+traders_w3<-subset(traders_wave3, hh_id != "n/a") #197 obs 
+
+#trying to find how many observations match based on hh_id 
+ 
+m12<- merge(traders_wave1, traders_wave2, by="hh_id", all=FALSE) #337 matched
+m23<- merge(traders_wave2, traders_wave3, by="hh_id", all=FALSE) #185 matched
+m13<- merge(traders_wave1, traders_wave3, by="hh_id", all=FALSE) #134 matched
+
+m123<- merge(m12, traders_wave3, by="hh_id", all=FALSE) #133 matched
+m0123<- merge( traders_wave0,m123, by="hh_id", all=FALSE) #133 matched
+
+m012<- merge( traders_wave0,m12, by="hh_id", all=FALSE) #337 matched
+m023<- merge( traders_wave0,m23, by="hh_id", all=FALSE) #185 matched
+m013<- merge( traders_wave0,m13, by="hh_id", all=FALSE) #134 matched
+
+#MCCS 
+mccs_wave0 <- read.csv(paste(pathp,"data/wave_0/mccs.csv", sep="/"), stringsAsFactors = FALSE) #92 obs
+colnames(mccs_wave0)[2] <- "hh_id"
+
+mccs_wave1 <- read.csv(paste(pathp,"data/wave_1/processors.csv", sep="/"), stringsAsFactors = FALSE) #52 obs
+mccs_wave2 <- read.csv(paste(pathp,"data/wave_2/processors.csv", sep="/"), stringsAsFactors = FALSE) #55 obs
+
+mccs_wave3 <- read.csv(paste(pathp,"wave_2021/mccs.csv", sep="/"), stringsAsFactors = FALSE) #137 obs
+mccs_w3<-subset(mccs_wave3, hh_id != "n/a") #64 obs 
+
+#trying to find how many observations match based on hh_id 
+
+mm12<- merge(mccs_wave1, mccs_wave2, by="hh_id", all=FALSE) #40 matched
+mm23<- merge(mccs_wave2, mccs_wave3, by="hh_id", all=FALSE) #41 matched
+mm13<- merge(mccs_wave1, mccs_wave3, by="hh_id", all=FALSE) #42 matched
+
+mm123<- merge(mm12, mccs_wave3, by="hh_id", all=FALSE) #32 matched
+mm0123<- merge( mccs_wave0,mm123, by="hh_id", all=FALSE) #32 matched
+
+mm012<- merge( mccs_wave0,mm12, by="hh_id", all=FALSE) # 40 matched
+mm023<- merge( mccs_wave0,mm23, by="hh_id", all=FALSE) #41 matched
+mm013<- merge( mccs_wave0,mm13, by="hh_id", all=FALSE) #42 matched
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
